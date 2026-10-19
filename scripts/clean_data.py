@@ -132,10 +132,39 @@ def clean_visitors():
     print(f"저장: {out_path} ({len(out)}행)")
 
 
+def _find_sangga_file():
+    paths = glob.glob(os.path.join(RAW_DIR, "sangga", "*.csv")) + glob.glob(os.path.join(RAW_DIR, "sangga", "*.zip"))
+    if not paths:
+        raise FileNotFoundError("sangga 원본(csv/zip)을 찾을 수 없습니다.")
+    return sorted(paths)[-1]
+
+
+def _read_sangga():
+    path = _find_sangga_file()
+    compression = "zip" if path.endswith(".zip") else None
+    snapshot_date = os.path.basename(path).rsplit("_", 1)[-1].replace(".zip", "").replace(".csv", "")
+    df = pd.read_csv(path, compression=compression, encoding="utf-8-sig")
+    return df, snapshot_date
+
+
+def clean_sangga_points():
+    """merchants <-> sangga 근접매칭(카페/식당/기념품 카테고리 부여)용 포인트 데이터.
+    원본 전체(86MB)를 매 요청마다 백엔드에서 읽긴 무거워서, 필요한 컬럼만 추려 저장한다."""
+    df, _ = _read_sangga()
+    out = df[["상호명", "상권업종대분류명", "상권업종중분류명", "경도", "위도"]].rename(columns={
+        "상호명": "name", "상권업종대분류명": "category_major", "상권업종중분류명": "category_minor",
+        "경도": "lon", "위도": "lat",
+    })
+    out["category_major"] = out["category_major"].str.strip()
+    out["category_minor"] = out["category_minor"].str.strip()
+    out = out.dropna(subset=["lon", "lat", "name"])
+    out_path = os.path.join(OUT_DIR, "sangga_points.csv")
+    out.to_csv(out_path, index=False, encoding="utf-8-sig")
+    print(f"저장: {out_path} ({len(out)}행)")
+
+
 def clean_commercial_density():
-    path = latest_file(os.path.join(RAW_DIR, "sangga", "*.zip"))
-    snapshot_date = os.path.basename(path).rsplit("_", 1)[-1].replace(".zip", "")
-    df = pd.read_csv(path, compression="zip", encoding="utf-8-sig")
+    df, snapshot_date = _read_sangga()
 
     grouped = df.groupby(["시군구명", "행정동명", "상권업종대분류명"]).agg(
         store_count=("상가업소번호", "count"),
@@ -162,3 +191,4 @@ if __name__ == "__main__":
     clean_consumption()
     clean_visitors()
     clean_commercial_density()
+    clean_sangga_points()
