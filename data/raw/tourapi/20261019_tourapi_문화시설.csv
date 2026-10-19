@@ -1,4 +1,5 @@
-﻿contentid,contenttypeid,title,addr1,addr2,zipcode,tel,mapx,mapy,cat1,cat2,cat3,sigungucode,firstimage,createdtime,modifiedtime
+﻿
+contentid,contenttypeid,title,addr1,addr2,zipcode,tel,mapx,mapy,cat1,cat2,cat3,sigungucode,firstimage,createdtime,modifiedtime
 130200,14,구덕민속예술관,부산광역시 서구 대신공원로 34-91 (서대신동3가),,49200,,129.0185100829,35.1239756631,A02,A0206,A02061100,11,http://tong.visitkorea.or.kr/cms/resource/42/2649742_image2_1.jpg,20071106104642,20250114174115
 3023734,14,동서대학교 소향씨어터 신한카드홀,부산광역시 해운대구 센텀중앙로 55 (우동),,48058,,129.1276353562,35.1731360622,A02,A0206,A02060600,16,http://tong.visitkorea.or.kr/cms/resource/09/3023709_image2_1.JPG,20231024145621,20250422131053
 2823059,14,박태준기념관,부산광역시 기장군 임랑해안길 1 박태준기념관,,46038,,129.2612503134,35.3169141022,A02,A0206,A02060200,3,http://tong.visitkorea.or.kr/cms/resource/56/2823056_image2_1.jpg,20220608110246,20251204153323
