@@ -9,6 +9,7 @@
 """
 
 import glob
+import hashlib
 import os
 
 import pandas as pd
@@ -16,8 +17,15 @@ import pandas as pd
 RAW_DIR = "data/raw"
 OUT_DIR = "data/processed"
 
-POI_COLUMNS = ["source", "source_id", "name", "category_major", "category_minor",
+POI_COLUMNS = ["id", "source", "source_id", "name", "category_major", "category_minor",
                "address", "lon", "lat", "data_date"]
+
+
+def stable_id(*parts):
+    """여러 필드를 합쳐 결정적(deterministic) md5 id를 만든다.
+    같은 입력이면 재실행해도 항상 같은 id -> upsert 시 멱등성 보장."""
+    key = "|".join("" if p is None else str(p) for p in parts)
+    return hashlib.md5(key.encode("utf-8")).hexdigest()
 
 
 def latest_file(pattern):
@@ -32,6 +40,7 @@ def clean_merchants():
     df = pd.read_csv(path, encoding="utf-8-sig")
     df = df[df["geocode_status"] == "ok"].copy()
     out = pd.DataFrame({
+        "id": [stable_id("dongbaekjeon", n, a) for n, a in zip(df["store_name"], df["address"])],
         "source": "dongbaekjeon",
         "source_id": None,
         "name": df["store_name"],
@@ -42,6 +51,7 @@ def clean_merchants():
         "lat": df["lat"],
         "data_date": df["data_date"],
     })
+    out = out.drop_duplicates(subset="id")
     out_path = os.path.join(OUT_DIR, "merchants.csv")
     out.to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"저장: {out_path} ({len(out)}행)")
@@ -54,6 +64,7 @@ def clean_tourist_spots():
         label = os.path.basename(path).split("_tourapi_")[1].replace(".csv", "")
         df = pd.read_csv(path, encoding="utf-8-sig")
         frames.append(pd.DataFrame({
+            "id": [stable_id("tourapi", cid) for cid in df["contentid"]],
             "source": "tourapi",
             "source_id": df["contentid"],
             "name": df["title"],
@@ -69,6 +80,7 @@ def clean_tourist_spots():
     tm = pd.read_csv(tm_path, encoding="cp949")
     tm = tm[tm["소재지도로명주소"].str.startswith("부산", na=False)].copy()
     frames.append(pd.DataFrame({
+        "id": [stable_id("traditional_market", n, a) for n, a in zip(tm["시장명"], tm["소재지도로명주소"])],
         "source": "traditional_market",
         "source_id": None,
         "name": tm["시장명"],
@@ -81,7 +93,7 @@ def clean_tourist_spots():
     }))
 
     out = pd.concat(frames, ignore_index=True)[POI_COLUMNS]
-    out = out.dropna(subset=["lon", "lat"])
+    out = out.dropna(subset=["lon", "lat"]).drop_duplicates(subset="id")
     out_path = os.path.join(OUT_DIR, "tourist_spots.csv")
     out.to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"저장: {out_path} ({len(out)}행)")
@@ -95,6 +107,10 @@ def clean_consumption():
     id_cols = ["year_month", "gu", "dong_region_code", "dong_name", "lon", "lat"]
     long_df = df.melt(id_vars=id_cols, value_vars=category_cols,
                        var_name="category", value_name="amount_krw")
+    long_df.insert(0, "id", [
+        stable_id(r.dong_region_code, r.year_month, r.category)
+        for r in long_df.itertuples()
+    ])
     out_path = os.path.join(OUT_DIR, "consumption.csv")
     long_df.to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"저장: {out_path} ({len(long_df)}행)")
@@ -110,6 +126,7 @@ def clean_visitors():
         frames.append(df)
 
     out = pd.concat(frames, ignore_index=True)[["period", "region", "foreign_visitors"]]
+    out.insert(0, "id", [stable_id(p, r) for p, r in zip(out["period"], out["region"])])
     out_path = os.path.join(OUT_DIR, "visitors.csv")
     out.to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"저장: {out_path} ({len(out)}행)")
@@ -117,6 +134,7 @@ def clean_visitors():
 
 def clean_commercial_density():
     path = latest_file(os.path.join(RAW_DIR, "sangga", "*.zip"))
+    snapshot_date = os.path.basename(path).rsplit("_", 1)[-1].replace(".zip", "")
     df = pd.read_csv(path, compression="zip", encoding="utf-8-sig")
 
     grouped = df.groupby(["시군구명", "행정동명", "상권업종대분류명"]).agg(
@@ -127,6 +145,11 @@ def clean_commercial_density():
     grouped = grouped.rename(columns={
         "시군구명": "gu", "행정동명": "dong", "상권업종대분류명": "category_major",
     })
+    grouped.insert(0, "snapshot_date", snapshot_date)
+    grouped.insert(0, "id", [
+        stable_id(r.gu, r.dong, r.category_major, snapshot_date)
+        for r in grouped.itertuples()
+    ])
     out_path = os.path.join(OUT_DIR, "commercial_density.csv")
     grouped.to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"저장: {out_path} ({len(grouped)}행)")
