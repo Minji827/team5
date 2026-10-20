@@ -5,7 +5,9 @@ from typing import List, Optional
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
 
-from app.data_loader import load_merchants, load_sangga_points, load_tourist_spots
+from app.data_loader import (
+    load_busan_mat, load_kakao_categories, load_merchants, load_sangga_points, load_tourist_spots,
+)
 from app.services.route import recommend_route
 
 router = APIRouter(prefix="/api/recommend", tags=["recommend"])
@@ -27,6 +29,8 @@ def recommend(req: RecommendRequest):
         merchants_df=load_merchants(),
         spots_df=load_tourist_spots(),
         sangga_df=load_sangga_points(),
+        kakao_df=load_kakao_categories(),
+        busan_mat_df=load_busan_mat(),
         start_lat=req.start_lat,
         start_lon=req.start_lon,
         categories=req.categories,

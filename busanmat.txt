@@ -1,0 +1,14 @@
+(146, 3)
+['구군', '식당명', '영문명']
+
+    구군               식당명                                              영문명
+0  강서구          만호갈미샤브샤브                          Manho Galmi Shabu-shabu
+1  강서구                방코                                            BANCO
+2  강서구              샤브니지                                        Shabuniji
+3  강서구            토북베이커리                                     TOBUK BAKERY
+4  금정구                디귿                                           Digeut
+5  금정구  마파람 해물찜 해물탕 구서본점  Maparam Haemuljjim Haemultang Guseo Main Branch
+6  금정구          모모스커피 본점                         Momos Coffee Main Branch
+7  금정구          부산대 포맨티코                            Phomantico PNU Branch
+8  금정구            이태리 삼촌                                    Italy Samchon
+9  금정구     이흥용과자점 부산대직영점                 Lee Heung-yong Bakery PNU Branch

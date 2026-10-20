@@ -184,6 +184,17 @@ def clean_commercial_density():
     print(f"저장: {out_path} ({len(grouped)}행)")
 
 
+def clean_busan_mat():
+    """"부산의 맛" 인증 식당 목록. 전부 식당이라 카테고리 보강용으로 쓴다
+    (좌표가 없어서 상호명+구 로만 merchants와 매칭한다)."""
+    path = os.path.join(RAW_DIR, "dongbaekjeon", "2026_부산의맛_식당목록.csv")
+    df = pd.read_csv(path, encoding="utf-8-sig")
+    out = df.rename(columns={"구군": "gu", "식당명": "name"})[["gu", "name"]]
+    out_path = os.path.join(OUT_DIR, "busan_mat.csv")
+    out.to_csv(out_path, index=False, encoding="utf-8-sig")
+    print(f"저장: {out_path} ({len(out)}행)")
+
+
 if __name__ == "__main__":
     os.makedirs(OUT_DIR, exist_ok=True)
     clean_merchants()
@@ -192,3 +203,4 @@ if __name__ == "__main__":
     clean_visitors()
     clean_commercial_density()
     clean_sangga_points()
+    clean_busan_mat()

@@ -47,6 +47,18 @@ def _sangga_category(category_major, category_minor):
     return None
 
 
+def _kakao_category(category_group_name, category_name):
+    """카카오 자체 업종분류. "시장"은 상호명에 흔히 섞여 오매칭이 나서
+    (예: "OO스쿼시장") 여기선 다루지 않고 전통시장 반경 매칭에 맡긴다."""
+    if category_group_name == "카페":
+        return "카페"
+    if category_group_name == "음식점":
+        return "식당"
+    if isinstance(category_name, str) and category_name.startswith("여행 > 기념품"):
+        return "기념품"
+    return None
+
+
 _BRANCH_SUFFIX_RE = re.compile(r"(점|지점|호점)$")
 _PAREN_RE = re.compile(r"\(.*?\)")
 _NON_ALNUM_RE = re.compile(r"[^0-9a-zA-Z가-힣]")
@@ -144,18 +156,53 @@ def _match_via_traditional_market(merchants_df: pd.DataFrame, spots_df: pd.DataF
     return rows
 
 
-def build_catalog(merchants_df: pd.DataFrame, spots_df: pd.DataFrame, sangga_df: pd.DataFrame) -> pd.DataFrame:
-    """동백전(결제확인) 매장에 카테고리를 근접+상호명 매칭으로 붙인다.
-    매칭 안 되는 매장은 카테고리를 알 수 없어 후보에서 제외한다 (알려진 한계)."""
+def _match_via_kakao(merchants_df: pd.DataFrame, kakao_df: pd.DataFrame) -> list:
+    """카카오 키워드검색 결과를 id로 붙이되, 검색 반경(100m) 안의 다른 가게가 잡혔을
+    위험이 있어 상호명이 완전일치(sangga와 동일 기준)하는 것만 받아들인다."""
+    kakao = kakao_df[kakao_df["status"] == "ok"].copy()
+    kakao["category"] = [
+        _kakao_category(g, n) for g, n in zip(kakao["category_group_name"], kakao["category_name"])
+    ]
+    kakao = kakao.dropna(subset=["category"])
+
+    merged = merchants_df.merge(kakao[["id", "place_name", "category"]], on="id", how="inner")
+    merged = merged[[_name_matches(n, p) for n, p in zip(merged["name"], merged["place_name"])]]
+    return merged[["id", "name", "address", "lon", "lat", "category", "data_date"]].to_dict("records")
+
+
+def _match_via_busan_mat(merchants_df: pd.DataFrame, busan_mat_df: pd.DataFrame) -> list:
+    """"부산의 맛" 인증 식당 목록 - 전부 식당이라 상호명(+구 일치)만 맞으면 "식당"으로 태그한다.
+    좌표가 없는 목록이라 구 단위로 먼저 추려서(이름 흔한 가게 오매칭 방지) 비교한다."""
+    rows = []
+    for bm in busan_mat_df.itertuples():
+        candidates = merchants_df[merchants_df["address"].str.contains(bm.gu, na=False)]
+        for m in candidates.itertuples():
+            if _name_matches(m.name, bm.name):
+                rows.append({
+                    "id": m.id, "name": m.name, "address": m.address,
+                    "lon": m.lon, "lat": m.lat, "category": "식당", "data_date": m.data_date,
+                })
+    return rows
+
+
+def build_catalog(merchants_df: pd.DataFrame, spots_df: pd.DataFrame, sangga_df: pd.DataFrame,
+                   kakao_df: pd.DataFrame = None, busan_mat_df: pd.DataFrame = None) -> pd.DataFrame:
+    """동백전(결제확인) 매장에 카테고리를 붙인다. 카카오 자체 분류/부산의맛 인증 목록이 있으면
+    그걸 우선 쓰고, 없는 매장은 근접+상호명 매칭(sangga)/전통시장 반경 매칭으로 보강한다.
+    다 안 되는 매장은 카테고리를 알 수 없어 후보에서 제외한다 (알려진 한계)."""
     rows = _match_via_sangga(merchants_df, sangga_df) + _match_via_traditional_market(merchants_df, spots_df)
+    if kakao_df is not None:
+        rows = _match_via_kakao(merchants_df, kakao_df) + rows
+    if busan_mat_df is not None:
+        rows = _match_via_busan_mat(merchants_df, busan_mat_df) + rows
     catalog = pd.DataFrame(rows)
     return catalog.drop_duplicates(subset="id", keep="first")
 
 
-def get_catalog(merchants_df, spots_df, sangga_df) -> pd.DataFrame:
+def get_catalog(merchants_df, spots_df, sangga_df, kakao_df=None, busan_mat_df=None) -> pd.DataFrame:
     global _catalog_cache
     if _catalog_cache is None:
-        _catalog_cache = build_catalog(merchants_df, spots_df, sangga_df)
+        _catalog_cache = build_catalog(merchants_df, spots_df, sangga_df, kakao_df, busan_mat_df)
     return _catalog_cache
 
 
@@ -225,8 +272,8 @@ def optimal_order(start_lat, start_lon, candidates: list, stop_count):
 
 
 def recommend_route(merchants_df, spots_df, sangga_df, start_lat, start_lon,
-                     categories=None, stop_count=5, max_minutes=None):
-    catalog = get_catalog(merchants_df, spots_df, sangga_df)
+                     categories=None, stop_count=5, max_minutes=None, kakao_df=None, busan_mat_df=None):
+    catalog = get_catalog(merchants_df, spots_df, sangga_df, kakao_df, busan_mat_df)
     candidates = nearest_candidates(catalog, start_lat, start_lon, categories, stop_count)
     if not candidates:
         return {"stops": [], "total_minutes": 0, "over_budget": False}

@@ -40,3 +40,13 @@ def load_commercial_density() -> pd.DataFrame:
 @lru_cache(maxsize=1)
 def load_sangga_points() -> pd.DataFrame:
     return pd.read_csv(DATA_DIR / "sangga_points.csv", encoding="utf-8-sig")
+
+
+@lru_cache(maxsize=1)
+def load_kakao_categories() -> pd.DataFrame:
+    return pd.read_csv(DATA_DIR / "_kakao_category_cache.csv", encoding="utf-8-sig")
+
+
+@lru_cache(maxsize=1)
+def load_busan_mat() -> pd.DataFrame:
+    return pd.read_csv(DATA_DIR / "busan_mat.csv", encoding="utf-8-sig")
