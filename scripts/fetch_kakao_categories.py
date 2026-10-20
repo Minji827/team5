@@ -71,7 +71,8 @@ def fetch_one(merchant):
             return None
         if resp.status_code != 200:
             body = resp.text[:200]
-            if "Quota" in body or "quota" in body:
+            # 실제 쿼터 초과 응답은 429가 아니라 400 + "API limit has been exceeded"로 온다.
+            if "quota" in body.lower() or "limit has been exceeded" in body.lower():
                 QUOTA_EXCEEDED = True
                 return None
             time.sleep(1 + attempt)
