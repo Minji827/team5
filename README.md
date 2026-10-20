@@ -3,8 +3,8 @@
 부산 관광객이 동백전(지역화폐) 결제 가능한 매장만으로 도보 루트를 추천받고,
 결과를 이메일로 받아볼 수 있는 서비스.
 
-- 데이터 수집/정제 가이드: [DATA_GUIDE.md](DATA_GUIDE.md)
-- 추천 알고리즘 설명: [ROUTE_ALGORITHM.md](ROUTE_ALGORITHM.md)
+- 데이터 수집/정제 가이드: [DATA_GUIDE.md](docs/DATA_GUIDE.md)
+- 추천 알고리즘 설명: [ROUTE_ALGORITHM.md](docs/ROUTE_ALGORITHM.md)
 
 ## 실행 방법
 
@@ -57,15 +57,15 @@ team5/
 │   ├── fetch_kakao_categories.py # 동백전 매장에 Kakao 업종분류 태깅 (쿼터 초과 시 캐시로 이어서 진행)
 │   ├── geocode_dongbaekjeon.py   # 동백전 가맹점 주소 → 좌표 변환
 │   ├── clean_data.py             # raw 데이터들을 공통 스키마로 정제 → data/processed/
-│   └── load_to_supabase.py       # data/processed/*.csv 를 Supabase에 업로드
+│   ├── load_to_supabase.py       # data/processed/*.csv 를 Supabase에 업로드
+│   ├── classify_travel_purposes.py # 여행 목적 태그 분류 (별도 결과 저장)
+│   └── rematch_kakao.py          # 실패·불일치 가맹점 카카오 재검색
 │
 ├── data/
-│   ├── raw/                      # 팀원별 원본 데이터 (가공 전) — 담당/규칙은 DATA_GUIDE.md 참고
+│   ├── raw/                      # 팀원별 원본 데이터 (가공 전) — 담당/규칙은 docs/DATA_GUIDE.md 참고
 │   └── processed/                # 정제된 공통 스키마 CSV (merchants, tourist_spots, consumption 등)
 │
 ├── supabase/schema.sql           # Supabase 테이블 스키마
-├── load_data.py                  # (구) raw CSV 병합 스크립트, clean_data.py로 대체됨
-├── DATA_GUIDE.md                 # 데이터 수집 규칙/폴더 담당자
-├── ROUTE_ALGORITHM.md            # 루트 추천 로직 설명
+├── docs/                        # 데이터 수집 가이드·추천 알고리즘 문서
 └── .env                          # API 키/메일 계정 (git 추적 안 됨)
 ```
