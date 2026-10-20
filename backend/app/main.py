@@ -3,7 +3,7 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import geocode, merchants, recommend, spots
+from app.routers import geocode, merchants, notify, recommend, spots
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(message)s")
 
@@ -20,6 +20,7 @@ app.include_router(spots.router)
 app.include_router(merchants.router)
 app.include_router(recommend.router)
 app.include_router(geocode.router)
+app.include_router(notify.router)
 
 
 @app.get("/api/health")

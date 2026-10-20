@@ -71,7 +71,7 @@ export default function App() {
           {error && <div className="error">⚠ {error}</div>}
           <RouteList
             stops={stops} totalMinutes={totalMinutes} overBudget={overBudget}
-            loading={loading} hasSearched={hasSearched}
+            loading={loading} hasSearched={hasSearched} startPoint={startPoint}
           />
         </div>
       </aside>

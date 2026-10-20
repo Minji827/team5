@@ -31,10 +31,12 @@ QUOTA_EXCEEDED = False
 
 
 def load_cache():
+    """"error"(네트워크 실패 등 일시적 오류)는 완료로 치지 않고 다음 실행에서 재시도한다.
+    "ok"/"no_match"만 확정 결과라서 완료로 센다."""
     if not os.path.exists(CACHE_PATH):
-        return {}
+        return set()
     df = pd.read_csv(CACHE_PATH, encoding="utf-8-sig")
-    return {row.id: True for row in df.itertuples()}
+    return set(df.loc[df["status"].isin(["ok", "no_match"]), "id"])
 
 
 def append_cache_rows(rows):

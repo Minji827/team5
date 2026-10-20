@@ -29,3 +29,17 @@ export function getRecommendation({ startLat, startLon, categories, stopCount, m
     }),
   });
 }
+
+export function sendRouteEmail({ email, stops, totalMinutes, startPoint }) {
+  return request("/api/notify/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      total_minutes: totalMinutes,
+      start_lat: startPoint?.lat,
+      start_lon: startPoint?.lon,
+      stops,
+    }),
+  });
+}
