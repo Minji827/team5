@@ -131,6 +131,7 @@ def main():
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--districts", nargs="+", help="Prioritize a limited MVP area by address district")
+    parser.add_argument("--ids-file", type=Path, help="CSV/text with an 'id' column (or one id per line) to limit the run to")
     parser.add_argument("--travel-only", action="store_true", help="Skip known non-tourism search categories and explicit medical/education names")
     parser.add_argument("--self-check", action="store_true")
     args = parser.parse_args()
@@ -153,6 +154,9 @@ def main():
     if args.districts:
         district_pattern = r"(?:^|\s)(?:" + "|".join(re.escape(d) for d in args.districts) + r")(?:\s|$)"
         todo = todo[todo.address.fillna("").str.contains(district_pattern, regex=True)]
+    if args.ids_file:
+        wanted = pd.read_csv(args.ids_file).id if args.ids_file.suffix == ".csv" else pd.Series(args.ids_file.read_text(encoding="utf-8").split())
+        todo = todo[todo.id.isin(wanted)]
     if args.travel_only:
         relevant = todo.category_name.fillna("").str.contains(r"^음식점(?: >|$)|기념품|소품|공예|디자인문구", regex=True)
         unknown = todo.status.ne("ok")

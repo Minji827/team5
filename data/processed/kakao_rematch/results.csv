@@ -6521,3 +6521,319 @@ c51e6a44d91c3a99faa722415301441c,no_match,,,,,,,,,,,,,,no_candidates
 0957f798b6052ef525ec08c5cb3cb725,no_match,,,,,,,,,,,,,,no_candidates
 7ec47bb3bb77561c30d595b2ea137399,no_match,,,,,,,,,,,,,,no_candidates
 4d6438479493666118d96b1cf5486d0b,no_match,,,,,,,,,,,,,,no_candidates
+fc9f346f7f0bfa8e14a7a0c5cf3aa4ad,review,1374731210,호텔마르쉐,숙박,"여행 > 숙박 > 여관,모텔",부산 중구 흑교로 10,부산 중구 부평동2가 63-11,35.100238281545934,129.02529102909403,0.0,0.4,True,마르쉐(Marcher) 흑교로,300,needs_verification
+9ba131622e5b43fabd0d14d26e5a38fb,review,15912082,고성수산,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 55,부산 중구 남포동5가 71-2,35.09751596803994,129.03023797392305,54.4,0.5,False,고성상회 부산,300,needs_verification
+453e58d34cabfbb13c7da43af8e84f85,review,9773502,미소안의원,병원,"의료,건강 > 병원 > 피부과",부산 중구 구덕로 40,부산 중구 남포동2가 22-1,35.09846028491849,129.03153554076835,2.7,0.8333,True,날씬미소안의원 구덕로,300,needs_verification
+a54c1da6b8c10586d12cfc13e9b6475b,review,1769691624,강남주막,음식점,"음식점 > 술집 > 호프,요리주점",부산 중구 중구로29번길 42,부산 중구 부평동2가 65-8,35.10055909987825,129.02566850138865,67.4,0.6667,False,강남,100,needs_verification
+82ddcebe872998300dd2a25dd0467ec6,review,740724197,조이,,"가정,생활 > 패션 > 의류판매",부산 중구 광복중앙로 16,부산 중구 광복동3가 4-1,35.10069731741988,129.0311941114584,0.0,0.0,True,JOY 광복중앙로,300,needs_verification
+2c5d79f73559baa199efccc0391d4f8b,review,10534672,쉬즈성형외과의원,병원,"의료,건강 > 병원 > 성형외과",부산 중구 구덕로 8-1,부산 중구 광복동1가 47-1,35.09815016405309,129.03455091602603,0.0,0.8571,True,쉬즈성형외과 구덕로,300,needs_verification
+0fc2994d17725e84da851fafcb6287d7,review,3359027,반스 광복점,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발 > 반스",부산 중구 광복로 88,부산 중구 광복동1가 45,35.09846941563078,129.0344831912576,10.5,0.5714,True,반스 광복로,300,needs_verification
+c737bc2ace9a72a55498aac4bf8f7810,review,27172152,푸마 부산스포츠광복점,,"가정,생활 > 패션 > 의류판매 > 푸마",부산 중구 광복로 74,부산 중구 광복동2가 33-1,35.0985081989683,129.032870089134,1.1,0.8,True,푸마스포츠광복점-유니 광복로,300,needs_verification
+2f3935bdc627d7377751f296b5f7aab3,review,535578706,호텔보브,숙박,"여행 > 숙박 > 여관,모텔",부산 중구 흑교로 7,부산 중구 부평동3가 52-2,35.100193280640944,129.0247482264826,1.1,0.5714,True,보브텔 흑교로,300,needs_verification
+7254ffef4d16ee5e6afc88227d67747f,review,27448955,대항길외과의원,병원,"의료,건강 > 병원 > 항문외과",부산 중구 구덕로 90,부산 중구 남포동6가 63,35.09757132347026,129.0260145285595,0.0,0.6667,True,대항길병원 구덕로,300,needs_verification
+46b2cf40aa25da9e5e34d64e12970365,review,606808577,동화열쇠,,"가정,생활 > 생활용품점 > 열쇠",부산 중구 자갈치로 18,부산 중구 남포동6가 25-1,35.0963466175399,129.026338384591,19.8,0.5,False,남포열쇠,100,needs_verification
+efe1bd7dd1c527ee42da757988b62f8c,review,2009670555,자갈치아지매시장,,"가정,생활 > 시장",부산 중구 자갈치해안로 30,부산 중구 남포동6가 117-3,35.0960346929152,129.027692493025,39.2,0.8571,False,자갈치아지매 자갈치로,300,needs_verification
+4ff85abf655fdcbc34b5dc1b3e4ad9be,review,19558825,키다리상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.09671897719682,129.03111952283606,50.1,0.5455,True,키다리꼼장어 자갈치해안로,300,needs_verification
+fe255eba4b76b1fa4c43d1b0c6698801,review,8432715,신광상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.09666354583004,129.03082428877653,22.6,0.5,True,신광수산 자갈치해안로,300,needs_verification
+815163348f300634098052acfdece47a,review,239125878,큐,,"가정,생활 > 패션 > 패션잡화점",부산 중구 광복중앙로33번길 9-2,부산 중구 신창동1가 35-5,35.10213688277421,129.02982623611797,58.3,0.2857,False,큐(queue),100,needs_verification
+89740f3058336f971234d3125146abd3,review,24532474,렌즈미 남포점,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈 > 렌즈미",부산 중구 구덕로 지하 12,부산 중구 남포동1가 11,35.09781416966251,129.03427392235224,21.3,0.5455,False,렌즈미안경 구덕로,300,needs_verification
+ccdb2d309fd819dcf48751be8812838e,review,17965145,LOVE MARKET(러브마켓),,"가정,생활 > 패션 > 의류판매",부산 중구 중구로44번길 15,부산 중구 신창동2가 7-1,35.1018289083901,129.029382168683,8.0,0.7143,False,러브마켓 (Love Market),100,needs_verification
+97e7fe036b1a5446a07d6fb2fec8ff01,review,1203222858,"제1,2구잠수기수협 위판장",,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 62,부산 중구 남포동4가 37-11,35.0968800640286,129.031939308663,75.5,0.4,False,잠수기 부산,300,ambiguous
+e3371a713406865a23885eba54d06d67,review,9437822,중앙치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 광복로 15-2,부산 중구 부평동1가 35-12,35.0995780622074,129.02688768738,1.0,0.8,True,중앙치과 광복로,300,needs_verification
+bc609a7e7df1ff5fcee4844b44168e83,review,22538210,더퍼퓸,,"가정,생활 > 미용 > 화장품",부산 중구 광복로 38,부산 중구 창선동2가 47-1,35.0991227476705,129.029108931857,1.7,0.6667,True,더 퍼품 광복로,300,needs_verification
+aa1022f87d86cf9c12ab821c19a377bd,review,2120980322,소망모바일 알뜰폰선불폰 중고폰 부산 남포점,,"가정,생활 > 중고용품 > 중고가전",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0980090430311,129.032004612158,0.0,0.4167,False,소망모바일 부산,300,needs_verification
+aa8d7ec2f031b650a79d13c072656c43,review,1765161798,레몬트리,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발",부산 중구 광복로49번길 23-2,부산 중구 신창동1가 21,35.1013143709595,129.030348631474,69.5,0.4,False,트리(Tree) 광복로49번길,300,needs_verification
+68e3b3ae45f12aff4b45ba95e8d00714,review,7882223,엠미니몰,,"서비스,산업 > 관리,운영 > 쇼핑시설관리운영",부산 중구 구덕로 46,부산 중구 남포동4가 4-3,35.0984651671867,129.030921615084,43.8,0.4,False,엠,100,needs_verification
+d7c905794e671d393aa57ed1a0f9193a,review,1575419044,GnB호텔,숙박,여행 > 숙박 > 호텔,부산 중구 흑교로 19,부산 중구 부평동3가 40-5,35.101257796375734,129.02484254452781,2.8,0.3333,True,지엔비호텔(GnB HOTEL) 흑교로,300,needs_verification
+d983e1841d8f08a8deb10d8b7671046e,review,1298831016,삼룡상회,,"가정,생활 > 식품판매",부산 중구 자갈치로 34,부산 중구 남포동6가 6-1,35.0967131435118,129.02813144531612,88.2,0.4444,False,자갈치상회,100,ambiguous
+c934e83df2a3d422ae6bd81be82c88a7,review,479466314,슈퍼케이스 남포,,"가정,생활 > 슈퍼마켓",부산 중구 중구로34번길 23,부산 중구 신창동1가 20-2,35.101118547266324,129.03031087767607,0.1,0.8333,True,슈퍼케이스 중구로34번길,300,needs_verification
+3a5312092d90710f0329a0471bf57030,review,651893112,독일보청기 청각재활센터,,"의료,건강 > 의료기기판매 > 의료보조기구 > 보청기",부산 중구 구덕로 63,부산 중구 남포동5가 47-2,35.0976836664925,129.028941681357,0.7,0.625,True,독일보청기 구덕로,300,needs_verification
+6467e4faf0ea40889c822228b5fe50ac,review,20516909,부평지하주차장,주차장,"교통,수송 > 교통시설 > 주차장",부산 중구 흑교로 34,부산 중구 부평동2가 77,35.1024393724547,129.025427734049,14.9,0.8333,True,부평주차장 흑교로,300,needs_verification
+26c20c59a5ef9518c6d5dc301ba63e0f,review,846281812,연세미래정형외과의원,병원,"의료,건강 > 병원 > 정형외과",부산 중구 대청로 70,부산 중구 부평동1가 2-23,35.1028419301719,129.027437843136,0.2,0.8889,True,연세 미래 정형외과 대청로,300,needs_verification
+9c4ab26f6888811276510f06e03481fd,review,707059468,쿵스게임랜드 부산광복점,,"가정,생활 > 여가시설 > 오락실",부산 중구 광복로39번길 6,부산 중구 창선동1가 12-1,35.09972032291879,129.029587576551,0.0,0.7778,True,쿵스-부산광복점 광복로39번길,300,needs_verification
+c1f3cddbc5dadfbc02b40f7cf37a9f7e,review,1219368585,남미건강식품,,"의료,건강 > 건강식품판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.09800727818351,129.03200237533935,0.3,0.8,False,남미식품 부산,300,needs_verification
+72292405e4feebe8228b902dc1d7c74b,review,21241586,제일참기름집,,"가정,생활 > 식품판매",부산 중구 자갈치로59번길 5-5,부산 중구 남포동5가 66-1,35.0978293798839,129.03057250477,0.2,0.4,True,제일상회 자갈치로59번길,300,needs_verification
+1c631a0efbd9ae2e56561e40bda5be32,review,34250344,비전조명창고,,"가정,생활 > 전자제품 > 전자제품판매 > 조명기기판매",부산 중구 국제시장2길 6-2,부산 중구 창선동2가 24-1,35.099870249342715,129.02859893279944,1.4,0.8,True,비전조명 국제시장2길,300,needs_verification
+fc5db25fc3c33d902a7f221aa15e2ab4,review,744989296,남포신용훈내과의원,병원,"의료,건강 > 병원 > 내과",부산 중구 구덕로 40,부산 중구 남포동2가 22-1,35.0984604508092,129.031579405369,1.8,0.875,True,남포 신용훈내과 구덕로,300,needs_verification
+2032a1e235dcf42cbfb85ad2c59eaddc,review,14735034,마운티아 부산부평점,,"가정,생활 > 패션 > 의류판매 > 스포츠의류 > 마운티아",부산 중구 흑교로 30-1,부산 중구 부평동2가 76-9,35.1021952332286,129.025369057627,1.7,0.8889,True,마운티어 부산부평점 흑교로,300,needs_verification
+8e1b35e24cdb93b0006dc35622a22399,review,1787288774,세양수산,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 61,부산 중구 남포동4가 30-2,35.09712954676818,129.0316790528333,36.7,0.5,False,세양유통 자갈치해안로,300,needs_verification
+f07a9fbfce276cdb5b54e5b7fc511387,review,135612106,경희미르애한의원 남포점,,"의료,건강 > 병원 > 한의원",부산 중구 구덕로 90,부산 중구 남포동6가 63,35.0975704410362,129.02601341023,0.2,0.8421,True,경희미르애한의원 구덕로,300,needs_verification
+d01f8b0b998babfd86e35e5f42e48c23,review,18281123,칸타비에스 남포점,,"가정,생활 > 미용 > 화장품",부산 중구 광복로 93,부산 중구 광복동1가 32-1,35.09883053507826,129.03503494174714,0.0,0.75,True,칸타비에스 광복점 광복로,300,needs_verification
+9464d7cf32309f907ff1b099ba1c132a,review,707059468,쿵스게임랜드 부산광복점,,"가정,생활 > 여가시설 > 오락실",부산 중구 광복로39번길 6,부산 중구 창선동1가 12-1,35.09972032291879,129.029587576551,0.0,0.7778,True,쿵스-부산광복점 광복로39번길,300,needs_verification
+5856b6ea40dacc110018a8e93cb2fcd4,review,88679702,삼천리타운,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로40번길 18,부산 중구 신창동2가 15,35.1012832538816,129.02978532932,0.4,0.6,True,삼천리구제 중구로40번길,300,needs_verification
+dc45502d19cfdc5bfb217d8d62fd7832,review,845768688,부산대동약국,약국,"의료,건강 > 약국",부산 중구 구덕로34번길 3,부산 중구 남포동4가 2-7,35.0982233228564,129.031962781165,0.0,0.6667,True,남포대동약국,100,needs_verification
+55e8242dfae4450d63cef3b0ec6afc8a,review,178677185,온,,"가정,생활 > 패션 > 의류판매",부산 중구 광복로49번길 27,부산 중구 신창동1가 29-1,35.1017379105447,129.030241805901,0.1,0.5,True,온(ON) 광복로49번길,300,needs_verification
+8dc738e7db2162a7f898c78bc17b5d38,review,24840372,스토리홈,,"가정,생활 > 생활용품점 > 인테리어장식판매",부산 중구 중구로53번길 11-1,부산 중구 부평동1가 8-1,35.102526138599,129.026706286168,44.2,0.8571,False,스토리,100,needs_verification
+d18f9b2533261ea9bec9998c47e75ef4,review,26936218,모퉁이극장,문화시설,"문화,예술 > 영화,영상 > 영화관",부산 중구 광복중앙로 13,부산 중구 신창동1가 8-2,35.100599512348275,129.0309000045889,0.3,0.5556,True,관객문화협동조합 모퉁이극장 광복중앙로,300,needs_verification
+b88e7434b88b7711f322067123b3e2b4,review,1681645568,더드림천하애프앤비,,"가정,생활 > 식품판매",부산 중구 부평1길 29,부산 중구 부평동2가 66-7,35.100841622405,129.025695230825,0.2,0.6154,True,더드림(the dream)천하 에프앤비 부평1길,300,needs_verification
+82153db266a0cdb8c099763e7b5d746e,review,955578889,근대흑백사진관 그리다 남포점,,"문화,예술 > 사진 > 사진관,포토스튜디오",부산 중구 중구로 28,부산 중구 신창동4가 21-3,35.1002184532306,129.028039556251,1.8,0.8696,True,근대흑백사진관그리다 중구로,300,needs_verification
+0a57b918f58848f93b4126315b7bd025,review,129076445,클리니컬필라테스 남포점,,"스포츠,레저 > 요가,필라테스 > 필라테스",부산 중구 구덕로 30-1,부산 중구 남포동2가 36-7,35.0980809989176,129.032496536811,0.0,0.8421,True,클리니컬필라테스 구덕로,300,needs_verification
+2252b9406d4e0b36e96542038eb38b87,review,748430159,비봉주차장,주차장,"교통,수송 > 교통시설 > 주차장",부산 중구 중구로29번길 46,부산 중구 부평동2가 65-2,35.1006771076732,129.025401672101,7.1,0.4444,True,비봉타워,100,needs_verification
+2ce0e14768c31c1af180ab93fd3cbe79,review,1490814922,팀제이짐 남포점,,"스포츠,레저 > 스포츠시설 > 헬스클럽",부산 중구 흑교로 6,부산 중구 부평동2가 58-2,35.0999292508891,129.025286672704,0.2,0.4211,True,팀 제이 짐 (TEAM J GYM) 흑교로,300,needs_verification
+360db1df5b4589f4c36bf6aa3c711e3d,review,517724490,CU 부산대청로점,편의점,"가정,생활 > 편의점 > CU",부산 중구 대청로 127,부산 중구 동광동4가 23-1,35.10297027607581,129.03376166797347,9.1,0.8889,True,씨유(CU)부산대청로점 대청로,300,needs_verification
+4c07f0b3bb98fbe9d046611f05f72031,review,1049971428,CU 부산남포점,편의점,"가정,생활 > 편의점 > CU",부산 중구 남포길 31,부산 중구 남포동2가 12-3,35.0985962184237,129.032135417737,47.8,0.875,False,씨유(CU) 부산남포점 부산,300,needs_verification
+cc398857a9551b1302c4f687e19586c1,review,653550041,코리아나화장품 부평뷰티센터,,"가정,생활 > 미용 > 화장품",부산 중구 흑교로25번길 11-1,부산 중구 부평동3가 65-1,35.1018195211262,129.023907917021,0.2,0.7,True,코리아나 화장품 흑교로25번길,300,needs_verification
+873dbc3d09c9b798358eee158f4eb6aa,review,1031643106,키즈베베 부산본점,,"가정,생활 > 패션 > 의류판매 > 아동복,유아복",부산 중구 광복중앙로 6-2,부산 중구 광복동3가 10-1,35.09989556954675,129.03128386991028,3.6,0.6667,True,키즈베베 광복중앙로,300,needs_verification
+e09b07037b9ee368ec81e1114e47f4f6,review,11841971,이가자헤어비스 부산광복점,,"가정,생활 > 미용 > 미용실 > 이가자헤어비스",부산 중구 광복중앙로 2,부산 중구 광복동2가 6-5,35.09950947756349,129.0314683742681,0.5,0.7368,True,이가자헤어비스 광복중앙로,300,needs_verification
+f2fc3fd64ed5c339406a0eb7b57917af,review,1887564639,과일쟁이 자갈치점,,"가정,생활 > 식품판매 > 과일,채소가게",부산 중구 구덕로 55-1,부산 중구 남포동5가 52-1,35.09781740483675,129.02945815984577,11.1,0.6667,True,과일쟁이 구덕로,300,needs_verification
+8bb4c09c1a74199b47ed27b8241c812e,review,1219368585,남미건강식품,,"의료,건강 > 건강식품판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.09800727818351,129.03200237533935,0.3,0.8,False,남미건강 부산,300,needs_verification
+6cd7920866ad87d00d9598a7a0110f38,review,1192853650,CU 남포브라운점,편의점,"가정,생활 > 편의점 > CU",부산 중구 보수대로 26,부산 중구 부평동2가 51-2,35.09920817985748,129.0251865932299,3.5,0.8889,True,씨유(CU)남포브라운점 보수대로,300,needs_verification
+0af5f4a85fc8ec3040799c520065d862,review,1045436467,CU 부산부평점,편의점,"가정,생활 > 편의점 > CU",부산 중구 흑교로 11-1,부산 중구 부평동3가 45-6,35.1006390574142,129.024874390054,2.1,0.875,True,씨유(CU)부산부평점 흑교로,300,needs_verification
+44f4fb89399eca729b289ff6ecc862ba,review,1943098302,스파오 남포점,,"가정,생활 > 패션 > 의류판매 > 스파오",부산 중구 광복로 82,부산 중구 광복동1가 59-1,35.0983301675276,129.033759323674,53.4,0.0,False,옷가게,100,ambiguous
+31a36c05478ae407170102663e11739f,review,501298957,CU 광복센터점,편의점,"가정,생활 > 편의점 > CU",부산 중구 광복로 79,부산 중구 광복동1가 9,35.0986549714712,129.033575503122,4.9,0.875,True,씨유(CU) 광복센터점 광복로,300,needs_verification
+22990cf12ad8cf563a43a79d44aca4b6,review,2093122759,채비애,,"가정,생활 > 패션 > 패션잡화점",부산 중구 광복로 48-1,부산 중구 창선동1가 40-4,35.0991464551544,129.030276218619,0.1,0.6667,True,채비에 광복로,300,needs_verification
+1a5ad8e8230335584435e68529de89f1,review,892629257,미니박스,,"가정,생활 > 패션 > 패션잡화점",부산 중구 광복로 49,부산 중구 창선동1가 26,35.0993781488183,129.03048591870274,0.0,0.0,True,MINI BOX 광복로,300,needs_verification
+0a16056fa69dacc72cc640e63e0f1d1d,review,611180820,미녀와동수,,"가정,생활 > 패션 > 패션잡화점",부산 중구 광복로49번길 15,부산 중구 신창동1가 13-5,35.1004789062132,129.030353128715,0.0,0.7692,True,미녀와동수 남포점,100,needs_verification
+08185282736f5b7ecc116e2a7b0f4a61,review,513660288,푸스케어 글림네일 남포점,,"가정,생활 > 미용 > 네일샵",부산 중구 구덕로 32-1,부산 중구 남포동2가 36-27,35.098116074285,129.032285781764,0.0,0.7273,True,푸스케어 남포점 글림네일 구덕로,300,needs_verification
+896a60eabed29861720a3c8da5de9537,review,656641185,CU 광복동블루점,편의점,"가정,생활 > 편의점 > CU",부산 중구 광복로85번길 6-1,부산 중구 광복동1가 20-1,35.09896741319506,129.0342894226246,0.8,0.8889,True,씨유(CU) 광복동블루점 광복로85번길,300,needs_verification
+f8c93b9238f427033e3fc74c6845e30b,review,24528550,조슈아,,"가정,생활 > 패션 > 의류판매",부산 중구 광복중앙로 19,부산 중구 신창동1가 6-1,35.10113594187614,129.030509784367,31.7,0.0,False,Joshua 광복중앙로,300,needs_verification
+c2e8413ea43d29276b118c492054fb85,review,1047781409,CU 부산자갈치점,편의점,"가정,생활 > 편의점 > CU",부산 중구 자갈치로 23,부산 중구 남포동6가 33,35.096764809220865,129.02703623498368,3.9,0.8889,True,씨유(CU)부산자갈치점 자갈치로,300,needs_verification
+deb2beed3eee10d04ebdb120c8f5ecc3,review,10428835,삼성인삼직매소,,"의료,건강 > 건강식품판매 > 인삼,홍삼",부산 중구 용미길9번길 7,부산 중구 남포동1가 38-1,35.09707857884525,129.03562954895312,5.3,0.7273,True,삼성인삼 용미길9번길,300,needs_verification
+497968dbcf5ab973d98a16a729ab3311,review,399554428,대진상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.0966144386765,129.030581843351,0.2,0.5,True,대진수산 자갈치해안로,300,needs_verification
+34d34d7ccfe3cac8afe1a7e8bdb9bde9,review,18890596,무유네일,,"가정,생활 > 미용 > 네일샵",부산 중구 중구로6번길 4-1,부산 중구 남포동5가 29-2,35.09829571484882,129.0283943408677,0.1,0.0,True,Muyu nail 중구로6번길,300,needs_verification
+0c0d76ec92480807203faf8a2e952138,review,10250246,대동천막,,"서비스,산업 > 건설,건축 > 건설자재",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.09706690010508,129.0281018318913,23.9,0.8889,True,대동천막사 자갈치로,300,needs_verification
+ea26cfdb81cdfd3bc1be073f04d90a98,review,659639690,이코피어싱 남포점,,"가정,생활 > 패션 > 패션잡화점 > 액세서리",부산 중구 광복중앙로 16,부산 중구 광복동3가 4-1,35.10069187582895,129.03119616950082,0.6,0.4,True,이코 광복중앙로,300,needs_verification
+88f6dc1b0a511bc5c39fc93556dec590,review,456500548,MGM호텔,숙박,"여행 > 숙박 > 여관,모텔",부산 중구 보수대로 8-7,부산 중구 남포동6가 101-4,35.0979508427017,129.026114931204,0.5,0.4615,True,호텔 엠지엠(MGM) 보수대로,300,needs_verification
+d963eed615df3ccc3fda715ba9e1b20a,review,15567546,애플백,,"가정,생활 > 패션 > 패션잡화점",부산 중구 중구로43번길 10,부산 중구 부평동1가 13-25,35.1018187654729,129.02740372682,54.5,0.8,False,애플 중구로43번길,300,needs_verification
+e5bd85508b2e18ff7a4caf1a3ca0c8c7,review,1093689306,코인홀릭 부산남포점,,"가정,생활 > 여가시설 > 노래방 > 코인노래방 > 코인홀릭",부산 중구 광복로 51-1,부산 중구 창선동1가 30-20,35.0993419202227,129.030819459907,0.0,0.6154,True,코인홀릭 광복로,300,needs_verification
+591aaabbede17b0cd6ddab44a92b39df,review,9253120,영남상회,,"가정,생활 > 식품판매",부산 중구 용미길7번길 4-1,부산 중구 남포동1가 41-2,35.097108977995745,129.03510727765752,28.5,0.5,False,영남유통,100,needs_verification
+dc36a87ec629f8c82df09e1670e8a119,accepted,,피카,,"가정,생활 > 패션 > 의류판매 > 아동복,유아복",,,,,,,,,,manual_confirmed_mvp95
+8c18b26e0167cfcec7905416ccc6ea30,accepted,,더라스트호텔,숙박,"여행 > 숙박 > 여관,모텔",,,,,,,,,,manual_confirmed_mvp95
+b66ff70f74221cfb41135bf8710d1c4d,accepted,,김천상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp95
+91caf39c0a36e202e19c551e25589d0f,accepted,,네일시티,,"가정,생활 > 미용 > 네일샵",,,,,,,,,,manual_confirmed_mvp95
+08223f82891514729fcb96562d6877f9,accepted,,더펌,,"가정,생활 > 미용 > 미용실",,,,,,,,,,manual_confirmed_mvp95
+fc9f346f7f0bfa8e14a7a0c5cf3aa4ad,accepted,,호텔마르쉐,숙박,"여행 > 숙박 > 여관,모텔",,,,,0.0,0.4,True,,,manual_confirmed_mvp95
+9543910645d4b1a71ee13aba772e2fcf,accepted,,보가,,"가정,생활 > 패션 > 패션잡화점",,,,,,,,,,manual_confirmed_mvp95
+4b57c5613903fb3c183506887e4934ca,accepted,,서울상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp95
+9ba131622e5b43fabd0d14d26e5a38fb,accepted,,고성수산,,"가정,생활 > 식품판매 > 수산물판매",,,,,54.4,0.5,False,,,manual_confirmed_mvp95
+453e58d34cabfbb13c7da43af8e84f85,accepted,,미소안의원,병원,"의료,건강 > 병원 > 피부과",,,,,2.7,0.8333,True,,,manual_confirmed_mvp95
+82ddcebe872998300dd2a25dd0467ec6,accepted,,조이,,"가정,생활 > 패션 > 의류판매 > 수입의류",,,,,0.0,0.0,True,,,manual_confirmed_mvp95
+2c5d79f73559baa199efccc0391d4f8b,accepted,,쉬즈성형외과의원,병원,"의료,건강 > 병원 > 성형외과",,,,,0.0,0.8571,True,,,manual_confirmed_mvp95
+0fc2994d17725e84da851fafcb6287d7,accepted,,반스 광복점,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발 > 반스",,,,,10.5,0.5714,True,,,manual_confirmed_mvp95
+c737bc2ace9a72a55498aac4bf8f7810,accepted,,푸마 부산스포츠광복점,,"가정,생활 > 패션 > 의류판매 > 푸마",,,,,1.1,0.8,True,,,manual_confirmed_mvp95
+36b920812948aa67ee27de8df4715d61,accepted,,멀티,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp95
+2f3935bdc627d7377751f296b5f7aab3,accepted,,호텔보브,숙박,"여행 > 숙박 > 여관,모텔",,,,,1.1,0.5714,True,,,manual_confirmed_mvp95
+c7f00234d891c025c6d7eadae31eda0a,accepted,,끼룩,음식점,음식점 > 한식,,,,,,,,,,manual_confirmed_mvp95
+7254ffef4d16ee5e6afc88227d67747f,accepted,,대항길외과의원,병원,"의료,건강 > 병원 > 항문외과",,,,,0.0,0.6667,True,,,manual_confirmed_mvp95
+9c4a8a31d06cd2d8e2bc187f66d73a93,accepted,,넘버원,,여행 > 기념품판매,,,,,,,,,,manual_confirmed_mvp95
+efe1bd7dd1c527ee42da757988b62f8c,accepted,,자갈치아지매시장,,"가정,생활 > 시장",,,,,39.2,0.8571,False,,,manual_confirmed_mvp95
+4ff85abf655fdcbc34b5dc1b3e4ad9be,accepted,,키다리상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,50.1,0.5455,True,,,manual_confirmed_mvp95
+fe255eba4b76b1fa4c43d1b0c6698801,accepted,,신광상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,22.6,0.5,True,,,manual_confirmed_mvp95
+815163348f300634098052acfdece47a,accepted,,큐,,"가정,생활 > 패션 > 패션잡화점",,,,,58.3,0.2857,False,,,manual_confirmed_mvp95
+89740f3058336f971234d3125146abd3,accepted,,렌즈미 남포점,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈 > 렌즈미",,,,,21.3,0.5455,False,,,manual_confirmed_mvp95
+ccdb2d309fd819dcf48751be8812838e,accepted,,LOVE MARKET(러브마켓),,"가정,생활 > 패션 > 의류판매",,,,,8.0,0.7143,False,,,manual_confirmed_mvp95
+97e7fe036b1a5446a07d6fb2fec8ff01,accepted,,"제1,2구잠수기수협 제1,2잠수기수협본점",,"금융,보험 > 금융서비스 > 은행 > 수협",,,,,75.5,0.4,False,,,manual_confirmed_mvp95
+e3371a713406865a23885eba54d06d67,accepted,,중앙치과의원,병원,"의료,건강 > 병원 > 치과",,,,,1.0,0.8,True,,,manual_confirmed_mvp95
+bc609a7e7df1ff5fcee4844b44168e83,accepted,,더퍼퓸,,"가정,생활 > 미용 > 화장품",,,,,1.7,0.6667,True,,,manual_confirmed_mvp95
+aa1022f87d86cf9c12ab821c19a377bd,accepted,,소망모바일 알뜰폰선불폰 중고폰 부산 남포점,,"가정,생활 > 중고용품 > 중고가전",,,,,0.0,0.4167,False,,,manual_confirmed_mvp95
+aa8d7ec2f031b650a79d13c072656c43,accepted,,레몬트리,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발",,,,,69.5,0.4,False,,,manual_confirmed_mvp95
+68e3b3ae45f12aff4b45ba95e8d00714,accepted,,엠미니몰,,"서비스,산업 > 관리,운영 > 쇼핑시설관리운영",,,,,43.8,0.4,False,,,manual_confirmed_mvp95
+d7c905794e671d393aa57ed1a0f9193a,accepted,,GnB호텔,숙박,여행 > 숙박 > 호텔,,,,,2.8,0.3333,True,,,manual_confirmed_mvp95
+d983e1841d8f08a8deb10d8b7671046e,accepted,,삼룡상회,,"가정,생활 > 식품판매",,,,,88.2,0.4444,False,,,manual_confirmed_mvp95
+c934e83df2a3d422ae6bd81be82c88a7,accepted,,슈퍼케이스 남포,,"가정,생활 > 슈퍼마켓",,,,,0.1,0.8333,True,,,manual_confirmed_mvp95
+3a5312092d90710f0329a0471bf57030,accepted,,독일보청기 청각재활센터,,"의료,건강 > 의료기기판매 > 의료보조기구 > 보청기",,,,,0.7,0.625,True,,,manual_confirmed_mvp95
+50323a932c1f79d7c9aace566eae780f,accepted,,단미,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp95
+6467e4faf0ea40889c822228b5fe50ac,accepted,,부평지하주차장,주차장,"교통,수송 > 교통시설 > 주차장",,,,,14.9,0.8333,True,,,manual_confirmed_mvp95
+26c20c59a5ef9518c6d5dc301ba63e0f,accepted,,연세미래정형외과의원,병원,"의료,건강 > 병원 > 정형외과",,,,,0.2,0.8889,True,,,manual_confirmed_mvp95
+9c4ab26f6888811276510f06e03481fd,accepted,,쿵스게임랜드 부산광복점,,"가정,생활 > 여가시설 > 오락실",,,,,0.0,0.7778,True,,,manual_confirmed_mvp95
+c4507d79e165a827f61201d33cba63a2,accepted,,호텔콘트,숙박,여행 > 숙박 > 호텔,,,,,,,,,,manual_confirmed_mvp95
+c1f3cddbc5dadfbc02b40f7cf37a9f7e,accepted,,남미건강식품,,"의료,건강 > 건강식품판매",,,,,0.3,0.8,False,,,manual_confirmed_mvp95
+72292405e4feebe8228b902dc1d7c74b,accepted,,제일참기름집,,"가정,생활 > 식품판매",,,,,0.2,0.4,True,,,manual_confirmed_mvp95
+1c631a0efbd9ae2e56561e40bda5be32,accepted,,비전조명창고,,"가정,생활 > 전자제품 > 전자제품판매 > 조명기기판매",,,,,1.4,0.8,True,,,manual_confirmed_mvp95
+fc5db25fc3c33d902a7f221aa15e2ab4,accepted,,남포신용훈내과의원,병원,"의료,건강 > 병원 > 내과",,,,,1.8,0.875,True,,,manual_confirmed_mvp95
+2032a1e235dcf42cbfb85ad2c59eaddc,accepted,,마운티아 부산부평점,,"가정,생활 > 패션 > 의류판매 > 스포츠의류 > 마운티아",,,,,1.7,0.8889,True,,,manual_confirmed_mvp95
+8e1b35e24cdb93b0006dc35622a22399,accepted,,세양수산,,"가정,생활 > 식품판매 > 수산물판매",,,,,36.7,0.5,False,,,manual_confirmed_mvp95
+f07a9fbfce276cdb5b54e5b7fc511387,accepted,,경희미르애한의원 남포점,,"의료,건강 > 병원 > 한의원",,,,,0.2,0.8421,True,,,manual_confirmed_mvp95
+d01f8b0b998babfd86e35e5f42e48c23,accepted,,칸타비에스 남포점,,"가정,생활 > 미용 > 화장품",,,,,0.0,0.75,True,,,manual_confirmed_mvp95
+9464d7cf32309f907ff1b099ba1c132a,accepted,,쿵스게임랜드 부산광복점,,"가정,생활 > 여가시설 > 오락실",,,,,0.0,0.7778,True,,,manual_confirmed_mvp95
+1959e8a7a2df4ac91a3efa4ea7b384cd,accepted,,와룽자야,음식점,음식점 > 아시아음식,,,,,,,,,,manual_confirmed_mvp95
+5856b6ea40dacc110018a8e93cb2fcd4,accepted,,삼천리타운,,"가정,생활 > 패션 > 의류판매",,,,,0.4,0.6,True,,,manual_confirmed_mvp95
+dc45502d19cfdc5bfb217d8d62fd7832,accepted,,부산대동약국,약국,"의료,건강 > 약국",,,,,0.0,0.6667,True,,,manual_confirmed_mvp95
+55e8242dfae4450d63cef3b0ec6afc8a,accepted,,온,,"가정,생활 > 패션 > 의류판매",,,,,0.1,0.5,True,,,manual_confirmed_mvp95
+d18f9b2533261ea9bec9998c47e75ef4,accepted,,모퉁이극장,문화시설,"문화,예술 > 영화,영상 > 영화관",,,,,0.3,0.5556,True,,,manual_confirmed_mvp95
+a572b8cee492e0e44874d3d05f3238a0,accepted,,프사이샵,,"가정,생활 > 패션 > 의류판매 > 여성의류",,,,,,,,,,manual_confirmed_mvp95
+b88e7434b88b7711f322067123b3e2b4,accepted,,더드림천하애프앤비,,"가정,생활 > 식품판매",,,,,0.2,0.6154,True,,,manual_confirmed_mvp95
+82153db266a0cdb8c099763e7b5d746e,accepted,,근대흑백사진관 그리다 남포점,,"문화,예술 > 사진 > 사진관,포토스튜디오",,,,,1.8,0.8696,True,,,manual_confirmed_mvp95
+0a57b918f58848f93b4126315b7bd025,accepted,,클리니컬필라테스 남포점,,"스포츠,레저 > 요가,필라테스 > 필라테스",,,,,0.0,0.8421,True,,,manual_confirmed_mvp95
+2252b9406d4e0b36e96542038eb38b87,accepted,,비봉주차장,주차장,"교통,수송 > 교통시설 > 주차장",,,,,7.1,0.4444,True,,,manual_confirmed_mvp95
+2ce0e14768c31c1af180ab93fd3cbe79,accepted,,팀제이짐 남포점,,"스포츠,레저 > 스포츠시설 > 헬스클럽",,,,,0.2,0.4211,True,,,manual_confirmed_mvp95
+360db1df5b4589f4c36bf6aa3c711e3d,accepted,,CU 부산대청로점,편의점,"가정,생활 > 편의점 > CU",,,,,9.1,0.8889,True,,,manual_confirmed_mvp95
+cc398857a9551b1302c4f687e19586c1,accepted,,코리아나화장품 부평뷰티센터,,"가정,생활 > 미용 > 화장품",,,,,0.2,0.7,True,,,manual_confirmed_mvp95
+873dbc3d09c9b798358eee158f4eb6aa,accepted,,키즈베베 부산본점,,"가정,생활 > 패션 > 의류판매 > 아동복,유아복",,,,,3.6,0.6667,True,,,manual_confirmed_mvp95
+e09b07037b9ee368ec81e1114e47f4f6,accepted,,이가자헤어비스 부산광복점,,"가정,생활 > 미용 > 미용실 > 이가자헤어비스",,,,,0.5,0.7368,True,,,manual_confirmed_mvp95
+f2fc3fd64ed5c339406a0eb7b57917af,accepted,,과일쟁이 자갈치점,,"가정,생활 > 식품판매 > 과일,채소가게",,,,,11.1,0.6667,True,,,manual_confirmed_mvp95
+8bb4c09c1a74199b47ed27b8241c812e,accepted,,남미건강식품,,"의료,건강 > 건강식품판매",,,,,0.3,0.8,False,,,manual_confirmed_mvp95
+6cd7920866ad87d00d9598a7a0110f38,accepted,,CU 남포브라운점,편의점,"가정,생활 > 편의점 > CU",,,,,3.5,0.8889,True,,,manual_confirmed_mvp95
+0af5f4a85fc8ec3040799c520065d862,accepted,,CU 부산부평점,편의점,"가정,생활 > 편의점 > CU",,,,,2.1,0.875,True,,,manual_confirmed_mvp95
+44f4fb89399eca729b289ff6ecc862ba,accepted,,스파오 남포점,,"가정,생활 > 패션 > 의류판매 > 스파오",,,,,53.4,0.0,False,,,manual_confirmed_mvp95
+31a36c05478ae407170102663e11739f,accepted,,CU 광복센터점,편의점,"가정,생활 > 편의점 > CU",,,,,4.9,0.875,True,,,manual_confirmed_mvp95
+22990cf12ad8cf563a43a79d44aca4b6,accepted,,채비애,,"가정,생활 > 패션 > 패션잡화점",,,,,0.1,0.6667,True,,,manual_confirmed_mvp95
+1a5ad8e8230335584435e68529de89f1,accepted,,미니박스,,"가정,생활 > 패션 > 패션잡화점",,,,,0.0,0.0,True,,,manual_confirmed_mvp95
+0a16056fa69dacc72cc640e63e0f1d1d,accepted,,미녀와동수,,"가정,생활 > 패션 > 패션잡화점",,,,,0.0,0.7692,True,,,manual_confirmed_mvp95
+08185282736f5b7ecc116e2a7b0f4a61,accepted,,푸스케어 글림네일 남포점,,"가정,생활 > 미용 > 네일샵",,,,,0.0,0.7273,True,,,manual_confirmed_mvp95
+896a60eabed29861720a3c8da5de9537,accepted,,CU 광복동블루점,편의점,"가정,생활 > 편의점 > CU",,,,,0.8,0.8889,True,,,manual_confirmed_mvp95
+beac868a29d349ca358dbd41920dbf84,accepted,,눈키,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp95
+f8c93b9238f427033e3fc74c6845e30b,accepted,,조슈아,,"가정,생활 > 패션 > 의류판매",,,,,31.7,0.0,False,,,manual_confirmed_mvp95
+c2e8413ea43d29276b118c492054fb85,accepted,,CU 부산자갈치점,편의점,"가정,생활 > 편의점 > CU",,,,,3.9,0.8889,True,,,manual_confirmed_mvp95
+deb2beed3eee10d04ebdb120c8f5ecc3,accepted,,삼성인삼직매소,,"의료,건강 > 건강식품판매 > 인삼,홍삼",,,,,5.3,0.7273,True,,,manual_confirmed_mvp95
+497968dbcf5ab973d98a16a729ab3311,accepted,,대진상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,0.2,0.5,True,,,manual_confirmed_mvp95
+9085d6259a38168b3ae838326fb338d8,accepted,,헤어랑,,"가정,생활 > 미용 > 미용실",,,,,,,,,,manual_confirmed_mvp95
+34d34d7ccfe3cac8afe1a7e8bdb9bde9,accepted,,무유네일,,"가정,생활 > 미용 > 네일샵",,,,,0.1,0.0,True,,,manual_confirmed_mvp95
+cf7aed391010dc6782ac8967888159f4,accepted,,해쉬,음식점,음식점 > 한식,,,,,,,,,,manual_confirmed_mvp95
+0c0d76ec92480807203faf8a2e952138,accepted,,대동천막,,"서비스,산업 > 건설,건축 > 건설자재",,,,,23.9,0.8889,True,,,manual_confirmed_mvp95
+8f7a985ac509236a344cab3d6e070675,accepted,,콤마,,"가정,생활 > 패션 > 의류판매 > 여성의류",,,,,,,,,,manual_confirmed_mvp95
+00e400ea39b79e27c8ff69a3f208d37d,accepted,,호띠,음식점,"음식점 > 간식 > 제과,베이커리",,,,,,,,,,manual_confirmed_mvp95
+ea26cfdb81cdfd3bc1be073f04d90a98,accepted,,이코피어싱 남포점,,"가정,생활 > 패션 > 패션잡화점 > 액세서리",,,,,0.6,0.4,True,,,manual_confirmed_mvp95
+88f6dc1b0a511bc5c39fc93556dec590,accepted,,MGM호텔,숙박,"여행 > 숙박 > 여관,모텔",,,,,0.5,0.4615,True,,,manual_confirmed_mvp95
+d963eed615df3ccc3fda715ba9e1b20a,accepted,,애플백,,"가정,생활 > 패션 > 패션잡화점",,,,,54.5,0.8,False,,,manual_confirmed_mvp95
+e5bd85508b2e18ff7a4caf1a3ca0c8c7,accepted,,코인홀릭 부산남포점,,"가정,생활 > 여가시설 > 노래방 > 코인노래방 > 코인홀릭",,,,,0.0,0.6154,True,,,manual_confirmed_mvp95
+591aaabbede17b0cd6ddab44a92b39df,accepted,,영남상회,,"가정,생활 > 식품판매",,,,,28.5,0.5,False,,,manual_confirmed_mvp95
+006ffa5e35de1b46d4598baf53b9e695,accepted,,명지횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+04dc647fef7c163be635f3f017b98795,accepted,,24시수퍼,,"가정,생활 > 슈퍼마켓",,,,,,,,,,manual_confirmed_mvp_full
+09bd211881aeb3bf2bc3c79d4bf8953d,accepted,,BNK부산은행 조은극장,문화시설,"문화,예술 > 문화시설 > 공연장,연극극장",,,,,,,,,,manual_confirmed_mvp_full
+0a1117d99fda303fa2af2327450d36c8,accepted,,차영일 비뇨기과의원,병원,"의료,건강 > 병원 > 비뇨기과",,,,,,,,,,manual_confirmed_mvp_full
+0f2da9f97d11f6e0e2e9e6075c31c28a,accepted,,자갈치커피상회,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+12c5b62158c465c30aa74b2634fddd30,accepted,,이대명과 부평점,음식점,"음식점 > 간식 > 제과,베이커리",,,,,,,,,,manual_confirmed_mvp_full
+13e6fc82fea149837cc5f9229ae66182,accepted,,LG전자 중앙프라자점,,"가정,생활 > 전자제품 > 전자제품판매",,,,,,,,,,manual_confirmed_mvp_full
+14e39202713343794d81e0f7d690fe1f,accepted,,한마음치과,병원,"의료,건강 > 병원 > 치과",,,,,,,,,,manual_confirmed_mvp_full
+16a6307c99e967b2bf5de39f570ce77b,accepted,,장앤전치과,병원,"의료,건강 > 병원 > 치과",,,,,,,,,,manual_confirmed_mvp_full
+18187135cc434ab704b5dfbb2be5a0e8,accepted,,빠리쥬얼리,,"가정,생활 > 패션 > 보석,귀금속",,,,,,,,,,manual_confirmed_mvp_full
+2be8580058c4ec81db4b3ae8c957a0ca,accepted,,메리트치과,병원,"의료,건강 > 병원 > 치과",,,,,,,,,,manual_confirmed_mvp_full
+36310decc81aab2503c329d9a3bd1e55,accepted,,고래사어묵 자갈치점,음식점,음식점 > 분식,,,,,,,,,,manual_confirmed_mvp_full
+386c9dc636eafa92605b961ad1ecbe50,accepted,,네루다커피,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+3ad5b7afc487782744e4f32319881596,accepted,,자갈치커피상회,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+3d905ec9e010ff953b73c838fedeb4b8,accepted,,부산어패류처리조합,,"서비스,산업 > 어업",,,,,,,,,,manual_confirmed_mvp_full
+42877fb9196f6255fb32003242274b05,accepted,,오티씨부산,,"가정,생활 > 패션 > 패션잡화점 > 가방",,,,,,,,,,manual_confirmed_mvp_full
+43387a177a50bac6f766910e33401530,accepted,,다모아문구사,,"가정,생활 > 문구,사무용품",,,,,,,,,,manual_confirmed_mvp_full
+45c9a033f7dc3b324cf59ca7474059c6,accepted,,동남조명전기,,"서비스,산업 > 제조업 > 전기,전자 > 조명기기제조",,,,,,,,,,manual_confirmed_mvp_full
+46b2cf40aa25da9e5e34d64e12970365,accepted,,동화열쇠,,"가정,생활 > 생활용품점 > 열쇠",,,,,,,,,,manual_confirmed_mvp_full
+4ad42c96a131364292b2fd40411d3f31,accepted,,삼화박정숙양곱창,음식점,"음식점 > 한식 > 육류,고기 > 곱창,막창",,,,,,,,,,manual_confirmed_mvp_full
+537b38dfa91b3921386c3d5d6ca2cc6b,accepted,,우리들내과의원,병원,"의료,건강 > 병원 > 내과",,,,,,,,,,manual_confirmed_mvp_full
+53e0115d43c92f26b6fb09a3ff9ec08f,accepted,,일신식육도매센타,,"서비스,산업 > 축산업 > 도축업",,,,,,,,,,manual_confirmed_mvp_full
+54da6ab41e039ba06667e864b0581e45,accepted,,제일횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+5ab7447bda08d81cb1b3184f61d6f1fb,accepted,,오디션,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+6146581bbab67fed7d32f784e01d9805,accepted,,경주선식,,"가정,생활 > 식품판매",,,,,,,,,,manual_confirmed_mvp_full
+6a17aba8dfb8644b0b67a36f0a368631,accepted,,뚜오이엔피,카페,음식점 > 카페 > 테마카페 > 디저트카페,,,,,,,,,,manual_confirmed_mvp_full
+6c7a4ecf5b5fd1527017b0f856ac21b1,accepted,,한양장식 본점,,"가정,생활 > 생활용품점 > 인테리어장식판매",,,,,,,,,,manual_confirmed_mvp_full
+6e84655b051b8aaf6209a752d827f1b0,accepted,,담비패션,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+752919edf5f8c9c501a71429a8d0a7a6,accepted,,이춘식안과의원,병원,"의료,건강 > 병원 > 안과",,,,,,,,,,manual_confirmed_mvp_full
+7569bf9887d576bf176ce98a755901a6,accepted,,바모노스,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+75f6d74cdd7cbc3022bd37a36848c099,accepted,,양산집,음식점,음식점 > 한식 > 국밥,,,,,,,,,,manual_confirmed_mvp_full
+7bf86183d58f4a14ea2b7ef264f19396,accepted,,발렌시아,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+7e6011de419bfce6014c44c648ec5884,accepted,,제이하우스,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp_full
+8068671fe9408e5d42a18ccfc1a6f9f4,accepted,,김천화진상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp_full
+8178c63076cfd4c71736580067971d8c,accepted,,청정상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp_full
+8747fbf1c33a4ef3747986b9ecf36ab9,accepted,,소베베H,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+8832ddea88984fe01b870bb8d5ad7691,accepted,,크로커다일레이디 대청점,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+89ddb7015d6bb1439c1529ed9225a1f0,accepted,,하동집남해,음식점,"음식점 > 한식 > 해물,생선 > 장어",,,,,,,,,,manual_confirmed_mvp_full
+8adcd6e1c544bfbc0dd1b4ac55706bf0,accepted,,가죽공방 갖바치김,,"문화,예술 > 미술,공예",,,,,,,,,,manual_confirmed_mvp_full
+8b6d397f0340f967966bc07129c3622d,accepted,,김봉희이비인후과의원,병원,"의료,건강 > 병원 > 이비인후과",,,,,,,,,,manual_confirmed_mvp_full
+90998c555ea8d847f7aa71eafbe31278,accepted,,성모통증의학과,병원,"의료,건강 > 병원 > 통증클리닉",,,,,,,,,,manual_confirmed_mvp_full
+98859c38b9c1adbb8193976e78262b11,accepted,,짭짤한공간,,"가정,생활 > 식품판매",,,,,,,,,,manual_confirmed_mvp_full
+a1d609f803095a561def296b5b050b73,accepted,,김해식당,음식점,"음식점 > 한식 > 해물,생선 > 아구",,,,,,,,,,manual_confirmed_mvp_full
+a25b6fb79189c56535265b3594bc3d90,accepted,,슈가,,"가정,생활 > 패션 > 의류판매 > 아동복,유아복",,,,,,,,,,manual_confirmed_mvp_full
+a277d2c3eead4c246fd91e2a5a648c76,accepted,,백광상회,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp_full
+a54c1da6b8c10586d12cfc13e9b6475b,accepted,,강남아로마,,"가정,생활 > 미용 > 체형관리",,,,,,,,,,manual_confirmed_mvp_full
+a70e12eae16e2ce2ce754ab64519e152,accepted,,김해식당,음식점,"음식점 > 한식 > 해물,생선 > 아구",,,,,,,,,,manual_confirmed_mvp_full
+aa6420cdb4f763572cb15155d91319d3,accepted,,동화열쇠,,"가정,생활 > 생활용품점 > 열쇠,도장",,,,,,,,,,manual_confirmed_mvp_full
+ad9529bb2816776a025d9e65c615f705,accepted,,클라우드밤,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+b3246a40d851f6d3d6d45af6eec03e2b,accepted,,남포동참바다대게독도꽃새우,음식점,"음식점 > 한식 > 해물,생선 > 게,대게",,,,,,,,,,manual_confirmed_mvp_full
+b78b51249a9fa24c25d10da6ceb724a6,accepted,,대우땅콩,,"가정,생활 > 식품판매",,,,,,,,,,manual_confirmed_mvp_full
+b7a99824bdc2f070cc484c407b366ff4,accepted,,충남공주상회,,"서비스,산업 > 식품",,,,,,,,,,manual_confirmed_mvp_full
+b9622111a0eddcd2c55d3cd9a44195cd,accepted,,나다,음식점,음식점 > 양식,,,,,,,,,,manual_confirmed_mvp_full
+bcf89beadef42eaa4c88966d74cd860f,accepted,,사실빙 부평점,카페,음식점 > 카페 > 테마카페 > 디저트카페 > 사실빙,,,,,,,,,,manual_confirmed_mvp_full
+be122adb742dc1cfd9ddde241b921c56,accepted,,금진사줄리스카페,,"가정,생활 > 패션 > 보석,귀금속",,,,,,,,,,manual_confirmed_mvp_full
+c24484d2634801e3878a7716994c7adf,accepted,,경북상회,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+c8cf08b0a3e56e11a2dec8c48352d145,accepted,,씨네시티플라워,,"가정,생활 > 꽃집,꽃배달",,,,,,,,,,manual_confirmed_mvp_full
+cd84d8b4c2ad796a5b1c7b98f180db5b,accepted,,소니 일광카메라,,"문화,예술 > 사진 > 카메라판매",,,,,,,,,,manual_confirmed_mvp_full
+d02991a7506ff7cf1df7d7fc30e55e9d,accepted,,이지숨이비인후과의원,병원,"의료,건강 > 병원 > 이비인후과",,,,,,,,,,manual_confirmed_mvp_full
+d12579fd64140b3bb642d2048468c76a,accepted,,아트빈,,"가정,생활 > 생활용품점",,,,,,,,,,manual_confirmed_mvp_full
+d3f8a8c9cff0905bdd9e7b93fcf08e88,accepted,,성시상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp_full
+d97c7f421c69c172b8da2f23ce17cb6d,accepted,,명동의류,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+dbdcb7078a01590805281cf01801f231,accepted,,메조포르테,,"가정,생활 > 패션 > 패션잡화점 > 가방",,,,,,,,,,manual_confirmed_mvp_full
+dde0c1f42424dca3b1ef359b26ce2d91,accepted,,우림기업천막,,"서비스,산업 > 전문대행 > 천막대여",,,,,,,,,,manual_confirmed_mvp_full
+e3379d58147210395393b3f9b23ce768,accepted,,리자인호텔,숙박,"여행 > 숙박 > 여관,모텔",,,,,,,,,,manual_confirmed_mvp_full
+e47b2d7c9e056d70e16e7a5cd99cc01c,accepted,,웰컴치과의원 광복점,병원,"의료,건강 > 병원 > 치과",,,,,,,,,,manual_confirmed_mvp_full
+e780b0af7f9b30083657d3657b99f65a,accepted,,이태리모피공장직영,,"가정,생활 > 패션 > 의류판매 > 가죽,모피",,,,,,,,,,manual_confirmed_mvp_full
+ea3a485970ae980a0cdf68ec632ab52a,accepted,,브런치,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+ea7712f992669666a65763491fc3b9db,accepted,,자갈치시장,,"가정,생활 > 시장",,,,,,,,,,manual_confirmed_mvp_full
+ebd8e940e534480748ba64be7bb90c94,accepted,,씨티피아,,"서비스,산업 > 마케팅 > 판촉,기념물",,,,,,,,,,manual_confirmed_mvp_full
+ebe7917c9e520ebc8c3f5e34e45e262c,accepted,,자갈치민물상회,,"가정,생활 > 식품판매 > 수산물판매",,,,,,,,,,manual_confirmed_mvp_full
+ef1b8bf254be3808dbd9d5be28fe64af,accepted,,서울외과,병원,"의료,건강 > 병원 > 외과",,,,,,,,,,manual_confirmed_mvp_full
+f08dc6084c1d485c89981816a25cdce4,accepted,,빈티지아이,,"가정,생활 > 패션 > 패션잡화점",,,,,,,,,,manual_confirmed_mvp_full
+f10fbf6ffc656c50adc2f0b1dd4fa835,accepted,,복진고래고기,음식점,"음식점 > 한식 > 해물,생선",,,,,,,,,,manual_confirmed_mvp_full
+f8b3bca5196d4c274f93ef410948f00a,accepted,,호주면세점 국제시장점,,"의료,건강 > 건강식품판매",,,,,,,,,,manual_confirmed_mvp_full
+f9a3d2260d3c1121ed43a0a7a8d0c495,accepted,,건국식육점,,"가정,생활 > 식품판매 > 정육점",,,,,,,,,,manual_confirmed_mvp_full
+fbffc7c09f19941414c73e0216fc5c80,accepted,,청아인한의원 부산남포점,,"의료,건강 > 병원 > 한의원",,,,,,,,,,manual_confirmed_mvp_full
+fca72a62839e08fae059c46eaa892f3f,accepted,,영도상회,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+5692b447d73cecae556803e0c36e1ad6,accepted,,원더풀명품찹쌀꽈배기,음식점,"음식점 > 간식 > 제과,베이커리",,,,,,,,,,manual_confirmed_mvp_full
+53fa75fb9adbaa6877e97837cc006713,accepted,,깡통사거리분식,음식점,음식점 > 분식,,,,,,,,,,manual_confirmed_mvp_full
+e29c6a4c41c359dd82083dcd6ade5f0b,accepted,,국제시장번영회,,"사회,공공기관 > 단체,협회",,,,,,,,,,manual_confirmed_mvp_full
+1d5fda38ccf3a398443e4465588e9511,accepted,,레귤러하우스 남포점,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+fc4f1f67e52c357475aa181367dc9549,accepted,,삼한꼼장어구이조개구이,음식점,"음식점 > 한식 > 해물,생선 > 장어",,,,,,,,,,manual_confirmed_mvp_full
+ad1f11faf558096106c0094335734e37,accepted,,고양이다락방 부산남포점,카페,음식점 > 카페 > 테마카페 > 고양이카페,,,,,,,,,,manual_confirmed_mvp_full
+4da84a8be949ea59609177082134265c,accepted,,BS킥복싱,,"스포츠,레저 > 복싱,권투",,,,,,,,,,manual_confirmed_mvp_full
+ec63a9a5570b6a1b79c754b91fc67698,accepted,,동아아트플라자,,"문화,예술 > 미술,공예",,,,,,,,,,manual_confirmed_mvp_full
+d17db18006e647d1224884c2f2e58146,accepted,,눈치모드,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+4c88471bd069cba1f6fee2a8f9affd81,accepted,,CCY3DVD룸,,"가정,생활 > 여가시설 > 비디오방,DVD감상실",,,,,,,,,,manual_confirmed_mvp_full
+3c73fa18bb054be3bc4c20723df5d216,accepted,,신경북상회,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+3f6cd3939bf6358a75e6d8c80975a24a,accepted,,이자까야자갈치 본점,음식점,음식점 > 술집 > 일본식주점,,,,,,,,,,manual_confirmed_mvp_full
+43ac09fd811949703120b1c0e982a3ea,accepted,,마라쿵젠 훠궈&마라탕 남포본점,음식점,음식점 > 중식 > 중국요리,,,,,,,,,,manual_confirmed_mvp_full
+4982a4abcb7a186c268714836287e10c,accepted,,육회달인2,음식점,"음식점 > 한식 > 육류,고기",,,,,,,,,,manual_confirmed_mvp_full
+c27de1df79243a95413a2c79adf03742,accepted,,쓰리몽키즈,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp_full
+7465d9090840fc8af5f5c9c8c4af0a7d,accepted,,배스킨라빈스 부산부평점,음식점,음식점 > 간식 > 아이스크림 > 배스킨라빈스,,,,,,,,,,manual_confirmed_mvp_full
+eb2582fd3b8f11b805c36671d1584c12,accepted,,프롬에이치,,"가정,생활 > 미용 > 미용실",,,,,,,,,,manual_confirmed_mvp_full
+ea8c4fab1f0a9d8529c2ec6bcce0f66f,accepted,,탑플로어,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+9ceff0d935f91fc887a029f636f45361,accepted,,신경북상회,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+8dc738e7db2162a7f898c78bc17b5d38,accepted,,스토리홈,,"가정,생활 > 생활용품점 > 인테리어장식판매",,,,,,,,,,manual_confirmed_mvp_full
+bf9cf14b3e941eb7553fb3ca531d43fd,accepted,,W바,음식점,음식점 > 술집 > 칵테일바,,,,,,,,,,manual_confirmed_mvp_full
+50836fb4e6cfd9a11e43ea30e42ea655,accepted,,옵테인,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+db151a9c9d95e37b2c928ea19accec80,accepted,,홍유단 남포본점,음식점,음식점 > 중식 > 중국요리,,,,,,,,,,manual_confirmed_mvp_full
+49296623e9fcbaf61cda2b6f92adf575,accepted,,100x 백꼽,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+4a78899687f41d92b6ad3af591173281,accepted,,땡우 남포본점,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp_full
+1fb3ecdfe48be991e527633d61dd499b,accepted,,패션자수,,"문화,예술 > 미술,공예 > 수예,자수",,,,,,,,,,manual_confirmed_mvp_full
+7f191df081e345789df4d27869890ba2,accepted,,주야상회,음식점,"음식점 > 한식 > 해물,생선",,,,,,,,,,manual_confirmed_mvp_full
+fada6b33819c36b824b3572ecb5d4739,accepted,,애견카페 남포아지트,카페,음식점 > 카페 > 테마카페 > 애견카페,,,,,,,,,,manual_confirmed_mvp_full
+3ae603b513eeee02585f2a9ac2980eec,accepted,,벨라아트갤러리,,"문화,예술 > 미술,공예 > 화랑",,,,,,,,,,manual_confirmed_mvp_full
+4c07f0b3bb98fbe9d046611f05f72031,accepted,,CU 부산남포점,편의점,"가정,생활 > 편의점 > CU",,,,,,,,,,manual_confirmed_mvp_full
+02e3e742c176bab32794e2ae75fe0e7c,accepted,,CU 남포피프광장점,편의점,"가정,생활 > 편의점 > CU",,,,,,,,,,manual_confirmed_mvp_full
+ae26a1a6ca070caf9f91a54dd1634e50,accepted,,11.9헤어,,"가정,생활 > 미용 > 미용실",,,,,,,,,,manual_confirmed_mvp_full
+6054b431da5ce54f4f444ac4324f1984,accepted,,미스터리발관,,"가정,생활 > 이발소",,,,,,,,,,manual_confirmed_mvp_full
+2ec9edaf3c2616e0a52d8d18b5605be3,accepted,,mM 아트갤러리,,"문화,예술 > 미술,공예 > 화랑",,,,,,,,,,manual_confirmed_mvp_full
+f7e50fe0e07ccedc9b84e5ce28051409,accepted,,육식도 남포점,음식점,"음식점 > 한식 > 육류,고기",,,,,,,,,,manual_confirmed_mvp_full
+a610259eb61aee011141c3b5e6fa607e,accepted,,여성빅사이즈전문매장큰옷 플러스 퀸,,"가정,생활 > 패션 > 의류판매 > 여성의류",,,,,,,,,,manual_confirmed_mvp_full
+216c393e41580580cee0e102ede9cfd0,accepted,,디네트,음식점,음식점 > 양식 > 이탈리안,,,,,,,,,,manual_confirmed_mvp_full
+1d661275f5f1456858e352256a11c159,accepted,,빠삭빠삭,음식점,음식점 > 간식 > 닭강정,,,,,,,,,,manual_confirmed_mvp_full
+8f83cf55e176592c91eab9167e1ac624,accepted,,파니스안젤리쿠스,음식점,"음식점 > 간식 > 제과,베이커리",,,,,,,,,,manual_confirmed_mvp_full
+853c275f288428db3a31fc533e182e6f,accepted,,호맥 부산남포점,음식점,"음식점 > 술집 > 호프,요리주점 > 호맥",,,,,,,,,,manual_confirmed_mvp_full
+3c40df0281ade8e374d4177061e2cb7a,accepted,,CU 중구대청코리아점,편의점,"가정,생활 > 편의점 > CU",,,,,,,,,,manual_confirmed_mvp_full
+86399b617e6e79bae34c559ae1a302e1,accepted,,해촌재첩국,음식점,음식점 > 한식,,,,,,,,,,manual_confirmed_mvp_full
+348236979b886315ef95ff6783ebaa5f,accepted,,헤어바이비,,"가정,생활 > 미용 > 미용실",,,,,,,,,,manual_confirmed_mvp_full
+34998ddaff38c9045170ffd854fc9e65,accepted,,풍천막국수밀면,음식점,음식점 > 한식 > 국수,,,,,,,,,,manual_confirmed_mvp_full
+865c2967f3d8246ea91a24c12ace836f,accepted,,쿠스트커피,카페,음식점 > 카페 > 커피전문점,,,,,,,,,,manual_confirmed_mvp_full
+361cdcde6e786e9f6d07b2964881f550,accepted,,송원집,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+932bf4856004f6382f3d70b94af04397,accepted,,투웨이,,"가정,생활 > 패션 > 패션잡화점",,,,,,,,,,manual_confirmed_mvp_full
+2a83b4cd225af9b50741d6e178c702f5,accepted,,솔티드우드,,"문화,예술 > 미술,공예 > 골동품",,,,,,,,,,manual_confirmed_mvp_full
+2f1520aaf6f5cad3bb3f4ed6b3f0691e,accepted,,인,음식점,"음식점 > 술집 > 호프,요리주점",,,,,,,,,,manual_confirmed_mvp_full
+47ad8cb22c54057d426a8691b41eb13c,accepted,,반달고깃,음식점,"음식점 > 한식 > 육류,고기",,,,,,,,,,manual_confirmed_mvp_full
+abcfdadb3092566609a016a6dc9db0a1,accepted,,백호상회,음식점,"음식점 > 한식 > 해물,생선 > 회",,,,,,,,,,manual_confirmed_mvp_full
+37b49291088eda2e8d93ca4f0293f517,accepted,,카페 오소,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+7bfe8e453666f73609b19d0757ea0577,accepted,,미트큐트,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+49fcdff573691794182509a048e90eaa,accepted,,폼,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+649ef49128670f1f2152ad96ed72558c,accepted,,비바로카페,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+4ca0eb6bd4f240cc99d8645b68be098a,accepted,,포경선,음식점,"음식점 > 한식 > 해물,생선",,,,,,,,,,manual_confirmed_mvp_full
+4766d7e027c1063317fccc963dd5ce55,accepted,,서면식 본점,음식점,"음식점 > 한식 > 육류,고기 > 갈비",,,,,,,,,,manual_confirmed_mvp_full
+157cfc976de9fc4efeec9f6b4be8c0ea,accepted,,CU 남포포차거리점,편의점,"가정,생활 > 편의점 > CU",,,,,,,,,,manual_confirmed_mvp_full
+b28e3a4e82c70abccbdc51af62bec17f,accepted,,카페보나,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+c1acc8a0ce8a3fc05520d47fd964ce62,accepted,,뉴앤유 뷰티,,"가정,생활 > 미용",,,,,,,,,,manual_confirmed_mvp_full
+e29f1313227a63a7f2df2194b6d1bcb2,accepted,,남포동맛집돝대기,음식점,"음식점 > 한식 > 육류,고기",,,,,,,,,,manual_confirmed_mvp_full
+1390fd9fbeee337f27301ae4cd03b73d,accepted,,모모스테이션 남포동점,,"가정,생활 > 여가시설 > 오락실 > 모모스테이션",,,,,,,,,,manual_confirmed_mvp_full
+f0fdab61b04cbe443bb8c67b7a45e942,accepted,,파로스,카페,음식점 > 카페,,,,,,,,,,manual_confirmed_mvp_full
+f9684da6433598406d79fe45ebd50537,accepted,,예예마켓,,"가정,생활 > 패션 > 의류판매",,,,,,,,,,manual_confirmed_mvp_full
+c6365a02e1702566550d896c598707ef,accepted,,CU 남포롯데점,편의점,"가정,생활 > 편의점 > CU",,,,,1.2,0.875,True,,,manual_confirmed_mvp_full
+5f7db258771b317c7a6e297443cf3d29,accepted,,현대목재합판,,"서비스,산업 > 건설,건축 > 건설자재",,,,,4.1,0.5714,True,,,manual_confirmed_mvp_full
+10ef2a07f573ed843b0e46f0126ef14d,accepted,,메가박스 부산극장,문화시설,"문화,예술 > 영화,영상 > 영화관 > 메가박스",,,,,5.3,0.6667,True,,,manual_confirmed_mvp_full
+b2f466b0ed83ac1345d61b111c21c342,accepted,,만어산장,,"스포츠,레저 > 스포츠용품 > 아웃도어용품",,,,,6.1,0.4444,True,,,manual_confirmed_mvp_full
+8e08e7d9841049f6a7478e9ca3ffd116,accepted,,젠틀모바일,,"가정,생활 > 전자제품 > 전자제품판매 > 휴대폰판매",,,,,7.0,0.0,True,,,manual_confirmed_mvp_full
+e94e56827334e81ea8e940093b3d1700,accepted,,고래사어묵 부산남포점,음식점,음식점 > 분식,,,,,7.5,0.75,True,,,manual_confirmed_mvp_full
+5f8bc89155ad4e992797276748e4a557,accepted,,맛찬들왕소금구이 부산부평점,음식점,"음식점 > 한식 > 육류,고기 > 맛찬들왕소금구이",,,,,7.6,0.7586,True,,,manual_confirmed_mvp_full

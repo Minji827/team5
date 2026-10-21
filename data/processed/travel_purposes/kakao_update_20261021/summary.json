@@ -1,16 +1,16 @@
 {
   "total": 158715,
   "statuses": {
-    "unmatched": 77753,
-    "outside_scope": 46498,
-    "classified": 30037,
-    "review": 4427
+    "unmatched": 77513,
+    "outside_scope": 46662,
+    "classified": 30099,
+    "review": 4441
   },
   "purposes": {
-    "식사": 23402,
-    "커피·디저트": 4792,
-    "간식·먹거리": 3493,
-    "소품·기념품 쇼핑": 93
+    "식사": 23438,
+    "커피·디저트": 4811,
+    "간식·먹거리": 3502,
+    "소품·기념품 쇼핑": 94
   },
   "limitations": [
     "카카오 기존 캐시는 주소/좌표 없어 상호일치만 검증 가능",
@@ -18,7 +18,7 @@
     "시장 소속은 경계/점포목록 없으므로 unknown",
     "실제 정확도는 수동 표본 검수 전 미확정"
   ],
-  "exported_rows": 96,
+  "exported_rows": 336,
   "delta_only": true,
   "application": "기존 travel_purposes/merchants_travel_purposes.csv에 이 CSV를 id 기준으로 덮어 합친 결과의 전체 집계. 원본 파일은 변경하지 않음."
 }
