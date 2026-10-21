@@ -50,3 +50,8 @@ def load_kakao_categories() -> pd.DataFrame:
 @lru_cache(maxsize=1)
 def load_busan_mat() -> pd.DataFrame:
     return pd.read_csv(DATA_DIR / "busan_mat.csv", encoding="utf-8-sig")
+
+
+@lru_cache(maxsize=1)
+def load_recommendation_places() -> pd.DataFrame:
+    return pd.read_csv(DATA_DIR / "recommendation_places.csv", encoding="utf-8-sig").fillna("")

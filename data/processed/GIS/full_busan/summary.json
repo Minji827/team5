@@ -1,0 +1,52 @@
+{
+  "total": 158715,
+  "unique_ids": 158715,
+  "purpose_status": {
+    "outside_scope": 46498,
+    "classified": 30037,
+    "unmatched": 77753,
+    "review": 4427
+  },
+  "travel_categories": {
+    "관광대상외 업종": 46498,
+    "카페·디저트": 6495,
+    "업종미매칭": 77753,
+    "식당": 23449,
+    "분류검토": 4427,
+    "쇼핑": 93
+  },
+  "districts": {
+    "동구": 5286,
+    "부산진구": 19165,
+    "서구": 3860,
+    "강서구": 6182,
+    "수영구": 9659,
+    "동래구": 12385,
+    "연제구": 9255,
+    "사하구": 14117,
+    "해운대구": 15847,
+    "북구": 9733,
+    "사상구": 11126,
+    "금정구": 11410,
+    "남구": 10197,
+    "중구": 5263,
+    "기장군": 7939,
+    "영도구": 4924,
+    "구군확인필요": 2367
+  },
+  "coordinate_quality": {
+    "valid": 158483,
+    "outside_rough_busan_bbox": 232
+  },
+  "market_inside": 3068,
+  "market_outside": 155647,
+  "missing_name": 1,
+  "missing_address": 0,
+  "duplicate_name_address_groups": 0,
+  "duplicate_name_address_rows": 0,
+  "shared_coordinate_groups": 23199,
+  "shared_coordinate_rows": 123817,
+  "quality_review_rows": 2368,
+  "source_sha256": "b0ae9722ea51741b40ffed436ee870e0858f41cb3c1df125a2cf69ee51781ae2",
+  "source_unchanged": true
+}

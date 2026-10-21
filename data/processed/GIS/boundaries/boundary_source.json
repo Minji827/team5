@@ -1,0 +1,9 @@
+{
+  "url": "https://raw.githubusercontent.com/vuski/admdongkor/master/ver20261001/HangJeongDong_ver20261001.geojson",
+  "repository": "https://github.com/vuski/admdongkor",
+  "version": "20261001",
+  "retrieved": "2026-10-21",
+  "source_sha256": "843ece3a0b3429742cd4a1b699cc13987a88b5e5401f382e7fdaaa194ea5e605",
+  "attribution": "통계청 SGIS 행정동 경계 기반, vuski/admdongkor 가공·보정",
+  "limitations": "배포 경계를 사용한 공간 추출이며 공식 지적측량/법적 경계 확인용 아님"
+}

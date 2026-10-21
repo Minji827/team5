@@ -1,0 +1,128 @@
+[
+  {
+    "file": "full_busan\\all_merchants_enriched.gpkg",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\all_merchants_enriched.gpkg",
+    "bytes": 67747840,
+    "sha256": "1037958e9521a1c1dbaa42ec1ae61b4f663f3f2f232a52944a0a7552b9a4bf3b"
+  },
+  {
+    "file": "full_busan\\category_counts.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\category_counts.csv",
+    "bytes": 140,
+    "sha256": "92e0c4c15c7574864ea2c7cf3de46c19be9595d639d619d4db99ad60f848e11e"
+  },
+  {
+    "file": "full_busan\\district_counts.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\district_counts.csv",
+    "bytes": 298,
+    "sha256": "b61bd9135d196583cc322724b73c2498e728b0df7c9979cedc1492a095558e9a"
+  },
+  {
+    "file": "full_busan\\market_category_counts.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\market_category_counts.csv",
+    "bytes": 305,
+    "sha256": "89e5fcdaffebf181014671988d484efccf59a26135240bd21837e5205e554db0"
+  },
+  {
+    "file": "full_busan\\quality_review.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\quality_review.csv",
+    "bytes": 702157,
+    "sha256": "9e49a7f88800173bbcd58bc67227e4041c4675b0c2527749c0da7ecdcdeb6b00"
+  },
+  {
+    "file": "full_busan\\summary.json",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\summary.json",
+    "bytes": 1309,
+    "sha256": "feaf7fd2f8760db0dc24c0957c4cac04edea3cd9b31efa28cf5e6d8b23213c0e"
+  },
+  {
+    "file": "full_busan\\전체가맹점_조사결과.md",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\all_merchants_audit\\전체가맹점_조사결과.md",
+    "bytes": 3362,
+    "sha256": "02b40b090438250fc19a319bf8ff37fe1d1a498eca990f779bf40b24d1a2c22f"
+  },
+  {
+    "file": "mvp\\excluded_personal_taxi.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\excluded_personal_taxi.csv",
+    "bytes": 21045,
+    "sha256": "07d1fe95ca2eb3faf8eb1266455c46e805d6e3ab79e74d434d8813eef5bc2e14"
+  },
+  {
+    "file": "mvp\\mvp_inside_markets.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\mvp_inside_markets.csv",
+    "bytes": 153936,
+    "sha256": "e7c6509cf03b43574dbc971a75538a7bb19f5df8c89024ae9b4851f67e981806"
+  },
+  {
+    "file": "mvp\\mvp_merchants.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\mvp_merchants.csv",
+    "bytes": 1295016,
+    "sha256": "c40d21796143ccce26434f4f384a7399f15774e72e9c87724933c9dbf3256232"
+  },
+  {
+    "file": "mvp\\mvp_no_personal_taxi.gpkg",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\mvp_no_personal_taxi.gpkg",
+    "bytes": 3514368,
+    "sha256": "be41d947f514e306184bbc0cb26c86cce943fed6e209973eae0c8973a5e34819"
+  },
+  {
+    "file": "mvp\\mvp_outside_markets.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\mvp_outside_markets.csv",
+    "bytes": 1141576,
+    "sha256": "db679faa46f286431545ab6b6920cf97aea0ebd07ec2f72546eae2df46a4d9df"
+  },
+  {
+    "file": "mvp\\remaining_unmatched.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\remaining_unmatched.csv",
+    "bytes": 361734,
+    "sha256": "195c9109269d43b7bc1fd10d6d77cd2f02bd075ac9f8c9128e99230c7aa1fa65"
+  },
+  {
+    "file": "mvp\\summary.json",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\summary.json",
+    "bytes": 281,
+    "sha256": "b7cc3c53ff1ed3da45b57421ddcbabb7471e9162df66ea1034f551fdf35302e1"
+  },
+  {
+    "file": "review\\팀원검토표.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\팀원검토표.csv",
+    "bytes": 170601,
+    "sha256": "b73625e939ed628e85bf4596689208bfd1b4149da46b47ecf5c9f195bc7999a6"
+  },
+  {
+    "file": "review\\후보없는_미매칭.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_no_personal_taxi\\후보없는_미매칭.csv",
+    "bytes": 214282,
+    "sha256": "f5a9fc4118c893d22c6acbe9f63020fd5059b97cd8d6a14ea1a6b781ada72d3b"
+  },
+  {
+    "file": "boundaries\\busan_traditional_market_areas.geojson",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\busan_traditional_market_areas.geojson",
+    "bytes": 209132,
+    "sha256": "cfe910eac2bd4046ab86a3ba67bced0a821f4cfcb39f0b0e49f02bae979d6318"
+  },
+  {
+    "file": "boundaries\\busan_market_boundaries_source.md",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\busan_market_boundaries_source.md",
+    "bytes": 851,
+    "sha256": "a58167c470a6af2dd11cd2fd49eaa0dccbc041036245459d4484d93bbbf32fbe"
+  },
+  {
+    "file": "boundaries\\mvp_admin_boundaries.geojson",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_4_dongs\\mvp_admin_boundaries.geojson",
+    "bytes": 5417,
+    "sha256": "50476b08c3c85de64e609ee313bbf080b124ac9782e87833a0349d39978c673f"
+  },
+  {
+    "file": "boundaries\\boundary_source.json",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_4_dongs\\boundary_source.json",
+    "bytes": 532,
+    "sha256": "388560185992dfe8a0cdea3407a7135af4f556c918e25c67a4d56bb34a50210d"
+  },
+  {
+    "file": "review\\자료대조완료_6건.csv",
+    "source": "C:\\Users\\redsu\\Documents\\Codex\\2026-10-20\\dks\\outputs\\mvp_matching\\team_review\\자료대조완료_6건.csv",
+    "bytes": 3479,
+    "sha256": "4da0fe6793471d21928d3c0596e7c3b32b36ba21c28c75c122a8da2f9b5c105c"
+  }
+]

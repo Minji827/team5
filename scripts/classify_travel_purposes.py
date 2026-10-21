@@ -1,5 +1,6 @@
 """Build reviewable travel-purpose tags offline; never replace production CSVs."""
 import json
+import argparse
 import re
 from pathlib import Path
 
@@ -57,28 +58,41 @@ def classify(source, major, detail):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-dir", type=Path, default=OUT)
+    parser.add_argument("--rematch-file", type=Path)
+    parser.add_argument("--delta-only", action="store_true", help="Write updated rows only; preserve the existing full dataset")
+    args = parser.parse_args()
+    output = args.output_dir
     assert classify("kakao", "", "음식점 > 카페 > 디저트카페")[0] == "커피·디저트"
     assert classify("kakao", "", "서비스,산업 > 공간대여 > 스터디카페,스터디룸")[1] == "outside_scope"
     assert classify("sangga", "소매", "시계/귀금속 소매업")[1] == "review"
     assert classify("sangga", "소매", "기념품점")[0] == "소품·기념품 쇼핑"
     assert classify("sangga", "음식", "빵/도넛")[0] == "간식·먹거리"
     assert key("본죽(서면점)") != key("본죽(해운대점)")
-    OUT.mkdir(exist_ok=True)
+    output.mkdir(parents=True, exist_ok=True)
     m = pd.read_csv(ROOT / "merchants.csv").fillna("")
     k = pd.read_csv(ROOT / "_kakao_category_cache.csv").fillna("").drop_duplicates("id", keep="last")
+    rematched = {}
+    category_records = k
+    if args.rematch_file:
+        rematch = pd.read_csv(args.rematch_file).fillna("").drop_duplicates("id", keep="last")
+        accepted = rematch[rematch.status.eq("accepted")]
+        rematched = accepted.set_index("id").to_dict("index")
+        category_records = pd.concat([k, accepted.assign(status="ok")], ignore_index=True).drop_duplicates("id", keep="last")
     raw_path = sorted((ROOT.parent / "raw/sangga").glob("*.csv"))[-1]
     columns = {"상호명": "name", "지점명": "branch", "상권업종대분류명": "category_major",
                "상권업종소분류명": "category_minor", "도로명주소": "address", "경도": "lon", "위도": "lat"}
     s = pd.read_csv(raw_path, usecols=list(columns), encoding="utf-8-sig").rename(columns=columns).fillna("")
     s = s[pd.to_numeric(s.lon, errors="coerce").notna() & pd.to_numeric(s.lat, errors="coerce").notna()].copy()
     inventories = []
-    for source, frame, cols in [("kakao", k[k.status.eq("ok")], ["category_group_name", "category_name"]),
+    for source, frame, cols in [("kakao", category_records[category_records.status.eq("ok")], ["category_group_name", "category_name"]),
                                 ("sangga", s, ["category_major", "category_minor"])]:
         for (major, detail), count in frame.groupby(cols).size().items():
             tags, status, reason = classify(source, major, detail)
             inventories.append(dict(source=source, major=major, detail=detail, source_records=int(count),
                                     purpose_tags=tags, decision=status, reason=reason))
-    pd.DataFrame(inventories).to_csv(OUT / "category_mapping.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(inventories).to_csv(output / "category_mapping.csv", index=False, encoding="utf-8-sig")
     groups = {}
     for row in s.itertuples(index=False):
         groups.setdefault(key(row.name), []).append(row)
@@ -90,7 +104,14 @@ def main():
         evidence = []
         identity_evidence = []
         hit = cached.get(merchant.id)
-        if hit and hit["status"] == "ok" and len(key(merchant.name)) >= 2 and key(merchant.name) == key(hit["place_name"]):
+        new_hit = rematched.get(merchant.id)
+        if new_hit:
+            evidence.append(("kakao", new_hit["category_group_name"], new_hit["category_name"]))
+            identity_evidence.append(dict(source="kakao_rematch", place_id=new_hit["place_id"],
+                place_name=new_hit["place_name"], address=new_hit["road_address"],
+                distance_m=new_hit["distance_m"], name_similarity=new_hit["name_similarity"],
+                address_match=new_hit["address_match"]))
+        elif hit and hit["status"] == "ok" and len(key(merchant.name)) >= 2 and key(merchant.name) == key(hit["place_name"]):
             evidence.append(("kakao", hit["category_group_name"], hit["category_name"]))
             identity_evidence.append(dict(source="kakao", place_name=hit["place_name"], verification="normalized_name_only"))
         for candidate in groups.get(key(merchant.name), []):
@@ -115,6 +136,7 @@ def main():
         else:
             tags, status, reason = "", "unmatched", "동일 가게 연결 근거 부족"
         result = dict(id=merchant.id, name=merchant.name, address=merchant.address, lat=merchant.lat, lon=merchant.lon,
+                      source=merchant.source, data_date=merchant.data_date,
                       purpose_tags=tags, classification_status=status, reason=reason,
                       evidence=json.dumps(evidence, ensure_ascii=False),
                       identity_evidence=json.dumps(identity_evidence, ensure_ascii=False), market_membership="unknown")
@@ -122,14 +144,20 @@ def main():
     result = pd.DataFrame(results)
     assert len(result) == len(m) and result.id.is_unique
     assert result[result.classification_status.ne("classified")].purpose_tags.eq("").all()
-    result.to_csv(OUT / "merchants_travel_purposes.csv", index=False, encoding="utf-8-sig")
-    result[result.classification_status.eq("review")].to_csv(OUT / "review_queue.csv", index=False, encoding="utf-8-sig")
-    samples = [g.sample(n=min(25, len(g)), random_state=42) for _, g in result.groupby(["classification_status", "purpose_tags"])]
-    pd.concat(samples).to_csv(OUT / "validation_sample.csv", index=False, encoding="utf-8-sig")
+    export = result[result.id.isin(rematched)] if args.delta_only else result
+    filename = "merchants_travel_purposes_delta.csv" if args.delta_only else "merchants_travel_purposes.csv"
+    export.to_csv(output / filename, index=False, encoding="utf-8-sig")
+    export[export.classification_status.eq("review")].to_csv(output / "review_queue.csv", index=False, encoding="utf-8-sig")
+    samples = [g.sample(n=min(25, len(g)), random_state=42) for _, g in export.groupby(["classification_status", "purpose_tags"])]
+    (pd.concat(samples) if samples else export).to_csv(output / "validation_sample.csv", index=False, encoding="utf-8-sig")
     summary = dict(total=len(result), statuses=result.classification_status.value_counts().to_dict(),
                    purposes=result.loc[result.purpose_tags.ne(""), "purpose_tags"].str.split("|").explode().value_counts().to_dict(),
                    limitations=["카카오 기존 캐시는 주소/좌표 없어 상호일치만 검증 가능", "상가 원본 소분류 사용; 동일 상호 100m 이내 후보의 충돌은 검토", "시장 소속은 경계/점포목록 없으므로 unknown", "실제 정확도는 수동 표본 검수 전 미확정"])
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    summary["exported_rows"] = len(export)
+    summary["delta_only"] = args.delta_only
+    if args.delta_only:
+        summary["application"] = "기존 travel_purposes/merchants_travel_purposes.csv에 이 CSV를 id 기준으로 덮어 합친 결과의 전체 집계. 원본 파일은 변경하지 않음."
+    (output / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 

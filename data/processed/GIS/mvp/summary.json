@@ -1,0 +1,14 @@
+{
+  "before": 3659,
+  "removed_personal_taxi": 66,
+  "remaining": 3593,
+  "purpose_status": {
+    "outside_scope": 1441,
+    "classified": 736,
+    "unmatched": 1163,
+    "review": 253
+  },
+  "market_inside": 399,
+  "market_outside": 3194,
+  "source_preserved": true
+}

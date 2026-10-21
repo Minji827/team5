@@ -21,6 +21,7 @@ FIELDS = ["id", "status", "place_id", "place_name", "category_group_name", "cate
           "road_address", "address", "lat", "lon", "distance_m", "name_similarity",
           "address_match", "query", "radius", "reason"]
 STOP = threading.Event()
+LOCAL = threading.local()
 
 
 def name_key(value):
@@ -66,12 +67,14 @@ def fetch(merchant, headers):
     searches = [(merchant.name, 100), (query + (" " + street[0] if street else " 부산"), 300)]
     candidates = {}
     had_error = False
+    if not hasattr(LOCAL, "session"):
+        LOCAL.session = requests.Session()
     for query, radius in dict.fromkeys(searches):
         for attempt in range(3):
             if STOP.is_set():
                 return None
             try:
-                response = requests.get("https://dapi.kakao.com/v2/local/search/keyword.json",
+                response = LOCAL.session.get("https://dapi.kakao.com/v2/local/search/keyword.json",
                     headers=headers, params={"query": query, "x": merchant.lon, "y": merchant.lat,
                     "radius": radius, "size": 15}, timeout=12)
                 if response.status_code == 429 or "limit has been exceeded" in response.text.lower():
@@ -127,6 +130,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--districts", nargs="+", help="Prioritize a limited MVP area by address district")
+    parser.add_argument("--travel-only", action="store_true", help="Skip known non-tourism search categories and explicit medical/education names")
     parser.add_argument("--self-check", action="store_true")
     args = parser.parse_args()
     self_check()
@@ -137,10 +142,23 @@ def main():
     headers = {"Authorization": "KakaoAK " + os.environ["KAKAO_REST_API_KEY"]}
     merchants = pd.read_csv(DATA / "merchants.csv")
     cache = pd.read_csv(DATA / "_kakao_category_cache.csv").drop_duplicates("id", keep="last")
-    joined = merchants.merge(cache[["id", "status", "place_name"]], on="id", how="left")
+    joined = merchants.merge(cache[["id", "status", "place_name", "category_name"]], on="id", how="left")
     verified_name = pd.Series([len(old_name(n)) >= 2 and old_name(n) == old_name(p) for n, p in zip(joined.name, joined.place_name)], index=joined.index)
     todo = joined[~(joined.status.eq("ok") & verified_name)].copy()
-    todo["priority"] = todo.status.map({"error": 0, "ok": 1, "no_match": 2}).fillna(3)
+    classified_path = DATA / "travel_purposes/merchants_travel_purposes.csv"
+    if classified_path.exists():
+        classified = pd.read_csv(classified_path, usecols=["id", "classification_status"])
+        unresolved = classified.loc[classified.classification_status.isin(["unmatched", "review"]), "id"]
+        todo = todo[todo.id.isin(unresolved)]
+    if args.districts:
+        district_pattern = r"(?:^|\s)(?:" + "|".join(re.escape(d) for d in args.districts) + r")(?:\s|$)"
+        todo = todo[todo.address.fillna("").str.contains(district_pattern, regex=True)]
+    if args.travel_only:
+        relevant = todo.category_name.fillna("").str.contains(r"^음식점(?: >|$)|기념품|소품|공예|디자인문구", regex=True)
+        unknown = todo.status.ne("ok")
+        nontravel_name = todo.name.str.contains(r"병원|의원|약국|학원|교습소|개인택시|치과|한의원|정비|미용|부동산|세무|공인중개", regex=True, na=False)
+        todo = todo[relevant | (unknown & ~nontravel_name)]
+    todo["priority"] = todo.status.map({"ok": 0, "error": 1, "no_match": 2}).fillna(3)
     todo = todo.sort_values("priority", kind="stable")
     OUT.mkdir(exist_ok=True)
     path = OUT / "results.csv"

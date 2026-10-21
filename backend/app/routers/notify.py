@@ -67,7 +67,7 @@ def build_email_body(req: EmailRequest) -> str:
         lines.append(f"구글맵에서 전체 경로 보기: {maps_link}")
         lines.append("")
 
-    lines.append("출처: 동백전 가맹점 데이터")
+    lines.append("출처: 동백전 가맹점·한국관광공사·전통시장 데이터. 관광 방문지는 결제 확인 대상이 아니며, 가맹점도 현재 결제 가능 여부를 방문 전 확인해주세요.")
     return "\n".join(lines)
 
 

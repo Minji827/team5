@@ -111,7 +111,7 @@ export default function FilterPanel({
       </label>
 
       <div className="field">
-        <span>관심 업종</span>
+        <span>관심 카테고리</span>
         <div className="category-grid">
           <label className="category-chip">
             <input
@@ -128,7 +128,7 @@ export default function FilterPanel({
                 checked={categories.includes(c)}
                 onChange={() => toggleCategory(c)}
               />
-              {c}
+              {c === "관광명소" ? "관광명소(시장 포함)" : c}
             </label>
           ))}
         </div>

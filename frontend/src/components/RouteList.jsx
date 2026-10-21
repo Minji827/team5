@@ -40,12 +40,11 @@ export default function RouteList({ stops, totalMinutes, overBudget, loading, ha
   if (!stops.length) {
     return (
       <div className="route-list state-message muted">
-        조건에 맞는 부산페이 결제 가능 매장을 찾지 못했어요. 업종을 바꿔보세요.
+        조건에 맞는 장소를 찾지 못했어요. 카테고리를 바꿔보세요.
       </div>
     );
   }
 
-  const sourceDate = stops[0]?.data_date;
 
   return (
     <div className="route-list">
@@ -63,7 +62,9 @@ export default function RouteList({ stops, totalMinutes, overBudget, loading, ha
           <div className="route-stop-body">
             {idx > 0 && <div className="leg-label">도보 {stop.leg_minutes}분 (추정)</div>}
             <div className="stop-name">
-              {stop.name} <span className="paid-badge">부산페이 결제 확인</span>
+              {stop.name} <span className="paid-badge">
+                {stop.payment_status === "merchant_listed" ? "동백전 가맹점 명부 등재" : "관광 방문지 · 결제 미확인"}
+              </span>
             </div>
             <div className="stop-meta">
               <span className="category-tag">{stop.category}</span>
@@ -97,7 +98,7 @@ export default function RouteList({ stops, totalMinutes, overBudget, loading, ha
       </div>
 
       <div className="source-note">
-        출처: 동백전 가맹점 데이터 (기준일 {sourceDate})
+        출처: 동백전 가맹점·한국관광공사·전통시장 데이터. 가맹점의 현재 결제 가능 여부는 방문 전 확인해주세요.
       </div>
     </div>
   );

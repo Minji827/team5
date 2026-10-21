@@ -19,7 +19,9 @@ export default function App() {
   const [hasSearched, setHasSearched] = useState(false);
 
   useEffect(() => {
-    getCategories().then(setAllCategories).catch(() => setAllCategories([]));
+    getCategories().then(setAllCategories).catch(() => {
+      setError("카테고리를 불러오지 못했어요. 잠시 후 새로고침해주세요.");
+    });
   }, []);
 
   function toggleCategory(c) {
