@@ -64,7 +64,8 @@ def fetch(merchant, headers):
         return None
     query = re.sub(r"주식회사|유한회사|\(주\)|\(유\)", "", merchant.name).strip()
     street = address_key(merchant.address)
-    searches = [(merchant.name, 100), (query + (" " + street[0] if street else " 부산"), 300)]
+    bare = re.sub(r"\(.*?\)", "", query).strip()  # drop English/transliteration suffix, e.g. "인디프헤어(indiff hair)" -> "인디프헤어"
+    searches = [(merchant.name, 100), (query + (" " + street[0] if street else " 부산"), 300), (bare, 500)]
     candidates = {}
     had_error = False
     if not hasattr(LOCAL, "session"):
@@ -132,6 +133,7 @@ def main():
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--districts", nargs="+", help="Prioritize a limited MVP area by address district")
     parser.add_argument("--ids-file", type=Path, help="CSV/text with an 'id' column (or one id per line) to limit the run to")
+    parser.add_argument("--retry", action="store_true", help="Reattempt ids even if already present in results.csv as no_match/review (not just error)")
     parser.add_argument("--travel-only", action="store_true", help="Skip known non-tourism search categories and explicit medical/education names")
     parser.add_argument("--self-check", action="store_true")
     args = parser.parse_args()
@@ -166,7 +168,7 @@ def main():
     todo = todo.sort_values("priority", kind="stable")
     OUT.mkdir(exist_ok=True)
     path = OUT / "results.csv"
-    if path.exists():
+    if path.exists() and not args.retry:
         prior = pd.read_csv(path).drop_duplicates("id", keep="last")
         todo = todo[~todo.id.isin(prior.loc[prior.status.ne("error"), "id"])]
     if args.limit:

@@ -1,15 +1,15 @@
 {
   "total": 158715,
   "statuses": {
-    "unmatched": 77513,
-    "outside_scope": 46662,
-    "classified": 30099,
-    "review": 4441
+    "unmatched": 77494,
+    "outside_scope": 46675,
+    "classified": 30104,
+    "review": 4442
   },
   "purposes": {
-    "식사": 23438,
-    "커피·디저트": 4811,
-    "간식·먹거리": 3502,
+    "식사": 23439,
+    "커피·디저트": 4813,
+    "간식·먹거리": 3504,
     "소품·기념품 쇼핑": 94
   },
   "limitations": [
@@ -18,7 +18,7 @@
     "시장 소속은 경계/점포목록 없으므로 unknown",
     "실제 정확도는 수동 표본 검수 전 미확정"
   ],
-  "exported_rows": 336,
+  "exported_rows": 355,
   "delta_only": true,
   "application": "기존 travel_purposes/merchants_travel_purposes.csv에 이 CSV를 id 기준으로 덮어 합친 결과의 전체 집계. 원본 파일은 변경하지 않음."
 }

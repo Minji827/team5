@@ -6837,3 +6837,999 @@ b2f466b0ed83ac1345d61b111c21c342,accepted,,만어산장,,"스포츠,레저 > 스
 8e08e7d9841049f6a7478e9ca3ffd116,accepted,,젠틀모바일,,"가정,생활 > 전자제품 > 전자제품판매 > 휴대폰판매",,,,,7.0,0.0,True,,,manual_confirmed_mvp_full
 e94e56827334e81ea8e940093b3d1700,accepted,,고래사어묵 부산남포점,음식점,음식점 > 분식,,,,,7.5,0.75,True,,,manual_confirmed_mvp_full
 5f8bc89155ad4e992797276748e4a557,accepted,,맛찬들왕소금구이 부산부평점,음식점,"음식점 > 한식 > 육류,고기 > 맛찬들왕소금구이",,,,,7.6,0.7586,True,,,manual_confirmed_mvp_full
+ae1d5b16f19a5d4252889f513a53fdd9,review,585974551,GS25 S부산자갈치역점,편의점,"가정,생활 > 편의점 > GS25",부산 중구 구덕로 지하 80,부산 중구 남포동6가 117-1,35.09740867681037,129.02695678210708,340.7,0.8,False,지에스25 S부산자갈치역점,500,needs_verification
+becc0b41a0039f96c041f7338f433d03,no_match,,,,,,,,,,,,,,no_candidates
+c3ce263faa9353f8aa964ebd6d67df60,no_match,,,,,,,,,,,,,,no_candidates
+fd9231d02ca40d6a7693c2fb10c63ea0,no_match,,,,,,,,,,,,,,no_candidates
+5b003d2b542cfe493119cf9156633ee1,no_match,,,,,,,,,,,,,,no_candidates
+c19aec1c39750c0d5da830bf53712b53,no_match,,,,,,,,,,,,,,no_candidates
+f85f2b53ed385a24297af5e35f8a154a,review,8780018,경남상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968270637713,129.029078346163,488.5,1.0,False,경남상회,500,needs_verification
+f10e1096938167b7372ccc0cbebeede2,no_match,,,,,,,,,,,,,,no_candidates
+2fbc63f07a51714c43f0147ef2163cf6,no_match,,,,,,,,,,,,,,no_candidates
+eff3083344d6ad4a68aeab40aa33c5f2,no_match,,,,,,,,,,,,,,no_candidates
+d0a933aaf62fbd8072b57e34f4326a1c,review,10243078,대우땅콩,,"가정,생활 > 식품판매",부산 중구 용미길7번길 1,부산 중구 남포동1가 59-4,35.09722428404569,129.03489523110431,30.5,0.5,False,대우상회,500,needs_verification
+7b3629c53de01cf59ad7c0e22a9d6815,review,8932527,대영상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968623618657,129.029123080683,70.9,1.0,False,대영상회,500,ambiguous
+1e85a17358e9900655e8a5358f0bb0f1,no_match,,,,,,,,,,,,,,no_candidates
+ba36eb3b6fb3fdd89dc48e426011bc08,no_match,,,,,,,,,,,,,,no_candidates
+54dffaf53cb746a1e386a256796af7cc,review,16979391,CU 자갈치점,편의점,"가정,생활 > 편의점 > CU",부산 중구 자갈치해안로 61,부산 중구 남포동4가 30-2,35.097131128854286,129.03179970646013,149.3,0.6667,False,씨유자갈치점,500,needs_verification
+29b491bfb9342f8e58457bd2c6df73bd,no_match,,,,,,,,,,,,,,no_candidates
+c50a68877174c3781e5678fb3fd45aac,no_match,,,,,,,,,,,,,,no_candidates
+32712ea26ce5b4f3e2a9c2e333daf91e,no_match,,,,,,,,,,,,,,no_candidates
+5b38eb5cb485308468bf61d5fa3261a9,no_match,,,,,,,,,,,,,,no_candidates
+edb9dad69dda623747027744659acf12,no_match,,,,,,,,,,,,,,no_candidates
+2bde5a571d6efd6c6bb25b45e5a77e1a,no_match,,,,,,,,,,,,,,no_candidates
+84de5edc88a7d082fef86ed5358bc52a,no_match,,,,,,,,,,,,,,no_candidates
+e8a2d97f80e37ab20b6e1b2a3aa3bb15,no_match,,,,,,,,,,,,,,no_candidates
+7d45252fcc6bd43f7566a95ec7261ea8,no_match,,,,,,,,,,,,,,no_candidates
+61d8b53d837ca102bac327cfa9494d7f,no_match,,,,,,,,,,,,,,no_candidates
+974164b7490b4e1575751f8c66072929,no_match,,,,,,,,,,,,,,no_candidates
+456fd5cca721cb693e4ae63d50530259,no_match,,,,,,,,,,,,,,no_candidates
+8ca45be15a467eb1a23c981e1e60a013,no_match,,,,,,,,,,,,,,no_candidates
+345e2c98f3c1d80f1a4565931ca65e43,no_match,,,,,,,,,,,,,,no_candidates
+63d8b478ffbd377b299938bd71033b11,review,26475663,애플치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 비프광장로 40,부산 중구 남포동5가 33,35.098371805878,129.028963122758,214.0,0.3077,False,애플,500,ambiguous
+11cc2e0828e45bd19ae48bafbfe44f48,no_match,,,,,,,,,,,,,,no_candidates
+ee8e38299be25a7f984d6908a0e8a253,no_match,,,,,,,,,,,,,,no_candidates
+7ba799e28115b3b3f65f6159ca8b1bf6,no_match,,,,,,,,,,,,,,no_candidates
+90c47846606be9eac9a9b28635c8181f,review,20536513,영진상회,,"서비스,산업 > 식품",부산 중구 부평2길 53,부산 중구 부평동2가 13-1,35.1018971055896,129.026383674025,224.1,1.0,False,영진상회,500,ambiguous
+a439e46d55301551870c6a5a343ff156,review,10456414,부광상회,음식점,음식점 > 한식,부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.09672213459847,129.02867114089275,138.3,1.0,False,부광상회,500,needs_verification
+7f1380d55df503dbcc73707ed9853583,no_match,,,,,,,,,,,,,,no_candidates
+d37b06c83b7b35387a87fc95f101c98c,no_match,,,,,,,,,,,,,,no_candidates
+0ef46a02453a1c97aa9b5014b1d6573d,review,16845928,코스모안경,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",부산 중구 국제시장2길 6-1,부산 중구 창선동2가 24-4,35.099823150785404,129.0286131170322,326.1,0.7692,False,코스모안경백화점,500,needs_verification
+207487c32cbc9a9d4d97b4115997a6bc,review,9640675,해성건어물,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 국제시장2길 33,부산 중구 신창동4가 44-3,35.102236404393096,129.0282957086767,198.0,1.0,False,해성건어물,500,needs_verification
+ca8d75b0a0a91bbe42eb995c7934064d,no_match,,,,,,,,,,,,,,no_candidates
+a5966df3e1f6b3e8d002bd24865b01e3,no_match,,,,,,,,,,,,,,no_candidates
+dc313046297745ea2a71e8db7e3b4c6e,no_match,,,,,,,,,,,,,,no_candidates
+abd9ba7be87813320d7f2041aa284a34,no_match,,,,,,,,,,,,,,no_candidates
+54b1176536de3d6655d016ca4003e85c,no_match,,,,,,,,,,,,,,no_candidates
+a5e8ea46e965fbc499591f234a222acc,review,25817382,협신종합전자,,"서비스,산업 > 제조업 > 전기,전자",부산 중구 중구로 22,부산 중구 창선동2가 38-9,35.0996207606909,129.027998431579,103.5,0.8,False,종합전자,500,needs_verification
+d64f71365cf4b716d21c3285603edf6b,review,10016920,현대기물상사,,"가정,생활 > 생활용품점 > 주방용품",부산 중구 국제시장2길 25,부산 중구 신창동4가 38-2,35.10154047174932,129.02830916685912,112.1,1.0,False,현대기물상사,500,needs_verification
+538476d117f64e22e32c48ebbc74c426,no_match,,,,,,,,,,,,,,no_candidates
+3e2a706f801464eff33479ec42373645,review,9058524,블랙박스,,"가정,생활 > 패션 > 패션잡화점 > 가방",부산 중구 중구로48번길 8-1,부산 중구 신창동3가 37-1,35.1021575886947,129.028697290547,185.8,1.0,False,블랙박스,500,needs_verification
+f443c7ce79985ad51656dbbabaca27b1,no_match,,,,,,,,,,,,,,no_candidates
+357a2189b4c75c6ac3d58ca777b15cf4,no_match,,,,,,,,,,,,,,no_candidates
+f40304c26d4f2e5dcccdd026f2630070,review,9531984,평화치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 중구로33번길 11,부산 중구 부평동1가 29-17,35.10083964349491,129.02726872417222,146.1,1.0,False,평화치과의원,500,needs_verification
+258d5b3c95ab8e3be2807aa79ad9d5d7,no_match,,,,,,,,,,,,,,no_candidates
+d715585c42e98f4e617f9d784d1d4484,no_match,,,,,,,,,,,,,,no_candidates
+3d490fe8e124ff7a7c593b7cf2b5b057,review,9476709,코오롱스포츠 남포점,,"스포츠,레저 > 스포츠용품 > 아웃도어용품",부산 중구 구덕로 32,부산 중구 남포동4가 1-3,35.09809508039423,129.03235543702698,166.1,1.0,False,코오롱스포츠남포점,500,needs_verification
+7119a3301eb39340cbd76f65e6e7a7bc,no_match,,,,,,,,,,,,,,no_candidates
+1b33da85adf47ff33e8e496fa9699728,review,9232650,엄상훈치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 광복중앙로 37,부산 중구 대청동2가 23-14,35.102700469791,129.030719661395,121.3,1.0,False,엄상훈치과의원,500,needs_verification
+359590480e6b61def1df488382deb728,no_match,,,,,,,,,,,,,,no_candidates
+cda1982f58cb9114aaebdffc0c8b123e,no_match,,,,,,,,,,,,,,no_candidates
+c39b3db20de1b1f89f87fa7c04386028,no_match,,,,,,,,,,,,,,no_candidates
+49af7558b2492027cf6c02f83e1ab74a,review,9048965,보배상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968270637713,129.029078346163,110.3,1.0,False,보배상회,500,needs_verification
+cee36700c339823ff8566f7cf9ede753,no_match,,,,,,,,,,,,,,no_candidates
+6bf753ca4cf050b51aebf77e3f97c6cc,no_match,,,,,,,,,,,,,,no_candidates
+acadab624fa4114730841a3abd6fd961,review,1089688202,삼삼오오,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 105-2,35.09763687744851,129.02947561449653,233.7,1.0,False,삼삼오오,500,needs_verification
+ce3e3d0766f33c666783b219dc72ed00,no_match,,,,,,,,,,,,,,no_candidates
+2265d944aa58bcc6dc6610edec62f4aa,review,9090468,새부평한우갈비,음식점,"음식점 > 한식 > 육류,고기 > 갈비",부산 중구 부평2길 29,부산 중구 부평동2가 20-1,35.10079863905415,129.02632577685853,145.6,0.5,False,새부평식당,500,needs_verification
+aaa1f80190dfe6b6f0f47ee81be8b395,no_match,,,,,,,,,,,,,,no_candidates
+70d2a221a213f01ba81fd56b18c3af68,no_match,,,,,,,,,,,,,,no_candidates
+fa062354d4bcaa481e823da892c0aac7,no_match,,,,,,,,,,,,,,no_candidates
+8ccda94d90eb71b196526570e2929746,no_match,,,,,,,,,,,,,,no_candidates
+95031daf0992bdeb622bbd02e77db9d2,no_match,,,,,,,,,,,,,,no_candidates
+4663fac2e54323ec9071d3968a3f8477,no_match,,,,,,,,,,,,,,no_candidates
+c2280d401aefc057cfdb634773906b1b,review,16666478,로즈마리,,"가정,생활 > 패션 > 패션잡화점",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.09775116969881,129.02835453213686,128.5,1.0,False,로즈마리,500,ambiguous
+ff08b1f47909cb59a781da0bdad6a86c,no_match,,,,,,,,,,,,,,no_candidates
+970cb1c71e5975da5cca7d2ed308f6a7,review,21337353,세정,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 중구로33번길 45,부산 중구 부평동2가 66-19,35.100928673227465,129.02544737250372,151.8,1.0,False,세정,500,needs_verification
+6cd17b838fe10fc8b6d1acfa7f4e99e2,review,9819454,삼오상회,,"가정,생활 > 패션 > 패션잡화점",부산 중구 중구로 42,부산 중구 신창동4가 40-5,35.10153191244631,129.02801288515985,112.0,1.0,False,삼오상회,500,needs_verification
+a478a1355c43b5e38cf8016cf0e1372b,no_match,,,,,,,,,,,,,,no_candidates
+76c703265ad6157344922dde01bcfbd2,review,8325250,라라아비스 부산점,,"가정,생활 > 생활용품점 > 침구판매",부산 중구 대청로90번길 6,부산 중구 신창동1가 40-1,35.102448040864346,129.02964972957523,236.9,1.0,False,라라아비스부산점,500,needs_verification
+833e5d9a781046a8ffbfa1764731cdd3,no_match,,,,,,,,,,,,,,no_candidates
+772be34f98b04d3f228bd9844f8a85c9,no_match,,,,,,,,,,,,,,no_candidates
+0b221e150bf6f00a7e1cd33f64adad35,review,592303851,팔도상회,,"가정,생활 > 식품판매",부산 서구 해안새벽시장길 27,부산 서구 충무동1가 43-1,35.0949832631486,129.02541430997,353.7,1.0,False,팔도상회,500,needs_verification
+f5e0e6a65f36bfdce62ebbe45567a00c,review,10403059,밀라노,,"가정,생활 > 패션 > 의류판매 > 여성의류",부산 중구 광복로55번길 14,부산 중구 창선동1가 9-3,35.0998960641052,129.030071118295,405.3,1.0,False,밀라노,500,needs_verification
+f7867c6f929b5cb5f26e9749ceb6226d,no_match,,,,,,,,,,,,,,no_candidates
+5ac84d092aa0bde604ddeb8dc90c4fad,no_match,,,,,,,,,,,,,,no_candidates
+6bca4c6281122eab45ab3a16a5eb4da5,no_match,,,,,,,,,,,,,,no_candidates
+6ab267e2ed62fdb2458d91e2f140a4cf,review,9954448,원일안경,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",부산 중구 국제시장2길 4,부산 중구 창선동2가 23-1,35.09963574727458,129.02861066582562,108.9,1.0,False,원일안경,500,needs_verification
+0f918328200e30352da60b6bc0e7eaec,no_match,,,,,,,,,,,,,,no_candidates
+3f7b46222e8af0aa75387a28635baf0b,review,10088438,조일침구,,"가정,생활 > 생활용품점 > 침구판매",부산 중구 국제시장2길 25,부산 중구 신창동4가 38-3,35.101586025447695,129.0282795921434,116.9,1.0,False,조일침구,500,needs_verification
+6b0612c0d2af1f0ae08260b387c890e7,review,10928735,이브자리 부산국제시장점,,"가정,생활 > 생활용품점 > 침구판매 > 이브자리",부산 중구 국제시장2길 19,부산 중구 신창동4가 34-1,35.10096925130859,129.0282478606365,110.6,0.2667,False,국제상사,500,needs_verification
+984c5cd0b68e871313f66c415ff877f5,no_match,,,,,,,,,,,,,,no_candidates
+6943b9ad3b5b8e49f90ee0a55b85110c,review,15264327,생수숯불갈비,음식점,"음식점 > 한식 > 육류,고기 > 갈비",부산 중구 중구로23번길 24,부산 중구 부평동1가 30-30,35.1001040365392,129.026475255495,237.9,0.8,False,생수갈비,500,needs_verification
+3f928e4a411043575e5a58c33fd8e384,review,4383980,성신외과의원,병원,"의료,건강 > 병원 > 외과",부산 중구 대청로 71,부산 중구 보수동1가 144-4,35.103281289814554,129.02762417891205,167.6,0.8571,False,성신항운외과의원,500,needs_verification
+eedad3494089d272f2721aa82c065afb,no_match,,,,,,,,,,,,,,no_candidates
+fbe78565d99268a2019d2a804c7c4a5f,review,7931954,18번완당집,음식점,음식점 > 분식,부산 중구 비프광장로 31,부산 중구 남포동3가 1-1,35.098942419469,129.028468480826,116.6,1.0,False,18번완당집,500,needs_verification
+0113e4aa4d55b684c24e2e142aea9f1a,review,10967576,한영사세탁소,,"가정,생활 > 세탁소",부산 중구 중구로33번길 15,부산 중구 부평동1가 28-1,35.1008414695422,129.026997922771,345.0,0.6667,False,한영사,500,needs_verification
+421c2f884fb3cf6de40b6501d03b179f,no_match,,,,,,,,,,,,,,no_candidates
+27e44c739db3238a7c9a5f4ae28f40e3,review,9122124,삼성모자점,,"가정,생활 > 패션 > 패션잡화점",부산 중구 국제시장2길 25,부산 중구 신창동4가 38-2,35.10154047174932,129.02830916685912,112.1,1.0,False,삼성모자점,500,needs_verification
+ac7137f17dc38854ad674bb99690e71f,review,8410495,신광문구,,"가정,생활 > 문구,사무용품",부산 중구 중구로33번길 9-1,부산 중구 부평동1가 29-16,35.1008392058124,129.027348761115,146.5,1.0,False,신광문구,500,needs_verification
+6246b57c1a7ca1a11feb2627044bc1c2,review,8932527,대영상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968623618657,129.029123080683,486.8,1.0,False,대영상회,500,ambiguous
+3581c6287adfb1516cfc01e9d2ed3a92,review,20532504,은혜공방,,"가정,생활 > 패션 > 보석,귀금속",부산 중구 중구로 52,부산 중구 신창동4가 51-2,35.1022502958782,129.028111830226,190.7,1.0,False,은혜공방,500,needs_verification
+2a99e5d8031f64df26e03bbc1f653736,no_match,,,,,,,,,,,,,,no_candidates
+2baf3bd594f692b17f557332c06c43e6,review,10828667,비앤에스의원,병원,"의료,건강 > 병원 > 일반의원",부산 중구 비프광장로 40,부산 중구 남포동5가 33,35.098239514716,129.028898439359,463.6,0.0,False,B.S,500,needs_verification
+8d059dc80cbf5354bfcd019155f0b52a,no_match,,,,,,,,,,,,,,no_candidates
+24415646334f749f6369db6dca5e7e62,no_match,,,,,,,,,,,,,,no_candidates
+e2abb659a2eebe032165cfde32806337,review,8780018,경남상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968270637713,129.029078346163,478.2,1.0,False,경남상회,500,needs_verification
+d2dfdd2f4f7b4216b4eb8fa8834170f5,no_match,,,,,,,,,,,,,,no_candidates
+b22a0406ab907d2190dbec2e77f6b50e,no_match,,,,,,,,,,,,,,no_candidates
+c112f70e97d5ed04967a6b206ad74d4b,no_match,,,,,,,,,,,,,,no_candidates
+69e912cc67bda7009b6ea192b2d7c191,no_match,,,,,,,,,,,,,,no_candidates
+fe2aed13b6c911a02a94d084e4d50fbe,no_match,,,,,,,,,,,,,,no_candidates
+a28a96f08629e6d76dc2838cf01d41fc,review,1412876351,대원딥스,,"가정,생활 > 패션 > 의류판매 > 속옷,언더웨어",부산 중구 중구로44번길 8,부산 중구 신창동4가 8-2,35.1016913185209,129.028557436897,132.4,1.0,False,대원딥스,500,needs_verification
+055e9eaaba36fb607d07a74360b8177b,review,8255280,동굴문구,,"가정,생활 > 문구,사무용품",부산 중구 중구로 42,부산 중구 신창동4가 40-5,35.10153902912989,129.02807227540214,232.4,1.0,False,동굴문구,500,needs_verification
+6192a0231aeb85eccb5c17ccffadcb9b,no_match,,,,,,,,,,,,,,no_candidates
+061c20f35692214a73e19006b2079de4,review,9451542,제일횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.0966954829449,129.031123325908,223.2,0.5,False,제일상회,500,needs_verification
+87b48eb4acc27db696665e79b14333a3,no_match,,,,,,,,,,,,,,no_candidates
+ba7578693db82c7d32d26d3fede6a42d,no_match,,,,,,,,,,,,,,no_candidates
+3c5424bd005c3c687195c2376203ba3b,no_match,,,,,,,,,,,,,,no_candidates
+cf46fdb46ff9e80321c702c52c1b015a,no_match,,,,,,,,,,,,,,no_candidates
+e8e5aa6849ed852fbb4a12c80fe2c67b,review,12529991,이행복스포츠마사지,,"가정,생활 > 미용 > 체형관리",부산 중구 광복로 80,부산 중구 광복동1가 61-2,35.0983748048052,129.033515910804,296.6,0.5,False,이행복,500,needs_verification
+8ae1f124023e66df9940f8129baef5db,no_match,,,,,,,,,,,,,,no_candidates
+344df434a990b5bdaf611d5d768f61fa,review,8993351,미정횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치해안로 45,부산 중구 남포동5가 109,35.09696783780343,129.03014324004522,442.0,0.5,False,미정식당,500,needs_verification
+25cbd7cdfc121082524095f03e794d69,no_match,,,,,,,,,,,,,,no_candidates
+fbafe349327af8ac18dcedaaa721eb4e,no_match,,,,,,,,,,,,,,no_candidates
+c5c63dd2b2b32fe4ddddc75b8ea766ca,review,9952741,이명수내과의원,병원,"의료,건강 > 병원 > 내과",부산 중구 중구로 59,부산 중구 보수동1가 146-29,35.1033203671101,129.027927802569,371.5,0.8333,False,이명수내과,500,needs_verification
+fa3abe63f1153e0217549c5375b67729,no_match,,,,,,,,,,,,,,no_candidates
+1296dda0d88110ee7d283645afc4ecf7,no_match,,,,,,,,,,,,,,no_candidates
+6786dfb85af283279e57de596ac91e69,no_match,,,,,,,,,,,,,,no_candidates
+6132e6fd37bedb1ccb66cf9a3a2e6600,no_match,,,,,,,,,,,,,,no_candidates
+c86af0a648dc5cbe4da75f3cb0c05dc9,no_match,,,,,,,,,,,,,,no_candidates
+a1e13b947df9faa959713e933d2914ad,review,7925394,삼익상사,,"가정,생활 > 생활용품점 > 주방용품",부산 중구 자갈치해안로 69,부산 중구 남포동4가 25-2,35.09722691213402,129.03269792041394,108.4,1.0,False,삼익상사,500,needs_verification
+2f8d99e1c361b47f4b7e4390b66f5145,no_match,,,,,,,,,,,,,,no_candidates
+3932bdcb452e0a4b9598ec88a8666ad8,no_match,,,,,,,,,,,,,,no_candidates
+9da98293a4ec7cfa7769535b3852dc0b,no_match,,,,,,,,,,,,,,no_candidates
+2219fbb9dbf0e0254576f0bdcafeee85,no_match,,,,,,,,,,,,,,no_candidates
+3e7ac801a5d87a66f4dc17e5c81d3587,no_match,,,,,,,,,,,,,,no_candidates
+3f426cf9e1fe1f215afe617cfa248930,no_match,,,,,,,,,,,,,,no_candidates
+505789073fa6bde6abf6d23f2d622561,no_match,,,,,,,,,,,,,,no_candidates
+5b71aaf2b0fa44f3522b69e256d4d2d2,no_match,,,,,,,,,,,,,,no_candidates
+862954b22f01d44e2615916653ad0e89,no_match,,,,,,,,,,,,,,no_candidates
+59ece7c87aaaf08f9d98b2ee1bd0abbc,no_match,,,,,,,,,,,,,,no_candidates
+ece5e49ffdee87a0173f476131ac671a,review,16224943,성원가방,,"가정,생활 > 패션 > 패션잡화점 > 가방",부산 중구 국제시장2길 25,부산 중구 신창동4가 38-1,35.1015937860631,129.028354350191,150.6,1.0,False,성원가방,500,needs_verification
+bc7b83ec951bbde987b6ac9e294bc8c3,no_match,,,,,,,,,,,,,,no_candidates
+135fc8fa17716eecf50f869d4b7297da,no_match,,,,,,,,,,,,,,no_candidates
+4895f033d87972be0e6ff5f7f9a4a8b9,review,8534705,장미한복,,"가정,생활 > 패션 > 의류판매 > 한복",부산 중구 국제시장2길 9,부산 중구 신창동4가 20-3,35.10023920001059,129.02830762522646,234.4,1.0,False,장미한복,500,needs_verification
+d99c2daa156a87d2df964757c9140a98,review,482255857,프롬에이치,,"가정,생활 > 미용 > 미용실",부산 중구 대청로 95-1,부산 중구 대청동2가 17-3,35.1030478429317,129.030425625654,303.3,0.5,False,에이치다,500,ambiguous
+043c350f4017d6f8ce627dd4019709f8,no_match,,,,,,,,,,,,,,no_candidates
+e846b0ca2c51e8ddb947eb9b4acffb02,no_match,,,,,,,,,,,,,,no_candidates
+9ad6b891513592b642fb5b0e55ea407a,review,10201841,김욱성마취통증의학과의원,병원,"의료,건강 > 병원 > 통증클리닉",부산 중구 대청로 70-1,부산 중구 부평동1가 1-2,35.1028428193241,129.027600157787,165.7,0.5882,False,김욱성의원,500,needs_verification
+8b6de3a61f20c981b8d235ab13e8d2c7,no_match,,,,,,,,,,,,,,no_candidates
+97db0dd9aa55f037277b56524a0dda70,no_match,,,,,,,,,,,,,,no_candidates
+16a6738784fbe7be62c6c6d74a34bf62,no_match,,,,,,,,,,,,,,no_candidates
+fba23d5f6d9d107556654617321e4f45,review,10623918,와이드,,"서비스,산업 > 마케팅 > 광고제작",부산 중구 동광길 7,부산 중구 동광동4가 25-1,35.103166097152,129.033906895344,238.9,0.8571,False,와이드뷰,500,needs_verification
+9591d0e673d606d469a1ea42e3ee8041,review,12598396,참편한약국,약국,"의료,건강 > 약국",부산 중구 대청로 126,부산 중구 대청동1가 39-2,35.1025984132426,129.033581363493,287.6,1.0,False,참편한약국,500,needs_verification
+15aab8bf57f649fa115957d38ee55dc3,no_match,,,,,,,,,,,,,,no_candidates
+d9c2a187ff8002e29b20dc2cdf34c474,review,1247856669,신롯데아케이트,,"서비스,산업 > 제조업 > 섬유 > 의류소품",부산 중구 중구로39번길 15,부산 중구 부평동1가 24-5,35.1012494781235,129.02701131622,102.4,0.9231,False,롯데아케이트,500,needs_verification
+1492abad92958145984e25486555e1ff,no_match,,,,,,,,,,,,,,no_candidates
+7c232050fa503c74f43fb02ffd6052d6,no_match,,,,,,,,,,,,,,no_candidates
+7bdfee447c862da307fcb542cb6ffba6,no_match,,,,,,,,,,,,,,no_candidates
+38f5f1a75a9a7ed92a4bbc1388531264,no_match,,,,,,,,,,,,,,no_candidates
+6bcf2d0b8bfa01a70e601d0c8f31ead0,no_match,,,,,,,,,,,,,,no_candidates
+98cd816481f04c5f037c514768e959ef,no_match,,,,,,,,,,,,,,no_candidates
+188a8f9b7235db47c9a361b6315918a1,review,16225504,팔팔상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968440522214,129.02914017072,106.5,1.0,False,팔팔상회,500,ambiguous
+833047921fcc3e67dac1919917f477dc,no_match,,,,,,,,,,,,,,no_candidates
+3a0a7f7650e52012d14fdc2fc195a8ba,no_match,,,,,,,,,,,,,,no_candidates
+d6edcd950280efebf527f51d0e1a29f0,no_match,,,,,,,,,,,,,,no_candidates
+926b69db0e5b180d150983ca539cb8ef,review,11132574,송인제 신경정신과의원,병원,"의료,건강 > 병원 > 정신건강의학과",부산 중구 구덕로 90,부산 중구 남포동6가 63,35.0975706609021,129.026000257654,322.2,0.8889,False,송인제정신과의원,500,needs_verification
+8e7dc99984c84d3c1f39816ea065e99c,review,24448972,아이리스 스킨&바디,,"가정,생활 > 미용 > 피부관리",부산 중구 중구로 59,부산 중구 보수동1가 146-29,35.103293288027984,129.02793042136105,373.1,0.6667,False,아이리스,500,needs_verification
+ae5787be313d4a643da8932a20a7fb7a,no_match,,,,,,,,,,,,,,no_candidates
+cad46a5be1cda21854836a23be8b20a1,no_match,,,,,,,,,,,,,,no_candidates
+00e819cbdf5fc866fdbe52eff6998d60,no_match,,,,,,,,,,,,,,no_candidates
+108a9adabd666a5985a5441ff57fa383,no_match,,,,,,,,,,,,,,no_candidates
+5ef959184cf18c263cc05847daae9913,no_match,,,,,,,,,,,,,,no_candidates
+29866031062fc8c3c9af9e23f5446665,no_match,,,,,,,,,,,,,,no_candidates
+51e6ff5a72465fc722d21d8c68701ce8,no_match,,,,,,,,,,,,,,no_candidates
+31cf72949d38ddcefbd3cc357ae3a276,no_match,,,,,,,,,,,,,,no_candidates
+90b404e8dcf9463d8eae0b2b49327bd5,no_match,,,,,,,,,,,,,,no_candidates
+48544aeb59e60acdac15352540826ed6,no_match,,,,,,,,,,,,,,no_candidates
+1c3129c9a3f16af60058640447bcc23f,no_match,,,,,,,,,,,,,,no_candidates
+823a24334c4ab4bd4fb1efb9bd2a4acd,no_match,,,,,,,,,,,,,,no_candidates
+cfe93300005899d1fa656b988faca89f,no_match,,,,,,,,,,,,,,no_candidates
+4356d39b92f9e1e519d6b14c0eddce4f,review,1816174074,시원설비,,"서비스,산업 > 건설,건축 > 시공업체 > 배관,누수시공",부산 중구 중구로 138,부산 중구 동광동5가 9-10,35.10779650924592,129.0342182726497,390.2,0.2963,False,시원설비,500,needs_verification
+f630951c1e7705c6b0dbad6a1e851030,no_match,,,,,,,,,,,,,,no_candidates
+0a74b77143c89c201d874e2209e8dccc,review,16225839,아모레퍼시픽 서구제일점,,"가정,생활 > 미용 > 화장품",부산 서구 보수대로 71,부산 서구 부민동1가 38-7,35.1020493098339,129.021154648175,395.8,0.4286,False,아모레,500,needs_verification
+221a20e92174573b96f6a42ecdd137d0,no_match,,,,,,,,,,,,,,no_candidates
+2816477aeb7d88adc35807a687803f59,no_match,,,,,,,,,,,,,,no_candidates
+732cf7ddc5b9ec077970fdbf57666e9f,no_match,,,,,,,,,,,,,,no_candidates
+358a5345d42f9b0051da682036744bb7,review,23639719,부영상사,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 69-1,부산 중구 남포동4가 25-1,35.09729252353579,129.03281577812712,302.7,0.75,False,부영상회,500,needs_verification
+ec82c88f515ba826726b14abca50b576,no_match,,,,,,,,,,,,,,no_candidates
+e5114505301d5a51f3d10d87e7f4727f,no_match,,,,,,,,,,,,,,no_candidates
+9f8e235dbe77f650f8faf0d98a8f4854,review,16348661,미도가방,,"가정,생활 > 패션 > 의류판매",부산 중구 국제시장2길 33,부산 중구 신창동4가 44-3,35.10224885239496,129.02835961783754,190.9,1.0,False,미도가방,500,needs_verification
+63ec56f57fc00df13e1f1082b9f3b7f1,no_match,,,,,,,,,,,,,,no_candidates
+5abc2c8c5c2dced314503ef43396b167,review,12073145,매일상회,,"가정,생활 > 식품판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968378733974,129.029078614082,109.2,1.0,False,매일상회,500,needs_verification
+41ad0a5f6c66a03d7bad669d5927b9da,no_match,,,,,,,,,,,,,,no_candidates
+469f1493dbb3305bf85efa5ba6b95d64,no_match,,,,,,,,,,,,,,no_candidates
+4ab49690609ec93f36caf1fcaf71202a,no_match,,,,,,,,,,,,,,no_candidates
+a158487ae505adc139913c10b2b228dc,no_match,,,,,,,,,,,,,,no_candidates
+d8b40c8778bebfa5d548d3bbc8a2ff87,no_match,,,,,,,,,,,,,,no_candidates
+1711bf7ff043055ae1c8f7115d947e89,review,310129287,신동아상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0967973172653,129.029024977353,115.2,1.0,False,신동아상회,500,needs_verification
+c655ca8e1ff33dce52aa885e86fbe8ac,no_match,,,,,,,,,,,,,,no_candidates
+4e3aa38b096009bf2cd0066c4d3a4609,no_match,,,,,,,,,,,,,,no_candidates
+0319cf71044eb35158e3ee1b833c1c52,no_match,,,,,,,,,,,,,,no_candidates
+f8a18e095d68a7ec9438c1fbdddb5ce1,no_match,,,,,,,,,,,,,,no_candidates
+525f78607417a1d94789493b83e91f21,no_match,,,,,,,,,,,,,,no_candidates
+0c88015b97c5b85b990ca3e5d2f242bb,no_match,,,,,,,,,,,,,,no_candidates
+01cc22b663c5ac9530119e98b5e5a3a3,review,7884288,미성상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968270637713,129.029078346163,110.3,1.0,False,미성상회,500,needs_verification
+21b1534549080a32a3166b5b90992cf7,review,374858564,양산상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 구덕로 17,부산 중구 남포동2가 43-7,35.097413043725794,129.03368938993114,197.1,1.0,False,양산상회,500,needs_verification
+d46842c4466b70240d931e703f421a19,review,9640286,해광상회,,"서비스,산업 > 어업",부산 중구 용미길7번길 2,부산 중구 남포동1가 41-8,35.09707925547414,129.0348916261992,307.6,1.0,False,해광상회,500,needs_verification
+fc5d5b3e59c3abc8232b11319ed19d8e,no_match,,,,,,,,,,,,,,no_candidates
+f76800c3f231fb660e3879477632bb95,no_match,,,,,,,,,,,,,,no_candidates
+d7c01c4328c808b82fb5fb409204c87c,no_match,,,,,,,,,,,,,,no_candidates
+056b81b079d1e532429e723c48c6163a,review,10821998,A플러스도산단과학원,학원,"교육,학문 > 학원",부산 중구 중구로 68-1,부산 중구 대청동4가 82-6,35.10351943705804,129.02879464739024,295.8,1.0,False,A플러스 도산단과학원,500,needs_verification
+07f855ab2f60d31367ac62a4bd67a223,no_match,,,,,,,,,,,,,,no_candidates
+edf0cce8fd480d80a960f216205ab52f,no_match,,,,,,,,,,,,,,no_candidates
+294d8c446e8c0594ab0bc0503daf8d66,no_match,,,,,,,,,,,,,,no_candidates
+543d70fa1d9431cdfb0d8fead06c074d,no_match,,,,,,,,,,,,,,no_candidates
+3b784006c54ddb18667c856e812c1947,no_match,,,,,,,,,,,,,,no_candidates
+385eedccb951447f44ee5aa785ce23ff,no_match,,,,,,,,,,,,,,no_candidates
+f49a54cb428a8b97550114b7525277d4,no_match,,,,,,,,,,,,,,no_candidates
+bfa7c9abfab524d84e60ef53dd0f7cc3,review,1427233619,보디가드,,"가정,생활 > 패션 > 의류판매 > 속옷,언더웨어",부산 서구 충무시장길 19-1,부산 서구 충무동1가 27-3,35.0955085108883,129.023642244218,362.4,1.0,False,보디가드,500,needs_verification
+c815f9c374ba5eaeadf475fb78982ff5,no_match,,,,,,,,,,,,,,no_candidates
+86fa9374d48a9db7ea5e52a2ea9c60c2,review,16238787,동원주방기물,,"가정,생활 > 생활용품점 > 주방용품",부산 중구 흑교로 34,부산 중구 부평동2가 77,35.1024837349356,129.025792892218,322.6,1.0,False,동원주방기물,500,needs_verification
+9a278268ca5fe7f01f335c4291bfefe7,review,8074926,지창준내과의원,병원,"의료,건강 > 병원 > 내과",부산 중구 대청로 124,부산 중구 대청동1가 39-5,35.1025967228571,129.033467278515,370.3,0.8333,False,지창준내과,500,needs_verification
+756d6fc7228e0bfe2d216552e44ed8d1,no_match,,,,,,,,,,,,,,no_candidates
+4931d80a72f116d73fc42c97d8d1555c,no_match,,,,,,,,,,,,,,no_candidates
+9cd99f29eccdf7260734eb876def6c30,no_match,,,,,,,,,,,,,,no_candidates
+259d3fd3b1abde303b8f78a1dbf81cba,review,13010500,대흥상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 용미길8번길 4,부산 중구 남포동1가 60-4,35.0972572139379,129.034597802947,273.0,1.0,False,대흥상회,500,needs_verification
+677df74056f4cc235fd6ba6876a7f57f,review,577588783,빈,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로 28,부산 중구 신창동4가 21-3,35.10020940852456,129.02804152523504,229.5,1.0,False,빈,500,needs_verification
+f047aff2d9c9254584a0297b5e6d092b,no_match,,,,,,,,,,,,,,no_candidates
+f9bc0dabdbd5e0b9e4fabbc0e7ad019a,review,17418836,우리팜약국,약국,"의료,건강 > 약국",부산 중구 구덕로 4,부산 중구 광복동1가 40-2,35.0983007346308,129.035136904606,417.8,1.0,False,우리팜약국,500,needs_verification
+95cc7bfe3168a20e3e5d585f68b0be12,review,26898008,미사람헤어존,,"가정,생활 > 미용 > 미용실",부산 중구 광복로39번길 13,부산 중구 신창동2가 25-4,35.1004251265003,129.029259642069,252.2,0.5,False,미사람미용실,500,needs_verification
+ef5e1c865d76030b5b92223f57944de8,no_match,,,,,,,,,,,,,,no_candidates
+5ddab5e8452f7bb80eb7df7b06d1389b,no_match,,,,,,,,,,,,,,no_candidates
+2776a15b46336b27e6d95f3b6d9e0f7f,review,16348664,근실상회,음식점,음식점 > 한식,부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.09658024287854,129.03047134646914,139.7,1.0,False,근실상회,500,needs_verification
+4a37d5ff595d59acac4f10b8c7107d70,review,9195510,신동아23호,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.09680871908566,129.02915135634996,109.9,1.0,False,신동아23호,500,needs_verification
+7f48a328bec55452692688f52ad4450a,no_match,,,,,,,,,,,,,,no_candidates
+1900ba9c1268b7cb72bc73429d16d9f4,no_match,,,,,,,,,,,,,,no_candidates
+45c5111d3aef728c0a8cd1f56c454b72,no_match,,,,,,,,,,,,,,no_candidates
+6616762d6cadebb1296c8819b6c5bc98,no_match,,,,,,,,,,,,,,no_candidates
+9d45ad6c9a57af900f2230ff53e04f3e,review,16490751,안나비니,,"가정,생활 > 패션 > 의류판매",부산 중구 광복중앙로 31,부산 중구 신창동1가 2-1,35.102209773149,129.030746963275,132.0,1.0,False,안나비니,500,needs_verification
+5fd46210016a164ae481f55fc1cfef03,review,8345090,블랙잉카,음식점,"음식점 > 술집 > 호프,요리주점",부산 중구 남포길 12-2,부산 중구 남포동5가 6-3,35.0986946546179,129.03013343133,118.7,1.0,False,블랙잉카,500,needs_verification
+16bb588ffc2b8be4fcc607acad6a9e2a,no_match,,,,,,,,,,,,,,no_candidates
+50ed8aaafcfdd9541078a0c272588dff,no_match,,,,,,,,,,,,,,no_candidates
+00a7330353b2bfb438abea1bfe3efe4f,no_match,,,,,,,,,,,,,,no_candidates
+054f286783e4fe7e043364b5b43abf8a,no_match,,,,,,,,,,,,,,no_candidates
+4e822bf3782927191dbe23e7bf617e10,no_match,,,,,,,,,,,,,,no_candidates
+7d630b8d84b99ff7843929a83f3e121e,no_match,,,,,,,,,,,,,,no_candidates
+201cb2915d704d3117b1b17831a00f19,no_match,,,,,,,,,,,,,,no_candidates
+0de19bbee76fd2a8e8ddb68fac9314a2,review,9839021,세명약국,약국,"의료,건강 > 약국",부산 중구 광복로 33,부산 중구 창선동2가 21-6,35.0994739402773,129.028801837618,150.8,1.0,False,세명약국,500,needs_verification
+6f78c83b3785aa2b27dc560a5978b821,review,473472156,휠라 광복메가샵,,"가정,생활 > 패션 > 의류판매 > 스포츠의류",부산 중구 광복로 76-2,부산 중구 광복동2가 31-2,35.0983916459231,129.033156673626,265.3,0.6667,False,휠라,500,needs_verification
+e117a766a30a151073ca1c0c0cdcebbf,review,16266999,C스타,,"가정,생활 > 문구,사무용품 > 디자인문구",부산 중구 광복로39번길 38,부산 중구 신창동2가 1-1,35.1026236691597,129.029279058328,166.1,0.6667,False,씨스타,500,needs_verification
+983e73dfafe898acd1e710cb3f1e3fa1,no_match,,,,,,,,,,,,,,no_candidates
+92b9f4f30ee6683f5bb1fce377d3fa6b,no_match,,,,,,,,,,,,,,no_candidates
+9af9ad396c9f9789eb333c753826fede,no_match,,,,,,,,,,,,,,no_candidates
+f5746b5afc8e8c9bda15ac71a0f259a2,no_match,,,,,,,,,,,,,,no_candidates
+4a801916e7f5c36f1e57bacbda5c2302,no_match,,,,,,,,,,,,,,no_candidates
+87930b1a807c7d13154103d22718dda1,review,23440429,일진상사,,"서비스,산업 > 제조업 > 산업용품",부산 중구 중구로 32,부산 중구 신창동4가 27-3,35.100520389094,129.028090898577,490.0,0.6667,False,일진,500,needs_verification
+d2b08a38bb6bc6ffd70711d2b6741a24,review,9515925,포항상회,,"서비스,산업 > 어업",부산 중구 용미길10번길 4-1,부산 중구 남포동1가 63-8,35.0970717612375,129.03447915864984,456.0,1.0,False,포항상회,500,needs_verification
+d9c18f733a98db7120e29532051807b7,review,91619565,협립양산,,"가정,생활 > 패션 > 패션잡화점",부산 중구 국제시장2길 19,부산 중구 신창동4가 34-1,35.10097795131104,129.02837417907213,17.0,0.6667,True,협립양산,500,needs_verification
+688bf88f21dd02aabb3a54efd095ea7f,review,13131362,700비어 남포점,음식점,"음식점 > 술집 > 호프,요리주점 > 700비어",부산 중구 남포길 45,부산 중구 남포동2가 3-2,35.0981283160939,129.033597508418,190.0,0.3077,False,칠공공 비어,500,needs_verification
+9f6b11451aaebb588bd5c28b5d70709a,review,2083208968,밀양상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0967811412096,129.029076111474,472.4,1.0,False,밀양상회,500,ambiguous
+bd2e464c4fd580a220c76183c5e165ff,no_match,,,,,,,,,,,,,,no_candidates
+3b35b292f5df19806ca6291d89ab96d2,review,8096907,지코바 동광점,음식점,음식점 > 치킨 > 지코바,부산 중구 중구로 148,부산 중구 동광동5가 3-175,35.108306801431,129.035170781179,491.7,0.4615,False,지코바숯불치킨,500,needs_verification
+08762db41acb59d743243a59c44fea22,no_match,,,,,,,,,,,,,,no_candidates
+db7dd914e29bdf0748ccf0b9b7d7ba8f,no_match,,,,,,,,,,,,,,no_candidates
+e33d579fcef1438e4997ce6d8dd96f44,review,1620413179,합천상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968480224312,129.029118339305,135.8,1.0,False,합천상회,500,ambiguous
+a70ee1d92adf1bab4cff2b4390ded307,accepted,10525451,신경북상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.096705465228524,129.03111918761422,49.8,1.0,True,신경북상회,500,identity_rule
+034bf3d3d6ec39381a450bd2303cbddd,no_match,,,,,,,,,,,,,,no_candidates
+adb7b09af9a3d88ae17a09992029ce80,no_match,,,,,,,,,,,,,,no_candidates
+28c588b82d80b8d1c8e6a027ffedfecb,no_match,,,,,,,,,,,,,,no_candidates
+cf3975db2219448e1db38cf9dc98129b,no_match,,,,,,,,,,,,,,no_candidates
+362bdffc2845ade0f0a3a7ceb025abfa,no_match,,,,,,,,,,,,,,no_candidates
+f37b1cac6cdc796cf027f49036830f4b,no_match,,,,,,,,,,,,,,no_candidates
+8647b6adf6373f98ab2245bb4082c725,no_match,,,,,,,,,,,,,,no_candidates
+cd19a3f47bd0de95205805d3dadf86c9,no_match,,,,,,,,,,,,,,no_candidates
+c028711536528c8f9e4c257e1a4798e0,no_match,,,,,,,,,,,,,,no_candidates
+4a38dd518178ffe023c5877d7a9a09ca,no_match,,,,,,,,,,,,,,no_candidates
+6d2d5ed60537990c8d24c0440bd374c4,no_match,,,,,,,,,,,,,,no_candidates
+c94c57b4908b6c05f8b6d2f326785ef6,no_match,,,,,,,,,,,,,,no_candidates
+e3e31b357a60311aa108cd5411d9ba83,no_match,,,,,,,,,,,,,,no_candidates
+25d1d977d5208c286a9128d7bbe26a5f,no_match,,,,,,,,,,,,,,no_candidates
+97a6df0435e605ad3ba0148089d275eb,no_match,,,,,,,,,,,,,,no_candidates
+a546eea7a8df3b591900193a11fd1cd7,review,9425226,중구종합사회복지관,,"사회,공공기관 > 단체,협회 > 사회복지시설",부산 중구 망양로 309,부산 중구 대청동4가 75-7,35.1058061469978,129.02823065133,2.6,0.6429,True,로사리오카리타스중구종합사회복지관,500,needs_verification
+0b05d64c246a98a0f33ab8917336919c,no_match,,,,,,,,,,,,,,no_candidates
+92f14321b8bb0d2747d4b29af4ba98e4,no_match,,,,,,,,,,,,,,no_candidates
+8d051f4bdbf97dffab3edbe586830116,no_match,,,,,,,,,,,,,,no_candidates
+ac4d1323c2cb3ab48ac13ce100bab1b8,review,1065721015,지스타모바일,,"가정,생활 > 전자제품 > 전자제품판매",부산 중구 비프광장로 11,부산 중구 부평동1가 49-4,35.0985434026298,129.026409208458,118.4,0.6667,False,지스타,500,needs_verification
+3a45b6b0e4f9598a50d8937b34d4df77,no_match,,,,,,,,,,,,,,no_candidates
+1c1fb7b5d382c4a44e213ee2a47aaf2f,no_match,,,,,,,,,,,,,,no_candidates
+ae539f9d69fb7bbd7ac6417ae7aaa97e,no_match,,,,,,,,,,,,,,no_candidates
+e11f5d063fdf77a0eb090046601caadd,review,16213903,고향김치전골,음식점,"음식점 > 한식 > 찌개,전골",부산 중구 중구로29번길 26,부산 중구 부평동1가 29-13,35.10052112943515,129.02653821528008,192.0,1.0,False,고향김치전골,500,needs_verification
+8ac74ed6bb7eb79c25f36d336d96b37e,no_match,,,,,,,,,,,,,,no_candidates
+37821f671e4e3619908afbce86edf57a,no_match,,,,,,,,,,,,,,no_candidates
+73fa042def045d33b511eb19815b811f,review,16397365,삼한꼼장어구이조개구이,음식점,"음식점 > 한식 > 해물,생선 > 장어",부산 중구 자갈치해안로 49,부산 중구 남포동5가 113-4,35.0969948318713,129.030468471299,119.1,0.2667,False,삼한수산,500,needs_verification
+930d26cddf60c61957113976dc233e73,no_match,,,,,,,,,,,,,,no_candidates
+322feb344dfa2d9250fa94439b647b1b,review,11414027,밀성횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.09657259139041,129.03028256092594,152.8,1.0,False,밀성횟집,500,needs_verification
+01c3695b2ba698e9360f669c7621064b,no_match,,,,,,,,,,,,,,no_candidates
+f07672af1cd8e728a8a710fe4c1d335f,no_match,,,,,,,,,,,,,,no_candidates
+4ae8dd497d52b6dcfa548a1b04a116a0,review,16720556,유성상회,,"가정,생활 > 식품판매",부산 중구 태종로 10,부산 중구 남포동1가 33-14,35.09701222896204,129.0357704430634,110.8,1.0,False,유성상회,500,needs_verification
+8c029d436f3e14c5367f4fc037bf5046,review,12011580,하카다라멘,음식점,음식점 > 일식 > 일본식라면,부산 중구 남포길 4,부산 중구 남포동3가 15-2,35.0988292729722,129.029198150898,220.9,1.0,False,하카다라멘,500,needs_verification
+9b65673e06d9ed67bedc49de19a2f932,no_match,,,,,,,,,,,,,,no_candidates
+c6e14590adfaed49bb3d1bcd2093317b,review,10464067,부산우리농영농조합법인 본점,,"서비스,산업 > 식품",부산 중구 중구로 71,부산 중구 대청동4가 81-1,35.10409600655634,129.0288593826047,253.3,0.9167,False,부산우리농 영농조합법인,500,needs_verification
+3d7622974a090172a43198e370fe974f,no_match,,,,,,,,,,,,,,no_candidates
+28fd21ff30261a6dff17c75a63d35d5d,review,2131041028,명성식당,음식점,음식점 > 한식,부산 중구 광복로12번길 10-2,부산 중구 부평동2가 36-5,35.09859523172353,129.0261659685743,210.1,1.0,False,명성식당,500,needs_verification
+6633a8ace1adc657eb6e8020b1c1e986,no_match,,,,,,,,,,,,,,no_candidates
+5f4c1728762e1f40382dce464cf6b02f,no_match,,,,,,,,,,,,,,no_candidates
+342b31e5d4a9e8909311e0e9959dd48b,no_match,,,,,,,,,,,,,,no_candidates
+c57d6ffa98acf2f3021bb27e98cd93fb,no_match,,,,,,,,,,,,,,no_candidates
+dbdd7f38ebe07816eeffefcaab7d096d,no_match,,,,,,,,,,,,,,no_candidates
+e4d346cce8710dc41511c9e331b3a65e,review,1122726803,바이올렛,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로53번길 3-2,부산 중구 부평동1가 11-6,35.1025487499412,129.027509533799,276.2,1.0,False,바이올렛,500,needs_verification
+19c3de751c74bc6411bdff512ebb06dd,no_match,,,,,,,,,,,,,,no_candidates
+a4bf0b412c1e7a4b954a36fc76fee887,review,9031113,부산초재,,"서비스,산업 > 농업",부산 중구 자갈치해안로 75-2,부산 중구 남포동4가 19-7,35.0972931097455,129.033532901104,181.9,1.0,False,부산초재,500,needs_verification
+f3461e6cbfc130c0513949316a58c305,review,16979384,대성밀냉면전문,음식점,음식점 > 한식 > 냉면,부산 중구 보수대로44번길 6,부산 중구 부평동3가 59-21,35.10085617294052,129.02385339399265,110.0,0.3636,False,대성분식,500,needs_verification
+ee52727053e4d5b89d2bf6a37055cb5a,review,23639241,영남상회,,"가정,생활 > 패션 > 의류판매",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.0970315195971,129.027846568843,170.2,1.0,False,영남상회,500,ambiguous
+3995a826a4fc9a900a7e15092dd1fca9,review,22300242,수수오리강,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로 43,부산 중구 부평동1가 13-12,35.1018312983965,129.02773190816032,498.0,0.4,False,오리강,500,needs_verification
+a57ba58859b68c92b9573608aa471d5f,review,17228631,수림천막기업사,,"서비스,산업 > 전문대행 > 천막대여",부산 중구 자갈치로 78-1,부산 중구 남포동4가 24-1,35.097464741775,129.032756457642,110.1,1.0,False,수림천막기업사,500,needs_verification
+833d67e4fbf15a7f68509f7d1ab574cc,no_match,,,,,,,,,,,,,,no_candidates
+64ed2513845c36bf5f19a3bcb3ea1262,no_match,,,,,,,,,,,,,,no_candidates
+45b0a15639b4ca5375afda9c3f571d21,no_match,,,,,,,,,,,,,,no_candidates
+6992ad8ed218f3f51fd54b9d4f2d13c4,review,20556514,평흥상회,,"가정,생활 > 생활용품점",부산 중구 중구로 28,부산 중구 신창동4가 65-3,35.1003485355882,129.028020848368,224.4,1.0,False,평흥상회,500,needs_verification
+8fcf9ca084e14dd6f777d64af5948145,no_match,,,,,,,,,,,,,,no_candidates
+e57d6889ad66ab098d3d3feedf7a2e72,no_match,,,,,,,,,,,,,,no_candidates
+e7b514c3a1ff011f98cab98c6a494c84,review,16322019,동주각,음식점,음식점 > 중식 > 중국요리,부산 중구 망양로 405-1,부산 중구 영주동 106-9,35.111618516247106,129.02894280569018,419.5,1.0,False,동주각,500,needs_verification
+b1ea0f4b677c5adcc193b99fea5fc438,review,10065846,앙코르비스,,"가정,생활 > 패션 > 의류판매",부산 중구 대청로 88,부산 중구 대청동3가 13-4,35.10276162447074,129.02943599850573,397.2,1.0,False,앙코르비스,500,needs_verification
+2587e442aa4ded53bf8f5143479af2d9,no_match,,,,,,,,,,,,,,no_candidates
+2aca9d077f0175ec34961a423e17f447,no_match,,,,,,,,,,,,,,no_candidates
+e7a78989343fe8508f78090100c248cd,no_match,,,,,,,,,,,,,,no_candidates
+46ccfd2c67ee5fbc436c56f82b6c0ece,review,25978064,춘삼이,,"가정,생활 > 패션 > 의류판매",부산 중구 광복로49번길 31,부산 중구 신창동1가 32-1,35.101926949075484,129.0302004393417,100.5,1.0,False,춘삼이,500,needs_verification
+80d667dacb7bc300a72a49fb8ed44f64,no_match,,,,,,,,,,,,,,no_candidates
+82be316d1026f75c178e70475310e8bb,no_match,,,,,,,,,,,,,,no_candidates
+c918afa35b1820d09137aef24eab511f,no_match,,,,,,,,,,,,,,no_candidates
+3d9a9ec7c1dcac9d3752f5271ac25b1b,no_match,,,,,,,,,,,,,,no_candidates
+53e2c0afc01c1194e8d0aa3ab98daabb,no_match,,,,,,,,,,,,,,no_candidates
+eaae32e7e8025103653ebe3a4a3273b6,review,1938960141,다미헤어,,"가정,생활 > 미용 > 미용실",부산 서구 구덕로186번길 29,부산 서구 토성동2가 5,35.1012510431431,129.021468288636,429.8,0.6667,False,다미,500,needs_verification
+a9ffa2899d15966969873a583107b8d0,review,20126266,윤순영패션 남포점,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 65,부산 중구 남포동5가 44,35.09763747997658,129.02873987683887,179.3,1.0,False,윤순영패션남포점,500,needs_verification
+cd9ddd47388d09998675cd910d2a16ec,no_match,,,,,,,,,,,,,,no_candidates
+71dfbb3b9514cde308ab6f9bfdd979e7,no_match,,,,,,,,,,,,,,no_candidates
+5a9e4318528429da0a7de43cc9388efe,no_match,,,,,,,,,,,,,,no_candidates
+98ab498da15fcea61892af0361a5781e,review,399554428,대진상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.0966144386765,129.030581843351,486.9,1.0,False,대진상회,500,needs_verification
+7c85ab52c0e595ba11f20dbe2836dcbc,review,577407729,금모래,,"가정,생활 > 패션 > 보석,귀금속",부산 중구 대청로 60,부산 중구 부평동2가 2,35.1028095061791,129.026359110189,363.3,1.0,False,금모래,500,needs_verification
+0ff79218ca5297f8a3315335667b8b18,no_match,,,,,,,,,,,,,,no_candidates
+a3456c7c02d495a2e1ceb54ef9187257,no_match,,,,,,,,,,,,,,no_candidates
+b96955de787332e5b5a2bf122ce78b18,review,619224465,붐살롱,,"가정,생활 > 미용 > 메이크업",부산 중구 보수대로 34,부산 중구 부평동3가 55-3,35.09984377211122,129.02479331140552,309.1,0.25,False,붐,500,ambiguous
+c20158c1d18b5fd58b46babaa5c3539f,review,17187582,옹헤야,음식점,"음식점 > 한식 > 육류,고기 > 불고기,두루치기",부산 중구 구덕로34번길 4,부산 중구 남포동2가 25-10,35.09837806046837,129.03240851591534,100.9,1.0,False,옹헤야,500,ambiguous
+89e2265e2beadebe6fc80af6402ea221,no_match,,,,,,,,,,,,,,no_candidates
+6920fb0fa7fa6bc3c801c46a00ef8d5f,review,15773713,블루미스티,,"가정,생활 > 패션 > 의류판매",부산 중구 자갈치로 45,부산 중구 남포동5가 83-2,35.0972905564567,129.029168781834,219.3,1.0,False,블루미스티,500,needs_verification
+124b032b541ea5d45d52cf2d476ea160,no_match,,,,,,,,,,,,,,no_candidates
+bab3e88062a1cbf552bf0d7cc9636ab3,no_match,,,,,,,,,,,,,,no_candidates
+8fbdebfdf830272a02bb4b7342fde15a,review,23639719,부영상사,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 69-1,부산 중구 남포동4가 25-1,35.09729252353579,129.03281577812712,117.3,0.75,False,부영상회,500,needs_verification
+935dc1eaee7d2d6faf2a2b07a7534fce,review,26424808,아이젠트리 부산광복점,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",부산 중구 광복로 64,부산 중구 광복동2가 42,35.09894366801677,129.03183701780117,131.9,0.5882,False,아이젠트리안경,500,needs_verification
+7db571b277985787ef8f3c50c6d4ecb8,review,12224426,신창모사,,"가정,생활 > 생활용품점",부산 중구 국제시장2길 28,부산 중구 신창동4가 7-2,35.1018352982228,129.02851604632446,147.2,1.0,False,신창모사,500,needs_verification
+45ccd70b0137c16c69e0e3834135c118,no_match,,,,,,,,,,,,,,no_candidates
+647b09266bc0a1fa34c1b0db6b27f224,no_match,,,,,,,,,,,,,,no_candidates
+7df3fa23082e11e1105550a487fff887,review,1010901052,장수왕족발,음식점,"음식점 > 한식 > 육류,고기 > 족발,보쌈",부산 중구 중구로33번길 32,부산 중구 부평동2가 18-2,35.10110288210832,129.02618527443298,174.0,1.0,False,장수왕족발,500,needs_verification
+1c3114a52b545fe77492f43893345022,no_match,,,,,,,,,,,,,,no_candidates
+0a3bcb6c831a2e1ed145b818dbda16d8,review,10505609,생화당꽃집,,"가정,생활 > 꽃집,꽃배달",부산 서구 구덕로124번길 54-5,부산 서구 토성동1가 23-5,35.09919205034827,129.02302275308412,483.0,1.0,False,생화당꽃집,500,needs_verification
+b5db243b63ab80c8d15eb1852512fb92,no_match,,,,,,,,,,,,,,no_candidates
+d522165f81fe0fb4e2258f6b94e55083,review,14589586,태양상회,,"가정,생활 > 미용 > 미용용품",부산 중구 중구로 52,부산 중구 신창동4가 50-4,35.1024211874477,129.028023953115,431.2,0.8,False,부산태양상회,500,needs_verification
+565e6d3182b250cd1ba8695e97635c00,no_match,,,,,,,,,,,,,,no_candidates
+a58a923803b8be55b9cf77bd77e39007,no_match,,,,,,,,,,,,,,no_candidates
+2229b72f26437c89d099fe1ec18dbf08,no_match,,,,,,,,,,,,,,no_candidates
+8b2eabbf24f19e67e46f69fefcb70f71,no_match,,,,,,,,,,,,,,no_candidates
+8e36ae99c217bc5b8a9edc507a8001c7,review,118164969,태리로제떡볶이&닭강정,음식점,음식점 > 분식 > 떡볶이,부산 중구 남포길 25,부산 중구 남포동2가 14-6,35.098737842752,129.031643308352,356.9,0.2353,False,로제,500,needs_verification
+d266721174a81818a317d52516dd906f,no_match,,,,,,,,,,,,,,no_candidates
+bef6d4b7b32b89ac85bdf77322651606,review,545100333,뉴리틀인디아,음식점,음식점 > 아시아음식 > 인도음식,부산 중구 비프광장로 33-1,부산 중구 남포동3가 3-1,35.09896414486064,129.02889337222453,144.3,0.4615,False,뉴리틀인디아,500,needs_verification
+aa2c6cbb3bd5e7b8cbf131cebb361bc0,no_match,,,,,,,,,,,,,,no_candidates
+98de36e6d0f563a8f6b101c369ffa11f,review,653550041,코리아나화장품 부평뷰티센터,,"가정,생활 > 미용 > 화장품",부산 중구 흑교로25번길 11-1,부산 중구 부평동3가 65-1,35.1018195211262,129.023907917021,457.5,0.4706,False,코리아나,500,needs_verification
+d88472fbc37626c8638657b115fa7c2b,no_match,,,,,,,,,,,,,,no_candidates
+9ad1a15f58ee1d96f02e1de409188ce0,no_match,,,,,,,,,,,,,,no_candidates
+304dc44794e732a7f11bb9424706c81f,no_match,,,,,,,,,,,,,,no_candidates
+e5258d416ec82e69f1d86015993db7ea,no_match,,,,,,,,,,,,,,no_candidates
+d34b4c4516e4c0b62d24420febb11667,review,11419410,파워태닝 양귀비,,"가정,생활 > 미용",부산 중구 광복로49번길 35,부산 중구 신창동1가 38-1,35.102370877581,129.030167587915,146.5,0.6,False,양귀비,500,needs_verification
+ba6e6ecebe94ddaa67cdc45d18a6f67b,no_match,,,,,,,,,,,,,,no_candidates
+0bc50c9e0f22d2297cd83e0a0ee806b7,no_match,,,,,,,,,,,,,,no_candidates
+1426a63eac890d648e5debfe94174fd6,no_match,,,,,,,,,,,,,,no_candidates
+1ff7b1e8b4a968003d0312ad817a85d4,no_match,,,,,,,,,,,,,,no_candidates
+2c1f4e5f528dcb097974364a6099f6a4,review,19736231,올리비아로렌 자갈치점,,"가정,생활 > 패션 > 의류판매 > 여성의류 > 올리비아로렌",부산 중구 구덕로 67,부산 중구 남포동5가 43,35.0976037943738,129.028544961335,197.1,1.0,False,올리비아로렌자갈치점,500,needs_verification
+ed1d492d908a4b17792ede2af5a717ef,review,9923791,장신구,,"가정,생활 > 패션 > 보석,귀금속",부산 중구 광복중앙로 31,부산 중구 신창동1가 2-1,35.102153001806954,129.03058545672212,350.9,1.0,False,장신구,500,needs_verification
+845fda2298bccd5ff4c8d8792fbb679a,review,20156954,거제도집,음식점,"음식점 > 한식 > 해물,생선",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.09689285556136,129.0275163794973,204.6,1.0,False,거제도집,500,needs_verification
+9c8e38666dacaf674de8b0b59ae83144,review,23639241,영남상회,,"가정,생활 > 패션 > 의류판매",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.0970315195971,129.027846568843,172.2,1.0,False,영남상회,500,ambiguous
+dcabf9db298348c4c9fe3f3fd449333d,no_match,,,,,,,,,,,,,,no_candidates
+f12ad314a6b216a0c4b97d7aba9d7684,no_match,,,,,,,,,,,,,,no_candidates
+a5a50257f6de73885fc31c57e50ee47e,review,18769209,디자인예원,,"서비스,산업 > 디자인 > 광고디자인",부산 중구 대청로 115-5,부산 중구 대청동1가 33-1,35.1032664062063,129.032439975964,277.3,1.0,False,디자인예원,500,needs_verification
+df7400372f829ed82f52618557e756ad,no_match,,,,,,,,,,,,,,no_candidates
+878c292a504dba34f3ff778c4c07663e,review,8040628,유림빌딩,,부동산 > 빌딩,부산 중구 보수대로 58,부산 중구 부평동4가 31-1,35.1014531372148,129.022534744314,378.9,0.6667,False,유림,500,needs_verification
+9d6223046e447bf35f8308cd18e385bb,review,1020833144,핑크,,"가정,생활 > 패션 > 의류판매",부산 중구 광복로35번길 3,부산 중구 창선동2가 21-1,35.0995653633623,129.028831516665,177.2,0.5,False,핑크,500,ambiguous
+ea03be8f5ac6d094f76ae4ce34f2956f,review,18761898,쥬리아,,"가정,생활 > 패션 > 패션잡화점",부산 중구 남포길 7-1,부산 중구 남포동3가 7-1,35.09900790181441,129.02967079285517,221.9,1.0,False,쥬리아,500,needs_verification
+5b2042ece3a49c583a922561b65568b1,review,27172152,푸마 부산스포츠광복점,,"가정,생활 > 패션 > 의류판매 > 푸마",부산 중구 광복로 74,부산 중구 광복동2가 33-1,35.0985081989683,129.032870089134,236.3,0.5455,False,유니스포츠퓨마스포츠광복,500,needs_verification
+95bdf4d2804bf8b68aa83dfee8ee98af,review,10233951,대우낚시,,"스포츠,레저 > 스포츠용품 > 낚시용품",부산 중구 자갈치로 70,부산 중구 남포동4가 32-1,35.0973798049409,129.031802588835,190.2,1.0,False,대우낚시,500,needs_verification
+4abc991bb14ee5b01ef4e1281aff7e08,no_match,,,,,,,,,,,,,,no_candidates
+3d4de08354d11202feebfdb564053d8c,review,15543038,케이스집,,"가정,생활 > 생활용품점",부산 중구 구덕로 73,부산 중구 남포동6가 1,35.0973369033692,129.027691851669,399.4,1.0,False,케이스집,500,needs_verification
+333a8adf6725e685ca9add1256c43950,review,21089330,K2 남포점,,"스포츠,레저 > 스포츠용품 > 아웃도어용품",부산 중구 구덕로 83,부산 중구 남포동6가 55-2,35.0971331043229,129.026945573053,351.6,0.7143,False,정우통상,500,needs_verification
+ebfafb8e5b7ca616898faa48073573c7,review,27402620,대영상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.0967171021702,129.031123862282,50.5,0.6667,True,대영상회,500,needs_verification
+6f912b99813f1a1cd8869226991ae489,review,9923791,장신구,,"가정,생활 > 패션 > 보석,귀금속",부산 중구 광복중앙로 31,부산 중구 신창동1가 2-1,35.102153001806954,129.03058545672212,129.3,1.0,False,장신구,500,needs_verification
+2ad6f64d967fa28c75c69207556a9520,review,19401443,울릉도오징어회포차,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 보수대로24번길 8,부산 중구 부평동2가 37-10,35.0988892055369,129.025831130873,161.7,0.9412,False,울릉도 오징어 포차,500,needs_verification
+319c74fde0a13f40e3b23c7a5fc4efa3,no_match,,,,,,,,,,,,,,no_candidates
+a23e7d48a9defcdb226b455311805076,no_match,,,,,,,,,,,,,,no_candidates
+33a4f7abbb15ae6e8d89a8a491172985,no_match,,,,,,,,,,,,,,no_candidates
+14db83415e4d966d6f17992df2953e8c,review,16214638,우리글방,카페,음식점 > 카페 > 테마카페 > 북카페,부산 중구 대청로 63,부산 중구 보수동1가 133-2,35.103289531770976,129.0269159938007,231.0,1.0,False,우리글방,500,needs_verification
+58a2961d6f0c0050f99570677768e1c7,no_match,,,,,,,,,,,,,,no_candidates
+c3a6da1d0b76af8f64bc6662b3a0a853,review,21158565,싸다상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 52,부산 중구 남포동4가 37-1,35.09661438358719,129.03058513144705,39.9,0.6667,False,싸다상회,500,needs_verification
+e09cb483f3ff795e4d551f6e1f5cbf2d,no_match,,,,,,,,,,,,,,no_candidates
+d2bea31499ee4ed21a931fe119f9582b,review,7838562,동아서적,,"문화,예술 > 도서 > 서점",부산 중구 대청로 59,부산 중구 보수동1가 125-1,35.1032428737132,129.026526649956,265.2,1.0,False,동아서적,500,needs_verification
+2f8a14b70708bade3ef3610b1e1a2e50,review,22842866,와라아카데미협동조합,,"여행 > 체험여행 > 정보화,체험마을",부산 중구 대청로 69-14,부산 중구 보수동1가 145-15,35.1036202319849,129.027672052692,176.1,1.0,False,와라아카데미협동조합,500,needs_verification
+691d6c4ca2a928da84203fe0e0f1ef64,no_match,,,,,,,,,,,,,,no_candidates
+cf1eb309c0076816029782df6b264104,no_match,,,,,,,,,,,,,,no_candidates
+ee1390939c85eddade4729d0bcd55d2c,review,21169056,어검검도관,,"스포츠,레저 > 무예 > 검도 > 검도장",부산 중구 대청로 70-1,부산 중구 부평동1가 1-2,35.10286105538572,129.02758745066845,166.7,1.0,False,어검검도관,500,needs_verification
+b19b7b55133a477e8e3178a059336c1a,no_match,,,,,,,,,,,,,,no_candidates
+2df9a21aa1f4af852ed9264575150922,no_match,,,,,,,,,,,,,,no_candidates
+baeb60b313eeae357df31e7cd17bd047,no_match,,,,,,,,,,,,,,no_candidates
+beb158f7b52fbbf54a6deed97f59fdfd,no_match,,,,,,,,,,,,,,no_candidates
+154b0ed1a495edde9482983e602cf7f0,no_match,,,,,,,,,,,,,,no_candidates
+b26ab6c7db5404c54cfe07927849d8ac,no_match,,,,,,,,,,,,,,no_candidates
+86c80ed1aebd41b2f5e0993b197c991c,review,301471757,조은아트플러스,문화시설,"문화,예술 > 문화시설 > 공연장,연극극장",부산 중구 구덕로34번길 4,부산 중구 남포동2가 25-10,35.0982762696824,129.032298530803,201.3,1.0,False,조은아트플러스,500,needs_verification
+16f9076a40c96881434c65ca7e8ce140,no_match,,,,,,,,,,,,,,no_candidates
+4c931a50c5d0636d3c14fcf1a62c2eae,review,21307147,교촌치킨 영주대청점,음식점,음식점 > 치킨 > 교촌치킨,부산 중구 중구로 70-1,부산 중구 대청동4가 82-13,35.1037352855088,129.028982030703,267.2,1.0,False,교촌치킨 영주대청점,500,needs_verification
+b3deef0de204f1f9c3a9ca9066c8f51c,review,22106882,비에스삼성안과의원,병원,"의료,건강 > 병원 > 안과",부산 중구 구덕로 90,부산 중구 남포동6가 63,35.0975850737627,129.026000614347,420.7,0.5333,False,BS삼성안과,500,needs_verification
+3b4334d62466d3bdb16170057eb39f7e,no_match,,,,,,,,,,,,,,no_candidates
+24f509bca3ded4c699c0ed5fe5f73817,review,22484937,마카오박,음식점,"음식점 > 술집 > 호프,요리주점",부산 중구 광복로 91-12,부산 중구 광복동1가 30-4,35.098906590612,129.034906346926,408.3,1.0,False,마카오박,500,needs_verification
+9b7aab78f2d17d1bd57225867ce39ee0,no_match,,,,,,,,,,,,,,no_candidates
+bb785e8c82674f350e3ff55226bd07cf,no_match,,,,,,,,,,,,,,no_candidates
+81097804b770666fcfde26d647ad8cd5,no_match,,,,,,,,,,,,,,no_candidates
+e95aa6f139aa1c10098d32e426dbd4be,no_match,,,,,,,,,,,,,,no_candidates
+00287b416b43740b281a800db854ec8a,no_match,,,,,,,,,,,,,,no_candidates
+89af57df7e898b2b642dc51fbe1eee79,review,412888932,신흥송월타올,,"서비스,산업 > 제조업 > 생활용품제조 > 목욕용품,세면용품",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.0970550687931,129.027839476696,109.8,0.8333,False,신흥.송월타월,500,needs_verification
+524578637621e4d70ce7f4185df83e15,no_match,,,,,,,,,,,,,,no_candidates
+39c0708950558b76e991d83d689beae5,no_match,,,,,,,,,,,,,,no_candidates
+956bed53d8359e2ab6c3193719c9bed1,review,10810632,태광유리상사,,"서비스,산업 > 제조업 > 산업용품",부산 중구 중구로 36,부산 중구 신창동4가 35-3,35.1011464975381,129.02799566017174,232.4,0.8,False,유리상사,500,needs_verification
+e8240f60b72d211d188d6590e41d2560,no_match,,,,,,,,,,,,,,no_candidates
+95ec9571888e41650e8cc4e4653ccd2f,no_match,,,,,,,,,,,,,,no_candidates
+14d07a2c5b74d2047682a7cf8c57f93f,review,15199867,햇살치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 중구로 59,부산 중구 보수동1가 146-29,35.1033203671101,129.027927802569,371.5,1.0,False,햇살치과의원,500,needs_verification
+053089d12996a6e4e111e512bff7e188,review,1787777062,하동상회,,"가정,생활 > 식품판매",부산 중구 용미길8번길 9-1,부산 중구 남포동1가 66-2,35.09735061097742,129.03391919978253,314.3,1.0,False,하동상회,500,needs_verification
+a8953579069f753d94a33e896f7e6f7d,no_match,,,,,,,,,,,,,,no_candidates
+9376336ab632176126737fe0b7fa875d,no_match,,,,,,,,,,,,,,no_candidates
+56b71d0cd7d7f873245e775fe41d4a86,no_match,,,,,,,,,,,,,,no_candidates
+a1621cb94a03965ce2d5c6ff79795964,no_match,,,,,,,,,,,,,,no_candidates
+7e52efae1dce032681a7871ae6182008,no_match,,,,,,,,,,,,,,no_candidates
+1c5300932605b42d635523593eff5672,review,14605059,콜핑 부산남포점,,"가정,생활 > 패션 > 의류판매 > 스포츠의류 > 콜핑",부산 중구 구덕로 74-1,부산 중구 남포동6가 78-2,35.0978625229415,129.027516271904,279.5,0.8333,False,콜핑남포점,500,needs_verification
+8bf9c874d032621b03eda549ce6d2dbc,no_match,,,,,,,,,,,,,,no_candidates
+e002d39d11aa90171416f1b5fc7f0384,no_match,,,,,,,,,,,,,,no_candidates
+73c6281c44cf73fa19019ad4380b430c,no_match,,,,,,,,,,,,,,no_candidates
+f21acc4fda49029d973e72e3db334d9f,no_match,,,,,,,,,,,,,,no_candidates
+df6fe62df66df5a57ac552f5dd72d4e3,no_match,,,,,,,,,,,,,,no_candidates
+0c151afd09c0e2bf8adafbe308494f3e,no_match,,,,,,,,,,,,,,no_candidates
+6196aa2b0404493340b55de910675987,no_match,,,,,,,,,,,,,,no_candidates
+de5a80bb8786859afe2c1bce77a85de9,no_match,,,,,,,,,,,,,,no_candidates
+df7dbc9addd703e1f69262e59ef4ab0a,review,15986629,오복상회,음식점,음식점 > 한식,부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968305935816,129.029082819613,109.8,1.0,False,오복상회,500,needs_verification
+5721a92eef7e19b9d473a26e773ec60e,no_match,,,,,,,,,,,,,,no_candidates
+74a33c8795ba185a921421353c8d8e8c,no_match,,,,,,,,,,,,,,no_candidates
+e60a8efbfc723d71d21f73875e9b3919,no_match,,,,,,,,,,,,,,no_candidates
+8606bae2fda48063e078c2903fa60374,review,23637751,민요한헤어 광복점,,"가정,생활 > 미용 > 미용실",부산 중구 광복로 93,부산 중구 광복동1가 32-1,35.0987962127116,129.035039571077,157.1,0.0,False,보그,500,needs_verification
+1ef54acb98f84ca1c3230e92086d4730,review,15854006,인사동,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로53번길 13,부산 중구 부평동2가 7-2,35.102555610819095,129.0263988802874,114.1,1.0,False,인사동,500,needs_verification
+9dab26ad0157f595355c9d2dd9dcfaee,no_match,,,,,,,,,,,,,,no_candidates
+72b9a6dd40ac5430636b9f578aad1a81,review,10539461,신광사,,"문화,예술 > 종교 > 불교 > 절,사찰",부산 중구 복병산길 9-14,부산 중구 대청동1가 17-2,35.1038588747045,129.032362575421,286.8,1.0,False,신광사,500,ambiguous
+e61b07f452ca5cfac3fdd6608146e60b,no_match,,,,,,,,,,,,,,no_candidates
+751d8b53aef1bba40d68b4e2c139023c,no_match,,,,,,,,,,,,,,no_candidates
+62681acb16d6bc211b888fc08b3eb459,review,695573578,민화양품,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발",부산 중구 중구로 52,부산 중구 대청동3가 26-2,35.1023976584951,129.028083681231,207.2,1.0,False,민화양품,500,needs_verification
+38f7f197b09df55b9a3bd0db5527ebc7,review,1511915848,원조소문난김밥집,음식점,음식점 > 분식,부산 중구 부평2길 30,부산 중구 부평동1가 28-16,35.100814901144076,129.02653890912043,155.5,0.8571,False,소문난김밥집,500,needs_verification
+32ad634ce1ff4b947e5cd85a7bbfec7f,no_match,,,,,,,,,,,,,,no_candidates
+09578ca9e6ab611777475d7f94a3518c,no_match,,,,,,,,,,,,,,no_candidates
+167baffaaafc8fcf9189d6624c340b34,no_match,,,,,,,,,,,,,,no_candidates
+abc25f38ab4513afb09a7310f14ccdc0,no_match,,,,,,,,,,,,,,no_candidates
+2160a0c4d7cc3920b0efb06be42bebef,no_match,,,,,,,,,,,,,,no_candidates
+4f4fc1a3856e16fbf164023debe18827,no_match,,,,,,,,,,,,,,no_candidates
+cdb513dc72de72da7faa223f42916682,review,1515000216,더컷헤어,,"가정,생활 > 미용 > 미용실",부산 중구 구덕로48번길 2-1,부산 중구 남포동4가 5-12,35.0985406840886,129.030717344099,218.1,0.3333,False,더컷,500,needs_verification
+b5a7ff2b2b6d8687b8910ba58dcc3dc7,no_match,,,,,,,,,,,,,,no_candidates
+9652d1182f935cfc28213351c8af7a93,no_match,,,,,,,,,,,,,,no_candidates
+1bce7f7a6d1c84595bf6e64ca0076b09,review,9091407,새한미용실,,"가정,생활 > 미용 > 미용실",부산 중구 흑교로 24-1,부산 중구 부평동2가 70-4,35.1016657805915,129.025342797924,234.3,1.0,False,새한미용실,500,needs_verification
+98a551d9315e6be81db952ddc4d685e9,no_match,,,,,,,,,,,,,,no_candidates
+ce83bdb193b841f81eaba6cfc2a2bec1,review,1501554398,수정상회,,"가정,생활 > 식품판매",부산 중구 자갈치해안로 47-1,부산 중구 남포동5가 110-1,35.0970206213077,129.030327663325,425.7,1.0,False,수정상회,500,needs_verification
+d3353964a4acdc84d1e9b06c0148bdbe,review,1024309589,청조횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 광복로12번길 3-2,부산 중구 부평동1가 41-6,35.0990695323331,129.026526402056,348.8,1.0,False,청조횟집,500,needs_verification
+028170737da775cd5e7860a9e033f518,review,496822908,우신기업,,"서비스,산업 > 건설,건축 > 건설자재 > 셔터,샷시",부산 중구 보수대로 38,부산 중구 부평동3가 58-17,35.1002548762975,129.024351706864,337.2,0.6667,False,우신,500,needs_verification
+e694cb41a6286f7c5ecc9d8f0c135c0b,no_match,,,,,,,,,,,,,,no_candidates
+a6bdff8f4d9565441e61a822a1f8f29e,review,15639577,돌체,,"가정,생활 > 패션 > 의류판매",부산 중구 국제시장2길 6-3,부산 중구 창선동2가 25,35.0999605863941,129.02858582009,136.1,1.0,False,돌체,500,needs_verification
+e504281d7ada609714fc6a50e2a70a83,no_match,,,,,,,,,,,,,,no_candidates
+82e95b9b3a005e81aa347024b4562f15,no_match,,,,,,,,,,,,,,no_candidates
+8051dcea0e9edac91930f6a5e0e100bd,no_match,,,,,,,,,,,,,,no_candidates
+3b1a01d1ece278c7ff372a18758f21f2,no_match,,,,,,,,,,,,,,no_candidates
+b7ede9221915a856cef6f0e341ef8b84,no_match,,,,,,,,,,,,,,no_candidates
+f7203d254f5b770da478b1dd64561ee6,review,413888499,루디아,,"가정,생활 > 패션 > 의류판매 > 아동복,유아복",부산 중구 국제시장2길 29,부산 중구 신창동4가 56-4,35.101863531242,129.02839064179,183.5,1.0,False,루디아,500,needs_verification
+a218f1cae2e2baf4c224a86b22dc7286,no_match,,,,,,,,,,,,,,no_candidates
+abb40509d9608d6923b358d82ad82962,review,13559773,컵테이블,카페,음식점 > 카페,부산 중구 용두산길 10,부산 중구 대청동2가 30-11,35.1019663089325,129.031508514273,121.6,1.0,False,"컵,테이블",500,needs_verification
+036f30871d464f82814ddf9944ead933,review,15632086,형제건어물,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 중구로43번길 27,부산 중구 부평동2가 14-7,35.10171595530669,129.0264384033959,245.8,1.0,False,형제건어물,500,needs_verification
+169a9a20f94ec8dc9a95d81354c35393,review,13577297,이솝,카페,음식점 > 카페,부산 중구 중구로 79,부산 중구 대청동4가 80-5,35.10452162686133,129.02959697527663,301.3,1.0,False,이솝,500,needs_verification
+02af814ab4350be15712e0f1b85d7971,review,20550044,오스람중앙전기,,"서비스,산업 > 제조업 > 전기,전자",부산 중구 국제시장2길 9,부산 중구 신창동4가 20-3,35.1001247778455,129.028252156288,272.5,0.7273,False,중앙전기,500,needs_verification
+9dc4529dba04771dd0f5a96397c532f7,no_match,,,,,,,,,,,,,,no_candidates
+ad0106102400eb35d19f09f58e46141d,no_match,,,,,,,,,,,,,,no_candidates
+9d89aaa9c069a0e7931cec0a56168dc2,no_match,,,,,,,,,,,,,,no_candidates
+5399affbe8c60b5693a698cb29511f16,review,16215699,티코어,,"서비스,산업",부산 중구 구덕로 73,부산 중구 남포동6가 1,35.097385141025605,129.02766344099373,82.2,0.6,False,티코어,500,needs_verification
+7e8038c911eaf122793f693a65e3ee95,no_match,,,,,,,,,,,,,,no_candidates
+637dfefacfca80b4f6c5e0b548f0b0ac,no_match,,,,,,,,,,,,,,no_candidates
+11cb4b23602ae8edaeafc9386f82ec67,no_match,,,,,,,,,,,,,,no_candidates
+6187cea8bab23acd3f436bc44115ccea,no_match,,,,,,,,,,,,,,no_candidates
+0f8e583656f80678aad83119b2ecc3ef,review,1706136273,아이케어 부산,,"가정,생활 > 전자제품 > 전자제품서비스센터 > 휴대폰수리",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0983315861435,129.030611278088,202.4,0.6154,False,아이케어남포점,500,needs_verification
+6a6f2973556f50468d7e49643f3cc6c3,no_match,,,,,,,,,,,,,,no_candidates
+cabfdc46ed0faa4af6d6c239370756b1,no_match,,,,,,,,,,,,,,no_candidates
+3e61b1cd826c0bccd70a813d4f6c5289,no_match,,,,,,,,,,,,,,no_candidates
+6ce523174cdcd54e275e5ee610af9d86,no_match,,,,,,,,,,,,,,no_candidates
+8a2fac10e323f9292e2a5860988259a2,review,1319994332,유지로,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 105-2,35.09763687744851,129.02947561449653,233.7,1.0,False,유지로,500,needs_verification
+6047c17475af71d870f2d84e8179ae74,no_match,,,,,,,,,,,,,,no_candidates
+386a4a76451fc8d0d1ff9b791b05e43a,no_match,,,,,,,,,,,,,,no_candidates
+d7c47807902cbb58c70e42685d046422,no_match,,,,,,,,,,,,,,no_candidates
+67fe52ab47683e252eccf31768087943,no_match,,,,,,,,,,,,,,no_candidates
+a70629294dbb72c9b301979a3debab7d,no_match,,,,,,,,,,,,,,no_candidates
+f515b0f02172127d425c4b6f267d8ef2,no_match,,,,,,,,,,,,,,no_candidates
+42277187e2923b8207a5c55d9cda7ed0,no_match,,,,,,,,,,,,,,no_candidates
+01abf76aac87776bfe9dd382ea006836,no_match,,,,,,,,,,,,,,no_candidates
+877d9508694245b1a40597ff355e412d,no_match,,,,,,,,,,,,,,no_candidates
+b5fdb1230417f376fff39c8efa5b5782,review,21239322,이브,,"가정,생활 > 유흥시설 > 유흥주점",부산 중구 백산길 19-1,부산 중구 동광동3가 16-3,35.1012199921321,129.034740161749,435.2,1.0,False,이브,500,needs_verification
+9779801b54afc7676f716fdfefa7ada2,no_match,,,,,,,,,,,,,,no_candidates
+7a9645fd605df71ec922f7889f695c62,no_match,,,,,,,,,,,,,,no_candidates
+03c6dca41459e1d37ab9315f88635c57,no_match,,,,,,,,,,,,,,no_candidates
+59167d7029e134e05532634693908068,no_match,,,,,,,,,,,,,,no_candidates
+6e0f2ad805f893158ba4a3d808a194aa,no_match,,,,,,,,,,,,,,no_candidates
+7dd4b6100ee336826dc30fadc8a2f0ee,no_match,,,,,,,,,,,,,,no_candidates
+fafafa7babf02bc07c83da9ef4ed4303,no_match,,,,,,,,,,,,,,no_candidates
+02e770beceaf5d0bf12b9dd90b6044c2,no_match,,,,,,,,,,,,,,no_candidates
+8a9a27c1869c19502c225fcc637083b5,no_match,,,,,,,,,,,,,,no_candidates
+bba96acfcb7e37ca674dca617d71cae5,no_match,,,,,,,,,,,,,,no_candidates
+4fe8ba26e1a8d833f2fd0103a18f9366,no_match,,,,,,,,,,,,,,no_candidates
+072c55aa907124d40ce69859be187611,no_match,,,,,,,,,,,,,,no_candidates
+54afc54bc0108593730220c8b1ff707f,no_match,,,,,,,,,,,,,,no_candidates
+d1b00d70c06b1bd7e420ac324979a48b,no_match,,,,,,,,,,,,,,no_candidates
+a2a89822cd5c615273f149ed58460466,no_match,,,,,,,,,,,,,,no_candidates
+3f5502cdf7b18be6736c7c3ee7f8456e,no_match,,,,,,,,,,,,,,no_candidates
+67e4cd5864a57a1a0aace50c7a1c5e13,review,1864481875,리치,카페,음식점 > 카페,부산 중구 광복로55번길 9,부산 중구 창선동1가 29-2,35.09971440265595,129.03037144820186,240.9,1.0,False,리치,500,ambiguous
+d1bc2370c3af4f76dfe0e75884569109,no_match,,,,,,,,,,,,,,no_candidates
+bedb92149fa3e7bb93d44fa931a0b1ba,review,1787288774,세양수산,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 61,부산 중구 남포동4가 30-2,35.09712954676818,129.0316790528333,152.6,1.0,False,세양수산,500,needs_verification
+704b57b25e14dde9502defdf75a4af2e,no_match,,,,,,,,,,,,,,no_candidates
+c457c501a5d9d461e90a5655a2d65b95,no_match,,,,,,,,,,,,,,no_candidates
+1fcfa3d444de3e814505ba316e980df0,no_match,,,,,,,,,,,,,,no_candidates
+2e5e0f78086bb628d10f27bc822f4b03,no_match,,,,,,,,,,,,,,no_candidates
+7dcf75094088eaf9d86f3696e92b896f,no_match,,,,,,,,,,,,,,no_candidates
+4713256258601bd893e686275820d36a,review,23639719,부영상사,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치해안로 69-1,부산 중구 남포동4가 25-1,35.09729252353579,129.03281577812712,490.6,0.75,False,부영상회,500,needs_verification
+e52ad4a688b8d3bba35b05651dd1fb09,no_match,,,,,,,,,,,,,,no_candidates
+ad969396f0a5bb15a38bf8429e95b320,no_match,,,,,,,,,,,,,,no_candidates
+7a6be306099f256e88bdf951ab644caf,no_match,,,,,,,,,,,,,,no_candidates
+8c5722be0dd8acabdf5370142e44a77e,no_match,,,,,,,,,,,,,,no_candidates
+f22c86cac1226a9406119133827bd084,no_match,,,,,,,,,,,,,,no_candidates
+8a834da0ba821fe11382585cdb69a95a,no_match,,,,,,,,,,,,,,no_candidates
+10004e65069ea93de4ec7568a32458ec,no_match,,,,,,,,,,,,,,no_candidates
+f5ddc8f06723de686c14bd71f5cf19e4,no_match,,,,,,,,,,,,,,no_candidates
+2344c6a54401b0af2ba8926b10dbecb9,no_match,,,,,,,,,,,,,,no_candidates
+af1cc1095be2ed16304a63f1bf1d905b,no_match,,,,,,,,,,,,,,no_candidates
+a251517c734a16ae066b935ca47731ca,no_match,,,,,,,,,,,,,,no_candidates
+c9540df2d60d2b2f37b07f291bc0bf73,no_match,,,,,,,,,,,,,,no_candidates
+d0eca4e4e0729c5cbabcf8b562649f2d,no_match,,,,,,,,,,,,,,no_candidates
+128ada4d4921eecdeb2c8948b6947f83,no_match,,,,,,,,,,,,,,no_candidates
+c01e8f8d76a49f356eb2162cbce9207e,no_match,,,,,,,,,,,,,,no_candidates
+8344e2e4211dead5736d063172a9de7e,no_match,,,,,,,,,,,,,,no_candidates
+1259c669ca36a73aea2c3ee8d03dbf9d,no_match,,,,,,,,,,,,,,no_candidates
+af083e96b5a79f63611b7f26926a2641,no_match,,,,,,,,,,,,,,no_candidates
+f248c53235a8446c01af500aa382000f,no_match,,,,,,,,,,,,,,no_candidates
+70f518035d15044a77aee2c50de3851e,no_match,,,,,,,,,,,,,,no_candidates
+33bf877b8d08c7c2e9fff5e6ea53a3f2,no_match,,,,,,,,,,,,,,no_candidates
+671f235d1175bfa926be436af0a08561,review,15713013,남해금수횟집 자갈치2호점,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로16번길 5,부산 중구 남포동6가 24-4,35.09601270278663,129.02647485525767,170.0,0.6667,False,남해금수횟집,500,needs_verification
+a17b90acd46032e71cb271c5ff52f0d7,no_match,,,,,,,,,,,,,,no_candidates
+f02f38c7294d731256beee26bc21dc2f,no_match,,,,,,,,,,,,,,no_candidates
+1ac1a70f3df9c0e666f1264ac758cad7,no_match,,,,,,,,,,,,,,no_candidates
+3105343a71342c7d9eeb59c22ee50226,no_match,,,,,,,,,,,,,,no_candidates
+a57eeafd63fda25faf59609af3704dc5,no_match,,,,,,,,,,,,,,no_candidates
+efd021f77ae7ef0f110a8cdfffb8d12b,no_match,,,,,,,,,,,,,,no_candidates
+fd82874f97f00154ee1a04dfca03f880,no_match,,,,,,,,,,,,,,no_candidates
+4792214b585e8858e7d9149d7c1243df,review,543809587,국제시장 오렌지몰,,"가정,생활 > 시장",부산 중구 중구로 28,부산 중구 신창동4가 21-3,35.10013992035436,129.02810120959677,426.9,0.5455,False,오렌지,500,needs_verification
+7d2abfabba1f9154ae036504c0e9adb4,no_match,,,,,,,,,,,,,,no_candidates
+18d68e61b83d5eca0daa29d071805673,review,8906877,동남식품,,"가정,생활 > 식품판매",부산 중구 용미길10번길 7-1,부산 중구 남포동1가 62-14,35.0970720606173,129.034031797011,201.3,1.0,False,동남식품,500,needs_verification
+797a51ac5e29b7970ead32d86221e3b7,review,26877653,와호텔,숙박,"여행 > 숙박 > 여관,모텔",부산 중구 광복로97번안길 5,부산 중구 광복동1가 33,35.0990566733272,129.034984641064,1.7,0.6,True,와 호텔,500,needs_verification
+962870586569e555f34d6b67710ddf97,no_match,,,,,,,,,,,,,,no_candidates
+f983a3642650f1e8661d3fd1787ce23e,no_match,,,,,,,,,,,,,,no_candidates
+d0db58281adab0dfca4785c55d92973c,no_match,,,,,,,,,,,,,,no_candidates
+b2b4d7ce7b3e3d2168d2790d77c8b4f2,review,99552533,내셔널 지오그래픽 부산 광복점,,"가정,생활 > 패션 > 의류판매",부산 중구 광복로 80-1,부산 중구 광복동1가 61-3,35.0983805399361,129.033603774113,304.0,0.7619,False,내셔널지오그래픽,500,needs_verification
+75710ea045d5b95aef898e58354ff2c9,no_match,,,,,,,,,,,,,,no_candidates
+2409c9b4d50bcf9e2e48b66581a350bd,review,1723452626,영도상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968650826221,129.029122051628,175.5,0.5,False,소라상회,500,ambiguous
+c7329100b6d996785e346dce375e94f1,no_match,,,,,,,,,,,,,,no_candidates
+0858b00a125b961ec2ddb2ad9aef64ce,no_match,,,,,,,,,,,,,,no_candidates
+09b1ee4cd01db2d3964b90f2c03f45b8,no_match,,,,,,,,,,,,,,no_candidates
+373b44ddadc49c9913cc4202ad945ee4,no_match,,,,,,,,,,,,,,no_candidates
+07930e3b83892c22460d0dbcf7297f56,no_match,,,,,,,,,,,,,,no_candidates
+a1cad123dc12e09a0696237a37c4a6e1,no_match,,,,,,,,,,,,,,no_candidates
+36b9207fd8a0497f3fd57ab4c78f56fc,no_match,,,,,,,,,,,,,,no_candidates
+be95667f8af9cc0a50ad8ca0fc008d80,review,1983059053,세인트 루이스,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.098199215041866,129.0301748736042,167.8,0.5455,False,세인트 루이스,500,needs_verification
+01178c562b659da0a9c24e1afebf81c9,no_match,,,,,,,,,,,,,,no_candidates
+240e9a1c32b59bfb3f9449dd38971d46,review,750621666,카페모카 by지엔비호텔,카페,음식점 > 카페,부산 중구 흑교로 19,부산 중구 부평동3가 40-5,35.1012403846313,129.024805927624,1.1,0.4167,True,지엔비호텔,500,needs_verification
+44b9e554ba28e5d0c81752b36179ea22,no_match,,,,,,,,,,,,,,no_candidates
+f4342d5d6db347f5b29c01dcd0a846df,no_match,,,,,,,,,,,,,,no_candidates
+667dbf6c6fe0cc054d564fb7a2946264,review,341431020,대박유통,,"가정,생활 > 취미 > 복권",부산 중구 구덕로 80,부산 중구 남포동6가 74-1,35.0977574969808,129.027114543402,445.7,0.6667,False,대박,500,ambiguous
+5364cbf91fc898c574994919b068b9e9,no_match,,,,,,,,,,,,,,no_candidates
+ecaa7874a144d973ea5800beb4fdbe99,no_match,,,,,,,,,,,,,,no_candidates
+289506fa608d90f317f7a929f8820b6d,review,2009447592,샬롬분식,음식점,음식점 > 분식,부산 중구 흑교로78번길 5,부산 중구 보수동1가 27-19,35.1063140456637,129.023886372676,450.4,0.6667,False,샬롬,500,needs_verification
+6625321c281632918850402c9dce72d0,no_match,,,,,,,,,,,,,,no_candidates
+57efe984f81f85a19180e320afb433c7,no_match,,,,,,,,,,,,,,no_candidates
+09a59f5c0593ba3308f8dc6d5b406416,review,517872542,더챠밍,,"가정,생활 > 미용",부산 중구 광복중앙로33번길 11-1,부산 중구 신창동1가 35-4,35.1021086421409,129.02968298279612,191.2,1.0,False,더챠밍,500,needs_verification
+f4c85c6c19d25e2d0e73b548ae96994d,no_match,,,,,,,,,,,,,,no_candidates
+6c7222e51d4ceaf5bf1351dcb1e53f32,no_match,,,,,,,,,,,,,,no_candidates
+9bd5ce82b3f63665ec20705ae7374b1d,review,948979003,SJ리샵,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로53번길 6,부산 중구 부평동1가 2-15,35.1027230242803,129.027434897764,0.0,0.6667,True,에스제이리샵,500,needs_verification
+841bfef435e6b64d8dc6554b273c6102,no_match,,,,,,,,,,,,,,no_candidates
+2743751328d178e72ae067cda1d271e7,no_match,,,,,,,,,,,,,,no_candidates
+acb5f33825ae784616c326d48ec5a0c0,no_match,,,,,,,,,,,,,,no_candidates
+841f519e696a340356dea1b1f13c4652,no_match,,,,,,,,,,,,,,no_candidates
+d805b6abade5d21049403df611356a75,no_match,,,,,,,,,,,,,,no_candidates
+8c52a9617e54af809b84506e61dba243,no_match,,,,,,,,,,,,,,no_candidates
+032ee35a43433386391add0f7be7699b,no_match,,,,,,,,,,,,,,no_candidates
+303ee7eef52422ea93e73e87d4c8fcd9,no_match,,,,,,,,,,,,,,no_candidates
+d9dbaefedb1d212475cc4bbbc3088ded,no_match,,,,,,,,,,,,,,no_candidates
+11c5065b37db9f0d386c2fed0e3cdc66,no_match,,,,,,,,,,,,,,no_candidates
+34263637826703e11ac2b7951f0fd67a,no_match,,,,,,,,,,,,,,no_candidates
+bf042dde377365251b4d6e1165360d9a,no_match,,,,,,,,,,,,,,no_candidates
+f54be5b351ffdf4c9aac25c0b742112c,no_match,,,,,,,,,,,,,,no_candidates
+9902a795ce7ddfb3a1103ff4dbec233f,no_match,,,,,,,,,,,,,,no_candidates
+39a690ea3bca37b520b46fe2fa34a2c0,no_match,,,,,,,,,,,,,,no_candidates
+e892b06b91309f7190b84a931cbd516a,no_match,,,,,,,,,,,,,,no_candidates
+720563329c0c71b77d65ec07df308ed1,no_match,,,,,,,,,,,,,,no_candidates
+39de1c88043fbf8ae9af0abe583a6440,no_match,,,,,,,,,,,,,,no_candidates
+93c7a990a7ce3a251c65481749fc5c8e,no_match,,,,,,,,,,,,,,no_candidates
+862669e93cdd81e710b1c8fc33966c38,review,2083208968,밀양상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0967811412096,129.029076111474,138.4,1.0,False,밀양상회,500,needs_verification
+86648703574792ae537dd54d3cf3b579,no_match,,,,,,,,,,,,,,no_candidates
+01a0d578b915573b48b3367ca6be77b7,no_match,,,,,,,,,,,,,,no_candidates
+417b2d0094da1e46b47586421a8f6ef3,review,488402453,뷰티트리,,"가정,생활 > 미용",부산 중구 남포길 49,부산 중구 남포동2가 1-2,35.0979673642215,129.033952067245,312.0,1.0,False,뷰티트리,500,needs_verification
+f4be3b3097ce9d112c7dfafe14198ef8,no_match,,,,,,,,,,,,,,no_candidates
+1c8568211c5cbeaddeb250486866f45f,no_match,,,,,,,,,,,,,,no_candidates
+79f9211b1264145fcce22355d0f56963,no_match,,,,,,,,,,,,,,no_candidates
+283064f3924a884ad76fd87470197fe7,no_match,,,,,,,,,,,,,,no_candidates
+777811bf827d5e5757e5495fde61f22b,no_match,,,,,,,,,,,,,,no_candidates
+f0e537f4a3a9482b324c534b6b752013,no_match,,,,,,,,,,,,,,no_candidates
+180181745a51f112b24f1b10c0fd88de,no_match,,,,,,,,,,,,,,no_candidates
+be17f6098335949b902eac8bedbdc6d2,no_match,,,,,,,,,,,,,,no_candidates
+c90f28fd68f51721e647073d5bd605f6,no_match,,,,,,,,,,,,,,no_candidates
+f141f1be2ba1f6371eaa583f53080a3d,no_match,,,,,,,,,,,,,,no_candidates
+2db160379b997b4ac513112a5a50b794,no_match,,,,,,,,,,,,,,no_candidates
+9fb6a957368e8efcf0a545b9ad4ae1ec,review,2038396288,해피포토,,"문화,예술 > 사진 > 사진관,포토스튜디오",부산 중구 구덕로 지하 44,부산 중구 남포동5가 105-2,35.0979884027406,129.029202527056,254.9,0.6667,False,해피,500,needs_verification
+1656c6fea0dee83a079d802f1407fc3d,no_match,,,,,,,,,,,,,,no_candidates
+3505c9757ce36c275f5736a5d241d5e9,accepted,258872125,투앤드마니아,,"서비스,산업 > 제조업 > 생활용품제조",부산 중구 광복로49번길 19-1,부산 중구 신창동1가 17-5,35.1009299677205,129.030324841401,0.7,0.9231,True,투앤드마니아,500,identity_rule
+79582f73ceb263701fb49a58aa322978,no_match,,,,,,,,,,,,,,no_candidates
+3308f6d13c9b4ea6c79d352a680927eb,no_match,,,,,,,,,,,,,,no_candidates
+c8ce3cfefa6501e5af8f71899a842a33,no_match,,,,,,,,,,,,,,no_candidates
+bdcfa369140bd4b3a59f59bd7010a4b8,no_match,,,,,,,,,,,,,,no_candidates
+2f8eb7a214d4778179f0e9bd499dae4f,no_match,,,,,,,,,,,,,,no_candidates
+2b8e495c333610996ad2127cf9c82898,no_match,,,,,,,,,,,,,,no_candidates
+be0d9b2a00c6ce8ce62a0637a1abe38a,review,1700614000,콩밭에,음식점,음식점 > 한식,부산 중구 광복중앙로 9,부산 중구 신창동1가 8-3,35.10001134123381,129.03066720163534,245.3,0.75,False,콩밭에 한식,500,needs_verification
+5819a5f26e83cf8d8fbb67690129f32e,review,1315576967,뷰티싸롱,,"가정,생활 > 미용 > 네일샵",부산 중구 구덕로 지하 44,부산 중구 남포동5가 105-2,35.0982955531752,129.030556655295,135.5,1.0,False,뷰티싸롱,500,needs_verification
+85b395fa95a58225c62519348dffdf60,no_match,,,,,,,,,,,,,,no_candidates
+96cdc5450e820f66a420fcc3f9c8a11b,no_match,,,,,,,,,,,,,,no_candidates
+87bca05f10e067f11a45912f5d1472a7,review,16224943,성원가방,,"가정,생활 > 패션 > 패션잡화점 > 가방",부산 중구 국제시장2길 25,부산 중구 신창동4가 38-1,35.1015937860631,129.028354350191,225.9,0.6667,False,성원,500,needs_verification
+1c1cba1983a028477b1da38134d92993,no_match,,,,,,,,,,,,,,no_candidates
+7ef26b6b376024b56a0c41620aec6982,review,492192420,아이앤와이뷰티,,"가정,생활 > 미용",부산 중구 구덕로 39-1,부산 중구 남포동4가 11-1,35.097863786460515,129.0312619628624,388.8,0.7273,False,와이뷰티,500,needs_verification
+88f43433d6eba7755a648018bb87e494,no_match,,,,,,,,,,,,,,no_candidates
+b0ae19d50c14f42af71fedc605d1892b,no_match,,,,,,,,,,,,,,no_candidates
+cae25ad4f26add16db49fa5f740d9d0a,review,1719766710,한미유통,,"서비스,산업 > 식품",부산 중구 태종로 14-1,부산 중구 남포동1가 72-2,35.096506078341825,129.03548373543651,195.5,1.0,False,한미유통,500,needs_verification
+510dff78d6047f15e9fe2270d8aea9cd,review,1597906053,취미는음악학원 남포점,학원,"교육,학문 > 학원 > 음악학원 > 실용음악학원",부산 중구 구덕로 38,부산 중구 남포동4가 2-4,35.0982568901533,129.03178817288,113.2,0.8235,False,취미는음악학원,500,needs_verification
+b3abdd14bc5c436c2293f0e0dc951e0e,no_match,,,,,,,,,,,,,,no_candidates
+7aec4f42f381b68226a8323870619bf5,review,19401443,울릉도오징어회포차,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 보수대로24번길 8,부산 중구 부평동2가 37-10,35.0988892055369,129.025831130873,110.4,0.5,False,회포차,500,needs_verification
+2eb5a81bf030e71593694a117a4ba911,review,847994381,화이트이치과 남포점,병원,"의료,건강 > 병원 > 치과",부산 중구 비프광장로 36,부산 중구 남포동5가 18-1,35.0986095940593,129.028808925266,4.8,0.6667,True,화이트이치과의원,500,needs_verification
+633e1eb886fba16aa3dba99dfe0f2201,no_match,,,,,,,,,,,,,,no_candidates
+5a7ff251f7b10005486f39fc85c9a7a6,no_match,,,,,,,,,,,,,,no_candidates
+7e9cd4aef31cbfc97a341acd887f6594,no_match,,,,,,,,,,,,,,no_candidates
+dc01199aa81fa2fa9bd488fb1e01569a,review,1616502725,부산컨세션 물품보관소,,"서비스,산업 > 보관,저장",부산 중구 비프광장로 36,부산 중구 남포동5가 18-1,35.0986185636216,129.02875761136622,108.0,0.6667,False,부산컨세션,500,needs_verification
+e07771544e04ad8eca492f8bc75cca58,no_match,,,,,,,,,,,,,,no_candidates
+539a60961076dd8be1c2b2bebac5cb26,no_match,,,,,,,,,,,,,,no_candidates
+3af6e194990a75100e72573d19d12a2d,review,863346891,27번빨간모자포차,음식점,음식점 > 술집 > 실내포장마차,부산 중구 부평1길 8-1,부산 중구 부평동2가 26-32,35.09983574549882,129.02581288760226,4.1,0.5882,True,이십칠번포차,500,needs_verification
+d4fa9fcc89ae8a9340f9061a431670de,no_match,,,,,,,,,,,,,,no_candidates
+ddccb2cb8544d1b2d7434e302647dd1c,review,10182036,경북상회,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968305935816,129.029082819613,76.8,0.8,False,경북상회,500,ambiguous
+811dab12da4ccdd9b8ad9e998334f5c5,no_match,,,,,,,,,,,,,,no_candidates
+d36dfb97efd5ee44b658927f4f20560d,no_match,,,,,,,,,,,,,,no_candidates
+58b47abcdd96033765ec9c27bab8a139,no_match,,,,,,,,,,,,,,no_candidates
+3e9ae4023fcf1e596641ba4f3d0445b8,no_match,,,,,,,,,,,,,,no_candidates
+69040845968cbb1f4a6c4fe12a29c0bc,no_match,,,,,,,,,,,,,,no_candidates
+bf25bbe73088056998e92159af0df253,no_match,,,,,,,,,,,,,,no_candidates
+4b675077733601c7068ed0a22e842d8a,no_match,,,,,,,,,,,,,,no_candidates
+38fa2b73c3d368c7d149d166d455ebe5,no_match,,,,,,,,,,,,,,no_candidates
+5df810515ee039e098002e2a4b516800,no_match,,,,,,,,,,,,,,no_candidates
+78e60a63c3dcf6b4e075e0b2509352ff,review,396037140,할매집 부평점,음식점,음식점 > 한식,부산 중구 흑교로21번길 4,부산 중구 부평동3가 31-6,35.1015381626772,129.024782590285,105.5,0.6667,False,할매집,500,needs_verification
+69add560628c8c0ad8c844cbecdfe6a9,no_match,,,,,,,,,,,,,,no_candidates
+c38fee18104e971dc2d8fde2ca53d242,no_match,,,,,,,,,,,,,,no_candidates
+ea46886c5d435d037ae349fd140800ae,no_match,,,,,,,,,,,,,,no_candidates
+35943d875476a5b6c7abab98f4c5a5b3,no_match,,,,,,,,,,,,,,no_candidates
+4b87ee44ec3d3a266b8ec09fab670ad7,review,19509566,남양인쇄사,,"서비스,산업 > 인쇄,복사",부산 중구 고가길 16,부산 중구 보수동1가 116-11,35.10426674827786,129.02641054137558,215.6,0.0,False,미성상회,500,needs_verification
+6bd58c81fa47701ea36df6f58c2dc459,no_match,,,,,,,,,,,,,,no_candidates
+100b9ec20553541bbceb06795502f86a,no_match,,,,,,,,,,,,,,no_candidates
+ec61f53927f7888c5adf9b7437dd6b70,review,8216253,보신카메라,,"문화,예술 > 사진 > 카메라판매",부산 중구 광복로 83-3,부산 중구 광복동1가 17-5,35.0986604818165,129.03410635290078,0.1,0.0,True,비에스디지털,500,needs_verification
+82affc5eb8349b82c81fadc58a802a8c,no_match,,,,,,,,,,,,,,no_candidates
+4b2c433070c7d2b9da23abb278d38c9d,no_match,,,,,,,,,,,,,,no_candidates
+8b7c0faf068bf98d27416d25e58d31f9,no_match,,,,,,,,,,,,,,no_candidates
+fd3fcdc4f90d4f7022c308a03c561ba4,no_match,,,,,,,,,,,,,,no_candidates
+cdc756698067a32584dd2bbea5cfaeb7,no_match,,,,,,,,,,,,,,no_candidates
+f9f7e9a0309fe4777cc11911ea55c30a,no_match,,,,,,,,,,,,,,no_candidates
+eed842bcbebeac95ca600106c25ce6a7,no_match,,,,,,,,,,,,,,no_candidates
+54c4b039007696cc76f71784f6cefde5,no_match,,,,,,,,,,,,,,no_candidates
+c222ddbe99cb981644f982d36b2a12a0,no_match,,,,,,,,,,,,,,no_candidates
+6d4ce940a66367ea24e320f2d53b6757,review,1513012530,컴포즈커피 BIFF거리점,카페,음식점 > 카페 > 커피전문점 > 컴포즈커피,부산 중구 비프광장로 8,부산 중구 남포동6가 102-2,35.09822786582776,129.02609327830882,2.8,0.7692,True,컴포즈커피 남포비프점,500,needs_verification
+cd717888309f9e6d230f304cc4579036,no_match,,,,,,,,,,,,,,no_candidates
+70bb885174a0acaded8de9041d2daf3f,no_match,,,,,,,,,,,,,,no_candidates
+d55d3f1c712a755198c1889954875f08,no_match,,,,,,,,,,,,,,no_candidates
+36174e809a41a8ce92056d6bf18daf4d,no_match,,,,,,,,,,,,,,no_candidates
+99ad75b14b5b72d8dbe7393ea7a7653f,no_match,,,,,,,,,,,,,,no_candidates
+7b3eb3eaedeb8f559043f4a723c9d252,review,23640040,유리구두,,"가정,생활 > 패션 > 패션잡화점 > 구두,신발",부산 중구 광복중앙로 14-1,부산 중구 광복동3가 6-5,35.1005367912387,129.031201093475,290.4,1.0,False,유리구두,500,needs_verification
+55a116d8295c382625d96bae396e582d,no_match,,,,,,,,,,,,,,no_candidates
+78a2f04d92f6c57a8b62683438697dde,review,865073488,써니,,"가정,생활 > 유흥시설 > 유흥주점",부산 중구 국제시장2길 2,부산 중구 창선동2가 23-2,35.0995658332999,129.028588099191,355.8,1.0,False,써니,500,needs_verification
+ba9fb425e897e50e37cc680a70c553d1,no_match,,,,,,,,,,,,,,no_candidates
+f4f49275f4ad5933705c02aabab75c38,no_match,,,,,,,,,,,,,,no_candidates
+15864b26d780cbc1e5e14d9f47849ac2,no_match,,,,,,,,,,,,,,no_candidates
+29cf6c4f0c324328d348c92e2c69a64f,review,11147903,삼천포상회,,"서비스,산업 > 어업",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968440522214,129.02914017072,133.8,1.0,False,삼천포상회,500,needs_verification
+86913b931239a660760d3395607f67e5,review,26830241,인플란트치과의원,병원,"의료,건강 > 병원 > 치과",부산 중구 구덕로 80,부산 중구 남포동6가 74-1,35.0977574969808,129.027114543402,317.5,0.8571,False,인플란트치과,500,needs_verification
+b7978fd6a3b026e91d2b60a71b206a04,no_match,,,,,,,,,,,,,,no_candidates
+f9367bb153adccbdc8eefc9cf1f5bc3a,no_match,,,,,,,,,,,,,,no_candidates
+937b66548a40506c006488d9a60f8092,no_match,,,,,,,,,,,,,,no_candidates
+4de7b982e43f1bcb6ab8f4417e112a59,no_match,,,,,,,,,,,,,,no_candidates
+a0c202ecadc762c11319ee195f08a512,no_match,,,,,,,,,,,,,,no_candidates
+e5d11f6743aa8b755ad595226580f063,no_match,,,,,,,,,,,,,,no_candidates
+1caac52cf87cc5cb84144936968ad5e6,no_match,,,,,,,,,,,,,,no_candidates
+8502811b0174469441c69bad74786c56,no_match,,,,,,,,,,,,,,no_candidates
+793afe62560f2290b09bd0c79bdf3474,no_match,,,,,,,,,,,,,,no_candidates
+c7752fb638d794d779b33fa52d902973,no_match,,,,,,,,,,,,,,no_candidates
+0270ea49bd689a258e70023442e500bb,no_match,,,,,,,,,,,,,,no_candidates
+7741c9d9f83b7dc8d0bb67fe4a82526c,no_match,,,,,,,,,,,,,,no_candidates
+bbe224aa610965f0d698fd66e9551b38,no_match,,,,,,,,,,,,,,no_candidates
+2e936f1664c98333f99dc64a0e99b70f,no_match,,,,,,,,,,,,,,no_candidates
+f84f0e9ef6f8b6c42ac4e60cbdfac560,no_match,,,,,,,,,,,,,,no_candidates
+421b6ecb6cedf5c8e30a9af87cacdfe8,no_match,,,,,,,,,,,,,,no_candidates
+425184adc5fe8d46218228c3a42a9a65,no_match,,,,,,,,,,,,,,no_candidates
+b0e07668745036d0fb72ce103926816b,no_match,,,,,,,,,,,,,,no_candidates
+5781d46dac336cdb36dff5d355446bff,no_match,,,,,,,,,,,,,,no_candidates
+0545c2e02a2be03afd19e509dfafe966,no_match,,,,,,,,,,,,,,no_candidates
+ffca8e25c17b9f4c33164fd0a4f96350,no_match,,,,,,,,,,,,,,no_candidates
+161a8dd1436233646e8ab2d4b2bbd664,no_match,,,,,,,,,,,,,,no_candidates
+c66577e022eeaac0717b6dde8e214dd3,no_match,,,,,,,,,,,,,,no_candidates
+42d573ab4c4c6ec8b6e8a57eaf6ae95d,no_match,,,,,,,,,,,,,,no_candidates
+2ac33b2bea6adcd3826f2eb6692c3c3e,no_match,,,,,,,,,,,,,,no_candidates
+3a2763cd71d30ce00c4acfe5be86e1fd,review,18829560,레인보우,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 73,부산 중구 남포동6가 1,35.0972982215669,129.027633875706,473.6,1.0,False,레인보우,500,needs_verification
+bd43f5eed66756be8870cc4e812bda83,no_match,,,,,,,,,,,,,,no_candidates
+5db1c9d03afc8574198144c533b18853,no_match,,,,,,,,,,,,,,no_candidates
+2f555254cfb1a10e4b7f06e7e12ec81b,review,384973600,메고지고떡카페,카페,음식점 > 카페,부산 중구 광복중앙로 22-1,부산 중구 광복동3가 1-3,35.1013989109696,129.031111735345,385.6,0.7273,False,메고지고,500,needs_verification
+28dedfcf55e8b297c46bad095903de9e,no_match,,,,,,,,,,,,,,no_candidates
+ac2fbe0771727bdcdc03a0b5679c6a64,no_match,,,,,,,,,,,,,,no_candidates
+45050b28be656b449038df239cdcc691,no_match,,,,,,,,,,,,,,no_candidates
+5f273b1a7fff1766d0e8e9ee6ba43840,no_match,,,,,,,,,,,,,,no_candidates
+15225a0d2ebf5463eb7544c714897729,no_match,,,,,,,,,,,,,,no_candidates
+4b82fcf6a4572dc37aee28b24bae962b,no_match,,,,,,,,,,,,,,no_candidates
+80d1884dd2b8a6a1545e447598cbf50d,no_match,,,,,,,,,,,,,,no_candidates
+03eb9a2f5bfcd894c8fe2aaa2d343e7a,no_match,,,,,,,,,,,,,,no_candidates
+f7d70af32fa94298e1f9ab17a2967545,no_match,,,,,,,,,,,,,,no_candidates
+ba774cbe594c1629d9d953015d4ed695,no_match,,,,,,,,,,,,,,no_candidates
+b479157fdd36799c6f14eb6f118d0411,review,1101860073,더베이먼트-비프애비뉴99,,부동산 > 주거시설 > 생활형숙박시설,부산 중구 중구로5번길 14,부산 중구 남포동6가 99,35.0981009074255,129.026787515472,239.5,0.375,False,더 에비뉴,500,needs_verification
+69e98c67d2d9cc3f79e1ca099c7c2ccb,no_match,,,,,,,,,,,,,,no_candidates
+d7bc52ec05f7b538de1dce9be31de328,no_match,,,,,,,,,,,,,,no_candidates
+2fbb41bdc0962d0840ff05899c3d8185,no_match,,,,,,,,,,,,,,no_candidates
+3f02265eb69a81eb082f0c31a52170cc,no_match,,,,,,,,,,,,,,no_candidates
+846894a3683f1af28a9e79d875fddf51,no_match,,,,,,,,,,,,,,no_candidates
+d183b7fe045cd04ebaabfc871c13cd51,no_match,,,,,,,,,,,,,,no_candidates
+f2b9879d4c15581fc7e37be2eb012645,no_match,,,,,,,,,,,,,,no_candidates
+dec612301c9a8fd5d278b69f050a29af,no_match,,,,,,,,,,,,,,no_candidates
+668e617b6e2614bb995805474be1376a,no_match,,,,,,,,,,,,,,no_candidates
+23183f8d39eeaa0076832bc063117875,no_match,,,,,,,,,,,,,,no_candidates
+02fb9a3e69ed1ef76dd4cfeb418fbf67,no_match,,,,,,,,,,,,,,no_candidates
+5ed1197fa281c19a52bb8181a65a420c,no_match,,,,,,,,,,,,,,no_candidates
+8a0da665c42a70b8b536bf8aeeb38ea1,no_match,,,,,,,,,,,,,,no_candidates
+8eaf0e0e0788265e4367ef1510e59b3c,no_match,,,,,,,,,,,,,,no_candidates
+0eb1652b3e89a6cccb6f38ad338f9d9d,review,1774891675,대성수산,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로48번길 3,부산 중구 남포동5가 104-1,35.0969950207851,129.029865404969,112.9,1.0,False,대성수산,500,needs_verification
+e5c8e9982dded99d53abb2d840c4551f,no_match,,,,,,,,,,,,,,no_candidates
+b695e7ea259383ad6bf507821479ad13,no_match,,,,,,,,,,,,,,no_candidates
+c2cc05e779221b0ae0f253792e9aa82a,no_match,,,,,,,,,,,,,,no_candidates
+6fcf779115899cf8d027620221db5d38,no_match,,,,,,,,,,,,,,no_candidates
+40cad2df060e574ed827269609896148,review,432553727,문,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로33번길 19,부산 중구 부평동1가 28-6,35.1008556705387,129.026795413559,274.4,0.3333,False,문,500,needs_verification
+32487aa81a00e535072d8ea4a8c2e08d,no_match,,,,,,,,,,,,,,no_candidates
+e18e04adb124cf38e880b56db9b2fe38,no_match,,,,,,,,,,,,,,no_candidates
+f147cf4965392f1bfe9d1e3380a44912,no_match,,,,,,,,,,,,,,no_candidates
+c51a006a6c56e8d71863f4557371ceeb,no_match,,,,,,,,,,,,,,no_candidates
+d560b2f82b38fc9d7863c4257e59fd1b,no_match,,,,,,,,,,,,,,no_candidates
+dc57d6face09fe890a3458f491dfb574,no_match,,,,,,,,,,,,,,no_candidates
+dd892498298208e9069978608cd1ed8f,no_match,,,,,,,,,,,,,,no_candidates
+e0b0d81b3007d426fd34da9c34fc3544,review,21357739,토우상회,,"가정,생활 > 식품판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968305935816,129.029082819613,39.5,0.5,True,토우수산,500,needs_verification
+7882029d900554f50bc120011bc3c871,no_match,,,,,,,,,,,,,,no_candidates
+4ae05951566df42cb9cf8e4b405a8516,no_match,,,,,,,,,,,,,,no_candidates
+ae8b96b19c9428961d4bfd6040adedc4,no_match,,,,,,,,,,,,,,no_candidates
+80d15e7a28d6dcc6591060a96a6a64d9,no_match,,,,,,,,,,,,,,no_candidates
+6275f2db11f3636b2b6200defbd992f1,no_match,,,,,,,,,,,,,,no_candidates
+3e8c1b7d6fdc1766185b72364d22c675,no_match,,,,,,,,,,,,,,no_candidates
+ac30411081e5efe6d20ae14d89349e43,no_match,,,,,,,,,,,,,,no_candidates
+fcd1393f6b8c39a80f5f73f7e5f04834,review,659911729,경북공업사,,"서비스,산업 > 제조업 > 산업용품",부산 중구 자갈치로 18,부산 중구 남포동6가 25-1,35.0963414355038,129.02637882627,320.9,1.0,False,경북공업사,500,needs_verification
+a85a9ab13db3f4af6599d602819f980e,no_match,,,,,,,,,,,,,,no_candidates
+b6acf69cb57495b847f15235359c0671,no_match,,,,,,,,,,,,,,no_candidates
+e794a62373e0d543b50b34bbfddcba13,no_match,,,,,,,,,,,,,,no_candidates
+967f8c0c65e754baa8b19a5282f7b564,review,778150528,윙윙벌집아이스크림 남포부평점,음식점,음식점 > 간식 > 아이스크림,부산 중구 부평1길 40,부산 중구 부평동2가 17,35.1012814676825,129.025960515909,332.5,0.7273,False,아이스크림,500,ambiguous
+c4f26676c57b09c4188820006f2a9dbe,no_match,,,,,,,,,,,,,,no_candidates
+dd46fb16c1825c974946f791962274de,no_match,,,,,,,,,,,,,,no_candidates
+386386a8592f6954bbe852d47e7f72e8,no_match,,,,,,,,,,,,,,no_candidates
+9361c1fe34269cb2844a7bc174f1204f,review,947430194,베티빌리지,음식점,"음식점 > 간식 > 제과,베이커리",부산 중구 광복중앙로34번길 9,부산 중구 대청동2가 27-7,35.1023750863659,129.03131469907,1.0,0.4348,True,베티빌리지,500,needs_verification
+6164839ce18398dda0cb7a2b7185f798,review,21406778,럭스캣,,"가정,생활 > 패션 > 의류판매 > 여성의류",,부산 중구 남포동1가 11,35.0979002723371,129.034727821579,383.0,0.8,False,럭스,500,needs_verification
+c2ac3a9ac3b119170b0e8ef19f458afd,no_match,,,,,,,,,,,,,,no_candidates
+0dbefaad1a7cd0f71e009648e797614b,no_match,,,,,,,,,,,,,,no_candidates
+b90bd600e89589ebbae80cbdbd7f6dfb,no_match,,,,,,,,,,,,,,no_candidates
+dfa004845a8f70e06707ad22a510bf3d,review,790843077,오가네,음식점,"음식점 > 술집 > 호프,요리주점",부산 중구 국제시장2길 2,부산 중구 창선동2가 23-2,35.09957348180755,129.02861570191624,127.6,1.0,False,오가네,500,needs_verification
+724feb6dfa08a212423163a098fcbed0,no_match,,,,,,,,,,,,,,no_candidates
+38171e9d6d402688a3a68faa935a130e,review,1595561373,케이스바이케이스,,"가정,생활 > 패션 > 패션잡화점 > 폰액세서리",부산 중구 광복로 39-2,부산 중구 창선동2가 7-2,35.0993880697139,129.029409377326,281.5,0.8,False,케이스바이케이스 자갈치점,500,needs_verification
+650647b0a34a259acae5cf0fa6e42174,no_match,,,,,,,,,,,,,,no_candidates
+8e050555c147143a829efff15da75e73,review,1517543455,동은,음식점,음식점 > 한식,부산 중구 중구로 52,부산 중구 대청동3가 26-2,35.10239765849512,129.02808368123107,207.2,1.0,False,동은,500,needs_verification
+bb007c1a2bd9c4ba6bcd554db48f0a4f,no_match,,,,,,,,,,,,,,no_candidates
+abf966625b536a1664bc27cc0832cc2e,review,988898268,엘로,,"가정,생활 > 통신판매 > 인터넷쇼핑몰",부산 중구 광복로49번길 31-1,부산 중구 신창동1가 30-5,35.10205466084987,129.03021566924383,111.1,0.5714,False,엘로,500,needs_verification
+a6dfb11b4ffa931a06a632b35e832667,review,1024309589,청조횟집,음식점,"음식점 > 한식 > 해물,생선 > 회",부산 중구 광복로12번길 3-2,부산 중구 부평동1가 41-6,35.0990695323331,129.026526402056,376.5,1.0,False,청조횟집,500,needs_verification
+e5bcc258b1b807686abd86e8f1921dd1,no_match,,,,,,,,,,,,,,no_candidates
+5eff119e57663af4e7f9a2ed886e0684,no_match,,,,,,,,,,,,,,no_candidates
+9c56f3004e8c12c8696d55ef33a79d99,no_match,,,,,,,,,,,,,,no_candidates
+195c2f4df1d819d679afb788a86af4cb,review,16286302,칼럼,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 73,부산 중구 남포동6가 1,35.0972982215669,129.027633875706,405.4,1.0,False,칼럼,500,needs_verification
+d7529bad85db164341b559363c0adf60,no_match,,,,,,,,,,,,,,no_candidates
+c606747a0ed9fdc29fbb915ce53c3b0e,no_match,,,,,,,,,,,,,,no_candidates
+dacf1fde4258e258612cd1b5e0ce909e,no_match,,,,,,,,,,,,,,no_candidates
+eee16cb2f3dad9515a7d0ee16d42e655,no_match,,,,,,,,,,,,,,no_candidates
+78a6a84d15001d4e5e3f20861c9eb019,no_match,,,,,,,,,,,,,,no_candidates
+c300febf945547571e82934c7109b70f,no_match,,,,,,,,,,,,,,no_candidates
+839e6b66c525004b16d82893daf0efbd,review,645854664,오유아이,,"가정,생활 > 패션 > 의류판매 > 여성의류",부산 중구 광복로49번길 19-1,부산 중구 신창동1가 17-5,35.10093346074744,129.03033150731642,0.1,0.7273,True,오유아이,500,needs_verification
+73abdcfa56cfb013ccd7c8f7f7afbbd3,review,1280497394,소예,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로44번길 19,부산 중구 신창동1가 32-2,35.10190526676822,129.02982707160177,152.8,1.0,False,소예,500,needs_verification
+8b1b36b929d82990139a55b008f297eb,review,2142936931,빈,음식점,음식점 > 술집,부산 중구 보수대로44번길 20-1,부산 중구 부평동3가 71-4,35.102206112608826,129.02390870368586,4.6,0.3333,True,빈,500,needs_verification
+a13ee61fd5ff31136dd583c34972824f,no_match,,,,,,,,,,,,,,no_candidates
+316e8d0e4448d096380bf5ca2468b590,no_match,,,,,,,,,,,,,,no_candidates
+fe2f6da31f9577015b928532b1638f9f,no_match,,,,,,,,,,,,,,no_candidates
+4a11d7e44cc6b1f261690fde0e8f82be,review,8507460,080안경,,"가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",부산 중구 중구로 14,부산 중구 창선동2가 45-17,35.09906263000841,129.02796267390156,235.6,1.0,False,080안경,500,needs_verification
+1b130080e32cbcf34afc9055b97aeb64,no_match,,,,,,,,,,,,,,no_candidates
+b2646800b41939b297c3b0e11c26246b,no_match,,,,,,,,,,,,,,no_candidates
+3c22f2a9eff732378d43ef3ddefcecf9,no_match,,,,,,,,,,,,,,no_candidates
+99d171cc1819f970a8f85b7a9fd3f0f7,no_match,,,,,,,,,,,,,,no_candidates
+8ec49b1673fa15b4c4fd3be0891dfa8c,no_match,,,,,,,,,,,,,,no_candidates
+301bcb16396ee5665eed01eded0b873b,no_match,,,,,,,,,,,,,,no_candidates
+103b683b05069e7df5d321327b54eb00,review,58512974,자갈치비디오만물,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0982692636774,129.030512142804,138.8,1.0,False,자갈치만물,500,needs_verification
+505eae005efe5d4f0ee3ee647ce3ab01,no_match,,,,,,,,,,,,,,no_candidates
+4c1e08eb8a284dea7e549b4553574ea8,no_match,,,,,,,,,,,,,,no_candidates
+69d7f411d060343127e250d1adbbf39b,no_match,,,,,,,,,,,,,,no_candidates
+acc104017bbcafb5b03d29187728644f,no_match,,,,,,,,,,,,,,no_candidates
+0fefcc52cda22382029cb6e1f09f8cf1,review,1904881995,쏘유,,"가정,생활 > 패션 > 의류판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0982870918833,129.030308634151,157.3,1.0,False,쏘유,500,needs_verification
+e554f09eca0af73c7e49682a9c19d771,no_match,,,,,,,,,,,,,,no_candidates
+1007cff314b3fb15e40ea1057a657f38,review,393027699,미진축산 본점,음식점,"음식점 > 한식 > 육류,고기",부산 중구 보수대로44번길 6-2,부산 중구 부평동3가 60-1,35.1009885362867,129.023859956334,325.2,0.7692,False,미진축산 남포점,500,needs_verification
+e2e47925f0105692b6b2d7c8c9d12428,review,1646485959,대청포세이돈아크로,,부동산 > 주거시설 > 도시형생활주택,부산 중구 중구로 72-6,부산 중구 대청동4가 82-21,35.103603973493,129.029074178042,244.0,0.375,False,아크로,500,needs_verification
+95fb78091b72a3179ba256619dc13f6a,review,852291791,아조이헤어,,"가정,생활 > 미용 > 미용실",부산 중구 대청로 93,부산 중구 대청동2가 20-2,35.1030527815702,129.030077037641,0.1,0.5556,True,아조이헤어,500,needs_verification
+352e4141b63f6eaab78f8ff3b91a4d6f,review,11054695,부영인삼,,"의료,건강 > 건강식품판매 > 인삼,홍삼",부산 중구 중구로 28,부산 중구 신창동4가 21-3,35.100267944371,129.028097802357,142.8,1.0,False,부영인삼,500,needs_verification
+493fd743c356438a9a4d48e1e807f2d0,review,631084742,24시중화요리,음식점,음식점 > 중식 > 중국요리,부산 서구 천마로 225-1,부산 서구 충무동2가 27-5,35.0956573079638,129.022286291293,465.1,0.4,False,자갈치맛집24시,500,needs_verification
+ccca0a951d0f9104ce8d3c9acf8bece8,no_match,,,,,,,,,,,,,,no_candidates
+0db850da3b2ae04347407aca2e94570f,no_match,,,,,,,,,,,,,,no_candidates
+e62d9d20d71afbbeb5c6e6e544876f1d,no_match,,,,,,,,,,,,,,no_candidates
+6c63214ff1c6076c3a0c64fbb1e178c9,no_match,,,,,,,,,,,,,,no_candidates
+2d8987ccec59c127dfb6bb90677ae3a9,no_match,,,,,,,,,,,,,,no_candidates
+e97cac595f6345a814ac1e634c74ffe4,no_match,,,,,,,,,,,,,,no_candidates
+c05b72c05b8ca2a6a9eeb7bacb24c6ac,no_match,,,,,,,,,,,,,,no_candidates
+4ef14e5c383f8599a8aee61ee429d185,review,1437933690,어스,음식점,음식점 > 일식 > 일식집,부산 중구 대청로137번길 4-1,부산 중구 중앙동3가 14-9,35.10324020100889,129.0350754931757,437.1,0.6667,False,어스,500,needs_verification
+e9f20acbfb0ab7c705e533b0f187761f,review,1949742769,BB모바일,,"가정,생활 > 전자제품 > 전자제품판매 > 휴대폰판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0980090430311,129.032004612158,0.0,0.8333,False,비비모바일,500,needs_verification
+4d22df3fea55489d85954317bbfbfccc,no_match,,,,,,,,,,,,,,no_candidates
+711764860cc39204ecfabbd523a1c4b7,no_match,,,,,,,,,,,,,,no_candidates
+b6099f070ec00372f9798e566754b17e,no_match,,,,,,,,,,,,,,no_candidates
+12f76b95346a84fd8c93c581f9ffe7af,no_match,,,,,,,,,,,,,,no_candidates
+2a36b9ef91f05fa3fc9e1002f4199fd7,no_match,,,,,,,,,,,,,,no_candidates
+89e716291126196438b7a858f577afc0,review,1860881028,이앤조,,"의료,건강 > 건강식품판매",부산 중구 대청로 87,부산 중구 대청동3가 9-1,35.1031441515016,129.029410392958,86.3,0.4,False,앤,500,ambiguous
+b12ced1d017669f5feaf2617ca6e4bda,no_match,,,,,,,,,,,,,,no_candidates
+acec2210d1f3f4e7f11de65b2b0d03ff,no_match,,,,,,,,,,,,,,no_candidates
+18d2b9b8a33c049837ed00794042873d,no_match,,,,,,,,,,,,,,no_candidates
+b802e80e744282684a2348b2d63a257b,review,15949511,K1,,"가정,생활 > 패션 > 의류판매",부산 중구 광복로35번길 19,부산 중구 신창동3가 28-1,35.1010575831428,129.028731433813,167.8,0.5714,False,케이원,500,needs_verification
+dc1138fe2edb1d01fb137e2ca6ebabea,no_match,,,,,,,,,,,,,,no_candidates
+5bb97ba22038ff359c1363aa8d7f7478,no_match,,,,,,,,,,,,,,no_candidates
+01424083dd39969eaf9600dcdb7896ec,no_match,,,,,,,,,,,,,,no_candidates
+1faa882321b6f4a46fc41dff6fd5f113,no_match,,,,,,,,,,,,,,no_candidates
+7ec4b1924c14778447c3aa7ce94b26c5,no_match,,,,,,,,,,,,,,no_candidates
+53d6bf228dba38054ae2235e59ad4c22,no_match,,,,,,,,,,,,,,no_candidates
+a9f7480d3e0e1a2437db6ab381f3a45d,review,361855389,김해상회,,"가정,생활 > 식품판매 > 수산물판매",부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.09683364624916,129.02911578998877,135.8,1.0,False,김해상회,500,needs_verification
+04d331add445866408daff86b516eed8,no_match,,,,,,,,,,,,,,no_candidates
+d6455874f4766112e05c590ff02d5bdb,no_match,,,,,,,,,,,,,,no_candidates
+1afa241f6ed9cbc1876dc6248efe0162,no_match,,,,,,,,,,,,,,no_candidates
+d41476d141f2112c4c612e7f861a37ba,no_match,,,,,,,,,,,,,,no_candidates
+e4a833f0c3a70b2c6ff94bc20dd091fc,review,258966490,창녕상회,음식점,음식점 > 한식,부산 중구 자갈치로 42,부산 중구 남포동5가 92,35.0968313859409,129.029143146246,133.3,1.0,False,창녕상회,500,needs_verification
+17f1a492e662065e454d4116bfa0a545,no_match,,,,,,,,,,,,,,no_candidates
+1f1bf970873936398187aeea93921a28,no_match,,,,,,,,,,,,,,no_candidates
+57e44a7c1a6d09b1cabbf9b72e13d900,no_match,,,,,,,,,,,,,,no_candidates
+bb4cd206b948e17c644ea9408f7f3e97,no_match,,,,,,,,,,,,,,no_candidates
+c783c3a6e3a7731f005eb14df67330ba,no_match,,,,,,,,,,,,,,no_candidates
+3e5afbf8863f13ec127e228d18a74f30,no_match,,,,,,,,,,,,,,no_candidates
+572e1bf999cae5ebf329fdc4ab0b9eaf,no_match,,,,,,,,,,,,,,no_candidates
+4f1f567ae1701e221fac4588f3037a3e,no_match,,,,,,,,,,,,,,no_candidates
+67a0c0b384884884a9011eff117770c7,no_match,,,,,,,,,,,,,,no_candidates
+36206875d7eb10b190224c69e0d8cf31,no_match,,,,,,,,,,,,,,no_candidates
+f1e1b77ac8396939d1724208349128cb,review,26895378,하쿠더갓포,음식점,음식점 > 술집 > 일본식주점,부산 중구 광복로43번길 10,부산 중구 창선동1가 11,35.10004878906424,129.02977664872887,357.3,0.2222,False,더꼬치다,500,needs_verification
+47aff551487b90b17ff03c64e232a3d3,no_match,,,,,,,,,,,,,,no_candidates
+a8bc239e4415e41762d6ec5694c52d49,no_match,,,,,,,,,,,,,,no_candidates
+f7550c787a14594cbb2ac5973ff95ec9,no_match,,,,,,,,,,,,,,no_candidates
+a7a21edfcb86644f86fa74650e1f1bfc,no_match,,,,,,,,,,,,,,no_candidates
+6f8687ab0ac848793c89f5891a6baff7,review,21426483,밀양순대 돼지국밥 부평점,음식점,음식점 > 한식 > 국밥,부산 중구 광복로 6,부산 중구 부평동2가 50-1,35.099386656593,129.025615364266,394.4,0.6316,False,부산순대돼지국밥,500,needs_verification
+2a26953dc1d844341ab4e9331096375f,no_match,,,,,,,,,,,,,,no_candidates
+7c8475f300814bc54bf60a143e6bad48,review,1601229884,콩카페 부산남포동점,카페,음식점 > 카페 > 커피전문점 > 콩카페,부산 중구 광복로 35-1,부산 중구 창선동2가 8-3,35.0994379532871,129.029067401478,330.7,1.0,False,콩카페,500,needs_verification
+4d23be88dc05f7751a162af902127bca,no_match,,,,,,,,,,,,,,no_candidates
+7d16d3ae6c93b556457dc63e8c06aa7a,review,342651357,아임헬로,,"가정,생활 > 통신판매 > 인터넷쇼핑몰",부산 중구 대청로 91-6,부산 중구 대청동2가 19-2,35.1031974065238,129.03010474948,374.3,0.3636,False,헬로,500,ambiguous
+ecb6edba046145c2ad66003684df7781,no_match,,,,,,,,,,,,,,no_candidates
+a04a85125c8bfd1cc042e789755bb9fc,no_match,,,,,,,,,,,,,,no_candidates
+5f257eb192d0f2faaa7565b054f7c6d0,no_match,,,,,,,,,,,,,,no_candidates
+c2dd3997d2995623a4f6e988587cd8fa,no_match,,,,,,,,,,,,,,no_candidates
+54d7665b5980884ebdd023bda71b0191,review,1960289935,제이엔제이행복한하모니카 남포센터,,"문화,예술 > 음악",부산 중구 구덕로 66-2,부산 중구 남포동5가 38-1,35.0979916878276,129.028467949178,199.3,0.4762,False,제이엔제이,500,ambiguous
+68d7ff9ccde7b4269fe37aa86d7dfd95,no_match,,,,,,,,,,,,,,no_candidates
+b4d9518f1e7035a0991d99c55690b97c,no_match,,,,,,,,,,,,,,no_candidates
+7a456b142aa5859aa113708bb14a084f,no_match,,,,,,,,,,,,,,no_candidates
+0299e6d7ff954b549762cad4ba3b724b,no_match,,,,,,,,,,,,,,no_candidates
+a17283ac63b434ffd6c875c12eb622c7,no_match,,,,,,,,,,,,,,no_candidates
+97363b0485809cb10222d90832da396a,no_match,,,,,,,,,,,,,,no_candidates
+78940d2766dee652158ec86e4f1be848,no_match,,,,,,,,,,,,,,no_candidates
+734105b846dd9a4c813a778ecf2c3cfc,review,10795887,중앙단추,,"서비스,산업 > 제조업 > 섬유 > 의류소품",부산 중구 광복로39번길 21-1,부산 중구 신창동2가 29-3,35.1011472359229,129.029189820119,135.6,0.6667,False,단추,500,needs_verification
+ba99387065ce514353cd88f58a16aabc,review,18032882,친구포차,음식점,음식점 > 술집 > 실내포장마차,부산 중구 남포길 25-3,부산 중구 남포동2가 15-4,35.0987810790219,129.031429464192,402.9,0.5714,False,친구야,500,needs_verification
+f76dd51de190092f58b7cdc58f858f84,no_match,,,,,,,,,,,,,,no_candidates
+960e1e42d25b499e610b3d617f6040d7,review,21582198,시에나,,"가정,생활 > 패션 > 의류판매",부산 중구 자갈치로 33,부산 중구 남포동6가 3,35.0970393128485,129.02781167408,396.4,1.0,False,시에나,500,needs_verification
+a910aed65dacf3e0ea608f43416bf220,no_match,,,,,,,,,,,,,,no_candidates
+db34fae3731d194ea6cf604367e50724,no_match,,,,,,,,,,,,,,no_candidates
+213436f6b3e7b6d9d5d766f18e6a4b20,no_match,,,,,,,,,,,,,,no_candidates
+d3a56ec44fe250a2739f7dc8848bad13,no_match,,,,,,,,,,,,,,no_candidates
+cbfd402e12611e4f07869ba12ecbf958,no_match,,,,,,,,,,,,,,no_candidates
+d7c45ead723265886e1f039566b4df78,no_match,,,,,,,,,,,,,,no_candidates
+950d0e6a30176a3a745a19ce7dd0bbbc,no_match,,,,,,,,,,,,,,no_candidates
+15bb0548a2e993bf0a869b534928995f,no_match,,,,,,,,,,,,,,no_candidates
+169b31b2c670259583b3df640798ede4,no_match,,,,,,,,,,,,,,no_candidates
+34ad7e506f4522f1fa61361e5c417dde,no_match,,,,,,,,,,,,,,no_candidates
+4074638d81e66987101c514c32b30640,no_match,,,,,,,,,,,,,,no_candidates
+fa237baa4a93f90f23315d15b173fc07,no_match,,,,,,,,,,,,,,no_candidates
+129bcb5646083512a9b11e5dcd985ae0,no_match,,,,,,,,,,,,,,no_candidates
+407abedac2113bbb7b278ab21f9ecbe7,no_match,,,,,,,,,,,,,,no_candidates
+155cbddce5e4ac8686eee28a1af3da9f,no_match,,,,,,,,,,,,,,no_candidates
+e80b1fe4a31a252475c1ec7565b44f86,no_match,,,,,,,,,,,,,,no_candidates
+24e3e8c5ae44dd536e2e9c371095e980,no_match,,,,,,,,,,,,,,no_candidates
+b7fbe1b9e29f424197c327d3bc704498,no_match,,,,,,,,,,,,,,no_candidates
+badee015370bb03b00341bc2c1a99246,no_match,,,,,,,,,,,,,,no_candidates
+5a4b3095ee8f284ed060470b8cbe27fb,no_match,,,,,,,,,,,,,,no_candidates
+54f33e8beff6530eddaf4929a929fc0f,no_match,,,,,,,,,,,,,,no_candidates
+ca83c12865f03e58534c227d0527354b,review,993748182,인디프헤어 남포본점,,"가정,생활 > 미용 > 미용실",부산 중구 광복로 96,부산 중구 광복동1가 37-1,35.0985883805453,129.035287698901,0.2,0.4167,True,인디프헤어,500,needs_verification
+2b38119362072fe4ced6fb7726f2af29,no_match,,,,,,,,,,,,,,no_candidates
+779c2de1d6bc7465a65e7bf985bbf737,no_match,,,,,,,,,,,,,,no_candidates
+85a9637295d7cefda5fbe305bf2885cd,no_match,,,,,,,,,,,,,,no_candidates
+e8c85046bb6954b65809870ef1254104,no_match,,,,,,,,,,,,,,no_candidates
+0e9f101c6b5935173987250e593f3953,no_match,,,,,,,,,,,,,,no_candidates
+b938aa282fd948391605fad47eb6641e,no_match,,,,,,,,,,,,,,no_candidates
+9089e60b2d08a043b0b8197ba05f7567,no_match,,,,,,,,,,,,,,no_candidates
+269c4e0b7cbf50a1319c0b29d7dbeeb4,no_match,,,,,,,,,,,,,,no_candidates
+8ad83cee8480239403e3763c07cb9fea,no_match,,,,,,,,,,,,,,no_candidates
+1b82e1b309a4fd91e7d259ea6cc8d1d7,no_match,,,,,,,,,,,,,,no_candidates
+d41c1bffadcf418bc7c1ac3065f4f35c,no_match,,,,,,,,,,,,,,no_candidates
+173a9cd31f6b32d64a1e2b67581bb844,review,9090468,새부평한우갈비,음식점,"음식점 > 한식 > 육류,고기 > 갈비",부산 중구 부평2길 29,부산 중구 부평동2가 20-1,35.10079863905415,129.02632577685853,487.1,0.9231,False,부평한우갈비,500,needs_verification
+eaad52824f064e1158feba781b6887eb,no_match,,,,,,,,,,,,,,no_candidates
+870e1c824f9e7d32e0cf88ba7b24f348,no_match,,,,,,,,,,,,,,no_candidates
+98abed8c9c388efc324a899f23c85bb7,no_match,,,,,,,,,,,,,,no_candidates
+2c6b1ac41a261fcdf345e2f2271c75c5,no_match,,,,,,,,,,,,,,no_candidates
+09f92a4287953df69c24963269f91067,review,908330315,미영이네보리밥집,음식점,음식점 > 한식,부산 중구 중구로33번길 19,부산 중구 부평동1가 28-6,35.1008580613225,129.02681411402773,308.5,0.6154,False,보리밥 맛집,500,needs_verification
+fd3db8acb27e969119b845c43ab94949,no_match,,,,,,,,,,,,,,no_candidates
+590c7ff4b41c1584b9e9d6d17c9442ef,no_match,,,,,,,,,,,,,,no_candidates
+545656617c88e41da28ccb4e68bafa7a,no_match,,,,,,,,,,,,,,no_candidates
+ac41d643557792ac9fc77f86fe67d323,no_match,,,,,,,,,,,,,,no_candidates
+ab7ea2a5d7c6fd0bd12e696529e4b815,no_match,,,,,,,,,,,,,,no_candidates
+0a3c336b15ce470e434fc51ce84b135f,no_match,,,,,,,,,,,,,,no_candidates
+e58eb1e954515ca18d4bc6104af2e8b6,no_match,,,,,,,,,,,,,,no_candidates
+d2e6ad475b08964947c34bb19c8845d7,review,1554578623,OXPC 남포비프광장점,,"가정,생활 > 여가시설 > 게임방,PC방",부산 중구 구덕로 54-1,부산 중구 남포동5가 8-1,35.09839925501547,129.02969188690344,0.1,0.4,True,오엑스피시,500,needs_verification
+a3c285982ff597064038c3a6b3e30d02,no_match,,,,,,,,,,,,,,no_candidates
+6c8dbb0e2f58038379c04dc10d14d6d7,no_match,,,,,,,,,,,,,,no_candidates
+220da8e236f1d44b97d30c837aa55aa2,no_match,,,,,,,,,,,,,,no_candidates
+d52e0e224701001cabc67110a5335cd3,no_match,,,,,,,,,,,,,,no_candidates
+d1433e8904ac869f319b526bc0c2d63d,no_match,,,,,,,,,,,,,,no_candidates
+016eccde6038fb199b0f4368b7c412fb,no_match,,,,,,,,,,,,,,no_candidates
+0293522014de90b37a76fcf4fc84b065,no_match,,,,,,,,,,,,,,no_candidates
+fc83345b08a4638e86e19892a6d6cc16,review,15913777,분홍공주,,"가정,생활 > 패션 > 패션잡화점 > 액세서리",부산 중구 중구로47번길 15,부산 중구 부평동1가 15-4,35.1021132562008,129.027038190102,280.3,0.6667,False,공주,500,ambiguous
+eeaa978ec8f2f673fbf604f756460d5f,no_match,,,,,,,,,,,,,,no_candidates
+976782b331ff4f4aa77fa3f359630e3a,no_match,,,,,,,,,,,,,,no_candidates
+e127123a6e9ea8f51c632a29ef809a77,no_match,,,,,,,,,,,,,,no_candidates
+eb6f1aee90c31048f67805d95526c58c,review,1263708654,메가MGC커피 부산BIFF광장점,카페,음식점 > 카페 > 커피전문점 > 메가MGC커피,부산 중구 구덕로 66,부산 중구 남포동5가 37-3,35.0980617358448,129.028644029559,68.2,0.7647,False,메가엠지씨커피 부산비프광장점,500,needs_verification
+befac4fdc1fe4b95d93a8eaa3737e878,no_match,,,,,,,,,,,,,,no_candidates
+f946673dbdf41d4d3d82ac6fa158405e,review,73980057,KB국민은행 광복동(점),은행,"금융,보험 > 금융서비스 > 은행 > KB국민은행",부산 중구 광복로 45,부산 중구 창선동1가 15,35.099449485780326,129.02999315512068,243.2,0.1538,False,점이네,500,needs_verification
+8d00a95cf948706454f092a9c3ed9a7a,no_match,,,,,,,,,,,,,,no_candidates
+453fa6066e8a29db2c5d1e661b37546d,review,840560292,키마우,음식점,음식점 > 술집,부산 중구 광복로16번길 7,부산 중구 부평동1가 39-15,35.0991391092263,129.026784710722,0.0,0.5,True,키마우,500,needs_verification
+5a20e9bca7a9527f4c679129d019c732,no_match,,,,,,,,,,,,,,no_candidates
+4db19a0e655bb16168cad36c1b6e860d,no_match,,,,,,,,,,,,,,no_candidates
+76edcb3f3a78173bafa69bbd9307ce52,no_match,,,,,,,,,,,,,,no_candidates
+74466e846b70156aac406d95f045477e,no_match,,,,,,,,,,,,,,no_candidates
+11020553811413e6db4771177dd83b3c,no_match,,,,,,,,,,,,,,no_candidates
+30a53659e3422bea6fc2a57b4578b7ab,no_match,,,,,,,,,,,,,,no_candidates
+35669efab6991130cee46a9086f0b6b9,no_match,,,,,,,,,,,,,,no_candidates
+74f7fc863642fe20ec080546923929c2,no_match,,,,,,,,,,,,,,no_candidates
+e3a62dee76c886986e086fc14bbb785d,review,1447000727,브래딩반죽의말,음식점,"음식점 > 간식 > 제과,베이커리",부산 중구 대청로 93,부산 중구 대청동2가 20-2,35.1030527815228,129.030077037629,0.1,0.6364,True,브래딩반죽의 말,500,needs_verification
+32df3c11e1f0e550e2ab02e172afb3a5,review,554635355,천상천황백마장군,,"문화,예술 > 종교",부산 중구 중구로29번길 35,부산 중구 부평동2가 24-20,35.1004447863471,129.025929938633,124.2,0.3333,False,장군이네,500,ambiguous
+cb157c4109583d42c1dbd73eff091f96,no_match,,,,,,,,,,,,,,no_candidates
+d4e91c21f50eab40801a1d3d5b909c0a,no_match,,,,,,,,,,,,,,no_candidates
+248191558d12a5b3664ef6ed2fdd71ba,no_match,,,,,,,,,,,,,,no_candidates
+71811170871ac585e6081e1cc6034e64,no_match,,,,,,,,,,,,,,no_candidates
+7dfc519f43e50e6d4aeb3e37842595f8,no_match,,,,,,,,,,,,,,no_candidates
+f8bcdb8f9264367ac740679f6e38e3fb,no_match,,,,,,,,,,,,,,no_candidates
+047631ec5305d92d5cbc1978cf20d8bc,no_match,,,,,,,,,,,,,,no_candidates
+95426f10941fd3c0e4da10d18155384f,no_match,,,,,,,,,,,,,,no_candidates
+a546eea7a8df3b591900193a11fd1cd7,accepted,9425226.0,중구종합사회복지관,,"사회,공공기관 > 단체,협회 > 사회복지시설",부산 중구 망양로 309,부산 중구 대청동4가 75-7,35.1058061469978,129.02823065133,2.6,0.6429,True,로사리오카리타스중구종합사회복지관,500.0,manual_confirmed_mvp_retry
+797a51ac5e29b7970ead32d86221e3b7,accepted,26877653.0,와호텔,숙박,"여행 > 숙박 > 여관,모텔",부산 중구 광복로97번안길 5,부산 중구 광복동1가 33,35.0990566733272,129.034984641064,1.7,0.6,True,와 호텔,500.0,manual_confirmed_mvp_retry
+240e9a1c32b59bfb3f9449dd38971d46,accepted,750621666.0,카페모카 by지엔비호텔,카페,음식점 > 카페,부산 중구 흑교로 19,부산 중구 부평동3가 40-5,35.1012403846313,129.024805927624,1.1,0.4167,True,지엔비호텔,500.0,manual_confirmed_mvp_retry
+9bd5ce82b3f63665ec20705ae7374b1d,accepted,948979003.0,SJ리샵,,"가정,생활 > 패션 > 의류판매",부산 중구 중구로53번길 6,부산 중구 부평동1가 2-15,35.1027230242803,129.027434897764,0.0,0.6667,True,에스제이리샵,500.0,manual_confirmed_mvp_retry
+2eb5a81bf030e71593694a117a4ba911,accepted,847994381.0,화이트이치과 남포점,병원,"의료,건강 > 병원 > 치과",부산 중구 비프광장로 36,부산 중구 남포동5가 18-1,35.0986095940593,129.028808925266,4.8,0.6667,True,화이트이치과의원,500.0,manual_confirmed_mvp_retry
+3af6e194990a75100e72573d19d12a2d,accepted,863346891.0,27번빨간모자포차,음식점,음식점 > 술집 > 실내포장마차,부산 중구 부평1길 8-1,부산 중구 부평동2가 26-32,35.09983574549882,129.02581288760226,4.1,0.5882,True,이십칠번포차,500.0,manual_confirmed_mvp_retry
+ec61f53927f7888c5adf9b7437dd6b70,accepted,8216253.0,보신카메라,,"문화,예술 > 사진 > 카메라판매",부산 중구 광복로 83-3,부산 중구 광복동1가 17-5,35.0986604818165,129.03410635290078,0.1,0.0,True,비에스디지털,500.0,manual_confirmed_mvp_retry
+6d4ce940a66367ea24e320f2d53b6757,accepted,1513012530.0,컴포즈커피 BIFF거리점,카페,음식점 > 카페 > 커피전문점 > 컴포즈커피,부산 중구 비프광장로 8,부산 중구 남포동6가 102-2,35.09822786582776,129.02609327830882,2.8,0.7692,True,컴포즈커피 남포비프점,500.0,manual_confirmed_mvp_retry
+9361c1fe34269cb2844a7bc174f1204f,accepted,947430194.0,베티빌리지,음식점,"음식점 > 간식 > 제과,베이커리",부산 중구 광복중앙로34번길 9,부산 중구 대청동2가 27-7,35.1023750863659,129.03131469907,1.0,0.4348,True,베티빌리지,500.0,manual_confirmed_mvp_retry
+839e6b66c525004b16d82893daf0efbd,accepted,645854664.0,오유아이,,"가정,생활 > 패션 > 의류판매 > 여성의류",부산 중구 광복로49번길 19-1,부산 중구 신창동1가 17-5,35.10093346074744,129.03033150731642,0.1,0.7273,True,오유아이,500.0,manual_confirmed_mvp_retry
+8b1b36b929d82990139a55b008f297eb,accepted,2142936931.0,빈,음식점,음식점 > 술집,부산 중구 보수대로44번길 20-1,부산 중구 부평동3가 71-4,35.102206112608826,129.02390870368586,4.6,0.3333,True,빈,500.0,manual_confirmed_mvp_retry
+95fb78091b72a3179ba256619dc13f6a,accepted,852291791.0,아조이헤어,,"가정,생활 > 미용 > 미용실",부산 중구 대청로 93,부산 중구 대청동2가 20-2,35.1030527815702,129.030077037641,0.1,0.5556,True,아조이헤어,500.0,manual_confirmed_mvp_retry
+e9f20acbfb0ab7c705e533b0f187761f,accepted,1949742769.0,BB모바일,,"가정,생활 > 전자제품 > 전자제품판매 > 휴대폰판매",부산 중구 구덕로 지하 44,부산 중구 남포동5가 83-2,35.0980090430311,129.032004612158,0.0,0.8333,False,비비모바일,500.0,manual_confirmed_mvp_retry
+ca83c12865f03e58534c227d0527354b,accepted,993748182.0,인디프헤어 남포본점,,"가정,생활 > 미용 > 미용실",부산 중구 광복로 96,부산 중구 광복동1가 37-1,35.0985883805453,129.035287698901,0.2,0.4167,True,인디프헤어,500.0,manual_confirmed_mvp_retry
+d2e6ad475b08964947c34bb19c8845d7,accepted,1554578623.0,OXPC 남포비프광장점,,"가정,생활 > 여가시설 > 게임방,PC방",부산 중구 구덕로 54-1,부산 중구 남포동5가 8-1,35.09839925501547,129.02969188690344,0.1,0.4,True,오엑스피시,500.0,manual_confirmed_mvp_retry
+453fa6066e8a29db2c5d1e661b37546d,accepted,840560292.0,키마우,음식점,음식점 > 술집,부산 중구 광복로16번길 7,부산 중구 부평동1가 39-15,35.0991391092263,129.026784710722,0.0,0.5,True,키마우,500.0,manual_confirmed_mvp_retry
+e3a62dee76c886986e086fc14bbb785d,accepted,1447000727.0,브래딩반죽의말,음식점,"음식점 > 간식 > 제과,베이커리",부산 중구 대청로 93,부산 중구 대청동2가 20-2,35.1030527815228,129.030077037629,0.1,0.6364,True,브래딩반죽의 말,500.0,manual_confirmed_mvp_retry
