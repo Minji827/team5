@@ -1,0 +1,11 @@
+﻿id,name,category,visit_type,address,lon,lat,admin_dong,duration_min,estimated_spend,opening_hours,rating,review_count,rating_source,market_id,is_busan_mat,source,source_id,data_date
+shopping_mvp_01,와펜하우스 부산광복점,쇼핑,retail_store,부산광역시 중구 광복로 46-1,129.030033147137,35.099143137198,광복동,25,,23:00 마감 (오픈시간 미확인),,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_02,지와이빈티지,쇼핑,retail_store,부산광역시 중구 광복로 64-1,129.031932890056,35.0989053828039,광복동,25,,12:30~21:30,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_03,부평깡통큰약국,쇼핑,retail_store,부산광역시 중구 부평2길 54,129.026601587133,35.1018849005439,부평동,25,,매일 08:30~19:30,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_04,다원도기,쇼핑,retail_store,부산광역시 중구 국제시장2길 29,129.028200953565,35.1005365708078,광복동,25,,,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_05,대광카메라,쇼핑,retail_store,"부산광역시 중구 구덕로 73, 남포지하상가 라-68호",129.026775367303,35.0975216541907,남포동,25,,,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_06,국제완구,쇼핑,retail_store,부산광역시 중구 중구로33번길 5,129.027579082098,35.1008189512611,부평동,25,,,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_07,아이하시,쇼핑,retail_store,부산광역시 중구 국제시장2길 33,129.028303881711,35.1023803655514,광복동,25,,,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_08,창선문구사,쇼핑,retail_store,"부산광역시 중구 중구로 28, 국제시장 6공구 창선문구사",129.028052247724,35.1002305869117,광복동,25,,,,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_09,일성모자점,쇼핑,retail_store,부산광역시 중구 국제시장2길 19,129.028307309972,35.1011203747498,광복동,25,,09:30~20:00 (관광정보 안내),,,,,False,dongbaekjeon,,2026-04-24
+shopping_mvp_10,안동민예토산품,쇼핑,retail_store,부산광역시 중구 국제시장2길 18,129.028553383535,35.1008375225472,광복동,25,,,,,,,False,dongbaekjeon,,2026-04-24
