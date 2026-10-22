@@ -1,0 +1,3 @@
+﻿name,lon,lat,reason,coordinate_source,note
+유라리광장,129.035773792455,35.0962209413009,outside_mvp,kakao_local,exact_name; address_conflict; boundary_review_required
+자갈치크루즈,129.0317124553,35.0967261783,outside_mvp,tourapi,normalized_exact_name_and_road_address; contentid=3064821; representative_point_outside_boundary

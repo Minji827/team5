@@ -1,8 +1,10 @@
+import { useI18n } from "../i18n.js";
 import { useEffect, useState } from "react";
 
-const STEPS = ["주변 장소 탐색 중", "최적 동선 계산 중", "루트 완성 중"];
+const STEPS = ["load1", "load2", "load3"];
 
 export default function RouteLoading() {
+  const { t } = useI18n();
   const [pct, setPct] = useState(8);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function RouteLoading() {
   return (
     <div className="route-loading">
       <span className="spinner" />
-      <div className="route-loading-text">{STEPS[stepIdx]}...</div>
+      <div className="route-loading-text">{t(STEPS[stepIdx])}...</div>
       <div className="route-loading-bar">
         <div className="route-loading-fill" style={{ width: `${pct}%` }} />
       </div>

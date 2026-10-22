@@ -7,3 +7,411 @@
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: http://192.168.10.144:5173/  Wi-Fi
+오전 10:32:42 [vite] (client) hmr update /src/index.css
+오전 10:33:03 [vite] (client) hmr update /src/App.jsx
+오전 10:33:13 [vite] (client) hmr update /src/App.css
+오전 10:33:28 [vite] (client) hmr update /src/App.css
+오전 10:33:40 [vite] (client) hmr update /src/App.css
+오전 10:33:44 [vite] (client) hmr update /src/App.css
+오전 10:33:49 [vite] (client) hmr update /src/App.css
+오전 10:50:15 [vite] (client) hmr update /src/App.jsx
+오전 10:50:15 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오전 10:50:15 [vite] (client) page reload index.html
+오전 10:50:15 [vite] (client) hmr update /src/components/MapView.jsx
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:50:15 [vite] Internal server error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+      at TransformPluginContext._formatLog (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26632:18)
+      at async file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26702:30
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26668:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20184:26)
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:15 [vite] (client) [console.error] [vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+오전 10:50:15 [vite] Internal server error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+      at TransformPluginContext._formatLog (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26632:18)
+      at async file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26702:30
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26668:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20184:26)
+      at async viteTransformMiddleware (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20404:20)
+오전 10:50:15 [vite] (client) [console.error] [vite] Failed to reload /src/components/FilterPanel.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:15 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:50:16 [vite] Internal server error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+      at TransformPluginContext._formatLog (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26632:18)
+      at async file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26702:30
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26668:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20184:26)
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:50:16 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:52:17 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:52:17 [vite] Internal server error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+      at TransformPluginContext._formatLog (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26632:18)
+      at async file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26702:30
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26668:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20184:26)
+오전 10:52:17 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:52:17 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:52:34 [vite] (client) Pre-transform error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+오전 10:52:34 [vite] Internal server error: Failed to resolve import "./components/Icon" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx:7:17
+  5  |  import { getCategories, getRecommendation, recalculateRoute } from "./api";
+  6  |  import "./App.css";
+  7  |  import Icon from "./components/Icon";
+     |                    ^
+  8  |  import ServiceInfo from "./components/ServiceInfo";
+  9  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/App.jsx";
+      at TransformPluginContext._formatLog (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26632:18)
+      at async file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26702:30
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:26668:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///C:/Users/redsu/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/team5/frontend/node_modules/vite/dist/node/chunks/node.js:20184:26)
+오전 10:52:34 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:52:34 [vite] (client) Pre-transform error: Failed to resolve import "./Icon" from "src/components/FilterPanel.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx:3:17
+  1  |  import { useState } from "react";
+  2  |  import { searchLocation } from "../api";
+  3  |  import Icon from "./Icon";
+     |                    ^
+  4  |  var _jsxFileName = "C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx";
+  5  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+오전 10:53:23 [vite] (client) hmr update /src/components/RouteList.jsx
+오전 10:53:23 [vite] (client) page reload src/components/Icon.jsx
+오전 10:53:23 [vite] (client) hmr update /src/components/MapView.jsx
+오전 10:53:23 [vite] (client) page reload src/api.js
+오전 10:55:38 [vite] (client) hmr update /src/App.css
+오전 10:55:38 [vite] (client) hmr update /src/index.css
+오전 11:03:31 [vite] (client) hmr update /src/App.jsx
+오전 11:03:31 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오전 11:03:31 [vite] (client) hmr update /src/components/RouteList.jsx
+오전 11:03:31 [vite] (client) hmr update /src/components/MapView.jsx
+오전 11:03:31 [vite] (client) hmr update /src/App.css
+오전 11:08:02 [vite] (client) hmr update /src/App.jsx
+오전 11:08:02 [vite] (client) hmr update /src/App.jsx, /src/components/RouteList.jsx, /src/components/FilterPanel.jsx
+오전 11:08:02 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오전 11:08:03 [vite] (client) hmr update /src/components/RouteList.jsx
+오전 11:18:50 [vite] (client) hmr update /src/App.jsx
+오전 11:18:50 [vite] (client) hmr update /src/App.jsx, /src/components/RouteList.jsx, /src/components/FilterPanel.jsx
+오전 11:18:50 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오전 11:18:50 [vite] (client) hmr update /src/components/RouteList.jsx
+오전 11:18:50 [vite] (client) hmr update /src/components/MapView.jsx
+오전 11:18:50 [vite] (client) hmr update /src/App.css
+오전 11:23:34 [vite] (client) hmr update /src/App.jsx
+오전 11:23:34 [vite] (client) hmr update /src/components/MapView.jsx
+오전 11:23:34 [vite] (client) hmr update /src/components/ServiceInfo.jsx
+오전 11:23:34 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오전 11:23:34 [vite] (client) hmr update /src/components/RouteList.jsx
+오전 11:23:34 [vite] (client) hmr update /src/App.css
+오전 11:30:02 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/RouteList.jsx
+오후 1:09:04 [vite] (client) page reload src/main.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 1:09:04 [vite] (client) hmr update /src/App.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/MapView.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 1:09:04 [vite] (client) [Unhandled error] ReferenceError: minutes is not defined
+ > FilterPanel src/components/FilterPanel.jsx?t=1792642144124:379:19
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18094:34
+
+오후 1:09:04 [vite] (client) [console.warn] An error occurred in the <FilterPanel> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+오후 1:09:04 [vite] (client) hmr update /src/components/RouteList.jsx
+오후 1:09:04 [vite] (client) hmr update /src/App.jsx, /src/components/RouteList.jsx, /src/components/FilterPanel.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/ServiceInfo.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/MapView.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/Dialog.jsx
+오후 1:09:04 [vite] (client) hmr update /src/components/RouteLoading.jsx
+오후 1:09:04 [vite] (client) hmr update /src/App.css
+오후 1:09:41 [vite] (client) hmr update /src/App.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/Dialog.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/Icon.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/MapView.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/RouteList.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/RouteLoading.jsx
+오후 1:09:41 [vite] (client) hmr update /src/components/ServiceInfo.jsx
+오후 1:10:33 [vite] (client) hmr update /src/i18n.jsx
+오후 1:10:33 [vite] (client) hmr invalidate /src/i18n.jsx Could not Fast Refresh ("useI18n" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+오후 1:10:33 [vite] (client) page reload src/i18n.jsx
+오후 1:12:00 [vite] (client) hmr update /src/components/RouteLoading.jsx
+오후 1:12:00 [vite] (client) hmr update /src/App.jsx
+오후 1:12:00 [vite] (client) page reload src/main.jsx
+오후 1:12:00 [vite] (client) hmr update /src/components/RouteList.jsx
+오후 1:12:00 [vite] (client) hmr update /src/i18n.jsx
+오후 1:12:00 [vite] (client) hmr update /src/components/MapView.jsx
+오후 1:12:00 [vite] (client) hmr update /src/i18n.jsx
+오후 1:12:00 [vite] (client) Pre-transform error: Failed to load url /src/i18n.jsx (resolved id: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/i18n.jsx) in C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx. Does the file exist?
+오후 1:12:00 [vite] (client) Pre-transform error: Failed to load url /src/i18n.jsx (resolved id: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/i18n.jsx) in C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx. Does the file exist?
+오후 1:12:00 [vite] (client) [console.error] [vite] Failed to reload /src/components/RouteList.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+오후 1:12:00 [vite] (client) [console.error] [vite] Failed to reload /src/i18n.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+오후 1:12:00 [vite] (client) [Unhandled error] TypeError: Cannot destructure property 'locale' of 'useContext(...)' as it is null.
+ > useI18n src/i18n.js:6:10
+    4  |  export const LanguageContext = createContext(null);
+    5  |  export function useI18n() {
+    6  |    const { locale, setLocale } = useContext(LanguageContext);
+       |            ^
+    7  |    const t = (key, params) => translate(locale, key, params);
+    8  |    const number = (value) => new Intl.NumberFormat(locale, { maximumFractionDigits: 1, useGrouping: false }).format(va...
+ > App src/App.jsx?t=1792642320290:15:55
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+
+오후 1:12:00 [vite] (client) [console.warn] An error occurred in the <App> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+오후 1:12:00 [vite] (client) Pre-transform error: Failed to load url /src/i18n.jsx (resolved id: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/i18n.jsx) in C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx. Does the file exist?
+오후 1:12:00 [vite] (client) Pre-transform error: Failed to load url /src/i18n.jsx (resolved id: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/i18n.jsx) in C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx. Does the file exist?
+오후 1:12:56 [vite] (client) hmr update /src/App.jsx, /src/components/RouteList.jsx, /src/components/MapView.jsx, /src/I18nProvider.jsx
+오후 1:14:16 [vite] (client) hmr update /src/App.jsx
+오후 1:14:16 [vite] (client) hmr update /src/I18nProvider.jsx
+오후 1:14:16 [vite] (client) page reload src/main.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/Dialog.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/Icon.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/MapView.jsx
+오후 1:14:16 [vite] (client) Pre-transform error: Failed to load url /src/i18n.jsx (resolved id: C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/i18n.jsx) in C:/Users/redsu/OneDrive/바탕 화면/team5/frontend/src/components/FilterPanel.jsx. Does the file exist?
+오후 1:14:16 [vite] (client) hmr update /src/components/RouteList.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/RouteLoading.jsx
+오후 1:14:16 [vite] (client) hmr update /src/components/ServiceInfo.jsx
+오후 1:15:57 [vite] (client) hmr update /src/App.css
+오후 1:31:50 [vite] (client) hmr update /src/index.css
+오후 1:31:56 [vite] (client) hmr update /src/index.css

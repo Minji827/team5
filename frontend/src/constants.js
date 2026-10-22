@@ -1,1 +1,1 @@
-export const BUSAN_CENTER = [35.1796, 129.0756];
+export const BUSAN_CENTER = [35.101, 129.030];

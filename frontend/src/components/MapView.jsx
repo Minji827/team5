@@ -1,7 +1,9 @@
+import { useI18n } from "../i18n.js";
 import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, ZoomControl, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import Icon from "./Icon";
 import { BUSAN_CENTER } from "../constants";
 
 function numberedIcon(n) {
@@ -39,9 +41,10 @@ function ClickHandler({ onPick }) {
   return null;
 }
 
-export default function MapView({ stops, startPoint, onPickStart, totalMinutes, overBudget, maxMinutes }) {
+export default function MapView({ stops, returnLeg, startPoint, onPickStart, totalMinutes, overBudget, maxMinutes }) {
+  const { t, approx, minutes, locale } = useI18n();
   const path = stops.some((s) => s.leg_path?.length)
-    ? stops.flatMap((s) => s.leg_path || [])
+    ? [...stops.flatMap((s) => s.leg_path || []), ...(returnLeg?.leg_path || [])]
     : startPoint
     ? [[startPoint.lat, startPoint.lon], ...stops.map((s) => [s.lat, s.lon])]
     : [];
@@ -49,7 +52,8 @@ export default function MapView({ stops, startPoint, onPickStart, totalMinutes, 
 
   return (
     <>
-      <MapContainer center={BUSAN_CENTER} zoom={13} className="map" zoomControl={false}>
+      <div className="map-toolbar"><div className="map-location"><span className="map-location-icon"><Icon name="pin" size={21} /></span><div><h2>{t("busanJunggu")}</h2></div></div><span className="walking-mode"><Icon name="walk" size={17} />{t("walkingMode")}</span></div>
+      <MapContainer center={BUSAN_CENTER} zoom={15} className="map" zoomControl={false}>
         <TileLayer
           attribution='&copy; OpenStreetMap contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -57,13 +61,13 @@ export default function MapView({ stops, startPoint, onPickStart, totalMinutes, 
 
         <ClickHandler onPick={onPickStart} />
         <FlyToStart startPoint={startPoint} />
-        <ZoomControl position="bottomright" />
+        <ZoomControl key={locale} position="bottomright" zoomInTitle={t("zoomIn")} zoomOutTitle={t("zoomOut")} />
 
         {path.length > 1 && <Polyline positions={path} color="#0d9488" weight={4} opacity={0.9} />}
 
         {startPoint && (
           <Marker position={[startPoint.lat, startPoint.lon]} icon={startIcon}>
-            <Popup>출발지</Popup>
+            <Popup>{t("start")}</Popup>
           </Marker>
         )}
 
@@ -71,19 +75,20 @@ export default function MapView({ stops, startPoint, onPickStart, totalMinutes, 
           <Marker key={stop.id} position={[stop.lat, stop.lon]} icon={numberedIcon(stop.order)}>
             <Popup>
               <strong>{stop.order}. {stop.name}</strong><br />
-              {stop.category} · {stop.address}<br />
-              이전 지점에서 도보 {stop.leg_minutes}분 (추정)
+              {t(stop.category)} · {stop.address}<br />
+              {t("previousWalk", { time: approx(stop.leg_minutes) })}
             </Popup>
           </Marker>
         ))}
       </MapContainer>
 
+
       {stops.length > 0 && (
         <div className="map-status-card">
           <div className="map-status-row">
-            <span>루트 현황</span>
+            <span><Icon name="route" size={17} />{t("routeStatus")}</span>
             <span className={overBudget ? "map-status-pct over" : "map-status-pct"}>
-              총 {totalMinutes}분{maxMinutes ? ` / ${maxMinutes}분` : ""}
+              {approx(totalMinutes)}{maxMinutes ? " / " + minutes(maxMinutes) : ""}
             </span>
           </div>
           <div className="map-status-bar">

@@ -1,0 +1,10 @@
+﻿original_name,name,lon,lat,coordinate_source,coordinate_url,matched_address,match_note,checked_on
+유라리광장,유라리광장,129.035773792455,35.0962209413009,kakao_local,http://place.map.kakao.com/27564676,부산 중구 중앙동7가 80,exact_name; address_conflict; boundary_review_required,2026-10-22
+자갈치크루즈,자갈치크루즈,129.0317124553,35.0967261783,tourapi,,부산광역시 중구 자갈치해안로 60 (남포동4가),normalized_exact_name_and_road_address; contentid=3064821; representative_point_outside_boundary,2026-10-22
+자갈치시장,자갈치시장,129.03057978534403,35.09661988021089,kakao_local,http://place.map.kakao.com/11168886,부산 중구 자갈치해안로 52,exact_name; address_checked,2026-10-22
+용두산공원,용두산공원,129.0324887097,35.100836917014,selected_input,https://naver.me/xAFCXBOE,부산광역시 중구 용두산길 37-55,coordinates_supplied_by_curator,2026-10-22
+부산근현대역사관 본관,부산근현대역사관 본관,129.032137450333,35.1025649585736,kakao_local,http://place.map.kakao.com/999813771,부산 중구 대청로 112,exact_name; address_checked,2026-10-22
+BNK부산은행 갤러리,BNK부산은행 갤러리,129.030696000759,35.100509208575694,kakao_local,http://place.map.kakao.com/26632464,부산 중구 광복중앙로 13,exact_name; address_checked,2026-10-22
+북병산작은미술관,복병산작은미술관,129.03337199496,35.1036608061354,kakao_local,http://place.map.kakao.com/236940283,부산 중구 복병산길 20,exact_name; address_checked,2026-10-22
+부평깡통시장,부평깡통시장,129.02586215783472,35.10182652099438,kakao_local,http://place.map.kakao.com/837490557,부산 중구 부평동2가 82,exact_market_name; representative_point_differs_from_street_address,2026-10-22
+국제시장,국제시장,129.02818525258604,35.101319053986096,kakao_local,http://place.map.kakao.com/20543715,부산 중구 신창동4가 56-4,exact_name; address_checked,2026-10-22

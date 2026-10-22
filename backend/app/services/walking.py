@@ -18,7 +18,7 @@ def walking_leg(start_lat, start_lon, end_lat, end_lon):
     if not key:
         raise WalkingError("TMAP 키가 설정되어 있지 않습니다.")
     if (start_lat, start_lon) == (end_lat, end_lon):
-        return {"leg_minutes": 0, "leg_distance_m": 0, "leg_path": []}
+        return {"leg_minutes": 0, "leg_seconds": 0, "leg_distance_m": 0, "leg_path": []}
     try:
         response = requests.post(
             "https://apis.openapi.sk.com/tmap/routes/pedestrian",
@@ -45,7 +45,7 @@ def walking_leg(start_lat, start_lon, end_lat, end_lon):
             geometry = feature.get("geometry", {})
             if geometry.get("type") == "LineString":
                 path.extend([[lat, lon] for lon, lat in geometry["coordinates"]])
-        return {"leg_minutes": round(seconds / 60, 1), "leg_distance_m": distance, "leg_path": path}
+        return {"leg_minutes": round(seconds / 60, 1), "leg_seconds": seconds, "leg_distance_m": distance, "leg_path": path}
     except WalkingError:
         raise
     except (requests.RequestException, ValueError, KeyError, TypeError, StopIteration):

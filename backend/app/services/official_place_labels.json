@@ -1,0 +1,106 @@
+[
+  {
+    "id": "spot:curated:9efac1bc3a5e92f3",
+    "name_ko": "용두산공원",
+    "address_ko": "부산광역시 중구 용두산길 37-55",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Yongdusan Park",
+        "address": "37-55, Yongdusan-gil, Jung-gu, Busan",
+        "source": "https://www.busan.go.kr/eng/park09"
+      },
+      "ja": {
+        "name": "龍頭山公園",
+        "source": "https://www.bsjunggu.go.kr/jap/index.junggu?menuCd=DOM_000001402002001000"
+      },
+      "zh-TW": {
+        "name": "龍頭山公園",
+        "address": "釜山廣域市中區龍頭山街37-55",
+        "source": "https://www.busan.go.kr/zht/park09"
+      }
+    }
+  },
+  {
+    "id": "spot:curated:a20b87123f9be387",
+    "name_ko": "자갈치시장",
+    "address_ko": "부산광역시 중구 자갈치해안로 52",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Jagalchi Market",
+        "address": "52 Jagalchihaean-ro, Jung-gu, Busan",
+        "source": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=69318"
+      },
+      "ja": {
+        "name": "チャガルチ市場",
+        "address": "プサン広域市チュン区チャガルチヘアンロ52",
+        "source": "https://japanese.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=459&vcontsId=70134"
+      },
+      "zh-TW": {
+        "name": "札嘎其市場",
+        "source": "https://big5chinese.visitkorea.or.kr/svc/contents/contentsView.do?dataSetId=264&menuSn=929&vcontsId=250094"
+      }
+    }
+  },
+  {
+    "id": "spot:curated:3979b299b6377432",
+    "name_ko": "부평깡통시장",
+    "address_ko": "부산광역시 중구 부평1길 48",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Bupyeong Kkangtong Market",
+        "source": "https://www.bsjunggu.go.kr/eng/index.junggu?menuCd=DOM_000001202002003000"
+      },
+      "ja": {
+        "name": "富平カントン市場",
+        "source": "https://www.bsjunggu.go.kr/jap/index.junggu?menuCd=DOM_000001402002004000"
+      },
+      "zh-TW": {
+        "name": "富平罐頭市場",
+        "source": "https://www.visitbusan.net/index.do?lang_cd=cnb&menuCd=DOM_000000301003001000&uc_seq=400"
+      }
+    }
+  },
+  {
+    "id": "spot:curated:8a18191f175cde68",
+    "name_ko": "국제시장",
+    "address_ko": "부산광역시 중구 국제시장2길 25",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Gukje Market",
+        "source": "https://www.visitbusan.net/index.busan?lang_cd=en&menuCd=DOM_000000301003001000&uc_seq=399"
+      },
+      "zh-TW": {
+        "name": "國際市場",
+        "source": "https://big5chinese.visitkorea.or.kr/svc/contents/contentsView.do?dataSetId=264&menuSn=929&vcontsId=250094"
+      }
+    }
+  },
+  {
+    "id": "3b26201ba6a956291d968261d80c95a7",
+    "name_ko": "삼송",
+    "address_ko": "부산 중구 광복로55번길 13",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Samsong Chobap Busan Nampo Main Branch",
+        "source": "data/raw/dongbaekjeon/2026_부산의맛_식당목록.csv"
+      }
+    }
+  },
+  {
+    "id": "b2a187f6a3ad0a609e81e33b9f507ba5",
+    "name_ko": "쉐프 곤",
+    "address_ko": "부산 중구 중구로23번길 12",
+    "verified_at": "2026-10-22",
+    "translations": {
+      "en": {
+        "name": "Chef Gon",
+        "source": "data/raw/dongbaekjeon/2026_부산의맛_식당목록.csv"
+      }
+    }
+  }
+]

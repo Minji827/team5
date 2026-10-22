@@ -59,7 +59,7 @@ def load_recommendation_places() -> pd.DataFrame:
 
 @lru_cache(maxsize=1)
 def load_places() -> pd.DataFrame:
-    """Read the new offline catalog; recommendation API migration is separate."""
+    """Read the service catalog and attach verified display tags."""
     import math
 
     frame = pd.read_csv(DATA_DIR / "fin/places.csv", encoding="utf-8-sig", dtype={"id": str})
@@ -102,4 +102,8 @@ def load_places() -> pd.DataFrame:
     for column in frame.columns:
         if column not in ["lon", "lat", "duration_min"]:
             frame[column] = frame[column].astype(object).where(frame[column].notna(), None)
+    from app.services.place_tags import busan_taste_matches
+    taste = busan_taste_matches(frame, DATA_DIR.parent / "raw/dongbaekjeon/2026_부산의맛_식당목록.csv")
+    frame["is_busan_taste"] = frame.id.isin(taste)
+    frame["busan_taste_name"] = frame.id.map(taste).fillna("")
     return frame

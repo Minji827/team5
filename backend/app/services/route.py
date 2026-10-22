@@ -1,5 +1,4 @@
 """Four-category route selection from the offline place catalog."""
-import itertools
 
 import pandas as pd
 
@@ -13,6 +12,13 @@ WALK_DISTANCE_FACTOR = 1.3
 
 def estimate_walk_minutes(distance_m):
     return distance_m * WALK_DISTANCE_FACTOR / WALK_SPEED_MPS / 60
+
+
+MAX_ORIGIN_WALK_MINUTES = 20
+
+
+class RouteConstraintError(ValueError):
+    pass
 
 
 MIN_STOP_SEPARATION_M = 30  # 이보다 가까우면 같은 상가 다른 호실/상호 취급, 하나만 남긴다
@@ -40,7 +46,7 @@ def nearest_candidates(catalog: pd.DataFrame, start_lat, start_lon, categories=N
     for cand in capped:
         too_close = any(
             haversine_m(cand["lat"], cand["lon"], kept["lat"], kept["lon"]) < MIN_STOP_SEPARATION_M
-            for kept in deduped
+            for kept in deduped if cand["category"] == kept["category"]
         )
         if not too_close:
             deduped.append(cand)
@@ -50,43 +56,15 @@ def nearest_candidates(catalog: pd.DataFrame, start_lat, start_lon, categories=N
     return deduped
 
 
-def optimal_order(start_lat, start_lon, candidates: list, stop_count):
-    """candidates 중 stop_count개를 골라 모든 순열을 비교, 총 도보시간이 최소인 조합을 찾는다.
-    candidates는 이미 출발지에서 가까운 순으로 정렬된 상태라고 가정하고,
-    상위 min(len, stop_count + 2)개 안에서만 순열을 돌려 조합 폭발을 막는다."""
-    pool = candidates[: stop_count + 2]
-    if len(pool) <= stop_count:
-        chosen_sets = [tuple(pool)]
-    else:
-        chosen_sets = list(itertools.combinations(pool, stop_count))
-
-    best_order = None
-    best_minutes = None
-    for combo in chosen_sets:
-        for perm in itertools.permutations(combo):
-            cur_lat, cur_lon = start_lat, start_lon
-            total = 0.0
-            legs = []
-            for stop in perm:
-                d = haversine_m(cur_lat, cur_lon, stop["lat"], stop["lon"])
-                leg_minutes = estimate_walk_minutes(d)
-                legs.append(leg_minutes)
-                total += leg_minutes
-                cur_lat, cur_lon = stop["lat"], stop["lon"]
-            if best_minutes is None or total < best_minutes:
-                best_minutes = total
-                best_order = (perm, legs)
-
-    return best_order, best_minutes
-
-
 def _place_fields(stop):
     return {
+        "is_busan_taste": bool(stop.get("is_busan_taste", False)),
+        "busan_taste_name": stop.get("busan_taste_name", ""),
         "duration_min": stop["duration_min"],
-        "duration_basis": stop["duration_basis"],
+        "duration_basis": stop.get("duration_basis", "place_default"),
         "id": stop["id"],
         "name": stop["name"],
-        "category": stop["category"],
+        "category": "카페/디저트" if stop["category"] == "카페·디저트" else stop["category"],
         "address": stop["address"],
         "lon": stop["lon"],
         "lat": stop["lat"],
@@ -97,32 +75,120 @@ def _place_fields(stop):
     }
 
 
-def recommend_route(catalog, start_lat, start_lon, categories=None, stop_count=5, max_minutes=None):
-    candidates = nearest_candidates(catalog, start_lat, start_lon, categories, stop_count)
-    if not candidates:
-        return {"stops": [], "total_minutes": 0, "over_budget": False, "alternatives": []}
-
-    (order, legs), total_minutes = optimal_order(start_lat, start_lon, candidates, stop_count)
-
-    stops = [{**_place_fields(stop), "order": i} for i, stop in enumerate(order, start=1)]
-    result = recalculate_route(start_lat, start_lon, stops, max_minutes)
-
-    chosen_ids = {stop["id"] for stop in order}
-    alternatives = [_place_fields(c) for c in candidates if c["id"] not in chosen_ids]
-
-    return {**result, "alternatives": alternatives}
+def category_limits(max_minutes):
+    return {"식당": 1 if max_minutes <= 180 else 2, "카페·디저트": 1,
+            "카페/디저트": 1, "쇼핑": 1}
 
 
-def recalculate_route(start_lat, start_lon, stops, max_minutes=None):
+def route_legs():
+    """Reuse directed legs only within this request; do not persist routing data."""
+    cache = {}
+    def leg(a_lat, a_lon, b_lat, b_lon):
+        key = (a_lat, a_lon, b_lat, b_lon)
+        if key not in cache:
+            cache[key] = walking_leg(*key)
+        return cache[key]
+    return leg
+
+
+def within_origin_limit(leg):
+    return leg.get("leg_seconds", leg["leg_minutes"] * 60) <= MAX_ORIGIN_WALK_MINUTES * 60
+
+
+def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=90,
+                    return_to_start=False, selected_only=False):
+    selected = {"카페·디저트" if c == "카페/디저트" else c for c in (categories or [])}
+    allowed = selected if selected_only and selected else selected | {"관광명소"} if selected else set(CATEGORIES)
+    candidates = nearest_candidates(catalog, start_lat, start_lon, limit=20)
+    remaining = [p for p in candidates if p["category"] in allowed]
+    stops, counts, origin = [], {}, {}
+    current_lat, current_lon = start_lat, start_lon
+    used, return_leg = 0.0, None
+    leg = route_legs()
+    limits = category_limits(max_minutes)
+    primary_available = not selected or any(p["category"] in selected for p in remaining)
+    if not primary_available:
+        remaining = []
+    # shortcut: greedily build a feasible course; this does not guarantee a globally optimal tour.
+    while remaining:
+        remaining = [p for p in remaining if used + p["duration_min"] <= max_minutes
+                     and counts.get(p["category"], 0) < limits.get(p["category"], 24)]
+        if not remaining:
+            break
+        last_category = stops[-1]["category"] if stops else None
+        eligible = [p for p in remaining if p["category"] == "관광명소" or p["category"] != last_category]
+        if not eligible:
+            break
+        eligible.sort(key=lambda p: (
+            0 if selected and p["category"] in selected and not counts.get(p["category"]) else 1,
+            counts.get(p["category"], 0),
+            haversine_m(current_lat, current_lon, p["lat"], p["lon"])))
+        stop = eligible[0]
+        remaining.remove(stop)
+        origin_leg = origin.setdefault(stop["id"], leg(start_lat, start_lon, stop["lat"], stop["lon"]))
+        if not within_origin_limit(origin_leg):
+            continue
+        incoming = leg(current_lat, current_lon, stop["lat"], stop["lon"])
+        back = leg(stop["lat"], stop["lon"], start_lat, start_lon) if return_to_start else None
+        next_used = round(used + incoming["leg_minutes"] + stop["duration_min"], 1)
+        if next_used + (back["leg_minutes"] if back else 0) > max_minutes:
+            continue
+        stops.append({**_place_fields(stop), **incoming, "order": len(stops) + 1,
+                      "origin_walk_minutes": origin_leg["leg_minutes"]})
+        used, return_leg = next_used, back
+        current_lat, current_lon = stop["lat"], stop["lon"]
+        counts[stop["category"]] = counts.get(stop["category"], 0) + 1
+    result = summarize_route(stops, max_minutes, return_leg)
+    result["return_to_start"] = return_to_start
+    chosen = {s["id"] for s in stops}
+    alternatives = []
+    # Verify a few alternatives per category even when that category was not selected.
+    for category in CATEGORIES:
+        found = 0
+        for place in candidates:
+            if place["category"] != category or place["id"] in chosen:
+                continue
+            origin_leg = origin.setdefault(place["id"], leg(start_lat, start_lon, place["lat"], place["lon"]))
+            if not within_origin_limit(origin_leg):
+                continue
+            alternatives.append({**_place_fields(place), "origin_walk_minutes": origin_leg["leg_minutes"]})
+            found += 1
+            if found == 3:
+                break
+    result["alternatives"] = alternatives
+    if not primary_available:
+        result["message"] = "선택한 관심 업종의 장소는 아직 준비 중이에요. 다른 업종을 선택해주세요."
+    elif not stops:
+        result["message"] = "출발지 도보 20분 이내에서 여행 시간에 맞는 코스를 찾지 못했어요. 출발지나 시간을 바꿔주세요."
+    elif selected and "쇼핑" in selected and not any(p["category"] == "쇼핑" for p in candidates):
+        result["message"] = "쇼핑 장소는 준비 중이라 다른 관심 업종을 중심으로 구성했어요."
+    return result
+
+
+def summarize_route(stops, max_minutes, return_leg=None):
+    walk = round(sum(s["leg_minutes"] for s in stops) + (return_leg["leg_minutes"] if return_leg else 0), 1)
+    stay = round(sum(s["duration_min"] for s in stops), 1)
+    total = round(walk + stay, 1)
+    return {"stops": stops, "total_walk_minutes": walk, "total_stay_minutes": stay,
+            "total_minutes": total, "over_budget": total > max_minutes, "routing_source": "tmap",
+            "return_leg": return_leg, "return_to_start": return_leg is not None,
+            "max_origin_walk_minutes": MAX_ORIGIN_WALK_MINUTES}
+
+
+def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False):
+    leg = route_legs()
+    limits, counts = category_limits(max_minutes), {}
     current_lat, current_lon = start_lat, start_lon
     result = []
     for i, stop in enumerate(stops, start=1):
-        leg = walking_leg(current_lat, current_lon, stop["lat"], stop["lon"])
-        result.append({**stop, **leg, "order": i})
+        origin_leg = leg(start_lat, start_lon, stop["lat"], stop["lon"])
+        if not within_origin_limit(origin_leg):
+            raise RouteConstraintError("출발지에서 도보 20분이 넘는 장소예요. 다른 장소를 선택해주세요.")
+        counts[stop["category"]] = counts.get(stop["category"], 0) + 1
+        if counts[stop["category"]] > limits.get(stop["category"], 24):
+            raise RouteConstraintError("식당·카페·쇼핑이 코스에 너무 많이 포함돼요. 다른 카테고리의 장소를 선택해주세요.")
+        incoming = leg(current_lat, current_lon, stop["lat"], stop["lon"])
+        result.append({**stop, **incoming, "order": i, "origin_walk_minutes": origin_leg["leg_minutes"]})
         current_lat, current_lon = stop["lat"], stop["lon"]
-    walk = round(sum(s["leg_minutes"] for s in result), 1)
-    stay = round(sum(s["duration_min"] for s in result), 1)
-    total = round(walk + stay, 1)
-    return {"stops": result, "total_walk_minutes": walk, "total_stay_minutes": stay,
-            "total_minutes": total, "over_budget": bool(max_minutes is not None and total > max_minutes),
-            "routing_source": "tmap"}
+    back = leg(current_lat, current_lon, start_lat, start_lon) if return_to_start and result else None
+    return summarize_route(result, max_minutes, back)

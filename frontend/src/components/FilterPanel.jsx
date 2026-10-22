@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useI18n } from "../i18n.js";
+import { useState } from "react";
 import { searchLocation } from "../api";
+import Icon from "./Icon";
 
 export default function FilterPanel({
   startPoint, setStartPoint,
   allCategories,
   categories, toggleCategory,
-  stopCount, setStopCount,
+  returnToStart, setReturnToStart, selectedOnly, setSelectedOnly,
   maxMinutes, setMaxMinutes,
   onSubmit, loading, collapsed,
 }) {
+  const { t, minutes, placeLabel, message } = useI18n();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
@@ -16,9 +19,6 @@ export default function FilterPanel({
   const [locating, setLocating] = useState(false);
   const [expanded, setExpanded] = useState(true);
 
-  useEffect(() => {
-    if (collapsed) setExpanded(false);
-  }, [collapsed]);
 
   const canSubmit = !!startPoint && !loading;
 
@@ -30,9 +30,9 @@ export default function FilterPanel({
     try {
       const data = await searchLocation(query.trim());
       setResults(data.results);
-      if (data.results.length === 0) setSearchError("검색 결과가 없어요.");
-    } catch (err) {
-      setSearchError("검색에 실패했어요.");
+      if (data.results.length === 0) setSearchError(t("noSearchResults"));
+    } catch {
+      setSearchError(t("searchError"));
     } finally {
       setSearching(false);
     }
@@ -46,7 +46,7 @@ export default function FilterPanel({
 
   function useMyLocation() {
     if (!navigator.geolocation) {
-      setSearchError("이 브라우저는 위치 조회를 지원하지 않아요.");
+      setSearchError(t("locationUnsupported"));
       return;
     }
     setLocating(true);
@@ -57,7 +57,7 @@ export default function FilterPanel({
         setLocating(false);
       },
       () => {
-        setSearchError("위치 조회에 실패했어요. 권한을 허용했는지 확인해주세요.");
+        setSearchError(t("locationError"));
         setLocating(false);
       }
     );
@@ -67,14 +67,15 @@ export default function FilterPanel({
     return (
       <div className="filter-summary">
         <div className="filter-summary-text">
-          <span className="filter-summary-pin">📍 {startPoint?.label || "출발지"}</span>
+          <span className="filter-summary-pin"><Icon name="pin" size={15} /> {placeLabel(startPoint)}</span>
           <span className="filter-summary-dot">·</span>
-          <span>{maxMinutes}분</span>
+          <span>{minutes(maxMinutes)}</span>
           <span className="filter-summary-dot">·</span>
-          <span>{categories.length ? categories.join(", ") : "전체"} {stopCount}곳</span>
+          <span>{categories.length ? categories.map((category) => t(category)).join(", ") : t("all")}</span>
+          <span>{returnToStart ? t("returnShort") : t("finishShort")}</span>
         </div>
         <button type="button" className="filter-edit-btn" onClick={() => setExpanded(true)}>
-          조건 수정
+          {t("editSettings")}
         </button>
       </div>
     );
@@ -82,67 +83,70 @@ export default function FilterPanel({
 
   return (
     <div className="filter-panel">
+      <div className="panel-heading"><h2>{t("tripSettings")}</h2></div>
       <div className="field">
-        <span>출발지</span>
+        <span className="field-title"><Icon name="pin" size={16} />{t("start")}</span>
 
         {startPoint ? (
           <div className="start-point-chip">
-            📍 {startPoint.label || `${startPoint.lat.toFixed(5)}, ${startPoint.lon.toFixed(5)}`}
-            <button type="button" className="clear-start" onClick={() => setStartPoint(null)}>변경</button>
+            <Icon name="pin" size={17} /> {startPoint.label ? placeLabel(startPoint) : `${startPoint.lat.toFixed(5)}, ${startPoint.lon.toFixed(5)}`}
+            <button type="button" className="clear-start" onClick={() => setStartPoint(null)}>{t("change")}</button>
           </div>
         ) : (
           <>
             <form className="search-row" onSubmit={handleSearch}>
               <input
                 type="text"
-                placeholder="장소 또는 주소 검색 (예: 서면역, 광안리해수욕장)"
+                aria-label={t("searchLabel")}
+                placeholder={t("searchPlaceholder")}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
-              <button type="submit" disabled={searching}>{searching ? "..." : "검색"}</button>
+              <button type="submit" aria-label={t("search")} disabled={searching}>{searching ? "…" : <Icon name="search" size={19} />}</button>
             </form>
 
             <button type="button" className="my-location-btn" onClick={useMyLocation} disabled={locating}>
-              {locating ? "위치 확인 중..." : "📍 내 위치 사용"}
+              {locating ? t("locating") : <><Icon name="locate" size={16} />{t("useLocation")}</>}
             </button>
 
-            {searchError && <div className="search-error">{searchError}</div>}
+            {searchError && <div className="search-error">{message(searchError)}</div>}
 
             {results.length > 0 && (
               <ul className="search-results">
                 {results.map((r, i) => (
-                  <li key={i} onClick={() => pickResult(r)}>
+                  <li key={i}><button type="button" onClick={() => pickResult(r)}>
                     <div className="result-name">{r.name}</div>
                     <div className="result-address">{r.address}</div>
-                  </li>
+                  </button></li>
                 ))}
               </ul>
             )}
 
-            <div className="start-point-hint">또는 지도를 클릭해서 출발지를 찍어도 돼요</div>
+            <div className="start-point-hint">{t("mapHint")}</div>
           </>
         )}
       </div>
 
+      <div className="field"><span className="field-title">{t("endMode")}</span>
+        <select aria-label={t("endMode")} value={returnToStart ? "return" : "end"} onChange={(e) => setReturnToStart(e.target.value === "return")}>
+          <option value="end">{t("finishLast")}</option><option value="return">{t("returnStart")}</option>
+        </select>
+        <span className="start-point-hint">{t("radiusHint")}{returnToStart && t("returnHint")}</span>
+      </div>
+
       <label className="field">
-        <span>여행 시간: {maxMinutes}분</span>
+        <span className="field-title"><Icon name="clock" size={16} />{t("tripTime")}<b className="time-value">{minutes(maxMinutes)}</b></span>
         <input
-          type="range" min={30} max={180} step={10} value={maxMinutes}
+          aria-label={t("tripTime")} type="range" min={30} max={360} step={10} value={maxMinutes}
           onChange={(e) => setMaxMinutes(Number(e.target.value))}
         />
+        <span className="range-labels"><span>{minutes(30)}</span><span>{t("sixHours")}</span></span>
+        <span className="start-point-hint">{t("budgetHint")}</span>
       </label>
 
       <div className="field">
-        <span>관심 카테고리</span>
+        <div className="category-heading"><span className="field-title">{t("interests")}<small>{t("multiSelect")}</small></span></div>
         <div className="category-grid">
-          <label className="category-chip">
-            <input
-              type="checkbox"
-              checked={categories.length === 0}
-              onChange={() => categories.forEach((c) => toggleCategory(c))}
-            />
-            전체
-          </label>
           {allCategories.map((c) => (
             <label key={c} className="category-chip">
               <input
@@ -150,34 +154,21 @@ export default function FilterPanel({
                 checked={categories.includes(c)}
                 onChange={() => toggleCategory(c)}
               />
-              {c === "관광명소" ? "관광명소(시장 포함)" : c}
+              {t(c)}
             </label>
           ))}
         </div>
+        <span className="start-point-hint">{t("interestHint")}</span>
       </div>
 
-      <div className="field">
-        <span>방문 지점 수</span>
-        <div className="segmented">
-          {[3, 4, 5].map((n) => (
-            <button
-              key={n}
-              type="button"
-              className={stopCount === n ? "segment active" : "segment"}
-              onClick={() => setStopCount(n)}
-            >
-              {n}곳
-            </button>
-          ))}
-        </div>
-      </div>
+      <label className="consent-check"><input type="checkbox" checked={selectedOnly} onChange={(e) => setSelectedOnly(e.target.checked)} /><span>{t("selectedOnly")}</span></label>
 
       <button
         className="submit-btn"
         onClick={() => { onSubmit(); setExpanded(false); }}
         disabled={!canSubmit}
       >
-        {loading ? "루트 짜는 중..." : "루트 짜기"}
+        {loading ? t("creating") : <>{t("recommend")}<Icon name="arrow" size={19} /></>}
       </button>
     </div>
   );
