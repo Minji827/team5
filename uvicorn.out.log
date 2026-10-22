@@ -2,3 +2,13 @@ INFO:     Started server process [21632]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55126 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55127 - "GET /api/geocode?query=%EC%84%9C%EB%A9%B4%EC%97%AD HTTP/1.1" 200 OK
+2026-10-22 14:09:21,072 recommend recommend start=(35.17960,129.07560) categories=None max_minutes=120 -> 0 stops in 19680.4ms
+INFO:     127.0.0.1:55129 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53014 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53015 - "GET /api/geocode?query=%EC%84%9C%EB%A9%B4%EC%97%AD HTTP/1.1" 200 OK
+2026-10-22 14:10:56,419 recommend recommend start=(35.10100,129.03000) categories=None max_minutes=120 -> 2 stops in 10703.8ms
+INFO:     127.0.0.1:53018 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61256 - "POST /api/notify/email HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:61257 - "POST /api/recommend/recalculate HTTP/1.1" 200 OK
