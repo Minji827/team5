@@ -11,7 +11,7 @@ from urllib.parse import urlencode
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from app.services.place_labels import official_labels
 
 load_dotenv()
@@ -44,6 +44,7 @@ class EmailRequest(BaseModel):
     return_to_start: bool = False
     return_minutes: Optional[float] = None
     total_minutes: Optional[float] = None
+    max_minutes: int = Field(default=360, ge=30, le=360)
     start_label: Optional[str] = None
     start_lat: Optional[float] = None
     start_lon: Optional[float] = None
@@ -79,6 +80,17 @@ def build_google_maps_links(req: EmailRequest) -> List[str]:
     return links
 
 
+def build_course_link(req: EmailRequest) -> Optional[str]:
+    if not req.stops or req.start_lat is None or req.start_lon is None or any(not s.id for s in req.stops):
+        return None
+    params = {"start": f"{req.start_lat},{req.start_lon}", "stop": [s.id for s in req.stops],
+              "minutes": req.max_minutes, "return": "1" if req.return_to_start else "0", "lang": req.language}
+    if req.start_label:
+        params["label"] = req.start_label
+    site = os.environ.get("PUBLIC_SITE_URL", "https://busan-full-course.onrender.com").rstrip("/")
+    return site + "/?" + urlencode(params, doseq=True)
+
+
 def build_email_body(req: EmailRequest) -> str:
     text = EMAIL_COPY[req.language]
     lines = [text["total"].format(n=req.total_minutes), ""]
@@ -103,10 +115,15 @@ def build_email_body(req: EmailRequest) -> str:
         lines.append("")
     if req.return_to_start:
         lines.append(text["return"].format(n=req.return_minutes))
+    course_link = build_course_link(req)
+    if course_link:
+        lines.extend([text["course_link"] + ": " + course_link, ""])
     maps_links = build_google_maps_links(req)
     for index, maps_link in enumerate(maps_links, 1):
         part = f" ({index}/{len(maps_links)})" if len(maps_links) > 1 else ""
         lines.extend([text["maps"] + part + ": " + maps_link, ""])
+    if maps_links:
+        lines.append(text["maps_note"])
     if missing_official:
         lines.append(text["official_fallback"])
     lines.append(text["source"])

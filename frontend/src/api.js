@@ -32,7 +32,7 @@ export function getRecommendation({ startLat, startLon, categories, maxMinutes, 
   });
 }
 
-export function sendRouteEmail({ email, stops, totalMinutes, startPoint, emailConsent, returnLeg, language }) {
+export function sendRouteEmail({ email, stops, totalMinutes, maxMinutes, startPoint, emailConsent, returnLeg, language }) {
   return request("/api/notify/email", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -43,6 +43,7 @@ export function sendRouteEmail({ email, stops, totalMinutes, startPoint, emailCo
       return_to_start: !!returnLeg,
       return_minutes: returnLeg?.leg_minutes,
       total_minutes: totalMinutes,
+      max_minutes: maxMinutes,
       start_label: startPoint?.label && startPoint.label !== "내 위치" ? [startPoint.label, startPoint.address].filter(Boolean).join(" ") : null,
       start_lat: startPoint?.lat,
       start_lon: startPoint?.lon,

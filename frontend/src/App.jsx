@@ -36,6 +36,36 @@ export default function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ids = params.getAll("stop");
+    if (!ids.length) return;
+    const origin = (params.get("start") || "").split(",");
+    const lat = Number(origin[0]), lon = Number(origin[1]);
+    const minutes = Number(params.get("minutes"));
+    if (origin.length !== 2 || origin.some((v) => !v.trim()) || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180 || !Number.isInteger(minutes) || minutes < 30 || minutes > 360 || ids.length > 24 || new Set(ids).size !== ids.length) {
+      setError("sharedRouteError");
+      return;
+    }
+    const point = { lat, lon, label: params.get("label") || "" };
+    const conditions = { startPoint: point, maxMinutes: minutes, returnToStart: params.get("return") === "1", categories: [] };
+    setLoading(true);
+    getNextPlaces({ ...conditions, stops: ids.map((id) => ({ id })), category: null })
+      .then((data) => {
+        applyRoute(data);
+        setStartPoint(point);
+        setMaxMinutes(minutes);
+        setReturnToStart(conditions.returnToStart);
+        setAppliedConditions(conditions);
+        setHasSearched(true);
+        setBuilding(false);
+        const language = params.get("lang");
+        if (["ko", "en", "ja", "zh-TW"].includes(language)) setLocale(language);
+      })
+      .catch(() => setError("sharedRouteError"))
+      .finally(() => setLoading(false));
+  }, []);
+
   function toggleCategory(c) {
     setCategories((prev) =>
       prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
@@ -78,7 +108,7 @@ export default function App() {
     }
   }
 
-  const phase = hasSearched ? "result" : "setup";
+  const phase = loading && !hasSearched ? "loading" : hasSearched ? "result" : "setup";
 
   return (
     <div className="app">
@@ -106,6 +136,7 @@ export default function App() {
             <div id="trip-results"><RouteList
               stops={stops} alternatives={alternatives}
               totalMinutes={totalMinutes} overBudget={overBudget}
+              maxMinutes={appliedConditions?.maxMinutes || maxMinutes}
               phase={phase} startPoint={appliedConditions?.startPoint || startPoint} returnLeg={returnLeg}
               building={building} busy={loading}
               onRemoveStop={(index) => updateSelection(stops.filter((_, i) => i !== index))}

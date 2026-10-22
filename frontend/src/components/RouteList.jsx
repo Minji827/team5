@@ -25,7 +25,7 @@ function EmailModal({ onClose, onSend, sending, sendResult }) {
   </Dialog>;
 }
 
-export default function RouteList({ stops, totalMinutes, overBudget, phase, startPoint, returnLeg, building, busy, onRemoveStop }) {
+export default function RouteList({ stops, totalMinutes, maxMinutes, overBudget, phase, startPoint, returnLeg, building, busy, onRemoveStop }) {
   const { t, approx, walkTime, stayTime, placeLabel, locale } = useI18n();
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [sending, setSending] = useState(false);
@@ -33,7 +33,7 @@ export default function RouteList({ stops, totalMinutes, overBudget, phase, star
   async function handleSendEmail(email) {
     setSending(true); setSendResult(null);
     try {
-      const res = await sendRouteEmail({ email, stops, totalMinutes, startPoint, emailConsent: true, returnLeg, language: locale });
+      const res = await sendRouteEmail({ email, stops, totalMinutes, maxMinutes, startPoint, emailConsent: true, returnLeg, language: locale });
       setSendResult(res.sent ? "success" : "pending");
     } catch { setSendResult("error"); }
     finally { setSending(false); }
