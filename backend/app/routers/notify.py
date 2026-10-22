@@ -3,6 +3,8 @@ from pathlib import Path
 import logging
 import os
 import smtplib
+
+import requests
 from email.mime.text import MIMEText
 from typing import List, Literal, Optional
 
@@ -103,6 +105,29 @@ def send_route_email(req: EmailRequest):
         raise HTTPException(400, EMAIL_COPY[req.language]["consent"])
     if os.environ.get("EMAIL_DELIVERY_ENABLED", "true").lower() == "false":
         raise HTTPException(503, EMAIL_COPY[req.language]["error"])
+    brevo_key = os.environ.get("BREVO_API_KEY")
+    if brevo_key:
+        sender = os.environ.get("EMAIL_FROM") or GMAIL_ADDRESS
+        if not sender:
+            raise HTTPException(503, EMAIL_COPY[req.language]["error"])
+        try:
+            response = requests.post(
+                "https://api.brevo.com/v3/smtp/email",
+                headers={"api-key": brevo_key, "accept": "application/json"},
+                json={"sender": {"email": sender, "name": "Busan Full Course"},
+                      "to": [{"email": req.email}],
+                      "subject": EMAIL_COPY[req.language]["subject"],
+                      "textContent": build_email_body(req)},
+                timeout=15,
+            )
+            response.raise_for_status()
+            if not response.json().get("messageId"):
+                raise ValueError("Missing delivery acknowledgement")
+        except (requests.RequestException, ValueError) as error:
+            # Provider response bodies can contain recipient details; do not log them.
+            logger.error("Brevo delivery failed: %s", type(error).__name__)
+            raise HTTPException(502, EMAIL_COPY[req.language]["error"]) from None
+        return {"ok": True, "sent": True}
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
         logger.info("Email sending is not configured; request skipped")
         return {"ok": True, "sent": False, "reason": "gmail credentials not configured yet"}
