@@ -431,3 +431,6 @@ Visit https://react.dev/link/error-boundaries to learn more about error boundari
 오후 5:10:27 [vite] (client) hmr update /src/components/RouteList.jsx
 오후 5:10:27 [vite] (client) hmr update /src/App.css
 오후 5:11:29 [vite] (client) hmr update /src/I18nProvider.jsx, /src/App.jsx, /src/components/FilterPanel.jsx, /src/components/ServiceInfo.jsx, /src/components/RouteList.jsx, /src/components/MapView.jsx, /src/components/RouteLoading.jsx, /src/components/Dialog.jsx
+오후 5:42:37 [vite] (client) hmr update /src/App.jsx, /src/components/FilterPanel.jsx, /src/components/RouteList.jsx
+오후 5:42:37 [vite] (client) hmr update /src/components/FilterPanel.jsx
+오후 5:43:04 [vite] (client) hmr update /src/App.css
