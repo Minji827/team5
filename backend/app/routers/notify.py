@@ -101,6 +101,8 @@ def build_email_body(req: EmailRequest) -> str:
 def send_route_email(req: EmailRequest):
     if not req.email_consent:
         raise HTTPException(400, EMAIL_COPY[req.language]["consent"])
+    if os.environ.get("EMAIL_DELIVERY_ENABLED", "true").lower() == "false":
+        raise HTTPException(503, EMAIL_COPY[req.language]["error"])
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
         logger.info("Email sending is not configured; request skipped")
         return {"ok": True, "sent": False, "reason": "gmail credentials not configured yet"}
@@ -114,7 +116,7 @@ def send_route_email(req: EmailRequest):
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as server:
             server.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
             server.sendmail(GMAIL_ADDRESS, [req.email], msg.as_string())
-    except smtplib.SMTPException as e:
+    except (smtplib.SMTPException, OSError) as e:
         logger.error("failed to send email via gmail smtp: %s", e)
         raise HTTPException(status_code=502, detail=EMAIL_COPY[req.language]["error"])
 

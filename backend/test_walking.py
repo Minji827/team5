@@ -110,8 +110,8 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual(c.post("/api/recommend",json={**body,"categories":["unknown"]}).status_code,422)
         shopping = c.post("/api/recommend",json={**body,"categories":["쇼핑"],"max_minutes":360})
         self.assertEqual(shopping.status_code,200)
-        self.assertEqual(shopping.json()["stops"],[])
-        self.assertIn("준비",shopping.json()["message"])
+        self.assertEqual(sum(stop["category"] == "쇼핑" for stop in shopping.json()["stops"]), 1)
+        self.assertEqual(next(stop["duration_min"] for stop in shopping.json()["stops"] if stop["category"] == "쇼핑"), 25)
         place = load_places().query("duration_min >= 60").iloc[0]
         swap = c.post("/api/recommend/recalculate",json={**body,"stop_ids":[place.id],"max_minutes":30})
         self.assertEqual(swap.status_code,422)
