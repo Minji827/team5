@@ -217,6 +217,26 @@ class WalkingTests(unittest.TestCase):
             self.assertFalse(pending.json()["sent"])
         self.assertEqual(client.post("/api/notify/email",json={**body,"language":"zh-CN"}).status_code,422)
 
+    def test_official_email_labels_and_korean_fallback(self):
+        from app.routers.notify import EmailRequest, build_email_body, EMAIL_COPY, send_route_email
+        from app.services.place_labels import LABELS
+        entry = next(row for row in LABELS if "en" in row["translations"])
+        stop = {"id": entry["id"], "order": 1, "name": entry["name_ko"], "address": entry["address_ko"], "category": "관광명소"}
+        for language in ["en", "ja", "zh-TW"]:
+            req = EmailRequest(email="test@example.com", email_consent=True, language=language,
+                stops=[stop, {**stop, "id": "unknown", "name": "미확인 가게"}])
+            body = build_email_body(req)
+            self.assertIn(entry["name_ko"], body)
+            self.assertIn("미확인 가게", body)
+            self.assertIn(EMAIL_COPY[language]["official_fallback"], body)
+            if language in entry["translations"]:
+                self.assertIn(entry["translations"][language]["name"], body)
+            with patch("app.routers.notify.smtplib.SMTP_SSL") as smtp, patch("app.routers.notify.GMAIL_ADDRESS", "sender@example.com"), patch("app.routers.notify.GMAIL_APP_PASSWORD", "test"):
+                self.assertTrue(send_route_email(req)["sent"])
+                smtp.return_value.__enter__.return_value.sendmail.assert_called_once()
+        invalid = EmailRequest(email="test@example.com", language="en", stops=[{**stop, "id": "different"}])
+        self.assertNotIn(entry["translations"]["en"]["name"], build_email_body(invalid))
+
 
 if __name__ == "__main__":
     unittest.main()

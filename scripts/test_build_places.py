@@ -20,7 +20,7 @@ class PlaceIntegrationTests(unittest.TestCase):
 
     def test_null_and_rules(self):
         rules = build.rules_from(RULES)
-        self.assertEqual(len(rules), 9)
+        self.assertEqual(len(rules), 10)
         row = dict(id="example", name="fixture", address="fixture", lon="129", lat="35.1")
         place = build.make_place(row, "general_restaurant", "남포동", rules)
         self.assertEqual(place["duration_min"], 60)
@@ -29,6 +29,15 @@ class PlaceIntegrationTests(unittest.TestCase):
         self.assertEqual(build.make_place(row, "traditional_market", "남포동", rules)["payment_status"], "not_verified")
         with self.assertRaises(ValueError):
             build.make_place(dict(row, estimated_spend="-1"), "general_restaurant", "남포동", rules)
+
+    def test_shopping_identity_requires_name_and_coordinates(self):
+        merchant = dict(id="original", name="테스트", lon="129", lat="35")
+        selected = dict(id="curated", name="테스트 부산광복점", lon="129", lat="35")
+        self.assertEqual(build.shopping_merchant(selected, [merchant])["id"], "original")
+        with self.assertRaises(ValueError):
+            build.shopping_merchant(dict(selected, name="다른가게"), [merchant])
+        with self.assertRaises(ValueError):
+            build.shopping_merchant(selected, [merchant, dict(merchant, id="duplicate")])
 
     def test_curated_inputs_and_mvp_partition(self):
         merchants = build.read_csv(DATA / "GIS/mvp/mvp_merchants.csv")

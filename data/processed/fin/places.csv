@@ -765,6 +765,16 @@ f0efca8cf90c079cf62ad0e0bd617918,보노베리,카페·디저트,takeaway_dessert
 2acd5c96246aba435d223f94a8a4d305,새부평한우갈비,식당,general_restaurant,부산 중구 부평2길 29,129.026335295866,35.1008155120753,부평동,60,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
 49c0c121b17660a0db0273aa5e46cae0,채선당 도시락 &샐러드 밀키트24,식당,general_restaurant,부산 중구 흑교로 35-1,129.024997466833,35.1027861257256,부평동,60,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
 5fabb6f1028926f5eaa93bc98254ccdd,일인당,카페·디저트,takeaway_dessert,부산 중구 대청로 84,129.028993396749,35.1028048120671,대청동,15,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+64bd57a37724da9500ba35cc09727c09,와펜하우스 부산광복점,쇼핑,retail_store,부산광역시 중구 광복로 46-1,129.030033147137,35.099143137198,광복동,25,,,,,23:00 마감 (오픈시간 미확인),2026-04-24,merchant,merchant_listed,dongbaekjeon
+89ba8aee474fc617c0577f596483ad0b,지와이빈티지,쇼핑,retail_store,부산광역시 중구 광복로 64-1,129.031932890056,35.0989053828039,광복동,25,,,,,12:30~21:30,2026-04-24,merchant,merchant_listed,dongbaekjeon
+a4f60364fa003982975b82fc23ae1377,부평깡통큰약국,쇼핑,retail_store,부산광역시 중구 부평2길 54,129.026601587133,35.1018849005439,부평동,25,,,,,매일 08:30~19:30,2026-04-24,merchant,merchant_listed,dongbaekjeon
+1259c669ca36a73aea2c3ee8d03dbf9d,다원도기,쇼핑,retail_store,부산광역시 중구 국제시장2길 29,129.028200953565,35.1005365708078,광복동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+aa33dddcd266648349edd50404944994,대광카메라,쇼핑,retail_store,"부산광역시 중구 구덕로 73, 남포지하상가 라-68호",129.026775367303,35.0975216541907,남포동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+b1e3e4ceb1cbe928a4f1d96d74e46ed1,국제완구,쇼핑,retail_store,부산광역시 중구 중구로33번길 5,129.027579082098,35.1008189512611,부평동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+3f8b5328afe4a447ae611e49b24009e9,아이하시,쇼핑,retail_store,부산광역시 중구 국제시장2길 33,129.028303881711,35.1023803655514,광복동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+85d47860be07039a7e67ee4b26185bf7,창선문구사,쇼핑,retail_store,"부산광역시 중구 중구로 28, 국제시장 6공구 창선문구사",129.028052247724,35.1002305869117,광복동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
+421c2f884fb3cf6de40b6501d03b179f,일성모자점,쇼핑,retail_store,부산광역시 중구 국제시장2길 19,129.028307309972,35.1011203747498,광복동,25,,,,,09:30~20:00 (관광정보 안내),2026-04-24,merchant,merchant_listed,dongbaekjeon
+e32ed35561ab3a59a548ce2e8794390c,안동민예토산품,쇼핑,retail_store,부산광역시 중구 국제시장2길 18,129.028553383535,35.1008375225472,광복동,25,,,,,,2026-04-24,merchant,merchant_listed,dongbaekjeon
 spot:curated:a20b87123f9be387,자갈치시장,관광명소,traditional_market,부산광역시 중구 자갈치해안로 52,129.03057978534403,35.09661988021089,남포동,60,,,,,,2026-10-22,market,not_verified,NAVER_MAP;KAKAO_MAP;coordinates:kakao_local
 spot:curated:9efac1bc3a5e92f3,용두산공원,관광명소,scenic_spot,부산광역시 중구 용두산길 37-55,129.0324887097,35.100836917014,광복동,30,,,,,24시간 운영 / 연중무휴,2026-10-22,attraction,not_verified,NAVER_MAP;KAKAO_MAP;coordinates:selected_input
 spot:curated:0ead789e7e5ae166,부산근현대역사관 본관,관광명소,exhibition_experience,부산광역시 중구 대청로 112,129.032137450333,35.1025649585736,대청동,60,,,,,09:00-18:00 (입장마감 17:00 / 월요일 및 1월 1일 휴관),2026-10-22,attraction,not_verified,KAKAO_MAP;NAVER_MAP;BUSAN_CITY;coordinates:kakao_local

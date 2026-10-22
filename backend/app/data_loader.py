@@ -77,7 +77,7 @@ def load_places() -> pd.DataFrame:
     types = {
         "general_restaurant": "식당", "quick_meal": "식당",
         "seated_cafe": "카페·디저트", "takeaway_dessert": "카페·디저트",
-        "general_shopping": "쇼핑", "souvenir_shop": "쇼핑",
+        "general_shopping": "쇼핑", "souvenir_shop": "쇼핑", "retail_store": "쇼핑",
         "scenic_spot": "관광명소", "exhibition_experience": "관광명소", "traditional_market": "관광명소",
     }
     if not frame.visit_type.map(types).eq(frame.category).all():

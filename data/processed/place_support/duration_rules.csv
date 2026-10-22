@@ -1,4 +1,4 @@
-visit_type,category,duration_min,min_guideline,max_guideline,basis
+﻿visit_type,category,duration_min,min_guideline,max_guideline,basis
  general_restaurant,식당,60,45,90,사용자 제공 시간 관련.png의 MVP 초기 가정
  quick_meal,식당,30,20,45,사용자 제공 시간 관련.png의 MVP 초기 가정
  seated_cafe,카페·디저트,45,30,90,사용자 제공 시간 관련.png의 MVP 초기 가정
@@ -8,3 +8,4 @@ visit_type,category,duration_min,min_guideline,max_guideline,basis
  scenic_spot,관광명소,30,15,45,사용자 제공 시간 관련.png의 MVP 초기 가정
  exhibition_experience,관광명소,60,40,120,사용자 제공 시간 관련.png의 MVP 초기 가정
  traditional_market,관광명소,60,30,90,사용자 제공 시간 관련.png의 MVP 초기 가정
+retail_store,쇼핑,25,,,shopping_verification/shopping_places_final.csv 제공 기본값; 실측 아님

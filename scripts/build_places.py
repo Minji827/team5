@@ -142,6 +142,27 @@ def make_place(row, visit_type, dong, rules, category=None, curated=False):
     return place
 
 
+def shopping_merchant(selected, merchants):
+    """Resolve curator IDs using both the merchant name and supplied source coordinates."""
+    direct = [r for r in merchants if r["id"] == selected["id"]]
+    if direct:
+        return direct[0]
+    import re
+    normalize = lambda name: re.sub(r"\s+", "", name)
+    candidates = []
+    for row in merchants:
+        try:
+            same_point = abs(float(row["lon"]) - float(selected["lon"])) < 0.000001 and abs(float(row["lat"]) - float(selected["lat"])) < 0.000001
+        except (KeyError, ValueError, TypeError):
+            continue
+        name, chosen = normalize(row["name"]), normalize(selected.get("name", ""))
+        if same_point and name and (chosen == name or chosen.startswith(name + "부산")):
+            candidates.append(row)
+    if len(candidates) != 1:
+        raise ValueError("Shopping identity is missing or ambiguous: " + selected["id"])
+    return candidates[0]
+
+
 def build(args):
     from qgis.core import QgsApplication
     app = QgsApplication([], False)
@@ -206,17 +227,21 @@ def build(args):
         selected = read_csv(args.shopping_file)
         if len(selected) != 10 or len({row["id"] for row in selected}) != 10:
             raise ValueError("Shopping selection must contain exactly 10 unique merchant IDs")
-        lookup = {row["id"]: row for row in merchants}
         for selected_row in selected:
-            row = dict(lookup.get(selected_row["id"], selected_row))
-            if selected_row["id"] not in lookup:
-                queue(row, "shopping_not_in_mvp_merchant_list", args.shopping_file)
-                continue
+            original = shopping_merchant(selected_row, merchants)
+            row = dict(original)
+            # Preserve the merchant ID while retaining curator-supplied display information.
+            row.update({key: value for key, value in selected_row.items() if key != "id" and value != ""})
             visit_type = selected_row.get("visit_type", "")
-            if visit_type not in {"general_shopping", "souvenir_shop"}:
-                queue(row, "shopping_visit_type_missing", args.shopping_file)
-                continue
-            add(row, visit_type, "curator_selected_10", args.shopping_file, category="쇼핑")
+            if visit_type not in {"general_shopping", "souvenir_shop", "retail_store"}:
+                raise ValueError("Invalid shopping visit_type")
+            if selected_row.get("duration_min") and float(selected_row["duration_min"]) != rules[visit_type]["duration_min"]:
+                raise ValueError("Shopping duration conflicts with duration rules")
+            if row["id"] in ready:
+                raise ValueError("Selected shop already classified in catalog: " + row["id"])
+            add(row, visit_type, "curator_selected_10", args.shopping_file,
+                supplemental="curator_id=" + selected_row["id"] + "; source_coordinate_and_name_match; source_coordinates_not_field_verified",
+                category="쇼핑")
 
     if args.tourism_file:
         tourist_rows = read_csv(args.tourism_file)
