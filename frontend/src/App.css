@@ -1,6 +1,6 @@
 .app{height:calc(100dvh - 40px);min-height:650px;max-width:1880px;margin:20px auto;display:flex;flex-direction:column;background:#fff;border:1px solid #fff;border-radius:26px;box-shadow:0 14px 70px #233f3710;overflow:hidden}
 .app-header{height:88px;flex-shrink:0;display:flex;align-items:center;padding:0 30px 0 22px;border-bottom:1px solid var(--border);gap:32px}
-.brand{width:auto;flex-shrink:0;display:flex;align-items:center;justify-content:center}.brand-image{display:flex;align-items:center;justify-content:center;height:64px;width:auto}.brand-image img{display:block;height:100%;width:auto;margin:auto}
+.brand{width:auto;flex-shrink:0;display:flex;align-items:center;justify-content:center}.brand-image{display:flex;align-items:center;justify-content:center;height:64px;width:180px}.brand-image img{display:block;height:auto;width:auto;max-height:100%;max-width:100%;object-fit:contain;margin:auto}
 .header-nav{display:flex;height:100%;align-items:center;gap:32px}.header-tab{height:100%;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700;border-bottom:3px solid var(--primary);padding:0 6px;color:var(--primary)}
 .header-nav button{background:none;border:0;color:var(--text-muted);font-size:13px;cursor:pointer;padding:15px 0}.header-caption{margin-left:auto;display:flex;align-items:center;gap:9px;color:var(--text-muted);font-size:12px}.status-dot{width:7px;height:7px;background:var(--primary);border-radius:50%}
 .app-body{display:flex;flex:1;min-height:0}.nav-rail{width:76px;flex-shrink:0;display:flex;align-items:center;flex-direction:column;gap:16px;padding:28px 0 20px;border-right:1px solid var(--border)}.rail-button{width:43px;height:43px;display:grid;place-items:center;border:0;border-radius:13px;background:transparent;color:#96a29e;cursor:pointer}.rail-button.active{color:#fff;background:var(--primary);box-shadow:0 5px 12px #19786922}.rail-button:hover{background:var(--primary-light);color:var(--primary)}.rail-help{margin-top:auto}.rail-label{font-size:8px;font-weight:800;letter-spacing:2px;color:#a5b5af}
@@ -59,3 +59,4 @@ html[lang=en] .header-nav{gap:20px}
 .remaining-time{font-size:12px;color:var(--primary);font-weight:600}
 .next-candidates .confirm-place{display:block;margin-top:10px;font-size:12px;font-weight:650;color:var(--primary)}
 .next-candidates button:disabled{opacity:.5}
+@media(max-width:760px){.brand{width:150px;flex:0 1 150px;min-width:0}.brand-image{width:100%;height:64px}.brand-image img{width:auto;height:auto;max-width:100%;max-height:100%;inset:auto;object-fit:contain}}

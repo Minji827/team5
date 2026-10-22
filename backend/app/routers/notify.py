@@ -7,6 +7,7 @@ import smtplib
 import requests
 from email.mime.text import MIMEText
 from typing import List, Literal, Optional
+from urllib.parse import urlencode
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException
@@ -43,27 +44,39 @@ class EmailRequest(BaseModel):
     return_to_start: bool = False
     return_minutes: Optional[float] = None
     total_minutes: Optional[float] = None
+    start_label: Optional[str] = None
     start_lat: Optional[float] = None
     start_lon: Optional[float] = None
     stops: List[RouteStop]
 
 
-def build_google_maps_link(req: EmailRequest) -> Optional[str]:
-    """출발지 -> 경유지들 -> 마지막 목적지를 도보 길찾기로 여는 구글맵 링크.
-    좌표가 하나라도 빠지면(옛 클라이언트 등) 링크 없이 보낸다."""
+def build_google_maps_links(req: EmailRequest) -> List[str]:
+    """Use named places and split routes for mobile's three-waypoint limit."""
     if not req.stops or req.start_lat is None or req.start_lon is None:
-        return None
-    if any(s.lat is None or s.lon is None for s in req.stops):
-        return None
-
-    origin = f"{req.start_lat},{req.start_lon}"
-    destination = origin if req.return_to_start else f"{req.stops[-1].lat},{req.stops[-1].lon}"
-    waypoints = "|".join(f"{s.lat},{s.lon}" for s in (req.stops if req.return_to_start else req.stops[:-1]))
-
-    url = f"https://www.google.com/maps/dir/?api=1&origin={origin}&destination={destination}&travelmode=walking"
-    if waypoints:
-        url += f"&waypoints={waypoints}"
-    return url
+        return []
+    start = req.start_label.strip() if req.start_label else ""
+    if not start or start == "내 위치":
+        start = f"{req.start_lat},{req.start_lon}"
+    points = [start]
+    for stop in req.stops:
+        label = f"{stop.name.strip()} {stop.address.strip()}".strip()
+        if not label:
+            if stop.lat is None or stop.lon is None:
+                return []
+            label = f"{stop.lat},{stop.lon}"
+        points.append(label)
+    if req.return_to_start:
+        points.append(start)
+    links = []
+    offset = 0
+    while offset < len(points) - 1:
+        segment = points[offset:offset + 5]
+        params = {"api": "1", "origin": segment[0], "destination": segment[-1], "travelmode": "walking"}
+        if len(segment) > 2:
+            params["waypoints"] = "|".join(segment[1:-1])
+        links.append("https://www.google.com/maps/dir/?" + urlencode(params))
+        offset += len(segment) - 1
+    return links
 
 
 def build_email_body(req: EmailRequest) -> str:
@@ -90,9 +103,10 @@ def build_email_body(req: EmailRequest) -> str:
         lines.append("")
     if req.return_to_start:
         lines.append(text["return"].format(n=req.return_minutes))
-    maps_link = build_google_maps_link(req)
-    if maps_link:
-        lines.extend([text["maps"] + ": " + maps_link, ""])
+    maps_links = build_google_maps_links(req)
+    for index, maps_link in enumerate(maps_links, 1):
+        part = f" ({index}/{len(maps_links)})" if len(maps_links) > 1 else ""
+        lines.extend([text["maps"] + part + ": " + maps_link, ""])
     if missing_official:
         lines.append(text["official_fallback"])
     lines.append(text["source"])

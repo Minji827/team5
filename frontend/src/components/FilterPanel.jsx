@@ -39,7 +39,7 @@ export default function FilterPanel({
   }
 
   function pickResult(r) {
-    setStartPoint({ lat: r.lat, lon: r.lon, label: r.name });
+    setStartPoint({ lat: r.lat, lon: r.lon, label: r.name, address: r.address });
     setResults([]);
     setQuery("");
   }

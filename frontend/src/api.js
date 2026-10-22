@@ -43,6 +43,7 @@ export function sendRouteEmail({ email, stops, totalMinutes, startPoint, emailCo
       return_to_start: !!returnLeg,
       return_minutes: returnLeg?.leg_minutes,
       total_minutes: totalMinutes,
+      start_label: startPoint?.label && startPoint.label !== "내 위치" ? [startPoint.label, startPoint.address].filter(Boolean).join(" ") : null,
       start_lat: startPoint?.lat,
       start_lon: startPoint?.lon,
       stops,

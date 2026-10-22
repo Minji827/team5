@@ -175,11 +175,13 @@ class WalkingTests(unittest.TestCase):
         self.assertTrue(all(p["origin_walk_minutes"]<=20 for p in strict["alternatives"]))
 
     def test_roundtrip_email_link(self):
-        from app.routers.notify import EmailRequest,build_google_maps_link,build_email_body
+        from app.routers.notify import EmailRequest,build_google_maps_links,build_email_body
         req=EmailRequest(email="test@example.com",start_lat=35.1,start_lon=129.03,return_to_start=True,return_minutes=8,
             stops=[{"order":1,"name":"test","category":"관광명소","address":"test","lat":35.11,"lon":129.04}])
-        self.assertIn("destination=35.1,129.03",build_google_maps_link(req))
-        self.assertIn("waypoints=35.11,129.04",build_google_maps_link(req))
+        from urllib.parse import parse_qs, urlparse
+        query=parse_qs(urlparse(build_google_maps_links(req)[0]).query)
+        self.assertEqual(query["destination"],["35.1,129.03"])
+        self.assertEqual(query["waypoints"],["test test"])
         self.assertIn("8.0",build_email_body(req))
 
     def test_taste_tags_require_exact_district_and_unique_name(self):
