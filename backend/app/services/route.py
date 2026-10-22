@@ -175,8 +175,8 @@ def summarize_route(stops, max_minutes, return_leg=None):
             "max_origin_walk_minutes": MAX_ORIGIN_WALK_MINUTES}
 
 
-def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False):
-    leg = route_legs()
+def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False, leg=None):
+    leg = leg or route_legs()
     limits, counts = category_limits(max_minutes), {}
     current_lat, current_lon = start_lat, start_lon
     result = []
@@ -192,3 +192,41 @@ def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_sta
         current_lat, current_lon = stop["lat"], stop["lon"]
     back = leg(current_lat, current_lon, start_lat, start_lon) if return_to_start and result else None
     return summarize_route(result, max_minutes, back)
+
+
+def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes=90, return_to_start=False):
+    """Keep the user's order; offer only additions that fit the complete time budget."""
+    leg = route_legs()
+    result = recalculate_route(start_lat, start_lon, stops, max_minutes, return_to_start, leg=leg)
+    if result["over_budget"]:
+        raise RouteConstraintError("이 장소로 바꾸면 여행 시간을 초과해요. 다른 장소를 선택해주세요.")
+    result["alternatives"] = []
+    result["remaining_minutes"] = round(max_minutes - result["total_minutes"], 1)
+    if not category or len(stops) >= 24:
+        return result
+    category = "카페·디저트" if category == "카페/디저트" else category
+    count = sum(("카페·디저트" if s["category"] == "카페/디저트" else s["category"]) == category for s in stops)
+    if count >= category_limits(max_minutes).get(category, 24):
+        return result
+    current = stops[-1] if stops else {"lat": start_lat, "lon": start_lon}
+    used_ids = {s["id"] for s in stops}
+    pool = catalog[(catalog.category == category) & ~catalog.id.isin(used_ids)]
+    candidates = nearest_candidates(pool, current["lat"], current["lon"], [category], limit=20)
+    used = result["total_walk_minutes"] + result["total_stay_minutes"] - (result["return_leg"]["leg_minutes"] if result["return_leg"] else 0)
+    for place in candidates:
+        if used + place["duration_min"] > max_minutes:
+            continue
+        origin = leg(start_lat, start_lon, place["lat"], place["lon"])
+        if not within_origin_limit(origin):
+            continue
+        incoming = leg(current["lat"], current["lon"], place["lat"], place["lon"])
+        back = leg(place["lat"], place["lon"], start_lat, start_lon) if return_to_start else None
+        total = round(used + incoming["leg_minutes"] + place["duration_min"] + (back["leg_minutes"] if back else 0), 1)
+        if total > max_minutes:
+            continue
+        result["alternatives"].append({**_place_fields(place), **incoming,
+            "origin_walk_minutes": origin["leg_minutes"], "projected_total_minutes": total})
+        if len(result["alternatives"]) == 3:
+            break
+    result["alternatives"].sort(key=lambda p: p["leg_minutes"])
+    return result

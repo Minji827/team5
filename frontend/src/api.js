@@ -58,3 +58,11 @@ export function recalculateRoute({ startPoint, stops, maxMinutes, returnToStart 
       stop_ids: stops.map((s) => s.id), max_minutes: maxMinutes, return_to_start: returnToStart }),
   });
 }
+
+export function getNextPlaces({ startPoint, stops, category, maxMinutes, returnToStart }) {
+  return request("/api/recommend/next", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ start_lat: startPoint.lat, start_lon: startPoint.lon,
+      stop_ids: stops.map((stop) => stop.id), category, max_minutes: maxMinutes, return_to_start: returnToStart }),
+  });
+}

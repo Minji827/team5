@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from app.data_loader import load_places
-from app.services.route import recommend_route, recalculate_route, RouteConstraintError
+from app.services.route import recommend_route, recalculate_route, next_places, RouteConstraintError
 from app.services.walking import WalkingError
 
 router = APIRouter(prefix="/api/recommend", tags=["recommend"])
@@ -28,6 +28,31 @@ class RecalculateRequest(BaseModel):
     return_to_start: bool = False
     stop_ids: List[str] = Field(min_length=1, max_length=24)
     max_minutes: int = Field(default=90, ge=30, le=360)
+
+
+class NextPlaceRequest(BaseModel):
+    start_lat: float = Field(ge=-90, le=90)
+    start_lon: float = Field(ge=-180, le=180)
+    return_to_start: bool = False
+    max_minutes: int = Field(default=90, ge=30, le=360)
+    stop_ids: List[str] = Field(default_factory=list, max_length=24)
+    category: Optional[Literal["식당", "카페/디저트", "카페·디저트", "관광명소", "쇼핑"]] = None
+
+
+@router.post("/next")
+def recommend_next(req: NextPlaceRequest):
+    catalog = load_places()
+    indexed = catalog.set_index("id")
+    if len(set(req.stop_ids)) != len(req.stop_ids) or any(i not in indexed.index for i in req.stop_ids):
+        raise HTTPException(422, "유효한 장소 ID를 중복 없이 선택해주세요.")
+    from app.services.route import _place_fields
+    stops = [_place_fields({**indexed.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
+    try:
+        return next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start)
+    except RouteConstraintError as exc:
+        raise HTTPException(422, str(exc)) from None
+    except WalkingError as exc:
+        raise HTTPException(502, str(exc)) from None
 
 
 @router.post("/recalculate")

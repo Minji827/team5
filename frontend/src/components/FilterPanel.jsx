@@ -7,7 +7,7 @@ export default function FilterPanel({
   startPoint, setStartPoint,
   allCategories,
   categories, toggleCategory,
-  returnToStart, setReturnToStart, selectedOnly, setSelectedOnly,
+  returnToStart, setReturnToStart,
   maxMinutes, setMaxMinutes,
   onSubmit, loading, collapsed,
 }) {
@@ -161,7 +161,6 @@ export default function FilterPanel({
         <span className="start-point-hint">{t("interestHint")}</span>
       </div>
 
-      <label className="consent-check"><input type="checkbox" checked={selectedOnly} onChange={(e) => setSelectedOnly(e.target.checked)} /><span>{t("selectedOnly")}</span></label>
 
       <button
         className="submit-btn"

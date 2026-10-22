@@ -1,0 +1,53 @@
+import unittest
+from unittest.mock import patch
+import pandas as pd
+from fastapi.testclient import TestClient
+from app.main import app
+from app.data_loader import load_places
+from app.services.route import next_places
+
+class NextPlaceTests(unittest.TestCase):
+    def setUp(self):
+        base = load_places().iloc[0].to_dict()
+        self.rows = [{**base, "id": "a", "category": "관광명소", "duration_min":30, "lat":35.101, "lon":129.03},
+                     {**base, "id": "b", "category": "카페·디저트", "duration_min":45, "lat":35.102, "lon":129.03},
+                     {**base, "id": "c", "category": "식당", "duration_min":60, "lat":35.103, "lon":129.03}]
+        self.catalog = pd.DataFrame(self.rows)
+
+    @patch("app.services.route.walking_leg")
+    def test_preserves_chosen_order_and_uses_last_location(self, walk):
+        walk.return_value = {"leg_minutes":5,"leg_seconds":300,"leg_path":[],"leg_distance_m":300}
+        result = next_places(self.catalog,35.1,129.03,self.rows[:1],"카페/디저트",180)
+        self.assertEqual([p["id"] for p in result["stops"]],["a"])
+        self.assertEqual([p["id"] for p in result["alternatives"]],["b"])
+        self.assertEqual(result["alternatives"][0]["projected_total_minutes"],85)
+        self.assertIn(((35.101,129.03,35.102,129.03),),[(c.args,) for c in walk.call_args_list])
+        result = next_places(self.catalog,35.1,129.03,[self.rows[2],self.rows[0]],None,180)
+        self.assertEqual([s["id"] for s in result["stops"]],["c","a"])
+        self.assertEqual([s["order"] for s in result["stops"]],[1,2])
+
+    @patch("app.services.route.walking_leg")
+    def test_budget_return_and_category_limit(self, walk):
+        walk.return_value={"leg_minutes":5,"leg_seconds":300,"leg_path":[],"leg_distance_m":300}
+        result=next_places(self.catalog,35.1,129.03,self.rows[:1],"카페/디저트",85,True)
+        self.assertEqual(result["alternatives"],[])
+        self.assertEqual(result["remaining_minutes"],45)
+        self.assertEqual(next_places(self.catalog,35.1,129.03,[self.rows[1]],"카페/디저트",180)["alternatives"],[])
+        self.assertFalse(next_places(self.catalog,35.1,129.03,[self.rows[0]],"관광명소",180)["alternatives"])
+
+    @patch("app.services.route.walking_leg")
+    def test_origin_limit_and_empty_selection(self, walk):
+        walk.return_value={"leg_minutes":20,"leg_seconds":1201,"leg_path":[],"leg_distance_m":1500}
+        self.assertFalse(next_places(self.catalog,35.1,129.03,[],"식당",180)["alternatives"])
+        result=next_places(self.catalog,35.1,129.03,[],None,180,True)
+        self.assertEqual(result["stops"],[])
+        self.assertEqual(result["total_minutes"],0)
+        self.assertIsNone(result["return_leg"])
+
+    def test_invalid_ids_and_category_rejected(self):
+        client=TestClient(app); base={"start_lat":35.1,"start_lon":129.03}
+        for change in [{"stop_ids":["missing"]},{"stop_ids":["same","same"]},{"category":"unknown"}]:
+            self.assertEqual(client.post("/api/recommend/next",json={**base,**change}).status_code,422)
+        self.assertEqual(client.post("/api/recommend/next",json=base).status_code,200)
+
+if __name__ == "__main__":unittest.main()

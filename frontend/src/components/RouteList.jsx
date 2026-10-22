@@ -25,9 +25,8 @@ function EmailModal({ onClose, onSend, sending, sendResult }) {
   </Dialog>;
 }
 
-export default function RouteList({ stops, alternatives, totalMinutes, overBudget, phase, startPoint, returnLeg, onSwapStop }) {
+export default function RouteList({ stops, totalMinutes, overBudget, phase, startPoint, returnLeg, building, busy, onRemoveStop }) {
   const { t, approx, walkTime, stayTime, placeLabel, locale } = useI18n();
-  const [editingIdx, setEditingIdx] = useState(null);
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendResult, setSendResult] = useState(null);
@@ -41,6 +40,7 @@ export default function RouteList({ stops, alternatives, totalMinutes, overBudge
   }
   if (phase === "loading") return <RouteLoading />;
   if (phase === "setup") return <div className="empty-state"><span className="empty-icon"><Icon name="route" size={25} /></span><div><strong>{t("results")}</strong><p>{t("resultsHint")}</p></div></div>;
+  if (!stops.length && building) return null;
   if (!stops.length) return <div className="empty-state"><Icon name="search" /><p>{t("emptyResults")}<br />{t("changeConditions")}</p></div>;
   const walk = Math.round((stops.reduce((sum, s) => sum + s.leg_minutes, 0) + (returnLeg?.leg_minutes || 0)) * 10) / 10;
   const stay = stops.reduce((sum, s) => sum + s.duration_min, 0);
@@ -48,17 +48,16 @@ export default function RouteList({ stops, alternatives, totalMinutes, overBudge
     <div className="panel-heading"><h2>{t("results")}</h2><span>{t("placeCount", { count: stops.length })}</span></div>
     <div className={overBudget ? "summary-bar over" : "summary-bar"}><div><span>{t("estimatedTotal")}</span><strong>{approx(totalMinutes)}</strong></div><p>{walkTime(walk)} + {stayTime(stay)}</p>{overBudget && <span className="over-badge">{t("overBudget")}</span>}</div>
     <div className="route-timeline">{stops.map((stop, idx) => {
-      const groups = ["식당", "카페/디저트", "관광명소", "쇼핑"].map((category) => ({ category, places: alternatives.filter((a) => a.category === category) }));
       return <div key={stop.id} className="route-stop">
         <div className="timeline-col"><span className="order-badge">{stop.order}</span><span className="timeline-line" /></div>
         <div className="route-stop-body"><div className="leg-label"><Icon name="walk" size={14} />{idx === 0 ? t("originWalk", { time: approx(stop.leg_minutes) }) : walkTime(stop.leg_minutes)}</div>
-          <article className="stop-card"><span className="category-tag">{t(stop.category)}</span><h3 className="stop-name">{stop.name}</h3><p className="stop-address">{stop.address}</p><div className="stop-card-bottom"><span><Icon name="clock" size={13} />{stayTime(stop.duration_min)}</span><button type="button" className="edit-stop-btn" onClick={() => setEditingIdx(editingIdx === idx ? null : idx)}><Icon name="edit" size={13} />{editingIdx === idx ? t("close") : t("otherPlace")}</button></div><div className="place-tags">{stop.payment_status === "merchant_listed" && <span className="payment-tag">{t("paymentTag")}</span>}{stop.is_busan_taste && <span className="taste-tag">{t("tasteTag")}</span>}</div></article>
-          {editingIdx === idx && <div className="alternative-groups"><p className="source-note">{t("alternativesHint")}</p>{groups.map(({ category, places }) => <section key={category} className="alternative-group"><h4>{t(category)}</h4>{places.length ? <ul className="alt-list">{places.map((alt) => <li key={alt.id}><button type="button" onClick={() => { onSwapStop(idx, alt.id); setEditingIdx(null); }}><span className="result-name">{alt.name}</span><span className="candidate-tags">{alt.payment_status === "merchant_listed" && <span className="payment-tag">{t("paymentTag")}</span>}{alt.is_busan_taste && <span className="taste-tag">{t("tasteTag")}</span>}</span><span className="result-address">{t("originWalk", { time: approx(alt.origin_walk_minutes) })} · {stayTime(alt.duration_min)}</span><Icon name="arrow" size={15} /></button></li>)}</ul> : <p className="source-note">{category === "쇼핑" ? t("noShopping") : t("noAlternatives")}</p>}</section>)}</div>}
+          <article className="stop-card"><span className="category-tag">{t(stop.category)}</span><h3 className="stop-name">{stop.name}</h3><p className="stop-address">{stop.address}</p><div className="stop-card-bottom"><span><Icon name="clock" size={13} />{stayTime(stop.duration_min)}</span>{building && <button type="button" className="edit-stop-btn" disabled={busy} onClick={() => onRemoveStop(idx)}>{t("removeStop")}</button>}</div><div className="place-tags">{stop.payment_status === "merchant_listed" && <span className="payment-tag">{t("paymentTag")}</span>}{stop.is_busan_taste && <span className="taste-tag">{t("tasteTag")}</span>}</div></article>
+
         </div>
       </div>;
     })}</div>
     {returnLeg && <div className="return-stop"><Icon name="pin" size={17} /><div><strong>{t("returnStart")}</strong><p>{placeLabel(startPoint)} · {walkTime(returnLeg.leg_minutes)}</p></div></div>}
-    <button type="button" className="submit-btn email-cta" onClick={() => { setSendResult(null); setShowEmailModal(true); }}><Icon name="mail" size={18} />{t("emailCTA")}<Icon name="arrow" size={18} /></button>
+    {!building && <button type="button" className="submit-btn email-cta" onClick={() => { setSendResult(null); setShowEmailModal(true); }}><Icon name="mail" size={18} />{t("emailCTA")}<Icon name="arrow" size={18} /></button>}
     <p className="source-note">{t("sourceNote")}</p>
     {showEmailModal && <EmailModal onClose={() => { if (!sending) setShowEmailModal(false); }} onSend={handleSendEmail} sending={sending} sendResult={sendResult} />}
   </section>;
