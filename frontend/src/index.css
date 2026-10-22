@@ -1,7 +1,7 @@
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #eff6ff;
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --primary-light: #f0fdfa;
   --accent-green: #16a34a;
   --accent-green-light: #f0fdf4;
 
@@ -26,7 +26,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-light: rgba(37, 99, 235, 0.15);
+    --primary-light: rgba(13, 148, 136, 0.15);
     --accent-green-light: rgba(22, 163, 74, 0.15);
     --bg: #0f172a;
     --surface: #1e293b;

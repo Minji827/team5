@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, ZoomControl, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { BUSAN_CENTER } from "../constants";
@@ -39,38 +39,61 @@ function ClickHandler({ onPick }) {
   return null;
 }
 
-export default function MapView({ stops, startPoint, onPickStart }) {
-  const path = startPoint
+export default function MapView({ stops, startPoint, onPickStart, totalMinutes, overBudget, maxMinutes }) {
+  const path = stops.some((s) => s.leg_path?.length)
+    ? stops.flatMap((s) => s.leg_path || [])
+    : startPoint
     ? [[startPoint.lat, startPoint.lon], ...stops.map((s) => [s.lat, s.lon])]
     : [];
+  const progressPct = maxMinutes ? Math.min(100, Math.round((totalMinutes / maxMinutes) * 100)) : 0;
 
   return (
-    <MapContainer center={BUSAN_CENTER} zoom={13} className="map">
-      <TileLayer
-        attribution='&copy; OpenStreetMap contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+    <>
+      <MapContainer center={BUSAN_CENTER} zoom={13} className="map" zoomControl={false}>
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
-      <ClickHandler onPick={onPickStart} />
-      <FlyToStart startPoint={startPoint} />
+        <ClickHandler onPick={onPickStart} />
+        <FlyToStart startPoint={startPoint} />
+        <ZoomControl position="bottomright" />
 
-      {path.length > 1 && <Polyline positions={path} color="#2563eb" weight={3} />}
+        {path.length > 1 && <Polyline positions={path} color="#0d9488" weight={4} opacity={0.9} />}
 
-      {startPoint && (
-        <Marker position={[startPoint.lat, startPoint.lon]} icon={startIcon}>
-          <Popup>출발지</Popup>
-        </Marker>
+        {startPoint && (
+          <Marker position={[startPoint.lat, startPoint.lon]} icon={startIcon}>
+            <Popup>출발지</Popup>
+          </Marker>
+        )}
+
+        {stops.map((stop) => (
+          <Marker key={stop.id} position={[stop.lat, stop.lon]} icon={numberedIcon(stop.order)}>
+            <Popup>
+              <strong>{stop.order}. {stop.name}</strong><br />
+              {stop.category} · {stop.address}<br />
+              이전 지점에서 도보 {stop.leg_minutes}분 (추정)
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+
+      {stops.length > 0 && (
+        <div className="map-status-card">
+          <div className="map-status-row">
+            <span>루트 현황</span>
+            <span className={overBudget ? "map-status-pct over" : "map-status-pct"}>
+              총 {totalMinutes}분{maxMinutes ? ` / ${maxMinutes}분` : ""}
+            </span>
+          </div>
+          <div className="map-status-bar">
+            <div
+              className={overBudget ? "map-status-fill over" : "map-status-fill"}
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
+        </div>
       )}
-
-      {stops.map((stop) => (
-        <Marker key={stop.id} position={[stop.lat, stop.lon]} icon={numberedIcon(stop.order)}>
-          <Popup>
-            <strong>{stop.order}. {stop.name}</strong><br />
-            {stop.category} · {stop.address}<br />
-            이전 지점에서 도보 {stop.leg_minutes}분 (추정)
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    </>
   );
 }

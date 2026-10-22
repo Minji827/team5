@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { searchLocation } from "../api";
 
 export default function FilterPanel({
@@ -7,13 +7,18 @@ export default function FilterPanel({
   categories, toggleCategory,
   stopCount, setStopCount,
   maxMinutes, setMaxMinutes,
-  onSubmit, loading,
+  onSubmit, loading, collapsed,
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searchError, setSearchError] = useState(null);
   const [locating, setLocating] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+
+  useEffect(() => {
+    if (collapsed) setExpanded(false);
+  }, [collapsed]);
 
   const canSubmit = !!startPoint && !loading;
 
@@ -55,6 +60,23 @@ export default function FilterPanel({
         setSearchError("위치 조회에 실패했어요. 권한을 허용했는지 확인해주세요.");
         setLocating(false);
       }
+    );
+  }
+
+  if (collapsed && !expanded) {
+    return (
+      <div className="filter-summary">
+        <div className="filter-summary-text">
+          <span className="filter-summary-pin">📍 {startPoint?.label || "출발지"}</span>
+          <span className="filter-summary-dot">·</span>
+          <span>{maxMinutes}분</span>
+          <span className="filter-summary-dot">·</span>
+          <span>{categories.length ? categories.join(", ") : "전체"} {stopCount}곳</span>
+        </div>
+        <button type="button" className="filter-edit-btn" onClick={() => setExpanded(true)}>
+          조건 수정
+        </button>
+      </div>
     );
   }
 
@@ -103,7 +125,7 @@ export default function FilterPanel({
       </div>
 
       <label className="field">
-        <span>가능 시간: {maxMinutes}분</span>
+        <span>여행 시간: {maxMinutes}분</span>
         <input
           type="range" min={30} max={180} step={10} value={maxMinutes}
           onChange={(e) => setMaxMinutes(Number(e.target.value))}
@@ -150,8 +172,12 @@ export default function FilterPanel({
         </div>
       </div>
 
-      <button className="submit-btn" onClick={onSubmit} disabled={!canSubmit}>
-        {loading ? "추천 중..." : "루트 추천받기"}
+      <button
+        className="submit-btn"
+        onClick={() => { onSubmit(); setExpanded(false); }}
+        disabled={!canSubmit}
+      >
+        {loading ? "루트 짜는 중..." : "루트 짜기"}
       </button>
     </div>
   );

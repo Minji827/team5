@@ -3,7 +3,8 @@ const API_BASE = "http://localhost:8000";
 async function request(path, options) {
   const res = await fetch(`${API_BASE}${path}`, options);
   if (!res.ok) {
-    throw new Error(`API ${path} failed: ${res.status}`);
+    const error = await res.json().catch(() => ({}));
+    throw new Error(typeof error.detail === "string" ? error.detail : `요청 실패: ${res.status}`);
   }
   return res.json();
 }
@@ -41,5 +42,14 @@ export function sendRouteEmail({ email, stops, totalMinutes, startPoint }) {
       start_lon: startPoint?.lon,
       stops,
     }),
+  });
+}
+
+export function recalculateRoute({ startPoint, stops, maxMinutes }) {
+  return request("/api/recommend/recalculate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ start_lat: startPoint.lat, start_lon: startPoint.lon,
+      stop_ids: stops.map((s) => s.id), max_minutes: maxMinutes }),
   });
 }

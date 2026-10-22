@@ -1,0 +1,29 @@
+{
+  "ready": 766,
+  "review": 1242,
+  "excluded": {
+    "outside_scope": 1585
+  },
+  "categories": {
+    "식당": 599,
+    "카페·디저트": 167
+  },
+  "visit_types": {
+    "general_restaurant": 563,
+    "seated_cafe": 126,
+    "quick_meal": 36,
+    "takeaway_dessert": 41
+  },
+  "review_reasons": {
+    "classification_unmatched": 960,
+    "classification_review": 266,
+    "shopping_selection_pending": 15,
+    "snack_subtype_conflict": 1
+  },
+  "shopping_input_received": false,
+  "tourism_input_received": false,
+  "release_status": "partial",
+  "duration_basis": "User-provided initial MVP assumptions; not measured dwell times",
+  "source_mvp": "C:\\Users\\redsu\\OneDrive\\바탕 화면\\team5\\data\\processed\\GIS\\mvp\\mvp_merchants.csv",
+  "backend_switched": false
+}

@@ -4,6 +4,7 @@ import itertools
 import pandas as pd
 
 from app.services.geo import haversine_m
+from app.services.walking import walking_leg
 
 CATEGORIES = ["식당", "카페·디저트", "관광명소", "쇼핑"]
 WALK_SPEED_MPS = 4.5 * 1000 / 3600
@@ -79,32 +80,49 @@ def optimal_order(start_lat, start_lon, candidates: list, stop_count):
     return best_order, best_minutes
 
 
+def _place_fields(stop):
+    return {
+        "duration_min": stop["duration_min"],
+        "duration_basis": stop["duration_basis"],
+        "id": stop["id"],
+        "name": stop["name"],
+        "category": stop["category"],
+        "address": stop["address"],
+        "lon": stop["lon"],
+        "lat": stop["lat"],
+        "data_date": stop["data_date"],
+        "place_type": stop["place_type"],
+        "payment_status": stop["payment_status"],
+        "source": stop["source"],
+    }
+
+
 def recommend_route(catalog, start_lat, start_lon, categories=None, stop_count=5, max_minutes=None):
     candidates = nearest_candidates(catalog, start_lat, start_lon, categories, stop_count)
     if not candidates:
-        return {"stops": [], "total_minutes": 0, "over_budget": False}
+        return {"stops": [], "total_minutes": 0, "over_budget": False, "alternatives": []}
 
     (order, legs), total_minutes = optimal_order(start_lat, start_lon, candidates, stop_count)
 
-    stops = []
-    for i, (stop, leg_minutes) in enumerate(zip(order, legs), start=1):
-        stops.append({
-            "order": i,
-            "id": stop["id"],
-            "name": stop["name"],
-            "category": stop["category"],
-            "address": stop["address"],
-            "lon": stop["lon"],
-            "lat": stop["lat"],
-            "data_date": stop["data_date"],
-            "place_type": stop["place_type"],
-            "payment_status": stop["payment_status"],
-            "source": stop["source"],
-            "leg_minutes": round(leg_minutes, 1),
-        })
+    stops = [{**_place_fields(stop), "order": i} for i, stop in enumerate(order, start=1)]
+    result = recalculate_route(start_lat, start_lon, stops, max_minutes)
 
-    return {
-        "stops": stops,
-        "total_minutes": round(total_minutes, 1),
-        "over_budget": bool(max_minutes is not None and total_minutes > max_minutes),
-    }
+    chosen_ids = {stop["id"] for stop in order}
+    alternatives = [_place_fields(c) for c in candidates if c["id"] not in chosen_ids]
+
+    return {**result, "alternatives": alternatives}
+
+
+def recalculate_route(start_lat, start_lon, stops, max_minutes=None):
+    current_lat, current_lon = start_lat, start_lon
+    result = []
+    for i, stop in enumerate(stops, start=1):
+        leg = walking_leg(current_lat, current_lon, stop["lat"], stop["lon"])
+        result.append({**stop, **leg, "order": i})
+        current_lat, current_lon = stop["lat"], stop["lon"]
+    walk = round(sum(s["leg_minutes"] for s in result), 1)
+    stay = round(sum(s["duration_min"] for s in result), 1)
+    total = round(walk + stay, 1)
+    return {"stops": result, "total_walk_minutes": walk, "total_stay_minutes": stay,
+            "total_minutes": total, "over_budget": bool(max_minutes is not None and total > max_minutes),
+            "routing_source": "tmap"}

@@ -23,6 +23,7 @@ class RouteStop(BaseModel):
     category: str
     address: str
     leg_minutes: Optional[float] = None
+    duration_min: Optional[float] = None
     lat: Optional[float] = None
     lon: Optional[float] = None
 
@@ -54,12 +55,14 @@ def build_google_maps_link(req: EmailRequest) -> Optional[str]:
 
 
 def build_email_body(req: EmailRequest) -> str:
-    lines = [f"총 도보 이동시간: {req.total_minutes}분 (추정)", ""]
+    lines = [f"총 일정: {req.total_minutes}분 (체류 + 예상 도보 이동)", ""]
     for stop in req.stops:
         lines.append(f"{stop.order}. {stop.name} ({stop.category})")
         lines.append(f"   {stop.address}")
         if stop.leg_minutes is not None:
-            lines.append(f"   다음 장소까지 도보 {stop.leg_minutes}분")
+            lines.append(f"   이전 지점에서 도보 {stop.leg_minutes}분")
+        if stop.duration_min is not None:
+            lines.append(f"   체류 {stop.duration_min}분 (기본값)")
         lines.append("")
 
     maps_link = build_google_maps_link(req)
