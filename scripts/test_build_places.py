@@ -25,7 +25,8 @@ class PlaceIntegrationTests(unittest.TestCase):
         place = build.make_place(row, "general_restaurant", "남포동", rules)
         self.assertEqual(place["duration_min"], 60)
         self.assertEqual(place["estimated_spend"], "")
-        self.assertEqual(place["rating"], "")
+        self.assertTrue({"rating", "review_count", "image_url"}.isdisjoint(place))
+        self.assertEqual(place["opening_hours"], "")
         self.assertEqual(build.make_place(row, "traditional_market", "남포동", rules)["payment_status"], "not_verified")
         with self.assertRaises(ValueError):
             build.make_place(dict(row, estimated_spend="-1"), "general_restaurant", "남포동", rules)
@@ -55,7 +56,7 @@ class PlaceIntegrationTests(unittest.TestCase):
             build.build(args)
             ready = build.read_csv(args.output_dir / "places.csv")
             review = build.read_csv(args.output_dir.parent / "place_support/places_review.csv")
-            self.assertEqual({p.name for p in args.output_dir.iterdir()}, {"places.csv"})
+            self.assertEqual({p.name for p in args.output_dir.iterdir()}, {"places.csv", "place_opening_hours.csv"})
             self.assertEqual(sum(r["category"] == "쇼핑" for r in ready), 10)
             self.assertEqual(sum(r["category"] == "관광명소" for r in ready), 1)
             self.assertTrue(all(r["admin_dong"] in build.DONGS for r in ready))
