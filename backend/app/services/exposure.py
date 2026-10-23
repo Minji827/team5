@@ -1,4 +1,4 @@
-"""Anonymous list impressions, acknowledged once after rendering."""
+"""Anonymous recommendation requests, eligible candidates and acknowledged list impressions."""
 import json
 import os
 import re
@@ -22,7 +22,7 @@ class PostgresConnection:
         self.connection = connection
 
     def execute(self, sql, parameters=()):
-        return self.connection.execute(re.sub(r'\blists\b', 'app_private.exposure_lists', sql).replace('?', '%s'), parameters)
+        return self.connection.execute(re.sub(r'\bcandidates\b', 'app_private.exposure_candidates', re.sub(r'\blists\b', 'app_private.exposure_lists', sql)).replace('?', '%s'), parameters)
 
 
 @contextmanager
@@ -45,10 +45,29 @@ def database():
     path = Path(os.getenv('EXPOSURE_DB_PATH', str(Path(__file__).resolve().parents[2] / 'var/exposure.sqlite3')))
     path.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(path, timeout=10)
+    db.execute("PRAGMA foreign_keys = ON")
     try:
         with db:
             db.execute('CREATE TABLE IF NOT EXISTS lists (id TEXT PRIMARY KEY, created REAL NOT NULL, shown REAL, places TEXT NOT NULL)')
             db.execute('CREATE INDEX IF NOT EXISTS lists_shown ON lists(shown)')
+            columns = {row[1] for row in db.execute('PRAGMA table_info(lists)')}
+            for name, definition in {
+                'policy': "TEXT NOT NULL DEFAULT 'legacy'",
+                'policy_version': "TEXT NOT NULL DEFAULT 'legacy'",
+                'mode': "TEXT NOT NULL DEFAULT 'production'",
+                'run_id': 'TEXT', 'context': 'TEXT',
+            }.items():
+                if name not in columns:
+                    db.execute(f'ALTER TABLE lists ADD COLUMN {name} {definition}')
+            db.execute("""CREATE TABLE IF NOT EXISTS candidates (
+                request_id TEXT NOT NULL REFERENCES lists(id) ON DELETE CASCADE,
+                place_id TEXT NOT NULL, walk_seconds REAL NOT NULL CHECK (walk_seconds >= 0),
+                duration_min REAL NOT NULL CHECK (duration_min > 0),
+                projected_total_seconds REAL NOT NULL CHECK (projected_total_seconds >= 0),
+                assigned_rank INTEGER CHECK (assigned_rank BETWEEN 1 AND 3),
+                expected_exposure REAL NOT NULL CHECK (expected_exposure BETWEEN 0 AND 1),
+                PRIMARY KEY (request_id, place_id), UNIQUE (request_id, assigned_rank))""")
+            db.execute('CREATE INDEX IF NOT EXISTS candidates_place ON candidates(place_id,request_id)')
             yield db
     finally:
         db.close()
@@ -57,7 +76,7 @@ def database():
 def counts():
     result = {}
     with database() as db:
-        for (places,) in db.execute('SELECT places FROM lists WHERE shown >= ?', (time.time()-WINDOW_SECONDS,)):
+        for (places,) in db.execute("SELECT places FROM lists WHERE shown >= ? AND mode = 'production'", (time.time()-WINDOW_SECONDS,)):
             for rank, place_id in enumerate(json.loads(places)):
                 top, total = result.get(place_id, (0, 0))
                 result[place_id] = (top + (rank == 0), total + 1)
@@ -77,14 +96,42 @@ def rotate(candidates):
     return (similar + fallback)[:3]
 
 
-def issue(places):
+def issue(places, *, candidates=None, policy='legacy', mode='production', run_id=None, context=None):
+    """Atomically record the assignment and its verified candidate pool; shown stays NULL until acknowledgement."""
+    import math
+    if policy not in {'legacy', 'distance', 'rotation'} or mode not in {'production', 'simulation'}:
+        raise ValueError('Invalid recommendation policy or mode')
+    if (mode == 'simulation') != bool(run_id):
+        raise ValueError('Simulation requires run_id; production must not have run_id')
+    ids = [p['id'] for p in places]
+    if len(ids) > 3 or len(ids) != len(set(ids)):
+        raise ValueError('Assigned places must be unique and limited to three')
+    rows = []
+    if candidates is not None:
+        eligible_ids = [p['id'] for p in candidates]
+        if len(eligible_ids) != len(set(eligible_ids)) or not set(ids).issubset(eligible_ids):
+            raise ValueError('Assigned places must belong to a unique eligible pool')
+        expected = len(ids) / len(candidates) if candidates else 0
+        ranks = {place_id: rank for rank, place_id in enumerate(ids, 1)}
+        for place in candidates:
+            seconds = place.get('leg_seconds', place.get('leg_minutes', 0) * 60)
+            duration = place['duration_min']
+            total = place['projected_total_seconds']
+            if not all(math.isfinite(v) and v >= 0 for v in (seconds, duration, total)) or duration == 0:
+                raise ValueError('Invalid candidate times')
+            rows.append((place['id'], seconds, duration, total, ranks.get(place['id']), expected))
     token = str(uuid4())
     now = time.time()
+    version = 'legacy' if policy == 'legacy' else policy + '_v1'
     with database() as db:
-        # Keep acknowledged history for the dashboard; only discard unused lists.
-        db.execute('DELETE FROM lists WHERE shown IS NULL AND created < ?', (now-3600,))
-        db.execute('INSERT INTO lists(id,created,places) VALUES (?,?,?)',
-                   (token, now, json.dumps([p['id'] for p in places])))
+        # Keep generated-but-unshown requests too, so assignment and display can be compared.
+        db.execute('INSERT INTO lists(id,created,places,policy,policy_version,mode,run_id,context) VALUES (?,?,?,?,?,?,?,?)',
+                   (token, now, json.dumps(ids), policy, version, mode, run_id,
+                    json.dumps(context, ensure_ascii=False) if context is not None else None))
+        if rows:
+            placeholders = ','.join(['(?,?,?,?,?,?,?)'] * len(rows))
+            parameters = tuple(value for row in rows for value in (token, *row))
+            db.execute('INSERT INTO candidates(request_id,place_id,walk_seconds,duration_min,projected_total_seconds,assigned_rank,expected_exposure) VALUES ' + placeholders, parameters)
     return token
 
 

@@ -69,6 +69,43 @@ class ExposureTests(unittest.TestCase):
             with self.assertRaises(ExposureStorageError) as error: counts()
             self.assertNotIn('private-secret',str(error.exception))
 
+    def test_candidates_assignment_display_and_simulation_are_separate(self):
+        pool = [{**p, 'duration_min':30, 'projected_total_seconds':p['leg_seconds']+1800} for p in self.places]
+        token = issue(pool[:3], candidates=pool, policy='rotation', context={'category':'카페/디저트'})
+        with database() as db:
+            row = db.execute('SELECT policy,policy_version,mode,run_id,context,shown FROM lists WHERE id=?',(token,)).fetchone()
+            self.assertEqual(row[:4],('rotation','rotation_v1','production',None))
+            self.assertIsNone(row[-1])
+            candidates = db.execute('SELECT place_id,walk_seconds,assigned_rank,expected_exposure FROM candidates WHERE request_id=? ORDER BY place_id',(token,)).fetchall()
+            self.assertEqual(len(candidates),4)
+            self.assertEqual(next(p[2] for p in candidates if p[0]=='far'),None)
+            self.assertTrue(all(p[3]==0.75 for p in candidates))
+        self.assertEqual(counts(),{})
+        acknowledge(token)
+        before = counts()
+        experiment = issue(pool[1:4], candidates=pool, policy='distance',mode='simulation',run_id='trial-1')
+        acknowledge(experiment)
+        self.assertEqual(counts(),before)
+        with self.assertRaises(ValueError):
+            issue(pool[:3], candidates=pool[:-2],policy='rotation')
+        with self.assertRaises(ValueError):
+            issue([],policy='distance',mode='simulation')
+        empty = issue([],candidates=[],policy='rotation')
+        with database() as db:
+            self.assertEqual(db.execute('SELECT count(*) FROM candidates WHERE request_id=?',(empty,)).fetchone()[0],0)
+            self.assertEqual(db.execute('SELECT count(*) FROM lists').fetchone()[0],3)
+
+    def test_old_sqlite_history_is_migrated_without_fabricating_candidates(self):
+        import sqlite3
+        path = os.environ['EXPOSURE_DB_PATH']
+        with sqlite3.connect(path) as db:
+            db.execute('CREATE TABLE lists (id TEXT PRIMARY KEY,created REAL NOT NULL,shown REAL,places TEXT NOT NULL)')
+            db.execute("INSERT INTO lists VALUES ('old',1,2,'[\"a\"]')")
+        db.close()
+        with database() as db:
+            self.assertEqual(db.execute("SELECT policy,mode,places FROM lists WHERE id='old'").fetchone(),('legacy','production','["a"]'))
+            self.assertEqual(db.execute('SELECT count(*) FROM candidates').fetchone()[0],0)
+
     @patch('app.services.route.walking_leg')
     def test_next_route_rotates_without_mutating_fixed_stops(self, walk):
         # All three tourist places remain feasible; fixed prefix is excluded.
@@ -88,7 +125,7 @@ class ExposureTests(unittest.TestCase):
     def test_api_issues_list_then_acknowledges_once(self, walk):
         import pandas as pd
         base={**load_places().iloc[0].to_dict(),'category':'관광명소','duration_min':30}
-        catalog=pd.DataFrame([{**base,'id':i,'lat':35.101+k*.001} for k,i in enumerate(['a','b','c'])])
+        catalog=pd.DataFrame([{**base,'id':i,'lat':35.101+k*.001} for k,i in enumerate(['a','b','c','d'])])
         walk.return_value={'leg_minutes':5,'leg_seconds':300,'leg_path':[],'leg_distance_m':300}
         client=TestClient(app)
         body={'start_lat':35.1,'start_lon':129.03,'category':'관광명소','max_minutes':180}
@@ -97,6 +134,12 @@ class ExposureTests(unittest.TestCase):
             self.assertEqual(response.status_code,200)
             first=response.json()
             self.assertEqual(counts(),{})
+            self.assertNotIn('_candidate_snapshot',first)
+            with database() as db:
+                rows = db.execute('SELECT assigned_rank,expected_exposure FROM candidates WHERE request_id=?',(first['recommendation_id'],)).fetchall()
+                self.assertEqual(len(rows),4)
+                self.assertEqual(sum(rank is not None for rank,expected in rows),3)
+                self.assertTrue(all(expected==0.75 for rank,expected in rows))
             payload={'recommendation_id':first['recommendation_id']}
             self.assertTrue(client.post('/api/recommend/impressions',json=payload).json()['recorded'])
             self.assertFalse(client.post('/api/recommend/impressions',json=payload).json()['recorded'])

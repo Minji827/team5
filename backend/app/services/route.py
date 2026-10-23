@@ -193,11 +193,13 @@ def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_sta
     return summary
 
 
-def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes=90, return_to_start=False):
+def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes=90, return_to_start=False, *, record_candidates=False):
     """Keep user order, allow 20-minute legs and at most a 10-minute total overrun."""
     leg = route_legs()
     result = recalculate_route(start_lat, start_lon, stops, max_minutes, return_to_start, leg=leg)
     result["alternatives"] = []
+    if record_candidates:
+        result["_candidate_snapshot"] = []
     result["remaining_minutes"] = round(max_minutes - result["total_minutes"], 1)
     if not category or len(stops) >= 24:
         return result
@@ -216,6 +218,9 @@ def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes
         if seconds > (max_minutes + MAX_OVERRUN_MINUTES) * 60:
             continue
         total = round(seconds / 60, 1)
+        if record_candidates:
+            result["_candidate_snapshot"].append({"id": place["id"], "leg_seconds": walking_seconds(incoming),
+                "duration_min": place["duration_min"], "projected_total_seconds": seconds})
         result["alternatives"].append({**_place_fields(place), **incoming,
             "projected_total_minutes": total,
             "over_budget": seconds > max_minutes * 60})

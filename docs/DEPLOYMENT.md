@@ -16,13 +16,13 @@ Render 서버 환경변수: `KAKAO_REST_API_KEY`, `TMAP_APP_KEY`, `BREVO_API_KEY
 
 ## Supabase 영속 노출 기록
 
-노출 전용 프로젝트는 `busan-full-course-exposure`입니다. `supabase/exposure.sql`로 비공개 `app_private.exposure_lists`와 인덱스를 생성합니다. Data API는 사용하지 않으며 public/anon/authenticated 테이블 접근을 차단했습니다. 기존 `supabase/schema.sql`은 과거 원천 적재 테이블용으로 별개입니다.
+노출 전용 프로젝트는 `busan-full-course-exposure`입니다. `supabase/exposure.sql`로 비공개 `app_private.exposure_lists`·`app_private.exposure_candidates`와 인덱스를 생성합니다. Data API는 사용하지 않으며 public/anon/authenticated 테이블 접근을 차단했습니다. 기존 `supabase/schema.sql`은 과거 원천 적재 테이블용으로 별개입니다.
 
 FastAPI는 `EXPOSURE_DATABASE_URL`로 SSL 필수 연결합니다. 현재 IPv4 호환 세션 풀러 5432를 사용합니다. 새 DB/환경으로 옮기면 해당 프로젝트 Connect 화면에서 연결 문자열을 다시 확인하세요. `scripts/configure_exposure_db.py`는 현재 프로젝트의 기존 DB 비밀번호를 로컬 터미널에서 입력받아 URL 인코딩 후 `.env`에 저장하는 전용 설정 도구입니다. 비밀번호를 출력하지 않습니다.
 
 Render에서 URL이 없거나 DB에 연결하지 못하면 기록을 로컬 파일로 조용히 대체하지 않고 관련 API가 503을 반환합니다. 로컬에서 URL이 없으면 `backend/var/exposure.sqlite3`를 사용합니다. 기존 SQLite는 자동 이관하지 않습니다.
 
-확인된 노출 이력은 보관하고 순환 집계만 최근 7일로 제한합니다. 표시되지 않은 발급 목록은 1시간 뒤 새 발급 시 정리합니다. Supabase 무료 프로젝트는 비활성 기간에 일시 중지될 수 있으므로 운영·발표 전에 상태를 확인합니다. 별도 백업·보관 정책과 대시보드는 아직 없습니다.
+확인된 노출 이력은 보관하고 순환 집계만 최근 7일로 제한합니다. 표시되지 않은 신규 요청도 후보·배정 분석을 위해 보관합니다. 표시 확인은 발급 후 1시간 이내에만 허용합니다. Supabase 무료 프로젝트는 비활성 기간에 일시 중지될 수 있으므로 운영·발표 전에 상태를 확인합니다. 별도 백업·보관 정책과 대시보드는 아직 없습니다.
 
 ## 메일
 
@@ -40,3 +40,7 @@ Render에서 URL이 없거나 DB에 연결하지 못하면 기록을 로컬 파�
 - DB는 별도 연결에서 기록이 유지되는지 확인합니다. 테스트 기록은 실제 노출 통계와 섞지 않습니다.
 - 이메일 500 오류는 본문 생성도 확인합니다. `course_link`는 모든 언어에 있어야 합니다.
 - 시간 초과는 설정값 +10분까지만 허용합니다. 장소 ID·중복·직전 장소에서 도보 20분 조건도 적용하며, 업종별 방문 횟수 제한은 없습니다.
+
+### 추천 기록 스키마 보완
+
+배포 전에 `python scripts/migrate_exposure_db.py`로 요청 정책·조건 컬럼과 `app_private.exposure_candidates`를 생성합니다. 기존 이력은 보존합니다. 실제 후보 기록은 해당 코드 배포 이후 생성되는 요청부터 쌓입니다. 최근 7일 순환 규칙은 그대로이며 실험(`simulation`) 기록은 운영 집계에서 제외됩니다.

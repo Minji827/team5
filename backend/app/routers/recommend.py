@@ -50,9 +50,15 @@ def recommend_next(req: NextPlaceRequest):
     from app.services.route import _place_fields
     stops = [_place_fields({**indexed.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
     try:
-        result = next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start)
-        if result['alternatives']:
-            result['recommendation_id'] = issue(result['alternatives'])
+        result = next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start, record_candidates=True)
+        candidates = result.pop('_candidate_snapshot')
+        if req.category:
+            result['recommendation_id'] = issue(result['alternatives'], candidates=candidates, policy='rotation',
+                context={'category': req.category, 'max_minutes': req.max_minutes,
+                         'return_to_start': req.return_to_start, 'selected_place_ids': req.stop_ids,
+                         'max_leg_walk_minutes': 20, 'max_overrun_minutes': 10,
+                         'history_window_days': 7, 'similar_extra_seconds': 120,
+                         'candidate_pool_limit': 20})
         return result
     except ExposureStorageError as exc:
         raise HTTPException(503, str(exc)) from None

@@ -61,7 +61,7 @@ Vite의 `/api` 프록시는 8000번입니다. 포트 변경 시 `frontend/vite.c
 - 추천 입력: `data/processed/fin/places.csv` → `load_places()`.
 - 출처·체류시간 기준·업종 검토: `data/processed/place_support/`.
 - 원본·GIS·과거 매칭·가중치 실험은 서비스 입력과 분리합니다.
-- 노출 기록: Supabase 비공개 `app_private.exposure_lists`. Render 재배포와 별개로 유지합니다.
+- 추천 요청·후보·순위·표시 기록: Supabase 비공개 `app_private.exposure_lists`와 `app_private.exposure_candidates`. Render 재배포와 별개로 유지합니다.
 - 완성 코스·사용자 프로필을 저장하는 DB 테이블은 없습니다. 노출 테이블에 이메일·출발 좌표·사용자 ID를 저장하지 않습니다.
 
 시장 자체는 관광명소이고 시장 안 가게는 원래 업종을 유지합니다. 관광명소 전체가 동백전 가맹점은 아니며 명부 등재가 당일 영업·결제 가능 여부를 보증하지 않습니다.

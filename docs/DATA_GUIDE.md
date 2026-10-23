@@ -16,7 +16,7 @@
 | `data/shopping_verification/` | 담당자 선정 쇼핑 입력 |
 | `data/experiments/weights_v01/` | 리뷰 기반 40곳 실험·수동 교체 이력. 운영 미반영 |
 | `data/experiments/weights_400/` | 식당·카페 400곳 엑셀 표본. 리뷰 조건 없음 |
-| Supabase `app_private.exposure_lists` | 운영 추천 목록 노출 이력 |
+| Supabase `app_private.exposure_lists` / `app_private.exposure_candidates` | 추천 요청·조건·후보·배정 순위·표시 이력. 운영/실험 구분 |
 
 원본·전체 가맹점·업종 분류 가능 데이터·최종 서비스 장소·Google 연결률은 분모가 다릅니다. 서로 다른 집계의 비율을 섞어 발표하지 않습니다.
 
