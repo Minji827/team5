@@ -23,6 +23,7 @@ export default function App() {
   const [maxMinutes, setMaxMinutes] = useState(90);
   const [stops, setStops] = useState([]);
   const [alternatives, setAlternatives] = useState([]);
+  const [recommendationId, setRecommendationId] = useState(null);
   const [totalMinutes, setTotalMinutes] = useState(0);
   const [overBudget, setOverBudget] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -75,6 +76,7 @@ export default function App() {
   function applyRoute(data) {
     setStops(data.stops);
     setAlternatives(data.alternatives || []);
+    setRecommendationId(data.recommendation_id || null);
     setReturnLeg(data.return_leg || null);
     setTotalMinutes(data.total_minutes);
     setOverBudget(data.over_budget);
@@ -144,6 +146,7 @@ export default function App() {
               {hasSearched && (building ? <NextPlacePicker
                 categories={appliedConditions.categories.length ? appliedConditions.categories : allCategories}
                 activeCategory={activeCategory} candidates={alternatives} busy={loading}
+                recommendationId={recommendationId}
                 stops={stops} remainingMinutes={Math.max(0, appliedConditions.maxMinutes - totalMinutes)}
                 onCategory={(category) => updateSelection(stops, category)}
                 onSelect={(place) => updateSelection([...stops, place])}

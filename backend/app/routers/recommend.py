@@ -1,5 +1,6 @@
 import logging
 import time
+from uuid import UUID
 from typing import List, Literal, Optional
 
 from fastapi import APIRouter, HTTPException
@@ -8,6 +9,7 @@ from pydantic import BaseModel, Field
 from app.data_loader import load_places
 from app.services.route import recommend_route, recalculate_route, next_places, RouteConstraintError
 from app.services.walking import WalkingError
+from app.services.exposure import issue, acknowledge, ExposureStorageError
 
 router = APIRouter(prefix="/api/recommend", tags=["recommend"])
 logger = logging.getLogger("recommend")
@@ -48,11 +50,30 @@ def recommend_next(req: NextPlaceRequest):
     from app.services.route import _place_fields
     stops = [_place_fields({**indexed.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
     try:
-        return next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start)
+        result = next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start)
+        if result['alternatives']:
+            result['recommendation_id'] = issue(result['alternatives'])
+        return result
+    except ExposureStorageError as exc:
+        raise HTTPException(503, str(exc)) from None
     except RouteConstraintError as exc:
         raise HTTPException(422, str(exc)) from None
     except WalkingError as exc:
         raise HTTPException(502, str(exc)) from None
+
+
+class ImpressionRequest(BaseModel):
+    recommendation_id: UUID
+
+
+@router.post('/impressions')
+def impression(req: ImpressionRequest):
+    try:
+        return {'recorded': acknowledge(req.recommendation_id)}
+    except ExposureStorageError as exc:
+        raise HTTPException(503, str(exc)) from None
+    except ValueError:
+        raise HTTPException(404, '추천 목록이 만료되었거나 존재하지 않습니다.') from None
 
 
 @router.post("/recalculate")

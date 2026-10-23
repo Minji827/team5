@@ -4,6 +4,7 @@ import pandas as pd
 
 from app.services.geo import haversine_m
 from app.services.walking import walking_leg
+from app.services.exposure import rotate
 
 CATEGORIES = ["식당", "카페·디저트", "관광명소", "쇼핑"]
 WALK_SPEED_MPS = 4.5 * 1000 / 3600
@@ -226,7 +227,6 @@ def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes
             continue
         result["alternatives"].append({**_place_fields(place), **incoming,
             "origin_walk_minutes": origin["leg_minutes"], "projected_total_minutes": total})
-        if len(result["alternatives"]) == 3:
-            break
-    result["alternatives"].sort(key=lambda p: p["leg_minutes"])
+    # shortcut: rotate within the existing nearest-20 pool, not the entire catalog.
+    result["alternatives"] = rotate(result["alternatives"])
     return result

@@ -68,3 +68,10 @@ export function getNextPlaces({ startPoint, stops, category, maxMinutes, returnT
       stop_ids: stops.map((stop) => stop.id), category, max_minutes: maxMinutes, return_to_start: returnToStart }),
   });
 }
+
+export function recordImpression(recommendationId) {
+  return request('/api/recommend/impressions', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ recommendation_id: recommendationId }),
+  });
+}
