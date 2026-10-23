@@ -137,10 +137,10 @@ export default function FilterPanel({
       <label className="field">
         <span className="field-title"><Icon name="clock" size={16} />{t("tripTime")}<b className="time-value">{minutes(maxMinutes)}</b></span>
         <input
-          aria-label={t("tripTime")} type="range" min={30} max={360} step={10} value={maxMinutes}
+          aria-label={t("tripTime")} type="range" min={30} max={360} step={10} aria-valuetext={minutes(maxMinutes)} value={maxMinutes}
           onChange={(e) => setMaxMinutes(Number(e.target.value))}
         />
-        <span className="range-labels"><span>{minutes(30)}</span><span>{t("sixHours")}</span></span>
+        <span className="range-labels"><span>{minutes(30)}</span><span>{minutes(360)}</span></span>
         <span className="start-point-hint">{t("budgetHint")}</span>
       </label>
 
