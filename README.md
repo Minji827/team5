@@ -1,71 +1,107 @@
-# 부산페이 도보 루트 추천 (team5)
+# 부산 풀코스 · Busan Full Course
 
-부산 관광객이 동백전(지역화폐) 결제 가능한 매장만으로 도보 루트를 추천받고,
-결과를 이메일로 받아볼 수 있는 서비스.
+부산 원도심의 관광명소와 동백전 가맹점을 연결하는 도보 여행 서비스입니다. 사용자가 카테고리별 후보에서 장소를 하나씩 선택해 방문 순서를 정하고, 완성한 코스를 이메일로 받을 수 있습니다.
 
-- 데이터 수집/정제 가이드: [DATA_GUIDE.md](docs/DATA_GUIDE.md)
-- 추천 알고리즘 설명: [ROUTE_ALGORITHM.md](docs/ROUTE_ALGORITHM.md)
+서비스: https://busan-full-course.onrender.com/
 
-## 실행 방법
+문서 기준: 2026-10-23 현재 구현
 
-```bash
-# 백엔드
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+## 사용자 흐름
 
-# 프론트엔드
+1. 출발지, 여행시간(30분~6시간), 출발지 복귀 여부를 입력합니다.
+2. 식당·카페/디저트·관광명소·쇼핑을 복수 선택합니다. 미선택 시 모든 카테고리를 볼 수 있습니다.
+3. 다음 카테고리의 추천 후보 최대 3곳 중 방문지를 선택합니다.
+4. 선택한 장소를 고정하고 다음 방문지를 추가하거나 제거합니다.
+5. 코스를 확정하고 이메일 이용 동의를 거쳐 선택한 언어로 전송합니다.
+
+한국어·영어·일본어·중국어 번체를 지원합니다. 확인된 공식 외국어명이 없는 상호·주소는 한국어로 유지합니다.
+
+## 추천 방식
+
+- 각 장소는 최초 출발지에서 TMAP 예상 도보 20분 이내여야 합니다. 다음 구간은 마지막 선택 장소에서 계산합니다.
+- 총 시간에 이동·기본 체류·선택한 복귀 구간을 포함합니다. 여행시간 입력은 최대 360분이지만, 사용자 코스는 이를 초과해도 경고와 함께 선택·확정할 수 있습니다.
+- 시간 내 후보를 먼저 제시하고 부족한 자리는 시간 초과 후보로 채웁니다.
+- 이동시간이 비슷한 후보 사이에서 최근 7일의 1위 노출이 적은 곳을 우선 배치합니다.
+- 평점·리뷰 가중치와 강화학습은 운영 추천에 사용하지 않습니다.
+
+목표는 추천 기회 분산입니다. 실제 방문·매출 증가나 사용자 만족을 입증한 결과는 아닙니다. 전역 최적 코스나 전체 장소 전수탐색을 보장하지 않습니다.
+
+## 로컬 실행
+
+프로젝트 루트의 `.env`에 서버 환경변수를 설정합니다. 실제 키·DB 비밀번호는 Git이나 `VITE_` 변수에 넣지 않습니다.
+
+| 환경변수 | 용도 |
+|---|---|
+| `KAKAO_REST_API_KEY` | 출발 장소 검색 |
+| `TMAP_APP_KEY` | 도보 경로·시간 |
+| `EXPOSURE_DATABASE_URL` | 서버 전용 PostgreSQL 연결. 로컬 미설정 시 SQLite |
+| `BREVO_API_KEY`, `EMAIL_FROM` | Brevo HTTPS 메일 발송 |
+| `EMAIL_DELIVERY_ENABLED` | `false`이면 메일 차단 |
+| `PUBLIC_SITE_URL` | 메일 코스 재열기 주소. 기본값은 공개 사이트 |
+
+별도 터미널 두 개에서 실행합니다.
+
+```powershell
+# 터미널 1 · 프로젝트 루트
+python -m pip install -r backend/requirements.txt
+python -m uvicorn app.main:app --app-dir backend --reload --host 127.0.0.1 --port 8000
+
+# 터미널 2 · 프로젝트 루트
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
-`.env`에 `KAKAO_REST_API_KEY`, `TOURAPI_SERVICE_KEY`, `GMAIL_ADDRESS`, `GMAIL_APP_PASSWORD` 필요.
+화면: http://127.0.0.1:5173/ · API 문서: http://127.0.0.1:8000/docs
 
-## 파일 구조
+Vite의 `/api` 프록시는 8000번입니다. 포트 변경 시 `frontend/vite.config.js`도 맞춰야 합니다.
 
+## 데이터와 영속 저장
+
+- 추천 입력: `data/processed/fin/places.csv` → `load_places()`.
+- 출처·체류시간 기준·업종 검토: `data/processed/place_support/`.
+- 원본·GIS·과거 매칭·가중치 실험은 서비스 입력과 분리합니다.
+- 노출 기록: Supabase 비공개 `app_private.exposure_lists`. Render 재배포와 별개로 유지합니다.
+- 완성 코스·사용자 프로필을 저장하는 DB 테이블은 없습니다. 노출 테이블에 이메일·출발 좌표·사용자 ID를 저장하지 않습니다.
+
+시장 자체는 관광명소이고 시장 안 가게는 원래 업종을 유지합니다. 관광명소 전체가 동백전 가맹점은 아니며 명부 등재가 당일 영업·결제 가능 여부를 보증하지 않습니다.
+
+## 검증
+
+```powershell
+cd backend
+python -m unittest discover -p "test_*.py"
+
+# 프로젝트 루트의 다른 터미널
+cd frontend
+node --test test_locale.mjs
+npm run build
+npm run lint
 ```
-team5/
-├── backend/                     # FastAPI 서버
-│   └── app/
-│       ├── main.py              # FastAPI 앱 생성, 라우터 등록
-│       ├── data_loader.py       # data/processed/*.csv 를 읽어 메모리 캐싱
-│       ├── routers/
-│       │   ├── spots.py         # 업종 카테고리 목록 조회
-│       │   ├── merchants.py     # 반경 내 매장 조회
-│       │   ├── geocode.py       # 주소/장소명 검색 (Kakao 키워드 검색 프록시)
-│       │   ├── recommend.py     # 출발지+조건 → 도보 루트 추천
-│       │   └── notify.py        # 추천 루트를 Gmail로 발송 (+ 구글맵 링크)
-│       └── services/
-│           ├── geo.py           # 거리 계산, 반경 필터 유틸
-│           └── route.py         # 매장-카테고리 매칭, 루트 최적 순서 계산
-│
-├── frontend/                     # React + Vite
-│   └── src/
-│       ├── App.jsx               # 전체 레이아웃, 상태 관리
-│       ├── api.js                # 백엔드 API 호출 함수 모음
-│       ├── constants.js          # 지도 초기 중심좌표 등 상수
-│       └── components/
-│           ├── FilterPanel.jsx   # 출발지 검색, 업종/개수/시간 필터 UI
-│           ├── MapView.jsx       # Leaflet 지도, 마커/경로 표시
-│           └── RouteList.jsx     # 추천 결과 목록 + 이메일 발송 버튼
-│
-├── scripts/                      # 데이터 수집·가공 스크립트 (레포 루트에서 실행)
-│   ├── download_localdata_raw.py # 인허가(일반음식점) 원본 다운로드
-│   ├── fetch_bs_gis.py           # 부산시 카드소비 데이터 수집
-│   ├── fetch_tourapi.py          # TourAPI 관광지/음식점 데이터 수집
-│   ├── fetch_kakao_categories.py # 동백전 매장에 Kakao 업종분류 태깅 (쿼터 초과 시 캐시로 이어서 진행)
-│   ├── geocode_dongbaekjeon.py   # 동백전 가맹점 주소 → 좌표 변환
-│   ├── clean_data.py             # raw 데이터들을 공통 스키마로 정제 → data/processed/
-│   ├── load_to_supabase.py       # data/processed/*.csv 를 Supabase에 업로드
-│   ├── classify_travel_purposes.py # 여행 목적 태그 분류 (별도 결과 저장)
-│   └── rematch_kakao.py          # 실패·불일치 가맹점 카카오 재검색
-│
-├── data/
-│   ├── raw/                      # 팀원별 원본 데이터 (가공 전) — 담당/규칙은 docs/DATA_GUIDE.md 참고
-│   └── processed/                # 정제된 공통 스키마 CSV (merchants, tourist_spots, consumption 등)
-│
-├── supabase/schema.sql           # Supabase 테이블 스키마
-├── docs/                        # 데이터 수집 가이드·추천 알고리즘 문서
-└── .env                          # API 키/메일 계정 (git 추적 안 됨)
+
+테스트 클라이언트에는 `httpx`가 필요합니다. 외부 발송·경로 요청은 모의 응답으로 검증합니다. 기존 React effect 관련 lint 경고가 남아 있을 수 있습니다.
+
+## 문서와 주요 코드
+
+| 문서 | 내용 |
+|---|---|
+| [추천 알고리즘](docs/ROUTE_ALGORITHM.md) | 순차 선택·후보·시간 경고 |
+| [상위 노출 순환](docs/recommendation_rotation.md) | 순위·집계·영속 저장 |
+| [장소 스키마](docs/PLACES_SCHEMA.md) | CSV 계약·기본 체류시간 |
+| [카테고리](docs/PLACE_CATEGORIES.md) | 업종·시장·결제 태그 |
+| [데이터 관리](docs/DATA_GUIDE.md) | 원본·전처리·GIS·실험 |
+| [배포와 DB](docs/DEPLOYMENT.md) | Render·Supabase·환경변수·문제 해결 |
+
+```text
+backend/app/services/route.py        후보·이동·체류 계산
+backend/app/services/exposure.py     상위 노출 순환·DB 저장
+backend/app/services/walking.py      TMAP 보행자 경로
+backend/app/routers/recommend.py     순차 추천·재계산·노출 확인 API
+backend/app/routers/notify.py        다국어 메일·코스/지도 링크
+frontend/src/App.jsx                 순차 선택 상태
+frontend/src/components/NextPlacePicker.jsx  후보 카드·노출 확인
+supabase/exposure.sql               비공개 노출 테이블
+Dockerfile / render.yaml            공개 배포
 ```
+
+미구현: 장소별 체류시간 직접 수정 UI, 날짜·시각 기반 영업시간 판정, 노출 대시보드, 방문·결제 추적. 예상 소비금액 필드는 있으나 현재 미확보 값을 가상 금액으로 채우지 않습니다.

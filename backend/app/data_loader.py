@@ -1,7 +1,7 @@
-"""data/processed/*.csv 를 읽어 메모리에 캐싱한다.
+"""CSV loaders; current recommendations use fin/places.csv through load_places().
 
-나중에 Supabase/DB로 옮길 때는 이 모듈의 반환값(DataFrame)만 맞춰주면
-services/routers 쪽은 그대로 쓸 수 있도록 데이터 접근을 여기 한 곳으로 모은다.
+Supabase stores anonymous exposure history separately in services/exposure.py.
+Legacy source-data loaders remain for compatible endpoints and preprocessing.
 """
 
 from functools import lru_cache

@@ -1,4 +1,4 @@
-"""Four-category route selection from the offline place catalog."""
+"""User-ordered courses, walking constraints, optional time overruns and exposure rotation."""
 
 import pandas as pd
 
@@ -27,9 +27,10 @@ PER_CATEGORY_POOL_SIZE = 20  # 카테고리 하나가 전체를 독점하지 못
 
 
 def nearest_candidates(catalog: pd.DataFrame, start_lat, start_lon, categories=None, limit=5):
-    """카테고리별로 가까운 후보를 고르게 모아두되(한 카테고리가 독점 못 하게),
-    최종 정렬/선택은 순수 거리순으로 한다 — 그래야 "다양성" 때문에 터무니없이
-    먼 곳(예: 2km 밖 카페 하나 끼워넣기)이 억지로 뽑히지 않는다."""
+    """Build a capped, spatially deduplicated distance pool.
+
+    This is candidate retrieval, not the final exposure-rotation ordering.
+    """
     pool = catalog
     if categories:
         pool = pool[pool["category"].isin(categories)]
