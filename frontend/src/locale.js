@@ -12,7 +12,7 @@ export function translate(locale, key, params = {}) {
   return value;
 }
 export function formatDuration(locale, value) {
-  const total = Math.max(0, Math.round(value));
+  const total = Math.max(0, Math.ceil(value));
   const hours = Math.floor(total / 60);
   const minutes = total % 60;
   const parts = [];

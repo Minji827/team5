@@ -22,7 +22,7 @@ test("category aliases and estimated times translate without changing category I
 });
 
 test("durations use hours and minutes across all screen time labels", () => {
-  for (const [input, expected] of [[0,"0분"],[30,"30분"],[60,"1시간"],[90,"1시간 30분"],[360,"6시간"],[369,"6시간 9분"],[59.9,"1시간"]]) {
+  for (const [input, expected] of [[0,"0분"],[30,"30분"],[60,"1시간"],[90,"1시간 30분"],[360,"6시간"],[369,"6시간 9분"],[59.9,"1시간"],[10 + 10/60,"11분"],[60 + 1/60,"1시간 1분"],[0.01,"1분"]]) {
     assert.equal(formatDuration("ko", input), expected);
   }
   for (const [locale, expected] of [["ko","1시간 30분"],["en","1 hr 30 min"],["ja","1時間 30分"],["zh-TW","1小時 30分鐘"]]) {
