@@ -133,7 +133,7 @@
     "fromLastStop": "마지막 방문지에서",
     "afterAdding": "추가 후 전체 시간: {time}",
     "confirmPlace": "{n}번째 장소로 확정",
-    "noNextPlaces": "이 카테고리에서 도보 범위·방문 횟수에 맞는 후보가 없어요. 다른 카테고리를 선택하거나 코스를 완성해 주세요.",
+    "noNextPlaces": "이 카테고리에서 추가할 수 있는 후보를 찾지 못했어요. 출발지 도보 20분 이내에서 아직 선택하지 않은 장소를 추천해요. 다른 카테고리를 선택하거나 코스를 완성해 주세요.",
     "finishCourse": "이 코스로 완성하기",
     "editCourse": "코스 편집하기",
     "removeStop": "선택 취소"
@@ -272,7 +272,7 @@
     "fromLastStop": "From the last stop",
     "afterAdding": "Total after adding: {time}",
     "confirmPlace": "Confirm as stop {n}",
-    "noNextPlaces": "No places in this category fit the walking range and stop limits. Choose another category or finish your route.",
+    "noNextPlaces": "No additional places were found in this category. Suggestions are unselected places within a 20-minute walk of your start. Choose another category or finish your route.",
     "finishCourse": "Finish this route",
     "editCourse": "Edit route",
     "removeStop": "Remove"
@@ -411,7 +411,7 @@
     "fromLastStop": "最後の訪問先から",
     "afterAdding": "追加後の合計時間：{time}",
     "confirmPlace": "{n}番目の場所に確定",
-    "noNextPlaces": "徒歩範囲・訪問数に合う候補がありません。別のカテゴリーを選ぶかコースを完成してください。",
+    "noNextPlaces": "このカテゴリーで追加できる候補が見つかりませんでした。出発地から徒歩20分以内の未選択の場所を提案します。別のカテゴリーを選ぶかコースを完成してください。",
     "finishCourse": "このコースで完成",
     "editCourse": "コースを編集",
     "removeStop": "選択を取消"
@@ -550,7 +550,7 @@
     "fromLastStop": "從上一個地點出發",
     "afterAdding": "加入後總時間：{time}",
     "confirmPlace": "確認為第 {n} 個地點",
-    "noNextPlaces": "此類別沒有符合步行範圍及停靠次數的地點。請選擇其他類別或完成路線。",
+    "noNextPlaces": "此類別找不到可新增的候選地點。我們推薦從出發地步行20分鐘內、尚未選擇的地點。請選擇其他類別或完成路線。",
     "finishCourse": "完成這條路線",
     "editCourse": "編輯路線",
     "removeStop": "取消選擇"

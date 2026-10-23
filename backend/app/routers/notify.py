@@ -51,35 +51,6 @@ class EmailRequest(BaseModel):
     stops: List[RouteStop]
 
 
-def build_google_maps_links(req: EmailRequest) -> List[str]:
-    """Use named places and split routes for mobile's three-waypoint limit."""
-    if not req.stops or req.start_lat is None or req.start_lon is None:
-        return []
-    start = req.start_label.strip() if req.start_label else ""
-    if not start or start == "내 위치":
-        start = f"{req.start_lat},{req.start_lon}"
-    points = [start]
-    for stop in req.stops:
-        label = f"{stop.name.strip()} {stop.address.strip()}".strip()
-        if not label:
-            if stop.lat is None or stop.lon is None:
-                return []
-            label = f"{stop.lat},{stop.lon}"
-        points.append(label)
-    if req.return_to_start:
-        points.append(start)
-    links = []
-    offset = 0
-    while offset < len(points) - 1:
-        segment = points[offset:offset + 5]
-        params = {"api": "1", "origin": segment[0], "destination": segment[-1], "travelmode": "walking"}
-        if len(segment) > 2:
-            params["waypoints"] = "|".join(segment[1:-1])
-        links.append("https://www.google.com/maps/dir/?" + urlencode(params))
-        offset += len(segment) - 1
-    return links
-
-
 def build_course_link(req: EmailRequest) -> Optional[str]:
     if not req.stops or req.start_lat is None or req.start_lon is None or any(not s.id for s in req.stops):
         return None
@@ -118,12 +89,6 @@ def build_email_body(req: EmailRequest) -> str:
     course_link = build_course_link(req)
     if course_link:
         lines.extend([text["course_link"] + ": " + course_link, ""])
-    maps_links = build_google_maps_links(req)
-    for index, maps_link in enumerate(maps_links, 1):
-        part = f" ({index}/{len(maps_links)})" if len(maps_links) > 1 else ""
-        lines.extend([text["maps"] + part + ": " + maps_link, ""])
-    if maps_links:
-        lines.append(text["maps_note"])
     if missing_official:
         lines.append(text["official_fallback"])
     lines.append(text["source"])

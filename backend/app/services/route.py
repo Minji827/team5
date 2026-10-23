@@ -77,11 +77,6 @@ def _place_fields(stop):
     }
 
 
-def category_limits(max_minutes):
-    return {"식당": 1 if max_minutes <= 180 else 2, "카페·디저트": 1,
-            "카페/디저트": 1, "쇼핑": 1}
-
-
 def route_legs():
     """Reuse directed legs only within this request; do not persist routing data."""
     cache = {}
@@ -107,14 +102,12 @@ def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=
     current_lat, current_lon = start_lat, start_lon
     used, return_leg = 0.0, None
     leg = route_legs()
-    limits = category_limits(max_minutes)
     primary_available = not selected or any(p["category"] in selected for p in remaining)
     if not primary_available:
         remaining = []
     # shortcut: greedily build a feasible course; this does not guarantee a globally optimal tour.
     while remaining:
-        remaining = [p for p in remaining if used + p["duration_min"] <= max_minutes
-                     and counts.get(p["category"], 0) < limits.get(p["category"], 24)]
+        remaining = [p for p in remaining if used + p["duration_min"] <= max_minutes]
         if not remaining:
             break
         last_category = stops[-1]["category"] if stops else None
@@ -179,16 +172,12 @@ def summarize_route(stops, max_minutes, return_leg=None):
 
 def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False, leg=None):
     leg = leg or route_legs()
-    limits, counts = category_limits(max_minutes), {}
     current_lat, current_lon = start_lat, start_lon
     result = []
     for i, stop in enumerate(stops, start=1):
         origin_leg = leg(start_lat, start_lon, stop["lat"], stop["lon"])
         if not within_origin_limit(origin_leg):
             raise RouteConstraintError("출발지에서 도보 20분이 넘는 장소예요. 다른 장소를 선택해주세요.")
-        counts[stop["category"]] = counts.get(stop["category"], 0) + 1
-        if counts[stop["category"]] > limits.get(stop["category"], 24):
-            raise RouteConstraintError("식당·카페·쇼핑이 코스에 너무 많이 포함돼요. 다른 카테고리의 장소를 선택해주세요.")
         incoming = leg(current_lat, current_lon, stop["lat"], stop["lon"])
         result.append({**stop, **incoming, "order": i, "origin_walk_minutes": origin_leg["leg_minutes"]})
         current_lat, current_lon = stop["lat"], stop["lon"]
@@ -205,9 +194,6 @@ def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes
     if not category or len(stops) >= 24:
         return result
     category = "카페·디저트" if category == "카페/디저트" else category
-    count = sum(("카페·디저트" if s["category"] == "카페/디저트" else s["category"]) == category for s in stops)
-    if count >= category_limits(max_minutes).get(category, 24):
-        return result
     current = stops[-1] if stops else {"lat": start_lat, "lon": start_lon}
     used_ids = {s["id"] for s in stops}
     pool = catalog[(catalog.category == category) & ~catalog.id.isin(used_ids)]

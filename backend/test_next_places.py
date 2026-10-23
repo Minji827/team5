@@ -27,7 +27,7 @@ class NextPlaceTests(unittest.TestCase):
         self.assertEqual([s["order"] for s in result["stops"]],[1,2])
 
     @patch("app.services.route.walking_leg")
-    def test_budget_return_and_category_limit(self, walk):
+    def test_budget_return_and_no_unselected_candidates(self, walk):
         walk.return_value={"leg_minutes":5,"leg_seconds":300,"leg_path":[],"leg_distance_m":300}
         result=next_places(self.catalog,35.1,129.03,self.rows[:1],"카페/디저트",85,True)
         self.assertEqual(len(result["alternatives"]),1)
@@ -36,6 +36,22 @@ class NextPlaceTests(unittest.TestCase):
         self.assertEqual(result["remaining_minutes"],45)
         self.assertEqual(next_places(self.catalog,35.1,129.03,[self.rows[1]],"카페/디저트",180)["alternatives"],[])
         self.assertFalse(next_places(self.catalog,35.1,129.03,[self.rows[0]],"관광명소",180)["alternatives"])
+
+    @patch("app.services.route.walking_leg")
+    def test_repeated_categories_can_be_suggested_selected_and_reopened(self, walk):
+        walk.return_value = {"leg_minutes":5,"leg_seconds":300,"leg_path":[],"leg_distance_m":300}
+        for category in ["식당", "카페·디저트", "쇼핑"]:
+            with self.subTest(category=category):
+                rows = [{**self.rows[0], "id":str(i), "category":category, "lat":35.101+i*.001} for i in range(3)]
+                catalog = pd.DataFrame(rows)
+                result = next_places(catalog,35.1,129.03,rows[:2],category,90)
+                self.assertEqual([p["id"] for p in result["alternatives"]],["2"])
+                with patch("app.routers.recommend.load_places", return_value=catalog):
+                    for endpoint in ["/api/recommend/next", "/api/recommend/recalculate"]:
+                        response = TestClient(app).post(endpoint,json={"start_lat":35.1,"start_lon":129.03,"stop_ids":["0","1","2"],"max_minutes":90})
+                        self.assertEqual(response.status_code,200)
+                        self.assertEqual(len(response.json()["stops"]),3)
+                        self.assertTrue(response.json()["over_budget"])
 
     @patch("app.services.route.walking_leg")
     def test_origin_limit_and_empty_selection(self, walk):
