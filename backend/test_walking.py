@@ -114,8 +114,7 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual(next(stop["duration_min"] for stop in shopping.json()["stops"] if stop["category"] == "쇼핑"), 25)
         place = load_places().query("duration_min >= 60").iloc[0]
         swap = c.post("/api/recommend/recalculate",json={**body,"stop_ids":[place.id],"max_minutes":30})
-        self.assertEqual(swap.status_code,200)
-        self.assertTrue(swap.json()['over_budget'])
+        self.assertEqual(swap.status_code,422)
         cafe = c.post("/api/recommend",json={**body,"categories":["카페/디저트"],"selected_only":True,"max_minutes":90})
         self.assertEqual(cafe.status_code,200)
         self.assertTrue(cafe.json()["stops"])

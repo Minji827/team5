@@ -82,7 +82,7 @@ class ExposureTests(unittest.TestCase):
         second=next_places(catalog,35.1,129.03,fixed,'관광명소',180)
         self.assertEqual([p['id'] for p in second['stops']],['a'])
         self.assertNotEqual(first['alternatives'][0]['id'],second['alternatives'][0]['id'])
-        self.assertTrue(all(p['projected_total_minutes']<=180 and p['origin_walk_minutes']<=20 for p in second['alternatives']))
+        self.assertTrue(all(p['projected_total_minutes']<=180 and p['leg_seconds']<=1200 for p in second['alternatives']))
 
     @patch('app.services.route.walking_leg')
     def test_api_issues_list_then_acknowledges_once(self, walk):
