@@ -196,11 +196,9 @@ def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_sta
 
 
 def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes=90, return_to_start=False):
-    """Keep the user's order; offer only additions that fit the complete time budget."""
+    """Keep the user's order; warn about time overruns without blocking choices."""
     leg = route_legs()
     result = recalculate_route(start_lat, start_lon, stops, max_minutes, return_to_start, leg=leg)
-    if result["over_budget"]:
-        raise RouteConstraintError("이 장소로 바꾸면 여행 시간을 초과해요. 다른 장소를 선택해주세요.")
     result["alternatives"] = []
     result["remaining_minutes"] = round(max_minutes - result["total_minutes"], 1)
     if not category or len(stops) >= 24:
@@ -215,18 +213,17 @@ def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes
     candidates = nearest_candidates(pool, current["lat"], current["lon"], [category], limit=20)
     used = result["total_walk_minutes"] + result["total_stay_minutes"] - (result["return_leg"]["leg_minutes"] if result["return_leg"] else 0)
     for place in candidates:
-        if used + place["duration_min"] > max_minutes:
-            continue
         origin = leg(start_lat, start_lon, place["lat"], place["lon"])
         if not within_origin_limit(origin):
             continue
         incoming = leg(current["lat"], current["lon"], place["lat"], place["lon"])
         back = leg(place["lat"], place["lon"], start_lat, start_lon) if return_to_start else None
         total = round(used + incoming["leg_minutes"] + place["duration_min"] + (back["leg_minutes"] if back else 0), 1)
-        if total > max_minutes:
-            continue
         result["alternatives"].append({**_place_fields(place), **incoming,
-            "origin_walk_minutes": origin["leg_minutes"], "projected_total_minutes": total})
+            "origin_walk_minutes": origin["leg_minutes"], "projected_total_minutes": total,
+            "over_budget": total > max_minutes})
     # shortcut: rotate within the existing nearest-20 pool, not the entire catalog.
-    result["alternatives"] = rotate(result["alternatives"])
+    fitting = [p for p in result["alternatives"] if not p["over_budget"]]
+    overruns = [p for p in result["alternatives"] if p["over_budget"]]
+    result["alternatives"] = (rotate(fitting) + rotate(overruns))[:3]
     return result

@@ -30,7 +30,9 @@ class NextPlaceTests(unittest.TestCase):
     def test_budget_return_and_category_limit(self, walk):
         walk.return_value={"leg_minutes":5,"leg_seconds":300,"leg_path":[],"leg_distance_m":300}
         result=next_places(self.catalog,35.1,129.03,self.rows[:1],"카페/디저트",85,True)
-        self.assertEqual(result["alternatives"],[])
+        self.assertEqual(len(result["alternatives"]),1)
+        self.assertTrue(result["alternatives"][0]["over_budget"])
+        self.assertEqual(result["alternatives"][0]["projected_total_minutes"],90)
         self.assertEqual(result["remaining_minutes"],45)
         self.assertEqual(next_places(self.catalog,35.1,129.03,[self.rows[1]],"카페/디저트",180)["alternatives"],[])
         self.assertFalse(next_places(self.catalog,35.1,129.03,[self.rows[0]],"관광명소",180)["alternatives"])
@@ -49,5 +51,27 @@ class NextPlaceTests(unittest.TestCase):
         for change in [{"stop_ids":["missing"]},{"stop_ids":["same","same"]},{"category":"unknown"}]:
             self.assertEqual(client.post("/api/recommend/next",json={**base,**change}).status_code,422)
         self.assertEqual(client.post("/api/recommend/next",json=base).status_code,200)
+
+    @patch('app.services.route.walking_leg')
+    def test_56_minutes_remaining_allows_60_minute_cafe_and_shared_course(self, walk):
+        walk.return_value={'leg_minutes':5,'leg_seconds':300,'leg_path':[],'leg_distance_m':300}
+        fixed={**self.rows[0], 'duration_min':299}
+        cafe={**self.rows[1], 'duration_min':60}
+        catalog=pd.DataFrame([fixed,cafe])
+        result=next_places(catalog,35.1,129.03,[fixed],'카페/디저트',360)
+        self.assertEqual(result['remaining_minutes'],56)
+        self.assertTrue(result['alternatives'][0]['over_budget'])
+        self.assertEqual(result['alternatives'][0]['projected_total_minutes'],369)
+        selected=next_places(catalog,35.1,129.03,[fixed,cafe],None,360)
+        self.assertEqual([p['id'] for p in selected['stops']],['a','b'])
+        self.assertTrue(selected['over_budget'])
+        self.assertEqual(selected['total_minutes'],369)
+        self.assertEqual(next_places(catalog,35.1,129.03,[fixed],None,360)['total_minutes'],304)
+        with patch('app.routers.recommend.load_places',return_value=catalog):
+            for endpoint in ['/api/recommend/next','/api/recommend/recalculate']:
+                response=TestClient(app).post(endpoint,json={'start_lat':35.1,'start_lon':129.03,'stop_ids':['a','b'],'max_minutes':360,'return_to_start':True})
+                self.assertEqual(response.status_code,200)
+                self.assertTrue(response.json()['over_budget'])
+                self.assertEqual(response.json()['total_minutes'],374)
 
 if __name__ == "__main__":unittest.main()

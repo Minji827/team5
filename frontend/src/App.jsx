@@ -147,6 +147,7 @@ export default function App() {
                 categories={appliedConditions.categories.length ? appliedConditions.categories : allCategories}
                 activeCategory={activeCategory} candidates={alternatives} busy={loading}
                 recommendationId={recommendationId}
+                maxMinutes={appliedConditions.maxMinutes}
                 stops={stops} remainingMinutes={Math.max(0, appliedConditions.maxMinutes - totalMinutes)}
                 onCategory={(category) => updateSelection(stops, category)}
                 onSelect={(place) => updateSelection([...stops, place])}

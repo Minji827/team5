@@ -85,8 +85,6 @@ def recalculate(req: RecalculateRequest):
     stops = [_place_fields({**catalog.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
     try:
         result = recalculate_route(req.start_lat, req.start_lon, stops, req.max_minutes, req.return_to_start)
-        if result["over_budget"]:
-            raise HTTPException(422, "이 장소로 바꾸면 여행 시간을 초과해요. 다른 장소를 선택해주세요.")
         return result
     except RouteConstraintError as exc:
         raise HTTPException(422, str(exc)) from None

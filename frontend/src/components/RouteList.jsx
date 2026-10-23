@@ -46,7 +46,7 @@ export default function RouteList({ stops, totalMinutes, maxMinutes, overBudget,
   const stay = stops.reduce((sum, s) => sum + s.duration_min, 0);
   return <section className="route-list" aria-label={t("results")}>
     <div className="panel-heading"><h2>{t("results")}</h2><span>{t("placeCount", { count: stops.length })}</span></div>
-    <div className={overBudget ? "summary-bar over" : "summary-bar"}><div><span>{t("estimatedTotal")}</span><strong>{approx(totalMinutes)}</strong></div><p>{walkTime(walk)} + {stayTime(stay)}</p>{overBudget && <span className="over-badge">{t("overBudget")}</span>}</div>
+    <div className={overBudget ? "summary-bar over" : "summary-bar"}><div><span>{t("estimatedTotal")}</span><strong>{approx(totalMinutes)}</strong></div><p>{walkTime(walk)} + {stayTime(stay)}</p>{overBudget && <span className="over-badge" role="status">{t("timeOverrun", { limit: approx(maxMinutes), extra: approx(Math.round((totalMinutes - maxMinutes) * 10) / 10) })}</span>}</div>
     <div className="route-timeline">{stops.map((stop, idx) => {
       return <div key={stop.id} className="route-stop">
         <div className="timeline-col"><span className="order-badge">{stop.order}</span><span className="timeline-line" /></div>
