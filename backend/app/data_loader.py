@@ -1,7 +1,7 @@
-"""data/processed/*.csv 를 읽어 메모리에 캐싱한다.
+"""CSV loaders; current recommendations use fin/places.csv through load_places().
 
-나중에 Supabase/DB로 옮길 때는 이 모듈의 반환값(DataFrame)만 맞춰주면
-services/routers 쪽은 그대로 쓸 수 있도록 데이터 접근을 여기 한 곳으로 모은다.
+Supabase stores anonymous exposure history separately in services/exposure.py.
+Legacy source-data loaders remain for compatible endpoints and preprocessing.
 """
 
 from functools import lru_cache
@@ -84,16 +84,16 @@ def load_places() -> pd.DataFrame:
         raise ValueError("Invalid Place category/visit_type pair")
     if not frame.admin_dong.isin(["남포동", "광복동", "부평동", "대청동"]).all():
         raise ValueError("Place is outside the approved MVP dong")
-    for column in ["lon", "lat", "duration_min", "estimated_spend", "rating", "review_count"]:
+    for column in ["lon", "lat", "duration_min", "estimated_spend"]:
         if column not in frame:
             continue
         frame[column] = pd.to_numeric(frame[column], errors="raise")
         values = frame[column].dropna()
         if not values.map(math.isfinite).all():
             raise ValueError(column + " must be finite")
-        if column in ["duration_min", "estimated_spend", "rating", "review_count"] and (values < 0).any():
+        if column in ["duration_min", "estimated_spend"] and (values < 0).any():
             raise ValueError(column + " must not be negative")
-        if column in ["duration_min", "review_count"] and (values % 1 != 0).any():
+        if column == "duration_min" and (values % 1 != 0).any():
             raise ValueError(column + " must contain whole numbers")
     if (frame.duration_min <= 0).any():
         raise ValueError("duration_min must be positive")

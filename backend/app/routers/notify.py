@@ -3,12 +3,15 @@ from pathlib import Path
 import logging
 import os
 import smtplib
+
+import requests
 from email.mime.text import MIMEText
 from typing import List, Literal, Optional
+from urllib.parse import urlencode
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from app.services.place_labels import official_labels
 
 load_dotenv()
@@ -41,27 +44,22 @@ class EmailRequest(BaseModel):
     return_to_start: bool = False
     return_minutes: Optional[float] = None
     total_minutes: Optional[float] = None
+    max_minutes: int = Field(default=360, ge=30, le=360)
+    start_label: Optional[str] = None
     start_lat: Optional[float] = None
     start_lon: Optional[float] = None
     stops: List[RouteStop]
 
 
-def build_google_maps_link(req: EmailRequest) -> Optional[str]:
-    """출발지 -> 경유지들 -> 마지막 목적지를 도보 길찾기로 여는 구글맵 링크.
-    좌표가 하나라도 빠지면(옛 클라이언트 등) 링크 없이 보낸다."""
-    if not req.stops or req.start_lat is None or req.start_lon is None:
+def build_course_link(req: EmailRequest) -> Optional[str]:
+    if not req.stops or req.start_lat is None or req.start_lon is None or any(not s.id for s in req.stops):
         return None
-    if any(s.lat is None or s.lon is None for s in req.stops):
-        return None
-
-    origin = f"{req.start_lat},{req.start_lon}"
-    destination = origin if req.return_to_start else f"{req.stops[-1].lat},{req.stops[-1].lon}"
-    waypoints = "|".join(f"{s.lat},{s.lon}" for s in (req.stops if req.return_to_start else req.stops[:-1]))
-
-    url = f"https://www.google.com/maps/dir/?api=1&origin={origin}&destination={destination}&travelmode=walking"
-    if waypoints:
-        url += f"&waypoints={waypoints}"
-    return url
+    params = {"start": f"{req.start_lat},{req.start_lon}", "stop": [s.id for s in req.stops],
+              "minutes": req.max_minutes, "return": "1" if req.return_to_start else "0", "lang": req.language}
+    if req.start_label:
+        params["label"] = req.start_label
+    site = os.environ.get("PUBLIC_SITE_URL", "https://busan-full-course.onrender.com").rstrip("/")
+    return site + "/?" + urlencode(params, doseq=True)
 
 
 def build_email_body(req: EmailRequest) -> str:
@@ -88,9 +86,9 @@ def build_email_body(req: EmailRequest) -> str:
         lines.append("")
     if req.return_to_start:
         lines.append(text["return"].format(n=req.return_minutes))
-    maps_link = build_google_maps_link(req)
-    if maps_link:
-        lines.extend([text["maps"] + ": " + maps_link, ""])
+    course_link = build_course_link(req)
+    if course_link:
+        lines.extend([text["course_link"] + ": " + course_link, ""])
     if missing_official:
         lines.append(text["official_fallback"])
     lines.append(text["source"])
@@ -101,6 +99,31 @@ def build_email_body(req: EmailRequest) -> str:
 def send_route_email(req: EmailRequest):
     if not req.email_consent:
         raise HTTPException(400, EMAIL_COPY[req.language]["consent"])
+    if os.environ.get("EMAIL_DELIVERY_ENABLED", "true").lower() == "false":
+        raise HTTPException(503, EMAIL_COPY[req.language]["error"])
+    brevo_key = os.environ.get("BREVO_API_KEY")
+    if brevo_key:
+        sender = os.environ.get("EMAIL_FROM") or GMAIL_ADDRESS
+        if not sender:
+            raise HTTPException(503, EMAIL_COPY[req.language]["error"])
+        try:
+            response = requests.post(
+                "https://api.brevo.com/v3/smtp/email",
+                headers={"api-key": brevo_key, "accept": "application/json"},
+                json={"sender": {"email": sender, "name": "Busan Full Course"},
+                      "to": [{"email": req.email}],
+                      "subject": EMAIL_COPY[req.language]["subject"],
+                      "textContent": build_email_body(req)},
+                timeout=15,
+            )
+            response.raise_for_status()
+            if not response.json().get("messageId"):
+                raise ValueError("Missing delivery acknowledgement")
+        except (requests.RequestException, ValueError) as error:
+            # Provider response bodies can contain recipient details; do not log them.
+            logger.error("Brevo delivery failed: %s", type(error).__name__)
+            raise HTTPException(502, EMAIL_COPY[req.language]["error"]) from None
+        return {"ok": True, "sent": True}
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
         logger.info("Email sending is not configured; request skipped")
         return {"ok": True, "sent": False, "reason": "gmail credentials not configured yet"}
@@ -114,7 +137,7 @@ def send_route_email(req: EmailRequest):
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as server:
             server.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
             server.sendmail(GMAIL_ADDRESS, [req.email], msg.as_string())
-    except smtplib.SMTPException as e:
+    except (smtplib.SMTPException, OSError) as e:
         logger.error("failed to send email via gmail smtp: %s", e)
         raise HTTPException(status_code=502, detail=EMAIL_COPY[req.language]["error"])
 

@@ -11,4 +11,13 @@ export function translate(locale, key, params = {}) {
   for (const [name, replacement] of Object.entries(params)) value = value.replaceAll(`{${name}}`, String(replacement));
   return value;
 }
+export function formatDuration(locale, value) {
+  const total = Math.max(0, Math.ceil(value));
+  const hours = Math.floor(total / 60);
+  const minutes = total % 60;
+  const parts = [];
+  if (hours) parts.push(translate(locale, "hours", { n: hours }));
+  if (minutes || !hours) parts.push(translate(locale, "minutes", { n: minutes }));
+  return parts.join(" ");
+}
 export { resources };

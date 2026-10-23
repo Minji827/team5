@@ -1,13 +1,15 @@
 import logging
 import time
+from uuid import UUID
 from typing import List, Literal, Optional
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from app.data_loader import load_places
-from app.services.route import recommend_route, recalculate_route, RouteConstraintError
+from app.services.route import recommend_route, recalculate_route, next_places, RouteConstraintError
 from app.services.walking import WalkingError
+from app.services.exposure import issue, acknowledge, ExposureStorageError
 
 router = APIRouter(prefix="/api/recommend", tags=["recommend"])
 logger = logging.getLogger("recommend")
@@ -30,6 +32,50 @@ class RecalculateRequest(BaseModel):
     max_minutes: int = Field(default=90, ge=30, le=360)
 
 
+class NextPlaceRequest(BaseModel):
+    start_lat: float = Field(ge=-90, le=90)
+    start_lon: float = Field(ge=-180, le=180)
+    return_to_start: bool = False
+    max_minutes: int = Field(default=90, ge=30, le=360)
+    stop_ids: List[str] = Field(default_factory=list, max_length=24)
+    category: Optional[Literal["식당", "카페/디저트", "카페·디저트", "관광명소", "쇼핑"]] = None
+
+
+@router.post("/next")
+def recommend_next(req: NextPlaceRequest):
+    catalog = load_places()
+    indexed = catalog.set_index("id")
+    if len(set(req.stop_ids)) != len(req.stop_ids) or any(i not in indexed.index for i in req.stop_ids):
+        raise HTTPException(422, "유효한 장소 ID를 중복 없이 선택해주세요.")
+    from app.services.route import _place_fields
+    stops = [_place_fields({**indexed.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
+    try:
+        result = next_places(catalog, req.start_lat, req.start_lon, stops, req.category, req.max_minutes, req.return_to_start)
+        if result['alternatives']:
+            result['recommendation_id'] = issue(result['alternatives'])
+        return result
+    except ExposureStorageError as exc:
+        raise HTTPException(503, str(exc)) from None
+    except RouteConstraintError as exc:
+        raise HTTPException(422, str(exc)) from None
+    except WalkingError as exc:
+        raise HTTPException(502, str(exc)) from None
+
+
+class ImpressionRequest(BaseModel):
+    recommendation_id: UUID
+
+
+@router.post('/impressions')
+def impression(req: ImpressionRequest):
+    try:
+        return {'recorded': acknowledge(req.recommendation_id)}
+    except ExposureStorageError as exc:
+        raise HTTPException(503, str(exc)) from None
+    except ValueError:
+        raise HTTPException(404, '추천 목록이 만료되었거나 존재하지 않습니다.') from None
+
+
 @router.post("/recalculate")
 def recalculate(req: RecalculateRequest):
     catalog = load_places().set_index("id")
@@ -39,8 +85,6 @@ def recalculate(req: RecalculateRequest):
     stops = [_place_fields({**catalog.loc[i].to_dict(), "id": i}) for i in req.stop_ids]
     try:
         result = recalculate_route(req.start_lat, req.start_lon, stops, req.max_minutes, req.return_to_start)
-        if result["over_budget"]:
-            raise HTTPException(422, "이 장소로 바꾸면 여행 시간을 초과해요. 다른 장소를 선택해주세요.")
         return result
     except RouteConstraintError as exc:
         raise HTTPException(422, str(exc)) from None

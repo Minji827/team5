@@ -1,9 +1,10 @@
-"""Four-category route selection from the offline place catalog."""
+"""User-ordered courses, walking constraints, optional time overruns and exposure rotation."""
 
 import pandas as pd
 
 from app.services.geo import haversine_m
 from app.services.walking import walking_leg
+from app.services.exposure import rotate
 
 CATEGORIES = ["식당", "카페·디저트", "관광명소", "쇼핑"]
 WALK_SPEED_MPS = 4.5 * 1000 / 3600
@@ -14,7 +15,8 @@ def estimate_walk_minutes(distance_m):
     return distance_m * WALK_DISTANCE_FACTOR / WALK_SPEED_MPS / 60
 
 
-MAX_ORIGIN_WALK_MINUTES = 20
+MAX_LEG_WALK_MINUTES = 20
+MAX_OVERRUN_MINUTES = 10
 
 
 class RouteConstraintError(ValueError):
@@ -26,9 +28,10 @@ PER_CATEGORY_POOL_SIZE = 20  # 카테고리 하나가 전체를 독점하지 못
 
 
 def nearest_candidates(catalog: pd.DataFrame, start_lat, start_lon, categories=None, limit=5):
-    """카테고리별로 가까운 후보를 고르게 모아두되(한 카테고리가 독점 못 하게),
-    최종 정렬/선택은 순수 거리순으로 한다 — 그래야 "다양성" 때문에 터무니없이
-    먼 곳(예: 2km 밖 카페 하나 끼워넣기)이 억지로 뽑히지 않는다."""
+    """Build a capped, spatially deduplicated distance pool.
+
+    This is candidate retrieval, not the final exposure-rotation ordering.
+    """
     pool = catalog
     if categories:
         pool = pool[pool["category"].isin(categories)]
@@ -75,11 +78,6 @@ def _place_fields(stop):
     }
 
 
-def category_limits(max_minutes):
-    return {"식당": 1 if max_minutes <= 180 else 2, "카페·디저트": 1,
-            "카페/디저트": 1, "쇼핑": 1}
-
-
 def route_legs():
     """Reuse directed legs only within this request; do not persist routing data."""
     cache = {}
@@ -91,8 +89,12 @@ def route_legs():
     return leg
 
 
-def within_origin_limit(leg):
-    return leg.get("leg_seconds", leg["leg_minutes"] * 60) <= MAX_ORIGIN_WALK_MINUTES * 60
+def walking_seconds(leg):
+    return leg.get("leg_seconds", leg["leg_minutes"] * 60)
+
+
+def within_walk_limit(leg):
+    return walking_seconds(leg) <= MAX_LEG_WALK_MINUTES * 60
 
 
 def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=90,
@@ -105,14 +107,12 @@ def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=
     current_lat, current_lon = start_lat, start_lon
     used, return_leg = 0.0, None
     leg = route_legs()
-    limits = category_limits(max_minutes)
     primary_available = not selected or any(p["category"] in selected for p in remaining)
     if not primary_available:
         remaining = []
     # shortcut: greedily build a feasible course; this does not guarantee a globally optimal tour.
     while remaining:
-        remaining = [p for p in remaining if used + p["duration_min"] <= max_minutes
-                     and counts.get(p["category"], 0) < limits.get(p["category"], 24)]
+        remaining = [p for p in remaining if used + p["duration_min"] <= max_minutes]
         if not remaining:
             break
         last_category = stops[-1]["category"] if stops else None
@@ -125,10 +125,10 @@ def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=
             haversine_m(current_lat, current_lon, p["lat"], p["lon"])))
         stop = eligible[0]
         remaining.remove(stop)
-        origin_leg = origin.setdefault(stop["id"], leg(start_lat, start_lon, stop["lat"], stop["lon"]))
-        if not within_origin_limit(origin_leg):
-            continue
         incoming = leg(current_lat, current_lon, stop["lat"], stop["lon"])
+        origin_leg = incoming
+        if not within_walk_limit(incoming):
+            continue
         back = leg(stop["lat"], stop["lon"], start_lat, start_lon) if return_to_start else None
         next_used = round(used + incoming["leg_minutes"] + stop["duration_min"], 1)
         if next_used + (back["leg_minutes"] if back else 0) > max_minutes:
@@ -149,7 +149,7 @@ def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=
             if place["category"] != category or place["id"] in chosen:
                 continue
             origin_leg = origin.setdefault(place["id"], leg(start_lat, start_lon, place["lat"], place["lon"]))
-            if not within_origin_limit(origin_leg):
+            if not within_walk_limit(origin_leg):
                 continue
             alternatives.append({**_place_fields(place), "origin_walk_minutes": origin_leg["leg_minutes"]})
             found += 1
@@ -166,29 +166,61 @@ def recommend_route(catalog, start_lat, start_lon, categories=None, max_minutes=
 
 
 def summarize_route(stops, max_minutes, return_leg=None):
-    walk = round(sum(s["leg_minutes"] for s in stops) + (return_leg["leg_minutes"] if return_leg else 0), 1)
-    stay = round(sum(s["duration_min"] for s in stops), 1)
-    total = round(walk + stay, 1)
-    return {"stops": stops, "total_walk_minutes": walk, "total_stay_minutes": stay,
-            "total_minutes": total, "over_budget": total > max_minutes, "routing_source": "tmap",
+    walk_seconds = sum(walking_seconds(s) for s in stops) + (walking_seconds(return_leg) if return_leg else 0)
+    stay = sum(s["duration_min"] for s in stops)
+    total_seconds = walk_seconds + stay * 60
+    return {"stops": stops, "total_walk_minutes": round(walk_seconds / 60, 1), "total_stay_minutes": round(stay, 1),
+            "total_minutes": round(total_seconds / 60, 1), "total_seconds": total_seconds,
+            "over_budget": total_seconds > max_minutes * 60, "routing_source": "tmap",
             "return_leg": return_leg, "return_to_start": return_leg is not None,
-            "max_origin_walk_minutes": MAX_ORIGIN_WALK_MINUTES}
+            "max_leg_walk_minutes": MAX_LEG_WALK_MINUTES, "max_overrun_minutes": MAX_OVERRUN_MINUTES}
 
 
-def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False):
-    leg = route_legs()
-    limits, counts = category_limits(max_minutes), {}
+def recalculate_route(start_lat, start_lon, stops, max_minutes=90, return_to_start=False, leg=None):
+    leg = leg or route_legs()
     current_lat, current_lon = start_lat, start_lon
     result = []
     for i, stop in enumerate(stops, start=1):
-        origin_leg = leg(start_lat, start_lon, stop["lat"], stop["lon"])
-        if not within_origin_limit(origin_leg):
-            raise RouteConstraintError("출발지에서 도보 20분이 넘는 장소예요. 다른 장소를 선택해주세요.")
-        counts[stop["category"]] = counts.get(stop["category"], 0) + 1
-        if counts[stop["category"]] > limits.get(stop["category"], 24):
-            raise RouteConstraintError("식당·카페·쇼핑이 코스에 너무 많이 포함돼요. 다른 카테고리의 장소를 선택해주세요.")
         incoming = leg(current_lat, current_lon, stop["lat"], stop["lon"])
-        result.append({**stop, **incoming, "order": i, "origin_walk_minutes": origin_leg["leg_minutes"]})
+        if not within_walk_limit(incoming):
+            raise RouteConstraintError("직전 장소에서 도보 20분이 넘는 장소예요. 다른 장소를 선택해주세요.")
+        result.append({**stop, **incoming, "order": i})
         current_lat, current_lon = stop["lat"], stop["lon"]
     back = leg(current_lat, current_lon, start_lat, start_lon) if return_to_start and result else None
-    return summarize_route(result, max_minutes, back)
+    summary = summarize_route(result, max_minutes, back)
+    if summary["total_seconds"] > (max_minutes + MAX_OVERRUN_MINUTES) * 60:
+        raise RouteConstraintError("전체 일정은 설정한 여행시간보다 최대 10분까지만 초과할 수 있어요. 장소를 줄이거나 여행시간을 늘려주세요.")
+    return summary
+
+
+def next_places(catalog, start_lat, start_lon, stops, category=None, max_minutes=90, return_to_start=False):
+    """Keep user order, allow 20-minute legs and at most a 10-minute total overrun."""
+    leg = route_legs()
+    result = recalculate_route(start_lat, start_lon, stops, max_minutes, return_to_start, leg=leg)
+    result["alternatives"] = []
+    result["remaining_minutes"] = round(max_minutes - result["total_minutes"], 1)
+    if not category or len(stops) >= 24:
+        return result
+    category = "카페·디저트" if category == "카페/디저트" else category
+    current = stops[-1] if stops else {"lat": start_lat, "lon": start_lon}
+    used_ids = {s["id"] for s in stops}
+    pool = catalog[(catalog.category == category) & ~catalog.id.isin(used_ids)]
+    candidates = nearest_candidates(pool, current["lat"], current["lon"], [category], limit=20)
+    used_seconds = result["total_seconds"] - (walking_seconds(result["return_leg"]) if result["return_leg"] else 0)
+    for place in candidates:
+        incoming = leg(current["lat"], current["lon"], place["lat"], place["lon"])
+        if not within_walk_limit(incoming):
+            continue
+        back = leg(place["lat"], place["lon"], start_lat, start_lon) if return_to_start else None
+        seconds = used_seconds + walking_seconds(incoming) + place["duration_min"] * 60 + (walking_seconds(back) if back else 0)
+        if seconds > (max_minutes + MAX_OVERRUN_MINUTES) * 60:
+            continue
+        total = round(seconds / 60, 1)
+        result["alternatives"].append({**_place_fields(place), **incoming,
+            "projected_total_minutes": total,
+            "over_budget": seconds > max_minutes * 60})
+    # shortcut: rotate within the existing nearest-20 pool, not the entire catalog.
+    fitting = [p for p in result["alternatives"] if not p["over_budget"]]
+    overruns = [p for p in result["alternatives"] if p["over_budget"]]
+    result["alternatives"] = (rotate(fitting) + rotate(overruns))[:3]
+    return result

@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import FilterPanel from "./components/FilterPanel";
 import MapView from "./components/MapView";
 import RouteList from "./components/RouteList";
-import { getCategories, getRecommendation, recalculateRoute } from "./api";
+import NextPlacePicker from "./components/NextPlacePicker";
+import { getCategories, getNextPlaces } from "./api";
 import "./App.css";
 import Icon from "./components/Icon";
 import ServiceInfo from "./components/ServiceInfo";
@@ -15,12 +16,14 @@ export default function App() {
   const [allCategories, setAllCategories] = useState([]);
   const [categories, setCategories] = useState([]);
   const [returnToStart, setReturnToStart] = useState(false);
-  const [selectedOnly, setSelectedOnly] = useState(false);
+  const [building, setBuilding] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [returnLeg, setReturnLeg] = useState(null);
   const [appliedConditions, setAppliedConditions] = useState(null);
   const [maxMinutes, setMaxMinutes] = useState(90);
   const [stops, setStops] = useState([]);
   const [alternatives, setAlternatives] = useState([]);
+  const [recommendationId, setRecommendationId] = useState(null);
   const [totalMinutes, setTotalMinutes] = useState(0);
   const [overBudget, setOverBudget] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,61 +37,80 @@ export default function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ids = params.getAll("stop");
+    if (!ids.length) return;
+    const origin = (params.get("start") || "").split(",");
+    const lat = Number(origin[0]), lon = Number(origin[1]);
+    const minutes = Number(params.get("minutes"));
+    if (origin.length !== 2 || origin.some((v) => !v.trim()) || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180 || !Number.isInteger(minutes) || minutes < 30 || minutes > 360 || ids.length > 24 || new Set(ids).size !== ids.length) {
+      setError("sharedRouteError");
+      return;
+    }
+    const point = { lat, lon, label: params.get("label") || "" };
+    const conditions = { startPoint: point, maxMinutes: minutes, returnToStart: params.get("return") === "1", categories: [] };
+    setLoading(true);
+    getNextPlaces({ ...conditions, stops: ids.map((id) => ({ id })), category: null })
+      .then((data) => {
+        applyRoute(data);
+        setStartPoint(point);
+        setMaxMinutes(minutes);
+        setReturnToStart(conditions.returnToStart);
+        setAppliedConditions(conditions);
+        setHasSearched(true);
+        setBuilding(false);
+        const language = params.get("lang");
+        if (["ko", "en", "ja", "zh-TW"].includes(language)) setLocale(language);
+      })
+      .catch(() => setError("sharedRouteError"))
+      .finally(() => setLoading(false));
+  }, []);
+
   function toggleCategory(c) {
     setCategories((prev) =>
       prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
     );
   }
 
-  async function handleSubmit() {
-    if (!startPoint) return;
-    setLoading(true);
+  function applyRoute(data) {
+    setStops(data.stops);
+    setAlternatives(data.alternatives || []);
+    setRecommendationId(data.recommendation_id || null);
+    setReturnLeg(data.return_leg || null);
+    setTotalMinutes(data.total_minutes);
+    setOverBudget(data.over_budget);
+  }
+
+  function handleSubmit() {
+    if (!startPoint || loading) return;
+    setAppliedConditions({ startPoint, maxMinutes, returnToStart, categories: [...categories] });
+    applyRoute({ stops: [], total_minutes: 0, over_budget: false });
+    setActiveCategory(null);
     setError(null);
     setNotice(null);
     setHasSearched(true);
-    try {
-      const data = await getRecommendation({
-        startLat: startPoint.lat, startLon: startPoint.lon,
-        categories, maxMinutes, returnToStart, selectedOnly,
-      });
-      setNotice(data.message || null);
-      setStops(data.stops);
-      setAlternatives(data.alternatives || []);
-      setAppliedConditions({ startPoint, maxMinutes, returnToStart });
-      setReturnLeg(data.return_leg || null);
-      setTotalMinutes(data.total_minutes);
-      setOverBudget(data.over_budget);
-    } catch (e) {
-      setError(e.message || t("recommendError"));
-    } finally {
-      setLoading(false);
-    }
+    setBuilding(true);
   }
 
-  async function handleSwapStop(index, altId) {
-    const alt = alternatives.find((a) => a.id === altId);
-    if (!alt || !startPoint) return;
-    const replaced = stops[index];
-    const nextStops = stops.map((s, i) => (i === index ? { ...alt, order: s.order } : s));
+  async function updateSelection(nextStops, category = null) {
+    if (!appliedConditions || loading) return;
     setLoading(true);
     setError(null);
-    setNotice(null);
     try {
-      const data = await recalculateRoute({ ...appliedConditions, stops: nextStops });
-      setNotice(data.message || null);
-      setStops(data.stops);
-      setReturnLeg(data.return_leg || null);
-      setTotalMinutes(data.total_minutes);
-      setOverBudget(data.over_budget);
-      setAlternatives((prev) => [replaced, ...prev.filter((a) => a.id !== altId)]);
+      const data = await getNextPlaces({ ...appliedConditions, stops: nextStops, category });
+      applyRoute(data);
+      setActiveCategory(category);
+      return true;
     } catch (e) {
       setError(e.message || t("recalculateError"));
+      return false;
     } finally {
       setLoading(false);
     }
   }
 
-  const phase = loading ? "loading" : hasSearched ? "result" : "setup";
+  const phase = loading && !hasSearched ? "loading" : hasSearched ? "result" : "setup";
 
   return (
     <div className="app">
@@ -107,7 +129,6 @@ export default function App() {
               allCategories={allCategories}
               categories={categories} toggleCategory={toggleCategory}
               returnToStart={returnToStart} setReturnToStart={setReturnToStart}
-              selectedOnly={selectedOnly} setSelectedOnly={setSelectedOnly}
               maxMinutes={maxMinutes} setMaxMinutes={setMaxMinutes}
               onSubmit={handleSubmit} loading={loading}
               collapsed={phase === "result"}
@@ -117,14 +138,27 @@ export default function App() {
             <div id="trip-results"><RouteList
               stops={stops} alternatives={alternatives}
               totalMinutes={totalMinutes} overBudget={overBudget}
+              maxMinutes={appliedConditions?.maxMinutes || maxMinutes}
               phase={phase} startPoint={appliedConditions?.startPoint || startPoint} returnLeg={returnLeg}
-              onSwapStop={handleSwapStop}
-            /></div>
+              building={building} busy={loading}
+              onRemoveStop={(index) => updateSelection(stops.filter((_, i) => i !== index))}
+            />
+              {hasSearched && (building ? <NextPlacePicker
+                categories={appliedConditions.categories.length ? appliedConditions.categories : allCategories}
+                activeCategory={activeCategory} candidates={alternatives} busy={loading}
+                recommendationId={recommendationId}
+                maxMinutes={appliedConditions.maxMinutes}
+                stops={stops} remainingMinutes={Math.max(0, appliedConditions.maxMinutes - totalMinutes)}
+                onCategory={(category) => updateSelection(stops, category)}
+                onSelect={(place) => updateSelection([...stops, place])}
+                onFinish={() => { setBuilding(false); setAlternatives([]); }}
+              /> : <button type="button" className="secondary-btn" onClick={() => { setBuilding(true); setActiveCategory(null); }}>{t("editCourse")}</button>)}
+            </div>
           </div>
         </aside>
         <main className="map-area">
           <MapView
-            stops={stops} returnLeg={returnLeg} startPoint={stops.length ? appliedConditions?.startPoint || startPoint : startPoint} onPickStart={setStartPoint}
+            stops={stops} returnLeg={returnLeg} startPoint={hasSearched ? appliedConditions?.startPoint : startPoint} onPickStart={(point) => { if (!hasSearched) setStartPoint(point); }}
             totalMinutes={totalMinutes} overBudget={overBudget} maxMinutes={appliedConditions?.maxMinutes || maxMinutes}
           />
         </main>

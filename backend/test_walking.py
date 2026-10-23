@@ -101,7 +101,7 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual(long["total_minutes"],360)
 
     @patch("app.services.route.walking_leg")
-    def test_limit_shopping_and_over_budget_swap(self, leg):
+    def test_shopping_and_over_budget_swap(self, leg):
         leg.return_value = {"leg_minutes": 20, "leg_distance_m":500, "leg_path":[]}
         c = TestClient(app)
         body = {"start_lat":35.1,"start_lon":129.03}
@@ -110,8 +110,8 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual(c.post("/api/recommend",json={**body,"categories":["unknown"]}).status_code,422)
         shopping = c.post("/api/recommend",json={**body,"categories":["쇼핑"],"max_minutes":360})
         self.assertEqual(shopping.status_code,200)
-        self.assertEqual(shopping.json()["stops"],[])
-        self.assertIn("준비",shopping.json()["message"])
+        self.assertGreaterEqual(sum(stop["category"] == "쇼핑" for stop in shopping.json()["stops"]), 1)
+        self.assertEqual(next(stop["duration_min"] for stop in shopping.json()["stops"] if stop["category"] == "쇼핑"), 25)
         place = load_places().query("duration_min >= 60").iloc[0]
         swap = c.post("/api/recommend/recalculate",json={**body,"stop_ids":[place.id],"max_minutes":30})
         self.assertEqual(swap.status_code,422)
@@ -153,7 +153,7 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual(swapped["total_minutes"],90)
 
     @patch("app.services.route.walking_leg")
-    def test_preferences_caps_and_cross_category_alternatives(self, leg):
+    def test_preferences_and_cross_category_alternatives(self, leg):
         from app.services.route import recommend_route
         import pandas as pd
         base = load_places().iloc[0].to_dict()
@@ -166,7 +166,7 @@ class WalkingTests(unittest.TestCase):
         catalog=pd.DataFrame(rows)
         result=recommend_route(catalog,35.1,129.03,categories=["식당"],max_minutes=180)
         self.assertEqual(result["stops"][0]["category"],"식당")
-        self.assertEqual(sum(p["category"]=="식당" for p in result["stops"]),1)
+        self.assertGreater(sum(p["category"]=="식당" for p in result["stops"]),1)
         self.assertTrue(any(p["category"]=="관광명소" for p in result["stops"]))
         self.assertFalse(any(p["category"] in ["카페/디저트","쇼핑"] for p in result["stops"]))
         strict=recommend_route(catalog,35.1,129.03,categories=["식당"],max_minutes=180,selected_only=True)
@@ -174,12 +174,10 @@ class WalkingTests(unittest.TestCase):
         self.assertEqual({p["category"] for p in strict["alternatives"]},{"식당","카페/디저트","관광명소","쇼핑"})
         self.assertTrue(all(p["origin_walk_minutes"]<=20 for p in strict["alternatives"]))
 
-    def test_roundtrip_email_link(self):
-        from app.routers.notify import EmailRequest,build_google_maps_link,build_email_body
+    def test_roundtrip_email_return_time(self):
+        from app.routers.notify import EmailRequest,build_email_body
         req=EmailRequest(email="test@example.com",start_lat=35.1,start_lon=129.03,return_to_start=True,return_minutes=8,
             stops=[{"order":1,"name":"test","category":"관광명소","address":"test","lat":35.11,"lon":129.04}])
-        self.assertIn("destination=35.1,129.03",build_google_maps_link(req))
-        self.assertIn("waypoints=35.11,129.04",build_google_maps_link(req))
         self.assertIn("8.0",build_email_body(req))
 
     def test_taste_tags_require_exact_district_and_unique_name(self):

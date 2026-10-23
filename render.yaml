@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: busan-full-course
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /api/health
+    envVars:
+      - key: EMAIL_DELIVERY_ENABLED
+        value: "true"
+      - key: KAKAO_REST_API_KEY
+        sync: false
+      - key: TMAP_APP_KEY
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EXPOSURE_DATABASE_URL
+        sync: false

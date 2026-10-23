@@ -1,4 +1,7 @@
 import logging
+from pathlib import Path
+
+from fastapi.staticfiles import StaticFiles
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,3 +29,9 @@ app.include_router(notify.router)
 @app.get("/api/health")
 def health():
     return {"ok": True}
+
+
+# Only the built frontend is public; source data and environment files stay private.
+frontend_dist = Path(__file__).resolve().parents[2] / "frontend" / "dist"
+if frontend_dist.is_dir():
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")

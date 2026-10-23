@@ -12,3 +12,34 @@ INFO:     127.0.0.1:53015 - "GET /api/geocode?query=%EC%84%9C%EB%A9%B4%EC%97%AD 
 INFO:     127.0.0.1:53018 - "POST /api/recommend HTTP/1.1" 200 OK
 INFO:     127.0.0.1:61256 - "POST /api/notify/email HTTP/1.1" 400 Bad Request
 INFO:     127.0.0.1:61257 - "POST /api/recommend/recalculate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57241 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51524 - "GET /api/spots/categories HTTP/1.1" 200 OK
+2026-10-22 14:24:25,520 recommend recommend start=(35.09914,129.03003) categories=['쇼핑'] max_minutes=180 -> 0 stops in 7290.7ms
+INFO:     127.0.0.1:61066 - "POST /api/recommend HTTP/1.1" 200 OK
+2026-10-22 14:24:47,034 recommend recommend start=(35.09914,129.03003) categories=['쇼핑'] max_minutes=180 -> 0 stops in 3530.7ms
+INFO:     127.0.0.1:53504 - "POST /api/recommend HTTP/1.1" 200 OK
+2026-10-22 14:24:52,915 recommend recommend start=(35.09914,129.03003) categories=['쇼핑'] max_minutes=180 -> 0 stops in 3847.0ms
+INFO:     127.0.0.1:63558 - "POST /api/recommend HTTP/1.1" 200 OK
+2026-10-22 14:24:58,950 recommend recommend start=(35.09914,129.03003) categories=['쇼핑'] max_minutes=180 -> 0 stops in 4007.4ms
+INFO:     127.0.0.1:49685 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54659 - "GET /api/geocode?query=%EB%82%A8%ED%8F%AC%EC%97%AD HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55752 - "OPTIONS /api/recommend HTTP/1.1" 200 OK
+2026-10-22 15:16:40,574 recommend recommend start=(35.09791,129.03474) categories=['쇼핑', '관광명소', '카페/디저트', '식당'] max_minutes=360 -> 6 stops in 11095.0ms
+INFO:     127.0.0.1:55752 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53909 - "OPTIONS /api/recommend/recalculate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53909 - "POST /api/recommend/recalculate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58278 - "OPTIONS /api/notify/email HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58278 - "POST /api/notify/email HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49680 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52736 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54857 - "OPTIONS /api/recommend HTTP/1.1" 200 OK
+2026-10-22 16:11:56,661 recommend recommend start=(35.09994,129.03182) categories=['식당', '카페/디저트', '쇼핑', '관광명소'] max_minutes=90 -> 2 stops in 6348.9ms
+INFO:     127.0.0.1:54857 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62809 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65042 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54937 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50061 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50269 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50270 - "GET /api/spots/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63764 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63764 - "GET /favicon.ico HTTP/1.1" 404 Not Found

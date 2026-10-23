@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
 async function request(path, options) {
   const res = await fetch(`${API_BASE}${path}`, options);
@@ -32,7 +32,7 @@ export function getRecommendation({ startLat, startLon, categories, maxMinutes, 
   });
 }
 
-export function sendRouteEmail({ email, stops, totalMinutes, startPoint, emailConsent, returnLeg, language }) {
+export function sendRouteEmail({ email, stops, totalMinutes, maxMinutes, startPoint, emailConsent, returnLeg, language }) {
   return request("/api/notify/email", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -43,6 +43,8 @@ export function sendRouteEmail({ email, stops, totalMinutes, startPoint, emailCo
       return_to_start: !!returnLeg,
       return_minutes: returnLeg?.leg_minutes,
       total_minutes: totalMinutes,
+      max_minutes: maxMinutes,
+      start_label: startPoint?.label && startPoint.label !== "내 위치" ? [startPoint.label, startPoint.address].filter(Boolean).join(" ") : null,
       start_lat: startPoint?.lat,
       start_lon: startPoint?.lon,
       stops,
@@ -56,5 +58,20 @@ export function recalculateRoute({ startPoint, stops, maxMinutes, returnToStart 
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ start_lat: startPoint.lat, start_lon: startPoint.lon,
       stop_ids: stops.map((s) => s.id), max_minutes: maxMinutes, return_to_start: returnToStart }),
+  });
+}
+
+export function getNextPlaces({ startPoint, stops, category, maxMinutes, returnToStart }) {
+  return request("/api/recommend/next", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ start_lat: startPoint.lat, start_lon: startPoint.lon,
+      stop_ids: stops.map((stop) => stop.id), category, max_minutes: maxMinutes, return_to_start: returnToStart }),
+  });
+}
+
+export function recordImpression(recommendationId) {
+  return request('/api/recommend/impressions', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ recommendation_id: recommendationId }),
   });
 }

@@ -12,8 +12,8 @@ from build_recommendation_places import category_for
 ROOT = Path(__file__).resolve().parents[1]
 DONGS = {"남포동", "광복동", "부평동", "대청동"}
 COLUMNS = ["id", "name", "category", "visit_type", "address", "lon", "lat",
-           "admin_dong", "duration_min", "estimated_spend", "rating", "review_count",
-           "image_url", "opening_hours", "data_date", "place_type", "payment_status", "source"]
+           "admin_dong", "duration_min", "estimated_spend", "opening_hours", "data_date", "place_type", "payment_status", "source"]
+OPENING_HOURS_COLUMNS = ['place_id', 'weekday', 'status', 'opens_at', 'closes_at', 'closes_next_day', 'source', 'checked_date']
 PROVENANCE = ["id", "source_file", "source_id", "raw_category", "category_evidence",
               "supplemental_evidence", "visit_type_rule", "duration_basis", "in_market", "market_ids"]
 
@@ -131,14 +131,7 @@ def make_place(row, visit_type, dong, rules, category=None, curated=False):
                  payment_status="not_verified" if category == "관광명소" else "merchant_listed",
                  source=row.get("source") or ("curated_tourism" if curated else "dongbaekjeon"))
     # Only supplied optional information is copied. No estimates or scraped substitutes.
-    for key in ["rating", "review_count", "image_url", "opening_hours"]:
-        place[key] = row.get(key, "") or ""
-    for key in ["rating", "review_count"]:
-        if place[key] != "":
-            value = float(place[key])
-            if not math.isfinite(value) or value < 0 or (key == "review_count" and not value.is_integer()):
-                raise ValueError(key + "_invalid")
-            place[key] = value
+    place["opening_hours"] = row.get("opening_hours", "") or ""
     return place
 
 
@@ -266,6 +259,9 @@ def build(args):
     support = out.parent / "place_support"
     support.mkdir(parents=True, exist_ok=True)
     write_csv(out / "places.csv", list(ready.values()), COLUMNS)
+    hours_file = out / "place_opening_hours.csv"
+    if not hours_file.exists():
+        write_csv(hours_file, [], OPENING_HOURS_COLUMNS)
     write_csv(support / "places_review.csv", list(reviews.values()), ["id", "name", "source_file", "reason", "current_status", "raw_category"])
     write_csv(support / "place_sources.csv", list(provenance.values()), PROVENANCE)
     summary = dict(ready=len(ready), review=len(reviews), excluded=dict(excluded),

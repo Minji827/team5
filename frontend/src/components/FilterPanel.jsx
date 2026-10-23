@@ -7,7 +7,7 @@ export default function FilterPanel({
   startPoint, setStartPoint,
   allCategories,
   categories, toggleCategory,
-  returnToStart, setReturnToStart, selectedOnly, setSelectedOnly,
+  returnToStart, setReturnToStart,
   maxMinutes, setMaxMinutes,
   onSubmit, loading, collapsed,
 }) {
@@ -39,7 +39,7 @@ export default function FilterPanel({
   }
 
   function pickResult(r) {
-    setStartPoint({ lat: r.lat, lon: r.lon, label: r.name });
+    setStartPoint({ lat: r.lat, lon: r.lon, label: r.name, address: r.address });
     setResults([]);
     setQuery("");
   }
@@ -137,10 +137,10 @@ export default function FilterPanel({
       <label className="field">
         <span className="field-title"><Icon name="clock" size={16} />{t("tripTime")}<b className="time-value">{minutes(maxMinutes)}</b></span>
         <input
-          aria-label={t("tripTime")} type="range" min={30} max={360} step={10} value={maxMinutes}
+          aria-label={t("tripTime")} type="range" min={30} max={360} step={10} aria-valuetext={minutes(maxMinutes)} value={maxMinutes}
           onChange={(e) => setMaxMinutes(Number(e.target.value))}
         />
-        <span className="range-labels"><span>{minutes(30)}</span><span>{t("sixHours")}</span></span>
+        <span className="range-labels"><span>{minutes(30)}</span><span>{minutes(360)}</span></span>
         <span className="start-point-hint">{t("budgetHint")}</span>
       </label>
 
@@ -161,7 +161,6 @@ export default function FilterPanel({
         <span className="start-point-hint">{t("interestHint")}</span>
       </div>
 
-      <label className="consent-check"><input type="checkbox" checked={selectedOnly} onChange={(e) => setSelectedOnly(e.target.checked)} /><span>{t("selectedOnly")}</span></label>
 
       <button
         className="submit-btn"

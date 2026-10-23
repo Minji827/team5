@@ -1,71 +1,79 @@
-# places.csv 연동 명세
+# 통합 Place 데이터 계약
 
-## 폴더와 적용 상태
+기준: 2026-10-23. 추천 API는 `load_places()`로 `data/processed/fin/places.csv`를 읽습니다. 기준표·검수·출처는 `data/processed/place_support/`에 분리합니다. `data/process`는 사용하지 않습니다.
 
-서비스 출력은 data/processed/fin/places.csv 하나다. 기준표·출처·검수·집계는 data/processed/place_support에 보관한다. process라는 별도 폴더를 만들지 않는다.
-현재 식당·카페만 766건으로 부분 생성했다. 쇼핑10·관광명소 담당자 입력은 미수신이며 추천 API는 전환하지 않는다.
-새 load_places()는 CSV를 읽는 별도 함수로 준비하고 기존 load_recommendation_places() 호출을 유지한다.
+## 컬럼
 
-현재 코드에는 build_catalog()가 없다. 기존 scripts/build_recommendation_places.py의 category_for()와
-최신 GIS/mvp/mvp_merchants.csv의 동백전·카카오·상가 매칭 결과를 재사용한다.
-재생성 때 원본 전체 API 매칭을 반복하지 않고, 최신 승인된 분류를 전처리 입력으로 사용한다.
-전처리는 QGIS Python(기존 데스크톱 GIS 환경)에서 실행한다. 서비스 서버에는 QGIS가 필요하지 않다.
+| 컬럼 | 계약 |
+|---|---|
+| `id` | 고유 문자열. 가맹점 ID 유지, 관광명소는 `spot:` 접두사 |
+| `name`, `address` | 확인된 장소명·주소, 필수 |
+| `category` | 식당 / 카페·디저트 / 관광명소 / 쇼핑, 필수 |
+| `visit_type` | 기본 체류시간 분류, 필수 |
+| `lon`, `lat` | WGS84 경도·위도, 필수 |
+| `admin_dong` | 남포동 / 광복동 / 부평동 / 대청동, 필수 |
+| `duration_min` | 양의 정수 기본 체류시간, 필수 |
+| `estimated_spend` | 대표 메뉴 기준 1인 예상 원화 금액. 미확보는 빈칸 |
+| `opening_hours` | 기존 자유서술 영업시간 원문. 요일별 구조화 값과 구분해 보존 |
+| `data_date`, `source` | 자료 기준일·출처 |
+| `place_type` | merchant / attraction / market |
+| `payment_status` | merchant_listed / not_verified |
 
-## 컬럼 계약
+빈칸은 결측값이며 미확보 금액을 0으로 채우지 않습니다. 로더는 필수값·ID 중복·업종/유형 조합·행정동·좌표 범위·숫자를 검사하고 선택 필드 결측을 `null`로 응답합니다. `rating`·`review_count`·`image_url`은 서비스 명세와 생성 결과에서 제거했습니다. 원천·실험 데이터에는 이 변경을 적용하지 않습니다.
 
-필수: id(str), name(str), category(str), visit_type(str), address(str), lon(float), lat(float), admin_dong(str), duration_min(양의 정수).
-선택: estimated_spend(원/1인), rating, review_count, image_url, opening_hours.
-기존 추천 응답 호환을 위해 추가: data_date, place_type, payment_status, source.
-CSV 빈칸은 NULL. 누락 정보에 0이나 가상 값을 넣지 않는다. 숫자 정보 미확보와 실제 0은 구분한다.
-영업시간은 안내용이며 필수 제외조건으로 쓰지 않는다.
+## 요일별 영업시간
 
-place_type: merchant / attraction / market.
-payment_status: merchant_listed(가맹점 명부 등재) / not_verified(관광명소 자체 결제 미확인).
-명부 등재는 현재 실제 결제 가능 여부의 현장 확인을 보증하지 않는다.
-id는 기존 가맹점ID를 유지하며 관광명소는 spot: 접두사로 이름공간을 분리한다.
-행정동은 남포·광복·부평·대청 4개 행정동 경계의 좌표 포함 여부로 검사한다.
-겹친 경계로 동을 하나로 확정하지 못하는 곳은 review로 분리한다.
-시장 내부 가게는 별도의 merchant이며 시장 소속을 이유로 category를 관광명소로 덮어쓰지 않는다.
-시장 소속·원천 상세근거는 data/processed/place_support/place_sources.csv에서 관리한다.
+`data/processed/fin/place_opening_hours.csv`를 `places.csv.id = place_id`로 연결합니다. 장소 1개에 여러 요일·영업 구간을 기록하는 1:N 구조입니다. 현재는 헤더만 준비했으며, 실제 시간은 수집 후 입력합니다. Supabase는 현재 노출 이력 전용이며 장소·영업시간 테이블을 생성하거나 이전한 것은 아닙니다.
 
-## 방문 유형별 초기 시간
+| 컬럼 | 계약 |
+|---|---|
+| `place_id` | `places.csv`에 존재하는 장소 ID, 필수 |
+| `weekday` | 월요일 0 ~ 일요일 6. 영업을 시작하는 날짜의 요일, 필수 |
+| `status` | `open` / `closed` / `unknown`, 필수. 정규 시간표 기준이며 실시간 영업 확인을 뜻하지 않음 |
+| `opens_at`, `closes_at` | `HH:MM`, `open`일 때 필수. 다른 상태는 빈칸 |
+| `closes_next_day` | 0 / 1. 익일 종료면 1. `open`일 때 필수, 다른 상태는 빈칸 |
+| `source` | 확인 출처 URL 또는 자료명. `open`·`closed` 기록에 필수 |
+| `checked_date` | 확인일 `YYYY-MM-DD`. `open`·`closed` 기록에 필수 |
 
-| visit_type | 카테고리 | 분 |
-|---|---|---:|
-| general_restaurant | 식당 | 60 |
-| quick_meal | 식당 | 30 |
-| seated_cafe | 카페·디저트 | 45 |
-| takeaway_dessert | 카페·디저트 | 15 |
-| general_shopping | 쇼핑 | 40 |
-| souvenir_shop | 쇼핑 | 20 |
-| scenic_spot | 관광명소 | 30 |
-| exhibition_experience | 관광명소 | 60 |
-| traditional_market | 관광명소 | 60 |
+- 기록이 없는 요일은 **미확인**입니다. 휴무나 24시간 영업으로 추정하지 않습니다.
+- 브레이크타임은 영업 구간을 나눠 여러 행으로 입력합니다. 예: 월요일 `11:00~15:00`, `17:00~22:00` 두 행.
+- 자정 이후 영업은 예를 들어 월요일 `18:00~02:00`, `closes_next_day=1`로 기록합니다.
+- 24시간 영업은 `00:00~00:00`, `closes_next_day=1`로 기록합니다.
+- 같은 장소·요일의 구간은 중복·겹침 없이 관리하며, `closed`·`unknown`과 `open`을 함께 입력하지 않습니다. 전날부터 이어지는 영업 구간도 확인해야 합니다.
+- 공휴일·임시휴무·특정 날짜 예외는 이 주간 시간표만으로 확정하지 않습니다. 추후 별도 예외 구조가 필요합니다.
+- 빌더는 이 파일이 없을 때만 헤더를 만들고, 이미 입력된 시간표를 덮어쓰지 않습니다.
+- 현재 API는 `places.csv`를 읽습니다. **요일별 CSV를 이용한 영업시간 판정·추천 필터는 아직 연결하지 않았습니다.**
 
-사용자 제공 시간 관련.png의 MVP 초기 가정값이며 실측 평균이 아니다.
-사진의 최소/최대 범위는 data/processed/place_support/duration_rules.csv에 참고값으로 보관하며 사용자 수정값을 자동으로 제한하지 않는다.
-좌석 유무·포장 여부를 확인하지 못한 유형 기본 배정은 data/processed/place_support/place_sources.csv의 규칙에서 확인할 수 있다.
+## 기본 체류시간
 
-## 일정 데이터와 사용자 변경 시간 (API/UI 구현은 별도)
+| visit_type | 분 |
+|---|---:|
+| general_restaurant | 60 |
+| quick_meal | 30 |
+| seated_cafe | 45 |
+| takeaway_dessert | 15 |
+| general_shopping | 40 |
+| souvenir_shop | 20 |
+| retail_store | 25 |
+| scenic_spot | 30 |
+| exhibition_experience | 60 |
+| traditional_market | 60 |
 
-일정의 각 방문에 stop_id, place_id, duration_override_min을 보관한다.
-duration_override_min=NULL이면 places.duration_min을 사용한다.
-수정값이 있으면 해당 일정에서만 적용한다. places.csv와 유형 기준표는 변경하지 않는다.
-적용시간 = override가 NULL이면 기본값, 아니면 override.
-전체시간 = 출발지부터 첫 장소까지 + 장소 사이 이동시간 + 각 장소 적용 체류시간.
-돌아오는 지점이 지정된 경우 마지막 이동시간도 포함한다.
-시장 자체와 그 안 가게를 함께 넣으면 체류시간을 중복 계산할 수 있으므로 코스 설계 단계에서 별도 규칙을 정한다.
-현재 route.py는 이동시간만 계산한다. load_places()를 연결하는 것만으로 체류시간·시간예산 검증이 구현되는 것은 아니다.
+출처는 `duration_rules.csv`입니다. 사용자 제공 기준·담당자 자료의 초기 가정이며 실측 평균이 아닙니다. 장소별 체류시간 수정 UI·일정별 override 저장은 아직 구현하지 않았습니다.
 
-## 담당자 입력
+## 재생성
 
-쇼핑: id,visit_type 헤더의 10개 고유 가맹점ID. 현재 MVP 가맹점 목록에 있는 ID여야 한다.
-관광명소: id,name,address,lon,lat,visit_type. admin_dong은 입력 문자열을 믿지 않고 경계로 재판정한다.
-기타 선택정보는 확보된 값만 제공한다. 개인정보·계정 정보는 수집하지 않는다.
-서비스 카테고리·방문유형·좌표·이름·주소가 불명확한 행은 data/processed/place_support/places_review.csv로 보낸다.
+현재 `build_catalog()` 함수는 없습니다. `scripts/build_places.py`가 기존 분류 함수와 승인된 GIS MVP 매칭 결과를 재사용합니다. 공간 검사는 전처리 단계에서 QGIS Python으로 수행하고 서비스 서버에는 QGIS가 필요하지 않습니다.
 
-## 완료/미완료
+프로젝트 루트에서 아래처럼 쇼핑·관광명소 입력을 모두 지정합니다. 생략하면 부분 결과로 덮어쓸 수 있으므로 재생성 전에 산출물을 보관하세요.
 
-완료: 부분 CSV 생성, 근거 분리, MVP 경계 필터, 초기시간 적용, load_places 검증 함수 준비.
-대기: 쇼핑10/관광명소 담당자 데이터, 대표메뉴 가격.
-미구현: 추천 API 입력 전환, 일정별 시간 수정 API/UI, 총시간 제약 반영. 기존 파이프라인과 팀원 작업은 유지한다.
+```powershell
+$env:QT_QPA_PLATFORM = "offscreen"
+& "C:/Program Files/QGIS 3.16/bin/python-qgis-ltr.bat" "$PWD/scripts/build_places.py" --shopping-file "$PWD/data/shopping_verification/shopping_places_final.csv" --tourism-file "$PWD/data/processed/mvp_tourist_spots.csv"
+```
+
+쇼핑 선정 ID는 좌표·정규화 상호로 기존 가맹점에 연결하며 최종 출력은 가맹점 ID를 사용합니다. 관광명소는 유형·좌표가 필요하고 행정동은 경계로 판정합니다. 산출물은 서비스 CSV, 출처 CSV, 검수 CSV, `summary.json`입니다. JSON의 과거 호환 필드 `backend_switched`를 현재 배포 상태로 해석하지 마세요.
+
+## 일정·노출 데이터와의 관계
+
+선택 순서는 프런트 상태와 API의 `stop_ids`에서 관리하며 완성 일정 테이블은 없습니다. 도보·체류·선택한 복귀시간을 합산하고 설정 시간보다 최대 10분 초과까지 경고 후 허용하며, 그보다 초과하면 후보에서 제외합니다. 영속 DB에는 추천 목록 ID·장소 ID 배열·생성/표시 시각만 저장합니다. 분류 검토 CSV는 고객 리뷰나 방문 기록이 아닙니다.
